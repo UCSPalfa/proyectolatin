@@ -35,21 +35,21 @@ if (!isset($CONFIG)) {
  * @global string $CONFIG->dbuser
  * @name $CONFIG->dbuser
  */
-$CONFIG->dbuser = 'user_latin';
+$CONFIG->dbuser = 'user_elgg';
 
 /**
  * The database password
  *
  * @global string $CONFIG->dbpass
  */
-$CONFIG->dbpass = 'latin123';
+$CONFIG->dbpass = 'prueba123';
 
 /**
  * The database name
  *
  * @global string $CONFIG->dbname
  */
-$CONFIG->dbname = 'latin';
+$CONFIG->dbname = 'elgg';
 
 /**
  * The database host.

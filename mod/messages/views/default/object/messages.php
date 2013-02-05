@@ -8,6 +8,7 @@
 $full = elgg_extract('full_view', $vars, false);
 $message = elgg_extract('entity', $vars, false);
 
+
 if (!$message) {
 	return true;
 }
@@ -16,7 +17,7 @@ if ($message->toId == elgg_get_page_owner_guid()) {
 	// received
 	$user = get_entity($message->fromId);
 	if ($user) {
-		$icon = elgg_view_entity_icon($user, 'tiny');
+		$icon = elgg_view_entity_icon($user, 'small');
 		$user_link = elgg_view('output/url', array(
 			'href' => "messages/compose?send_to=$user->guid",
 			'text' => $user->name,

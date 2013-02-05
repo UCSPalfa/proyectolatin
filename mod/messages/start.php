@@ -16,18 +16,20 @@ function messages_init() {
 
 	// add page menu items
 	if (elgg_is_logged_in()) {
-		elgg_register_menu_item('page', array(
+
+		/*elgg_register_menu_item('page', array(
 			'name' => 'messages:inbox',
 			'text' => elgg_echo('messages:inbox'),
 			'href' => "messages/inbox/" . elgg_get_logged_in_user_entity()->username,
 			'context' => 'messages',
-		));
+		));*/
 		
 		elgg_register_menu_item('page', array(
 			'name' => 'messages:sentmessages',
 			'text' => elgg_echo('messages:sentmessages'),
 			'href' => "messages/sent/" . elgg_get_logged_in_user_entity()->username,
 			'context' => 'messages',
+			'priority' => 31,
 		));		
 	}
 

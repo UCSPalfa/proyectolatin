@@ -29,6 +29,7 @@
 	float: left;
 	width: 55%;
 	margin-right: 2%;
+	vertical-align: middle;
 }
 .messages-timestamp {
 	float: left;

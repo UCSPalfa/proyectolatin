@@ -37,6 +37,9 @@ function groups_init() {
 	// Register some actions
 	$action_base = elgg_get_plugins_path() . 'groups/actions/groups';
 	elgg_register_action("groups/edit", "$action_base/edit.php");
+	// Modification by Gonzalo
+	// Registering the action to link this group to other groups
+	elgg_register_action("groups/link", "$action_base/link.php");
 	elgg_register_action("groups/delete", "$action_base/delete.php");
 	elgg_register_action("groups/featured", "$action_base/featured.php", 'admin');
 
@@ -166,34 +169,81 @@ function groups_setup_sidebar_menus() {
 			));
 		}
 	}
-	if (elgg_get_context() == 'groups' && !elgg_instanceof($page_owner, 'group')) {
-		elgg_register_menu_item('page', array(
-			'name' => 'groups:all',
-			'text' => elgg_echo('groups:all'),
-			'href' => 'groups/all',
-		));
+
+	if (elgg_get_context() == 'groups' && !elgg_instanceof($page_owner, 'group') ) {
 
 		$user = elgg_get_logged_in_user_entity();
-		if ($user) {
-			$url =  "groups/owner/$user->username";
-			$item = new ElggMenuItem('groups:owned', elgg_echo('groups:owned'), $url);
-			elgg_register_menu_item('page', $item);
-			
-			$url = "groups/member/$user->username";
-			$item = new ElggMenuItem('groups:member', elgg_echo('groups:yours'), $url);
-			elgg_register_menu_item('page', $item);
+	
 
-			$url = "groups/invitations/$user->username";
-			$invitations = groups_get_invited_groups($user->getGUID());
-			if (is_array($invitations) && !empty($invitations)) {
-				$invitation_count = count($invitations);
-				$text = elgg_echo('groups:invitations:pending', array($invitation_count));
+		if ($user) {
+
+			
+			/*$url = "groups/member/$user->username";
+			$item = new ElggMenuItem('groups:member', elgg_echo('groups:yours'), $url);
+			elgg_register_menu_item('page', $item);*/
+
+
+			if ($page_owner->guid != $user->guid) {
+				$text = elgg_echo('groups:user', array(strtok($page_owner->name, " ")));
 			} else {
-				$text = elgg_echo('groups:invitations');
+				$text = elgg_echo('groups:yours');
 			}
 
-			$item = new ElggMenuItem('groups:user:invites', $text, $url);
-			elgg_register_menu_item('page', $item);
+			elgg_register_menu_item('page', array(
+				'name' => 'groups:member',
+				'text' => $text,
+				'href' => 'groups/member/' . $page_owner->username,
+				'priority' => 41,
+			));
+
+
+			/*$url =  "groups/owner/$user->username";
+			$item = new ElggMenuItem('groups:owned', elgg_echo('groups:owned'), $url);
+			elgg_register_menu_item('page', $item);*/
+
+			if ($page_owner->guid != $user->guid) {
+				$text = elgg_echo('groups:owned:user', array(strtok($page_owner->name, " ")));
+			} else {
+				$text = elgg_echo('groups:owned');
+			}
+
+			elgg_register_menu_item('page', array(
+				'name' => 'groups:owned',
+				'text' => $text,
+				'href' => 'groups/owner/' . $page_owner->username,
+				'priority' => 42,
+			));
+
+			if ($page_owner->guid == $user->guid) {
+
+				$url = "groups/invitations/$page_owner->username";
+				$invitations = groups_get_invited_groups($page_owner->getGUID());
+				if (is_array($invitations) && !empty($invitations)) {
+					$invitation_count = count($invitations);
+					$text = elgg_echo('groups:invitations:pending', array($invitation_count));
+				} else {
+					$text = elgg_echo('groups:invitations');
+				}
+
+				/*$item = new ElggMenuItem('groups:user:invites', $text, $url);
+				elgg_register_menu_item('page', $item);*/
+
+				elgg_register_menu_item('page', array(
+					'name' => 'groups:invitations',
+					'text' => $text,
+					'href' => $url,
+					'priority' => 43,
+				));
+
+				elgg_register_menu_item('page', array(
+					'name' => 'groups:all',
+					'text' => elgg_echo('groups:all'),
+					'href' => 'groups/all',
+					'priority' => 44,
+				));
+			
+
+			}
 		}
 	}
 }
@@ -260,6 +310,11 @@ function groups_page_handler($page) {
 		case 'edit':
 			groups_handle_edit_page('edit', $page[1]);
 			break;
+		// Modification by Gonzalo
+		// Adding support to link groups to other groups			
+		case 'link':
+			groups_handle_edit_page('link', $page[1]);
+			break;			
 		case 'profile':
 			groups_handle_profile_page($page[1]);
 			break;
@@ -268,6 +323,9 @@ function groups_page_handler($page) {
 			break;
 		case 'members':
 			groups_handle_members_page($page[1]);
+			break;
+		case 'links':
+			groups_handle_links_page($page[1]);
 			break;
 		case 'invite':
 			groups_handle_invite_page($page[1]);

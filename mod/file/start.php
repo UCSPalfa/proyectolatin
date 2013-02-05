@@ -51,7 +51,7 @@ function file_init() {
 	elgg_register_entity_type('object', 'file');
 
 	// add a file link to owner blocks
-	elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'file_owner_block_menu');
+	//elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'file_owner_block_menu');
 
 	// Register actions
 	$action_path = elgg_get_plugins_path() . 'file/actions/file';
@@ -121,11 +121,8 @@ function file_page_handler($page) {
 			file_register_toggle();
 			include "$file_dir/friends.php";
 			break;
-		case 'read': // Elgg 1.7 compatibility
-			register_error(elgg_echo("changebookmark"));
-			forward("file/view/{$page[1]}");
-			break;
 		case 'view':
+		case 'read': // Elgg 1.7 compatibility
 			set_input('guid', $page[1]);
 			include "$file_dir/view.php";
 			break;

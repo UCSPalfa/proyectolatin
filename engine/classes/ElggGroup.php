@@ -265,6 +265,21 @@ class ElggGroup extends ElggEntity
 	}
 
 	/**
+	 * Get a list of the groups linked to this group.
+	 *
+	 * @param int  $limit  Limit
+	 * @param int  $offset Offset
+	 * @param bool $count  Count
+	 *
+	 * @return mixed
+	 */
+
+	public function getLinkedGroups($limit = 10, $offset = 0, $count = false) {
+		return get_linked_groups($this->getGUID(), $limit, $offset, 0, $count);
+	}
+
+
+	/**
 	 * Returns whether the current group is public membership or not.
 	 *
 	 * @return bool

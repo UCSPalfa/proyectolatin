@@ -29,7 +29,7 @@ function bookmarks_init() {
 	));
 
 	elgg_register_plugin_hook_handler('register', 'menu:page', 'bookmarks_page_menu');
-	elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'bookmarks_owner_block_menu');
+	//elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'bookmarks_owner_block_menu');
 
 	elgg_register_page_handler('bookmarks', 'bookmarks_page_handler');
 
@@ -125,13 +125,10 @@ function bookmarks_page_handler($page) {
 			include "$pages/friends.php";
 			break;
 
+		case "read":
 		case "view":
 			set_input('guid', $page[1]);
 			include "$pages/view.php";
-			break;
-		case 'read': // Elgg 1.7 compatibility
-			register_error(elgg_echo("changebookmark"));
-			forward("bookmarks/view/{$page[1]}");
 			break;
 
 		case "add":

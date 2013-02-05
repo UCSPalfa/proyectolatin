@@ -1051,11 +1051,14 @@ function collections_submenu_items() {
 
 	$user = elgg_get_logged_in_user_entity();
 
-	elgg_register_menu_item('page', array(
+	$params = array(
 		'name' => 'friends:view:collections',
 		'text' => elgg_echo('friends:collections'),
-		'href' => "collections/$user->username",
-	));
+		'href' => 'collections/' . $user->username,
+		'contexts' => array('friends'),
+		'priority' => 22,
+	);
+	elgg_register_menu_item('page', $params);
 }
 
 /**
@@ -1463,21 +1466,28 @@ function users_pagesetup() {
 	$viewer = elgg_get_logged_in_user_entity();
 
 	if ($owner) {
-		$params = array(
+
+
+		if ($owner->guid == $viewer->guid) {
+
+		}
+
+		/*$params = array(
 			'name' => 'friends',
 			'text' => elgg_echo('friends'),
 			'href' => 'friends/' . $owner->username,
-			'contexts' => array('friends')
+			'contexts' => array('friends'),
 		);
-		elgg_register_menu_item('page', $params);
+		elgg_register_menu_item('page', $params);*/
 
-		$params = array(
+		/*$params = array(
 			'name' => 'friends:of',
 			'text' => elgg_echo('friends:of'),
 			'href' => 'friendsof/' . $owner->username,
-			'contexts' => array('friends')
+			'contexts' => array('friends'),
+			'priority' => 21,
 		);
-		elgg_register_menu_item('page', $params);
+		elgg_register_menu_item('page', $params);*/
 		
 		elgg_register_menu_item('page', array(
 			'name' => 'edit_avatar',

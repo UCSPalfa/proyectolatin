@@ -31,7 +31,7 @@ function thewire_init() {
 	elgg_register_menu_item('site', $item);
 
 	// owner block menu
-	elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'thewire_owner_block_menu');
+	//elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'thewire_owner_block_menu');
 
 	// remove edit and access and add thread, reply, view previous
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'thewire_setup_entity_menu_items');

@@ -1,104 +1,3 @@
-2013-01-26  cash <cash.costello@gmail.com>
-
-  	* CHANGES.txt, version.php: updated version for 1.8.13 release
-
-2012-08-28  Juho Jaakkola <juho.jaakkola@mediamaisteri.com>
-
-  	* _graphics/walled_garden/one_column_bottom.png,
-  _graphics/walled_garden/one_column_top.png,
-  _graphics/walled_garden/two_column_bottom.png,
-  _graphics/walled_garden/two_column_top.png: Fixes #4636: Transparent corners
-  for walled garden backgrounds.
-
-2013-01-26  cash <cash.costello@gmail.com>
-
-  	* mod/groups/views/default/groups/css.php,
-  views/default/css/elements/layout.php,
-  views/default/css/elements/modules.php,
-  views/default/css/elements/typography.php: fixed some formatting issues in
-  CSS files
-
-  	* js/lib/languages.js, views/default/js/elgg.php: Fixes #4956 language unit
-  tests pass again
-
-2013-01-26  Cash Costello <cash.costello@gmail.com>
-
-  	* languages/en.php, views/default/annotation/generic_comment.php: fixed
-  comment language for brief display of comments - made it easier to translate
-  - taken from PR 438
-
-  	* CHANGES.txt, languages/en.php: Defines river:comment:object:default -
-  taken from PR 438
-
-2013-01-25  cash <cash.costello@gmail.com>
-
-  	* engine/lib/output.php: Fixes #4972 decode special chars before encoding
-  for friendly titles
-
-  	* engine/classes/ElggPlugin.php: Fixes #4987 removed unnecessary code
-
-  	* languages/en.php: adds missing language string
-
-  	* engine/lib/upgrades/2011010101.php: Fixes #5002 unlocking the upgrade
-  before forwarding to upgrade script
-
-  	* mod/groups/lib/groups.php: Fixes #5005 correct pagination for my groups
-
-  	* engine/lib/private_settings.php: Fixes #4992 - saving temporary private
-  settings works now
-
-2013-01-23  Cash Costello <cash.costello@gmail.com>
-
-  	* mod/blog/start.php, mod/bookmarks/start.php, mod/file/start.php: better
-  solution for 1.7 file compatibility than pull request 471
-
-2013-01-22  cash <cash.costello@gmail.com>
-
-  	* .../views/default/groups/profile/summary.php: addresses pull request 472 -
-  group not having an owner is a serious problem - try exception approach -
-  maybe we need a mechanism for displaying an error page besides exceptions
-
-2013-01-20  Cash Costello <cash.costello@gmail.com>
-
-  	* CHANGES.txt, engine/classes/ElggSite.php: Fixes #4991 CLI allowed when
-  walled garden is turned on
-
-2013-01-19  Cash Costello <cash.costello@gmail.com>
-
-  	* languages/en.php: standardise on American spelling of licence
-
-  	* README.txt: updated copyright date
-
-  	* mod/notifications/actions/groupsave.php: Fixes #4983 added default
-  paramter to get_input() to avoid warning
-
-  	* CHANGES.txt, languages/en.php,
-  views/default/admin/appearance/profile_fields.php,
-  views/default/forms/profile/fields/reset.php: Fixes #4982 adds confirm dialog
-  to profile field reset
-
-  	* mod/file/views/default/object/file.php: Fixes #4990 removes extra title
-  for full file view
-
-2013-01-18  Steve Clay <steve@mrclay.org>
-
-  	* .../views/default/widgets/twitter/content.php,
-  mod/twitter/views/default/widgets/twitter/edit.php: Style fixes to match 1.8
-  widgets
-
-2013-01-17  Steve Clay <steve@mrclay.org>
-
-  	* mod/twitter/languages/en.php,
-  .../views/default/widgets/twitter/content.php,
-  mod/twitter/views/default/widgets/twitter/edit.php: Corrects encoding and
-  other small tweaks in Twitter widget
-
-2012-12-22  Per Jensen <admin@perjensen-online.dk>
-
-  	* views/default/css/elements/typography.php: Prevent distortion of image
-
-  	* mod/groups/views/default/groups/css.php: Prevent distortion of group icon
-
 2013-01-04  Brett Profitt <brett.profitt@gmail.com>
 
   	* CHANGES.txt, version.php: Version bump. Updated changes.
@@ -125,10 +24,6 @@
 
   	* mod/search/search_hooks.php, mod/search/start.php: Fixes #2212. Added
   profile fields to the user search.
-
-2012-12-28  Paweł Sroka <srokap@gmail.com>
-
-  	* engine/lib/admin.php: fixes: invalid link in admin footer
 
 2012-12-27  Brett Profitt <brett.profitt@gmail.com>
 
@@ -213,16 +108,6 @@
   Fixes #4491. Automatic fallback to JS to test rewrite rules during
   installation.
 
-2012-12-14  Paweł Sroka <srokap@gmail.com>
-
-  	* htaccess_dist: Fixes #4961 - Addc "last rule" tag to mod_rewrite rules in
-  htaccess_dist
-
-2012-12-13  Sem <sembrestels@riseup.net>
-
-  	* .../views/default/groups/profile/summary.php: Checking if we have an owner
-  before using it.
-
 2012-12-10  Brett Profitt <brett.profitt@gmail.com>
 
   	* engine/classes/ElggAutoP.php, engine/classes/ElggAutop.php,
@@ -272,13 +157,6 @@
 
   	* CHANGES.txt, version.php: Bumped version to 1.8.10. Updated changes. Refs
   #4947.
-
-2012-12-04  Krzysztof Różalski <cristo.rabani@gmail.com>
-
-  	* views/default/core/settings/statistics/online.php: Fixes #4946 - In
-  views/default/core/settings/statistics/online.php there's get_system_log call
-  but system_log call can be supressed by unregistering default handler. Better
-  to use last_login attribute.
 
 2012-12-01  Steve Clay <steve@mrclay.org>
 
@@ -536,11 +414,6 @@
 2012-10-29  Evan Winslow <evan@elgg.org>
 
   	* mod/blog/views/default/forms/blog/save.php: Fixes inconsistent blog markup
-
-2012-10-25  Srokap <srokap@gmail.com>
-
-  	* engine/classes/ElggDiskFilestore.php: File access control omits now access
-  to owner control.
 
 2012-10-22  Brett Profitt <brett.profitt@gmail.com>
 

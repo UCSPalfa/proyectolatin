@@ -9,10 +9,7 @@
 .groups-profile > .elgg-image {
 	margin-right: 10px;
 }
-.groups-profile img {
-	width: 100%;
-	height: auto;
-}
+
 .groups-stats {
 	background: #eeeeee;
 	padding: 5px;
@@ -77,4 +74,48 @@
 .elgg-menu-groups-my-status li.elgg-state-selected > a {
 	background-color: #4690D6;
 	color: white;
+}
+
+
+
+.numberMembers {
+  color: #333333;
+  border-color:#DDDDDD;
+  border-width:1px;
+  border-style:solid solid solid solid;
+  top:-3px;
+  padding:6px;
+  position:relative;
+  text-align: center;
+}
+
+.groupName {
+  color:#FFFFFF;
+  display:block;
+  left:6px;
+  overflow:hidden;
+  position:absolute;
+  text-shadow:#333333 0 0 2px;
+  top:20px;
+  word-wrap:break-word;
+  position:relative;
+  font-family:arial, sans-serif;
+  font-size:12px;
+  font-style:normal;
+  font-variant:normal;
+  font-weight:normal;
+  line-height:normal;
+}
+
+.iconBorder {
+	border-color:#DDDDDD;
+	border-width:1px;
+	border-style:solid solid none solid;
+}
+
+.groupIcon {
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
