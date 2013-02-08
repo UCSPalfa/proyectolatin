@@ -37,7 +37,7 @@ $english = array(
 	'messages:markread' => 'Mark read',
 	'messages:recipient' => 'Choose a recipient&hellip;',
 	'messages:to_user' => 'To: %s',
-
+	'messages:date' => 'Date',
 	'messages:new' => 'New message',
 
 	'notification:method:site' => 'Site',
