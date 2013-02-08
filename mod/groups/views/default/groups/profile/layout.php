@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Layout of the groups profile page

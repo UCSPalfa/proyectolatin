@@ -6,6 +6,10 @@
  * @package ElggInviteFriends
  */
 
+
+elgg_set_context('friends');
+collections_submenu_items();
+
 if (elgg_get_config('allow_registration')) {
 	$site = elgg_get_site_entity();
 	$introduction = elgg_echo('invitefriends:introduction');

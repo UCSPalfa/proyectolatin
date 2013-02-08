@@ -8,15 +8,20 @@ elgg_push_context('front');
 
 elgg_push_context('widgets');
 
+$n = 3;
+
 $list_params = array(
 	'type' => 'object',
-	'limit' => 4,
+	'limit' => $n,
 	'full_view' => false,
 	'view_type_toggle' => false,
 	'pagination' => false,
+	'list_type' => 'gallery',
+	'gallery_class' => 'groups-profile-icon',
+	'size' => 'medium',
 );
 
-//grab the latest 4 blog posts
+//grab the latest $n blog posts
 $list_params['subtype'] = 'blog';
 $blogs = elgg_list_entities($list_params);
 
@@ -45,6 +50,18 @@ $list_params['type'] = 'group';
 unset($list_params['subtype']);
 $groups = elgg_list_entities($list_params);
 
+
+
+$groups = elgg_list_entities(array(
+    'type' => 'group',
+    'size' => 'medium',
+	'full_view' => false,
+	'list_type' => 'gallery',
+	'gallery_class' => 'elgg-gallery-users',
+	'limit' => $n,
+	'pagination' => false,
+));
+
 //grab the login form
 $login = elgg_view("core/account/login_box");
 
@@ -52,9 +69,9 @@ elgg_pop_context();
 
 // lay out the content
 $params = array(
-	'blogs' => $blogs,
-	'bookmarks' => $bookmarks,
-	'files' => $files,
+//	'blogs' => $blogs,
+//	'bookmarks' => $bookmarks,
+//	'files' => $files,
 	'groups' => $groups,
 	'login' => $login,
 	'members' => $newest_members,

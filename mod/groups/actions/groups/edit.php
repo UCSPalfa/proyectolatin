@@ -101,6 +101,8 @@ if (!$is_new_group && $new_owner_guid && $new_owner_guid != $old_owner_guid) {
 
 $must_move_icons = ($owner_has_changed && $old_icontime);
 
+
+// Aquí se guarda el grupo y se hace la escritura en la base de datos
 $group->save();
 
 // Invisible group support
