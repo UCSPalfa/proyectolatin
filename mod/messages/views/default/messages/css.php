@@ -62,3 +62,15 @@
 	font-size: 10px;
 	font-weight: bold;
 }
+
+.message-header-details {
+	background-color: #D8D8D8;
+}
+
+.message-unread {
+	background-color: #F8E6E0;
+}
+
+.message-read {
+	background-color: #FAFAFA;
+}
