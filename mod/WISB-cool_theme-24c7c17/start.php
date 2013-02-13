@@ -46,6 +46,21 @@ function cool_theme_init() {
 	 */
 	//Small "correction" to groups profile -- brief description makes more sense to come first!
 	elgg_register_plugin_hook_handler('profile:fields', 'group', 'facebook_theme_group_profile_fields', 1);
+
+	// Removing the radiobuttons to make group elements optionasl (because they should be part of any group regardless the creator's will)
+	// Modified by Gonzalo Gabriel Méndez
+	remove_group_tool_option('activity');
+	remove_group_tool_option('forum');
+	remove_group_tool_option('blog');
+	remove_group_tool_option('bookmarks');
+	remove_group_tool_option('file');
+	remove_group_tool_option('pages');
+
+
+	
+
+
+
 		
 	//@todo report some of the extra patterns to be included in Elgg core
 	elgg_extend_view('css/elgg', 'cool_theme/css');
@@ -228,7 +243,7 @@ function facebook_theme_pagesetup_handler() {
 					'section' => 'more',	
 					'name' => 'blog',
 					'text' => elgg_view_icon('speech-bubble-alt') . elgg_echo('blog'),
-					'href' => "/blog/friends/$user->username",
+					'href' => "/blog/owner/$user->username",
 					'priority' => 50,
 				));
 			}
@@ -238,11 +253,10 @@ function facebook_theme_pagesetup_handler() {
 					'section' => 'more',
 					'name' => 'bookmarks',
 					'text' => elgg_view_icon('push-pin') . elgg_echo('bookmarks'),	
-					'href' => "/bookmarks/friends/$user->username",
+					'href' => "/bookmarks/owner/$user->username",
 					'priority' => 60,
 				));
-			}
-		
+			}		
 		
 		
 			if (elgg_is_active_plugin('pages')) {
@@ -250,8 +264,7 @@ function facebook_theme_pagesetup_handler() {
 					'section' => 'more',	
 					'name' => 'pages',
 					'text' => elgg_view_icon('list') . elgg_echo('pages'),
-					'href' => "/pages/friends/$user->username",
-					//'contexts' => array('dashboard', 'profile'),
+					'href' => "/pages/owner/$user->username",
 					'priority' => 70,
 				));
 			}
@@ -261,8 +274,7 @@ function facebook_theme_pagesetup_handler() {
 					'section' => 'more',	
 					'name' => 'files',
 					'text' => elgg_view_icon('clip') . elgg_echo('files'),
-					'href' => "/file/friends/$user->username",
-					//'contexts' => array('dashboard', 'profile'),
+					'href' => "/file/owner/$user->username",
 					'priority' => 80,
 				));
 			}
@@ -272,8 +284,7 @@ function facebook_theme_pagesetup_handler() {
 					'section' => 'more',
 					'name' => 'thewire',
 					'text' => elgg_view_icon('share') . elgg_echo('thewire'),
-					'href' => "/thewire/friends/$user->username",
-					//'contexts' => array('dashboard', 'profile'),
+					'href' => "/thewire/owner/$user->username",
 					'priority' => 90,
 				));
 			}
@@ -528,25 +539,23 @@ function facebook_theme_group_profile_fields($hook, $type, $fields, $params) {
 
 function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) {
 
+	
 	$owner = elgg_get_page_owner_entity();
 	
 	// If the owner is a group
 	if ($owner instanceof ElggGroup) {
-		$items['info'] = ElggMenuItem::factory(array(
-			'name' => 'info', 
-			'text' => elgg_view_icon('info') . elgg_echo('profile:info'), 
-			'href' => "/groups/info/$owner->guid/" . elgg_get_friendly_title($owner->name),
-			'priority' => 1,
-		));
 		
-		$items['profile'] = ElggMenuItem::factory(array(
+		
+		/*$items['profile'] = ElggMenuItem::factory(array(
 			'name' => 'profile',
-			'text' => elgg_view_icon('userwall') . elgg_echo('profile:wall'),
+			'text' => elgg_view_icon('userwall') . elgg_echo('activity'),
 			'href' => "/groups/profile/$owner->guid/" . elgg_get_friendly_title($owner->name),
 			'priority' => 2,
-		));
+		));*/
 
 	}
+
+
 	
 	// If the owner is a user
 	if ($owner instanceof ElggUser) {
@@ -590,6 +599,76 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
 			'text' => elgg_view_icon('page') . elgg_view('output/text', array('value' => $page->title)),
 		));
 	}*/
+
+	if (elgg_instanceof($params['entity'], 'group')) {
+
+		
+
+		if ($params['entity']->activity_enable != "no") {
+			$items['activity'] = ElggMenuItem::factory(array(
+				'name' => 'activity',
+				'href' => "/groups/profile/$owner->guid/" . elgg_get_friendly_title($owner->name),
+				'text' => elgg_view_icon('userwall') . elgg_echo('activity'),
+				'priority' => 1,
+			));
+		}
+
+		$items['info'] = ElggMenuItem::factory(array(
+			'name' => 'info', 
+			'text' => elgg_view_icon('info') . elgg_echo('profile:info'), 
+			'href' => "/groups/info/$owner->guid/" . elgg_get_friendly_title($owner->name),
+			'priority' => 2,
+		));
+
+			
+		if ($params['entity']->forum_enable != "no") {
+			$items['discussion'] = ElggMenuItem::factory(array(
+				'name' => 'discussion',
+				'text' => elgg_view_icon('share') . elgg_echo('discussion:group'),
+				'href' => "discussion/owner/{$params['entity']->guid}",
+				'priority' => 3,
+			));
+		}
+
+		if ($params['entity']->file_enable != "no") {
+			$items['file'] = ElggMenuItem::factory(array(
+				'name' => 'file',
+				'text' => elgg_view_icon('clip') . elgg_echo('file:group'),
+				'href' => "file/group/{$params['entity']->guid}/all",
+				'priority' => 4,
+			));
+		}
+		
+		if ($params['entity']->pages_enable != "no") {
+			$items['pages'] = ElggMenuItem::factory(array(
+				'name' => 'pages',
+				'text' => elgg_view_icon('list') . elgg_echo('pages:group'),
+				'href' => "pages/group/{$params['entity']->guid}/all",
+				'priority' => 5,
+			));
+		}
+
+		if ($params['entity']->bookmarks_enable != "no") {
+			$items['bookmarks'] = ElggMenuItem::factory(array(
+				'name' => 'bookmarks',
+				'text' => elgg_view_icon('push-pin') . elgg_echo('bookmarks:group'),
+				'href' => "bookmarks/group/{$params['entity']->guid}/all",
+				'priority' => 6,
+			));
+		}
+		
+		
+		if ($params['entity']->blogs_enable != "no") {
+			$items['blog'] = ElggMenuItem::factory(array(
+				'name' => 'blog',
+				'text' => elgg_view_icon('speech-bubble-alt') . elgg_echo('blog:group'),
+				'href' => "blog/group/{$params['entity']->guid}/all",
+				'priority' => 6,
+			));
+		}
+		
+
+	}
 	
 	return $items;
 	

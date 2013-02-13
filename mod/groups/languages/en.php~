@@ -68,6 +68,7 @@ $english = array(
 	'groups:inviteto' => "Invite friends to '%s'",
 	'groups:link' => 'Link to groups',
 	'groups:links' => 'Linked to',
+	'groups:links:more' => 'View all links',
 	'groups:link:title' => 'Groups linked to this group',
 	'groups:linkto' => "Link groups to '%s'",
 	'groups:nofriends' => "You have no friends left who have not been invited to this group.",
@@ -90,7 +91,7 @@ $english = array(
 View and reply to the discussion:
 %s
 ',
-
+	
 	'discussion:notification:reply:body' =>
 '%s replied to the discussion topic %s in the group %s:
 
@@ -101,6 +102,8 @@ View and reply to the discussion:
 ',
 
 	'groups:activity' => "Group activity",
+	'groups:my_activity' => "My activity in this group",
+	'group:my_discussion' => "My discussions in this group",
 	'groups:enableactivity' => 'Enable group activity',
 	'groups:activity:none' => "There is no group activity yet",
 

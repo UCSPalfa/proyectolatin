@@ -96,9 +96,7 @@
 	 */
 	function profile_manager_create_user_event($event, $object_type, $object){
 		$custom_profile_fields = array();
-		//GC:copiar email a contact_email
-		if (!isset($_POST['custom_profile_fields_contact_email']))
-			create_metadata($object->guid, "contact_email", $object->email, 'text',$object->guid, get_default_access($object));
+		
 		// retrieve all field that were on the register page
 		foreach($_POST as $key => $value){
 	    	if(strpos($key, "custom_profile_fields_") === 0){

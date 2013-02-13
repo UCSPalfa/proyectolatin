@@ -91,7 +91,7 @@ $english = array(
 View and reply to the discussion:
 %s
 ',
-
+	
 	'discussion:notification:reply:body' =>
 '%s replied to the discussion topic %s in the group %s:
 
