@@ -20,8 +20,9 @@
 	}
 	
 	echo '<div id="profile-details" class="elgg-body pll">';
-	echo "<h2>{$user->name}</h2>";
-	
+//	echo "<h2>{$user->name}</h2>";
+	//echo "<h2>{$user->email}</h2>";
+
 	echo elgg_view("profile/status", array("entity" => $user));
 
 	$description_position = elgg_get_plugin_setting("description_position", "profile_manager");
@@ -39,14 +40,22 @@
 	
 	if($show_profile_type_on_profile != "no"){
 		if($profile_type_guid = $user->custom_profile_type){
+		
 			if(($profile_type = get_entity($profile_type_guid)) && ($profile_type instanceof ProfileManagerCustomProfileType)){
 				$details_result .= "<div class='even'><b>" . elgg_echo("profile_manager:user_details:profile_type") . "</b>: " . $profile_type->getTitle() . " </div>";
+				
 			}
 		}
+		
 	}
+	$field_result = "<div class='odd'>";
+	$field_result .= "<b>Email</b>:&nbsp;";
+	$field_result .= $user->email;
+	$field_result .= "</div>\n";
+	
 	
 	if(count($cats) > 0){
-				
+	
 		// only show category headers if more than 1 category available
 		if(count($cats) > 1){
 			$show_header = true;
@@ -97,7 +106,7 @@
 					} else {
 						$even_odd = "odd";
 					}
-					
+				
 					// make nice title
 					$title = $field->getTitle();
 					
@@ -121,20 +130,35 @@
 					}
 					
 					// build result
-					$field_result .= "<div class='" . $even_odd . "'>";
+				/*	$field_result .= "<div class='" . $even_odd . "'>";
 					$field_result .= "<b>" . $title . "</b>:&nbsp;";
 					$field_result .= elgg_view("output/" . $output_type, array("value" =>  $value, "target" => $target));
 					$field_result .= "</div>\n";
+					
+					*/
+					//GC:detalle del campo como una fila
+					$field_result .= "<tr class='" . $even_odd . "'>";
+					//TODO:mostrar el titulo segun el idioma, se podria usar $metadata_name
+					$field_result .= "<td width='20%'><b>" . $title . ":</b></td>";
+					$field_result .= "<td>";
+					$field_result .= elgg_view("output/" . $output_type, array("value" =>  $value, "target" => $target));
+					$field_result .= "</td></tr>";
+					
 				}
 			}
 			
 			if(!empty($field_result)){
-				$details_result .= $cat_title;
-				$details_result .= "<div>" . $field_result . "</div>";	
+				
+				//$details_result .= $cat_title;
+				//$details_result .= "<div>" . $field_result . "</div>";	
+				//GC:los datos de esa categoria en una tabla
+				$details_result .= "<table width='100%'><tr><td colspan='2'>$cat_title</td></tr>";
+				$details_result .= $field_result;
+				$details_result .= "</table></br>";
 			}
 		}
 	}
-	
+
 	if(!empty($details_result)){
 		echo "<div id='custom_fields_userdetails'>" . $details_result . "</div>";
 		if(elgg_get_plugin_setting("display_categories", "profile_manager") == "accordion"){
@@ -152,5 +176,5 @@
 	if($description_position != "top"){
 		echo $about;
 	}
-
+	
 	echo '</div>';
