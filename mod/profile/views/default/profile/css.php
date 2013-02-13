@@ -84,7 +84,7 @@
 }
 /*** profile details ***/
 #profile-details .odd {
-	background-color: #f4f4f4;
+	background-color: #D0DBE6;
 	
 	-webkit-border-radius: 4px; 
 	-moz-border-radius: 4px;
