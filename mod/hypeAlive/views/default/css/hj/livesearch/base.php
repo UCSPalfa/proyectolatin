@@ -6,7 +6,7 @@ $graphics_url = $base_url . 'mod/hypeAlive/graphics/';
 .elgg-module-livesearch {
         /*font-size:0.8em;*/
         line-height:1.4em;
-        width:260px;
+        /*width:260px;*/
         margin-bottom:0;
 }
 
