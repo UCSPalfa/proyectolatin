@@ -66,7 +66,7 @@ function groups_init() {
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'groups_entity_menu_setup');
 	
 	// group user hover menu	
-	elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'groups_user_entity_menu_setup');
+	elgg_register_plugin_hook_handler('register', 'menu:entity', 'groups_user_entity_menu_setup');
 
 	// delete and edit annotations for topic replies
 	elgg_register_plugin_hook_handler('register', 'menu:annotation', 'groups_annotation_menu_setup');
