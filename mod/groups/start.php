@@ -37,9 +37,11 @@ function groups_init() {
 	// Register some actions
 	$action_base = elgg_get_plugins_path() . 'groups/actions/groups';
 	elgg_register_action("groups/edit", "$action_base/edit.php");
+	
 	// Modification by Gonzalo
 	// Registering the action to link this group to other groups
 	elgg_register_action("groups/link", "$action_base/link.php");
+	
 	elgg_register_action("groups/delete", "$action_base/delete.php");
 	elgg_register_action("groups/featured", "$action_base/featured.php", 'admin');
 
@@ -170,9 +172,10 @@ function groups_setup_sidebar_menus() {
 		}
 	}
 
-	if (elgg_get_context() == 'groups' && !elgg_instanceof($page_owner, 'group') ) {
+	
+ 	if (elgg_get_context() == 'groups' && !elgg_instanceof($page_owner, 'group') ) {
 
-		$user = elgg_get_logged_in_user_entity();
+ 		$user = elgg_get_logged_in_user_entity();
 	
 
 		if ($user) {
@@ -246,6 +249,8 @@ function groups_setup_sidebar_menus() {
 			}
 		}
 	}
+
+	
 }
 
 /**

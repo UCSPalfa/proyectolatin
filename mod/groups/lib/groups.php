@@ -16,7 +16,10 @@ function groups_handle_all_page() {
 	elgg_push_breadcrumb(elgg_echo('groups'));
 
 	if (elgg_get_plugin_setting('limited_groups', 'groups') != 'yes' || elgg_is_admin_logged_in()) {
-		elgg_register_title_button();
+		
+		// Modification by Gonzalo
+		// I have to add the register the title groups, because the setting of the allGroups context changes this. 
+		elgg_register_title_button('groups');
 	}
 
 	$selected_tab = get_input('filter', 'newest');
@@ -486,7 +489,13 @@ function groups_handle_invite_page($guid) {
 	elgg_push_breadcrumb($group->name, $group->getURL());
 	elgg_push_breadcrumb(elgg_echo('groups:invite'));
 
-	if ($group && $group->canEdit()) {
+	
+	// Modification by Gonzalo
+	// Before, only members that can edit the group can invite other people.
+	// Now, we allow any member of the group to invite friends
+// 	if ($group && $group->canEdit()) {
+	if ($group && $group->isMember(elgg_get_logged_in_user_entity())) {
+		
 		$content = elgg_view_form('groups/invite', array(
 			'id' => 'invite_to_group',
 			'class' => 'elgg-form-alt mtm',
@@ -565,9 +574,9 @@ function groups_register_profile_buttons($group) {
 	if ($group->canEdit()) {
 		// edit and invite
 		$url = elgg_get_site_url() . "groups/edit/{$group->getGUID()}";
-		$actions[$url] = 'groups:edit';		
-		$url = elgg_get_site_url() . "groups/invite/{$group->getGUID()}";
-		$actions[$url] = 'groups:invite';
+		$actions[$url] = 'groups:edit';
+		
+		
 		
 		// Modification by GONZALO:
 		// Adding a button to link this group to another group
@@ -578,6 +587,12 @@ function groups_register_profile_buttons($group) {
 
 	// group members
 	if ($group->isMember(elgg_get_logged_in_user_entity())) {
+		
+		// I think that members would be able to invite friends to the group, not only the admin
+		$url = elgg_get_site_url() . "groups/invite/{$group->getGUID()}";
+		$actions[$url] = 'groups:invite';
+		
+		
 		if ($group->getOwnerGUID() != elgg_get_logged_in_user_guid()) {
 			// leave
 			$url = elgg_get_site_url() . "action/groups/leave?group_guid={$group->getGUID()}";

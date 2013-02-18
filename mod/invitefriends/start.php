@@ -5,23 +5,13 @@
  * @package ElggInviteFriends
  */
 
-elgg_register_event_handler('init', 'system', 'invitefriends_init');
+elgg_register_event_handler('init', 'system', 'invitefriends_init');	
 
 function invitefriends_init() {
 	elgg_register_page_handler('invite', 'invitefriends_page_handler');
 
 	elgg_register_action('invitefriends/invite', elgg_get_plugins_path() . 'invitefriends/actions/invite.php');
-
-	if (elgg_is_logged_in()) {
-		$params = array(
-			'name' => 'invite',
-			'text' => elgg_echo('friends:invite'),
-			'href' => 'invite',
-			'contexts' => array('friends'),
-			'priority' => 23,
-		);
-		elgg_register_menu_item('page', $params);
-	}
+	
 }
 
 /**

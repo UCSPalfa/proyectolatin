@@ -17,7 +17,7 @@ function group_operators_init() {
 	// Register a page handler, so we can have nice URLs
 	elgg_register_page_handler('group_operators', 'group_operators_page_handler');
 
-	elgg_register_event_handler('pagesetup', 'system', 'group_operators_setup_menu');
+	//elgg_register_event_handler('pagesetup', 'system', 'group_operators_setup_menu');
 	
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'group_operators_entity_menu_setup');
 
@@ -65,7 +65,7 @@ function group_operators_page_handler($page) {
 	return false;
 }
 
-function group_operators_setup_menu() {
+/*function group_operators_setup_menu() {
 
 	// Get the page owner entity
 	$page_owner = elgg_get_page_owner_entity();
@@ -74,15 +74,28 @@ function group_operators_setup_menu() {
 		if ($page_owner instanceof ElggGroup) {
 			if (elgg_is_logged_in() && $page_owner->canEdit()) {
 				$url = elgg_get_site_url() . "group_operators/manage/{$page_owner->getGUID()}";
-				elgg_register_menu_item('page', array(
+				
+				/*elgg_register_menu_item('page', array(
 					'name' => 'edit',
 					'text' => elgg_echo('group_operators:manage'),
 					'href' => $url,
-				));
+				));*/
+				
+				
+				/*elgg_register_menu_item('page', ElggMenuItem::factory(array(
+				'name' => 'moderators',
+				'text' => elgg_view_icon('moderator') . elgg_echo('group_operators:manage'),
+				'href' => $url,
+				'priority' => 9,
+			)));
+				
+				
+
+				
 			}
 		}
 	}
-}
+}*/
 
 function group_operators_permissions_hook($hook, $entity_type, $returnvalue, $params) {
 	$params = array('container'=>$params['entity'], 'user'=>$params['user']);

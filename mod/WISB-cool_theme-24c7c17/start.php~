@@ -609,7 +609,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
 				'name' => 'activity',
 				'href' => "/groups/profile/$owner->guid/" . elgg_get_friendly_title($owner->name),
 				'text' => elgg_view_icon('userwall') . elgg_echo('activity'),
-				'priority' => 2,
+				'priority' => 1,
 			));
 		}
 
@@ -617,7 +617,14 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
 			'name' => 'info', 
 			'text' => elgg_view_icon('info') . elgg_echo('profile:info'), 
 			'href' => "/groups/info/$owner->guid/" . elgg_get_friendly_title($owner->name),
-			'priority' => 1,
+			'priority' => 2,
+		));
+
+		$items['members'] = ElggMenuItem::factory(array(
+			'name' => 'members', 
+			'text' => elgg_view_icon('friends') . elgg_echo('group:member'), 
+			'href' => "/groups/members/".$owner->guid,
+			'priority' => 3,
 		));
 
 			
@@ -626,7 +633,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
 				'name' => 'discussion',
 				'text' => elgg_view_icon('share') . elgg_echo('discussion:group'),
 				'href' => "discussion/owner/{$params['entity']->guid}",
-				'priority' => 3,
+				'priority' => 4,
 			));
 		}
 
@@ -635,7 +642,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
 				'name' => 'file',
 				'text' => elgg_view_icon('clip') . elgg_echo('file:group'),
 				'href' => "file/group/{$params['entity']->guid}/all",
-				'priority' => 4,
+				'priority' => 5,
 			));
 		}
 		
@@ -644,7 +651,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
 				'name' => 'pages',
 				'text' => elgg_view_icon('list') . elgg_echo('pages:group'),
 				'href' => "pages/group/{$params['entity']->guid}/all",
-				'priority' => 5,
+				'priority' => 6,
 			));
 		}
 
@@ -653,7 +660,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
 				'name' => 'bookmarks',
 				'text' => elgg_view_icon('push-pin') . elgg_echo('bookmarks:group'),
 				'href' => "bookmarks/group/{$params['entity']->guid}/all",
-				'priority' => 6,
+				'priority' => 7,
 			));
 		}
 		
@@ -663,7 +670,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
 				'name' => 'blog',
 				'text' => elgg_view_icon('speech-bubble-alt') . elgg_echo('blog:group'),
 				'href' => "blog/group/{$params['entity']->guid}/all",
-				'priority' => 6,
+				'priority' => 8,
 			));
 		}
 		
