@@ -5,17 +5,17 @@
  * @package ElggGroups
  */
 
-$english = array(
+$spanish = array(
 
 	/**
 	 * Menu items and titles
 	 */
-	'groups' => "Groups",
+	'groups' => "Grupos",
 	'groups:owned' => "Groups I own",
 	'groups:owned:user' => 'Groups %s owns',
-	'groups:yours' => "My groups",
-	'groups:user' => "%s's groups",
-	'groups:all' => "All groups",
+	'groups:yours' => "Mis grupos",
+	'groups:user' => "Grupos de %s",
+	'groups:all' => "Todos los grupos",
 	'groups:add' => "Create a new group",
 	'groups:edit' => "Edit group",
 	'groups:delete' => 'Delete group',
@@ -102,8 +102,6 @@ View and reply to the discussion:
 ',
 
 	'groups:activity' => "Group activity",
-	'groups:my_activity' => "My activity in this group",
-	'group:my_discussion' => "My discussions in this group",
 	'groups:enableactivity' => 'Enable group activity',
 	'groups:activity:none' => "There is no group activity yet",
 
