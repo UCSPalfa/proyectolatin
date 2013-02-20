@@ -14,9 +14,9 @@
  */
 
 if (isset($vars['class'])) {
-	$vars['class'] = "elgg-input-autocomplete {$vars['class']}";
+	$vars['class'] = "elgg-input-autocomplete2 {$vars['class']}";      //carlos:2
 } else {
-	$vars['class'] = "elgg-input-autocomplete";
+	$vars['class'] = "elgg-input-autocomplete2";                       //carlos:2
 }
 
 $defaults = array(
@@ -37,13 +37,15 @@ if (isset($vars['match_owner'])) {
 }
 $ac_url_params = http_build_query($params);
 
-elgg_load_js('elgg.autocomplete');
+//carlos:2 Cambio para prevenir que se use el livesearch del HypeAlive (lo que ahora dice autocomplete2 antes decia autocomplete)
+elgg_register_js('elgg.autocomplete2', 'js/lib/ui.autocomplete2.js');
+elgg_load_js('elgg.autocomplete2');     
 elgg_load_js('jquery.ui.autocomplete.html');
 
 ?>
 
 <script type="text/javascript">
-elgg.provide('elgg.autocomplete');
-elgg.autocomplete.url = "<?php echo elgg_get_site_url() . 'livesearch?' . $ac_url_params; ?>";
+elgg.provide('elgg.autocomplete2');
+elgg.autocomplete2.url = "<?php echo elgg_get_site_url() . 'livesearch?' . $ac_url_params; ?>";
 </script> 
 <input type="text" <?php echo elgg_format_attributes($vars); ?> />
