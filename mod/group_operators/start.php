@@ -20,12 +20,18 @@ function group_operators_init() {
 	//elgg_register_event_handler('pagesetup', 'system', 'group_operators_setup_menu');
 	
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'group_operators_entity_menu_setup');
-
+	
+	
 	// Register actions
 	$action_path = elgg_get_plugins_path() . 'group_operators/actions/group_operators';
+	$group_action_path = elgg_get_plugins_path() . 'group_operators/actions/groups';
 	elgg_register_action("group_operators/add", "$action_path/add.php");
 	elgg_register_action("group_operators/remove", "$action_path/remove.php");
 	elgg_register_action("group_operators/mkowner", "$action_path/change_owner.php");
+	
+	//GC: sobreescribir la funcion para remover miembro de comunidad para que elimine el rol de operador si lo tuviera
+	elgg_unregister_action('groups/remove');
+	elgg_register_action("groups/remove", "$group_action_path/membership/remove.php");
 
 	// Register plugin hooks
 	elgg_register_plugin_hook_handler('permissions_check', 'group', 'group_operators_permissions_hook');
