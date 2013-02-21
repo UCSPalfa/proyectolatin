@@ -295,9 +295,12 @@ function facebook_theme_pagesetup_handler() {
 			
 			// Inbox menu item
 			if (elgg_is_active_plugin('messages')) {
+				$new_messages ="";
+				$num_messages = (int)messages_count_unread();
+				if ($num_messages>0) $new_messages =" [$num_messages]";
 				elgg_register_menu_item('page', array(
 					'name' => 'messages:inbox',
-					'text' => elgg_view_icon('messages') . elgg_echo('Inbox'),
+					'text' => elgg_view_icon('messages') . elgg_echo('Inbox'). $new_messages,
 					'href' => "/messages/",
 					'priority' => 30,
 				));
