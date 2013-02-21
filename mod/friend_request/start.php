@@ -100,7 +100,7 @@
 				"name" => "friend_request",
 				"text" => elgg_echo("friend_request:menu") . $extra,
 				"href" => "friend_request/" . $page_owner->username,
-				"contexts" => array("friends", "friendsof", "collections", "messages"),
+				"contexts" => array("friends", "friendsof", "collections"),
 				//"section" => "friend_request", //GC para que tome en cuenta la prioridad
 				'priority' => 25,				//prioridad para que el menu se muestre en la seccion de Friends
 			);
