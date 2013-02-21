@@ -772,6 +772,33 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
 			));
 		
 		}
+
+		if (elgg_is_logged_in() && $owner->canEdit() && !$owner->isPublicMembership()) {
+			$url = elgg_get_site_url() . "groups/requests/{$owner->getGUID()}";
+
+			$count = elgg_get_entities_from_relationship(array(
+					'type' => 'user',
+					'relationship' => 'membership_request',
+					'relationship_guid' => $owner->getGUID(),
+					'inverse_relationship' => true,
+					'count' => true,
+			));
+
+			if ($count) {
+				$text = elgg_echo('groups:membershiprequests:pending', array($count));
+			} else {
+				$text = elgg_echo('groups:membershiprequests');
+			}
+
+			$items['membership_requests'] = ElggMenuItem::factory(array(
+				'name' => 'membership_requests',
+				'text' => $text,
+				'href' => $url,
+				'priority' => 10,
+			));
+			
+		}
+
 		
 		
 
