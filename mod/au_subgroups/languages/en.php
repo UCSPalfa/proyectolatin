@@ -59,7 +59,7 @@ automatically join you as a member of all parent groups.
 Click below to view your invitations:
 
 %s",
-
+		'au_subgroups:joinrequestsent' => "Join request sent!",
 );
 					
 add_translation("en",$english);

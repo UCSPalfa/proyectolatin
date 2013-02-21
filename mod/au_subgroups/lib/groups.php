@@ -439,18 +439,34 @@ function groups_register_profile_buttons($group) {
 			$actions[$url] = 'groups:join';
 		} else {
 			// request membership
-			$actions[$url] = 'groups:joinrequest';
+			//GC:check if the request has been sent
+			if (check_entity_relationship(elgg_get_logged_in_user_guid(), 'membership_request', $group->getGUID())) {
+				//show message join request has been sent
+				$actions[$url] = 'au_subgroups:joinrequestsent';
+			}else{
+				$actions[$url] = 'groups:joinrequest';
+			}
 		}
 	}
 
 	if ($actions) {
 		foreach ($actions as $url => $text) {
-			elgg_register_menu_item('title', array(
+				
+			if ($text=="au_subgroups:joinrequestsent"){
+				elgg_register_menu_item('title', array(
+				'name' => $text,
+				//	'href' => $url,
+				'text' => elgg_echo($text),
+				//	'link_class' => 'elgg-button elgg-button-action',
+				));
+			}else{
+				elgg_register_menu_item('title', array(
 				'name' => $text,
 				'href' => $url,
 				'text' => elgg_echo($text),
 				'link_class' => 'elgg-button elgg-button-action',
-			));
+				));
+			}
 		}
 	}
 }
