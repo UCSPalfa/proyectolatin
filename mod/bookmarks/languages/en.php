@@ -17,7 +17,7 @@ $english = array(
 	'bookmarks:this' => "Bookmark this page",
 	'bookmarks:this:group' => "Bookmark in %s",
 	'bookmarks:bookmarklet' => "Get bookmarklet",
-	'bookmarks:bookmarklet:group' => "Get group bookmarklet",
+	'bookmarks:bookmarklet:group' => "Get community bookmarklet",
 	'bookmarks:inbox' => "Bookmarks inbox",
 	'bookmarks:morebookmarks' => "More bookmarks",
 	'bookmarks:more' => "More",
@@ -51,9 +51,9 @@ View and comment on the new bookmark:
 
 	'item:object:bookmarks' => 'Bookmarks',
 
-	'bookmarks:group' => 'Group bookmarks',
-	'bookmarks:enablebookmarks' => 'Enable group bookmarks',
-	'bookmarks:nogroup' => 'This group does not have any bookmarks yet',
+	'bookmarks:group' => 'Community bookmarks',
+	'bookmarks:enablebookmarks' => 'Enable community bookmarks',
+	'bookmarks:nogroup' => 'This community does not have any bookmarks yet',
 	'bookmarks:more' => 'More bookmarks',
 
 	'bookmarks:no_title' => 'No title',

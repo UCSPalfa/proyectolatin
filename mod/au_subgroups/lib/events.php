@@ -205,7 +205,7 @@ function au_subgroups_leave_group($event, $type, $params) {
 
 function au_subgroups_pagesetup() {    
     
-    echo elgg_get_context();
+  //echo elgg_get_context();
     
   if (in_array(elgg_get_context(), array('au_subgroups', 'group_profile', 'groups'))) {
     $group = elgg_get_page_owner_entity();
