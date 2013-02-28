@@ -17,7 +17,7 @@ $english = array(
 	'file:edit' => "Edit file",
 	'file:more' => "More files",
 	'file:list' => "list view",
-	'file:group' => "Group files",
+	'file:group' => "Community files",
 	'file:gallery' => "gallery view",
 	'file:gallery_list' => "Gallery or list view",
 	'file:num_files' => "Number of files to display",
@@ -62,7 +62,7 @@ $english = array(
 	'file:widget' => "File widget",
 	'file:widget:description' => "Showcase your latest files",
 
-	'groups:enablefiles' => 'Enable group files',
+	'groups:enablefiles' => 'Enable community files',
 
 	'file:download' => "Download this",
 

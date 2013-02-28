@@ -17,8 +17,8 @@ $english = array(
 	'pages:all' => "All site pages",
 	'pages:add' => "Add page",
 
-	'pages:group' => "Group pages",
-	'groups:enablepages' => 'Enable group pages',
+	'pages:group' => "Community pages",
+	'groups:enablepages' => 'Enable community pages',
 
 	'pages:edit' => "Edit this page",
 	'pages:delete' => "Delete this page",
@@ -39,7 +39,7 @@ View and comment on the new page:
 ',
 	'item:object:page_top' => 'Top-level pages',
 	'item:object:page' => 'Pages',
-	'pages:nogroup' => 'This group does not have any pages yet',
+	'pages:nogroup' => 'This community does not have any pages yet',
 	'pages:more' => 'More pages',
 	'pages:none' => 'No pages created yet',
 

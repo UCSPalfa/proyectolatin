@@ -16,8 +16,8 @@ $english = array(
 	'blog:title:all_blogs' => 'All site blogs',
 	'blog:title:friends' => 'Friends\' blogs',
 
-	'blog:group' => 'Group blog',
-	'blog:enableblog' => 'Enable group blog',
+	'blog:group' => 'Community blog',
+	'blog:enableblog' => 'Enable community blog',
 	'blog:write' => 'Write a blog post',
 
 	// Editing
@@ -40,7 +40,7 @@ $english = array(
 	// messages
 	'blog:message:saved' => 'Blog post saved.',
 	'blog:error:cannot_save' => 'Cannot save blog post.',
-	'blog:error:cannot_write_to_container' => 'Insufficient access to save blog to group.',
+	'blog:error:cannot_write_to_container' => 'Insufficient access to save blog to community.',
 	'blog:messages:warning:draft' => 'There is an unsaved draft of this post!',
 	'blog:edit_revision_notice' => '(Old version)',
 	'blog:message:deleted_post' => 'Blog post deleted.',

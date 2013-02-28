@@ -11,7 +11,7 @@ $english = array(
 	 * Titles
 	 */
 	"group_operators:title" => 'Moderators of %s',
-	"group_operators:manage" => 'Manage group moderators',
+	"group_operators:manage" => 'Manage moderators',
 	"group_operators:operators" => 'Moderators',
 	"group_operators:members" => 'Members',
 	
@@ -32,10 +32,10 @@ $english = array(
 	/**
 	 * System messages
 	 */
-	"group_operators:added" => '%s successfully added as group moderator',
-	"group_operatros:add:error" => 'It was impossible to add %s as group moderator',
+	"group_operators:added" => '%s successfully added as community moderator',
+	"group_operatros:add:error" => 'It was impossible to add %s as community moderator',
 	"group_operators:owner_changed" => '%s is the new owner',
-	"group_operators:change_owner:error" => 'Only the group owner can assign a new owner',
+	"group_operators:change_owner:error" => 'Only the community owner can assign a new owner',
 	"group_operators:removed" => 'Moderator successfully removed',
 
 );

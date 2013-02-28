@@ -15,7 +15,7 @@ add_translation('en', array(
 	
 	'friend:user:add' => "Add %s as Friend",
 	
-	'groups:add' => 'Create Group...',
+	'groups:add' => 'Create Community',
 	'thanks' => 'Thanks',
 	'thanks_body' => 'Special thanks to all the Elgg staff!<br /><br/><ul><li><a href="http://community.elgg.org/profile/ewinslow">Evan Winslow</a></li><br /><li><a href="http://community.elgg.org/profile/Beck24">Matt Beckett</a></li><br /></li><a href="http://community.elgg.org">All the Elgg community</a></li><br /><br /><li><a href="../">And you of course because you downloaded my theme :-)</a></li></ul>',
 	'home' => 'Home',

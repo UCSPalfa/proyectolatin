@@ -203,8 +203,11 @@ function au_subgroups_leave_group($event, $type, $params) {
 
 
 
-function au_subgroups_pagesetup() {
-  if (in_array(elgg_get_context(), array('au_subgroups', 'group_profile'))) {
+function au_subgroups_pagesetup() {    
+    
+  //echo elgg_get_context();
+    
+  if (in_array(elgg_get_context(), array('au_subgroups', 'group_profile', 'groups'))) {
     $group = elgg_get_page_owner_entity();
 	$any_member = ($group->subgroups_members_create_enable != 'no');
     if (elgg_instanceof($group, 'group') && $group->subgroups_enable != 'no') {
