@@ -3,7 +3,9 @@
  * Elgg groups plugin language pack
  *
  * @package ElggGroups
+ * 
  */
+
 
 $english = array(
 
@@ -25,7 +27,12 @@ $english = array(
 	'groups:invitations:pending' => 'Community invitations (%s)',
 
 	'groups:icon' => 'Community icon (leave blank to leave unchanged)',
+    
 	'groups:name' => 'Community name',
+    
+        
+    
+    
 	'groups:username' => 'Community short name (displayed in URLs, alphanumeric characters only)',
 	'groups:description' => 'Description',
 	'groups:briefdescription' => 'Brief description',

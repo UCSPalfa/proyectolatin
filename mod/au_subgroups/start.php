@@ -19,7 +19,10 @@ function au_subgroups_init() {
   elgg_extend_view('group/elements/summary', 'au_subgroups/group/elements/summary');
   elgg_extend_view('groups/tool_latest', 'au_subgroups/group_module');
   elgg_extend_view('groups/sidebar/members', 'au_subgroups/sidebar/subgroups');
-  elgg_extend_view('groups/edit', 'au_subgroups/group/transfer');
+  
+  // Modification by Gonzalo
+  // The following view should NOT be shown when editing a group (that's why it is commented).
+  //elgg_extend_view('groups/edit', 'au_subgroups/group/transfer');
   
   // register the edit page's JavaScript
   $js = elgg_get_simplecache_url('js', 'au_subgroups/edit_js');
@@ -30,6 +33,7 @@ function au_subgroups_init() {
   elgg_register_event_handler('update', 'group', 'au_subgroups_group_visibility');
   elgg_register_event_handler('create', 'member', 'au_subgroups_join_group', 0);
   elgg_register_event_handler('leave', 'group', 'au_subgroups_leave_group');
+  
   // break up the create/update events to be more manageable
   elgg_register_event_handler('create', 'group', 'au_subgroups_add_parent', 1000);
   elgg_register_event_handler('create', 'group', 'au_subgroups_clone_layout_on_create', 1000);
@@ -39,8 +43,16 @@ function au_subgroups_init() {
   // replace the existing groups library so we can push some display options
   elgg_register_library('elgg:groups', elgg_get_plugins_path() . 'au_subgroups/lib/groups.php');
   
-  add_group_tool_option('subgroups', elgg_echo('au_subgroups:group:enable'));
-  add_group_tool_option('subgroups_members_create', elgg_echo('au_subgroups:group:memberspermissions'));
+  
+  // Modification by: Gonzalo
+  // By default, all communities MUST allow the creation of Writing Groups. This should not be optional, thus, I remove the radio button
+  // placed by the au_subgroups to select yes or no at this point of the creation process of a group.
+  // add_group_tool_option('subgroups', elgg_echo('au_subgroups:group:enable'));
+  
+  
+  // Modification by: Gonzalo
+  // I also comment this option because it MUST not be optional. By default, any member of the group can create writing groups
+  // add_group_tool_option('subgroups_members_create', elgg_echo('au_subgroups:group:memberspermissions'));
   
   // route some urls that go through 'groups' handler
   elgg_register_plugin_hook_handler('route', 'groups', 'au_subgroups_groups_router', 499);

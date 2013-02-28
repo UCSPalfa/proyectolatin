@@ -16,7 +16,8 @@ $item = $vars['item'];
 $object = $item->getObjectEntity();
 
 // annotations do not have comments
-if ($item->annotation_id != 0 || !$object) {
+//if ($item->annotation_id != 0 || !$object) {
+if (($item->annotation_id != 0 && $item->action_type != 'messageboard') || !$object) {
     return true;
 }
 

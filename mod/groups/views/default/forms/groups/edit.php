@@ -9,6 +9,8 @@
 $name = $membership = $vis = $entity = null;
 extract($vars, EXTR_IF_EXISTS);
 
+
+
 ?>
 <div>
 	<label><?php echo elgg_echo("groups:icon"); ?></label><br />

@@ -219,7 +219,7 @@ function groups_handle_profile_page($guid) {
     $autofeed = true;
 
     elgg_push_context('group_profile');
-
+    
     $group = get_entity($guid);
     if (!$group) {
         forward('groups/all');
@@ -318,6 +318,8 @@ function groups_handle_members_page($guid) {
         'relationship_guid' => $group->guid,
         'inverse_relationship' => true,
         'types' => 'user',
+        'list_type' => 'gallery',
+        'size' => 'medium',
         'limit' => 20,
             ));
 

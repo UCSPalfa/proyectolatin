@@ -1,5 +1,10 @@
 <?php
 
+// Modification by: Gonzalo
+// This context is necessary to place the "Create a Writing Group" button
+elgg_push_context('group_profile');
+
+
 $group = elgg_get_page_owner_entity();
 
 if (!$group || !elgg_instanceof($group, 'group')) {
