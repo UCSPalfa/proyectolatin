@@ -11,7 +11,10 @@ if (!($any_member && $page_owner->isMember())) {
   }
 }
 
+elgg_push_context('au_subgroups_creation');
+
 $title = elgg_echo('au_subgroups:add:subgroup');
+
 
 // set up breadcrumb navigation
 au_subgroups_parent_breadcrumbs($page_owner);

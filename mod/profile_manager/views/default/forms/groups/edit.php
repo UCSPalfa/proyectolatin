@@ -22,15 +22,25 @@ if (isset($vars['entity'])) {
 	$membership = ACCESS_PUBLIC;
 	$access = ACCESS_PUBLIC;
 }
+
+$currentContext = elgg_get_context();
+$nameField = 'groups:name';
+$iconField = 'groups:icon';
+
+if ($currentContext == 'au_subgroups_creation') {
+    $nameField = 'au_subgroups:name';
+    $iconField = 'au_subgroups:icon';
+}
 	
 ?>
 
 <div>
-	<label><?php echo elgg_echo("groups:icon"); ?></label><br />
+	<label><?php echo elgg_echo($iconField); ?></label><br />
 	<?php echo elgg_view("input/file", array('name' => 'icon')); ?>
 </div>
+
 <div>
-	<label><?php echo elgg_echo("groups:name"); ?></label><br />
+	<label><?php echo elgg_echo($nameField); ?></label><br />
 	<?php echo elgg_view("input/text", array(
 		'name' => 'name',
 		'value' => $vars['entity']->name,

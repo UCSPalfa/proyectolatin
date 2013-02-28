@@ -11,6 +11,10 @@ if (!$group instanceof ElggGroup) {
 elgg_load_library('elgg:groups');
 groups_register_profile_buttons($group);
 
+// Modification by: Gonzalo
+// This context is necessary to place the "Create a Writing Group" button
+elgg_push_context('group_profile');
+
 $content = elgg_view('groups/profile/layout', array('entity' => $group));
 if (group_gatekeeper(false)) {
 	$sidebar = elgg_view('groups/sidebar/members', array('entity' => $group));

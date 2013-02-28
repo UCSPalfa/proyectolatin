@@ -95,7 +95,7 @@
   left:6px;
   overflow:hidden;
   position:absolute;
-  text-shadow:#333333 0 0 2px;
+  text-shadow:0px 0px 2px #333333;
   top:20px;
   word-wrap:break-word;
   position:relative;
@@ -105,6 +105,7 @@
   font-variant:normal;
   font-weight:normal;
   line-height:normal;
+  z-index:444;
 }
 
 .iconBorder {

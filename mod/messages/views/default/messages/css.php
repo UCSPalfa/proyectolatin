@@ -24,6 +24,7 @@
 	float: left;
 	width: 20%;
 	margin-right: 2%;
+        vertical-align: middle;
 }
 .messages-subject {
 	float: left;
@@ -35,6 +36,7 @@
 	float: left;
 	width: 14%;
 	margin-right: 2%;
+        vertical-align: middle;
 }
 .messages-delete {
 	float: left;
@@ -68,9 +70,12 @@
 }
 
 .message-unread {
-	background-color: #F8E6E0;
+	background-color: #DEDEDE;
+        height: 25px;
+        vertical-align: middle;
 }
 
 .message-read {
 	background-color: #FAFAFA;
+        height: 25px;
 }

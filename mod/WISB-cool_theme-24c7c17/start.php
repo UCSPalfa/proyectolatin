@@ -56,11 +56,6 @@ function cool_theme_init() {
 	remove_group_tool_option('file');
 	remove_group_tool_option('pages');
 
-
-	
-
-
-
 		
 	//@todo report some of the extra patterns to be included in Elgg core
 	elgg_extend_view('css/elgg', 'cool_theme/css');

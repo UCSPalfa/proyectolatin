@@ -1,6 +1,11 @@
 <?php
 
 $english = array(
+   
+    'au_subgroups:name' => "Writing group name",
+    'au_subgroups:icon' => "Writing group icon (leave blank to leave unchanged)",
+    
+    'au_subgroups' => "Writing Groups",
     'au_subgroups' => "Writing Groups",
     'au_subgroups:subgroup' => "Writing Group",
     'au_subgroups:subgroups' => "Writing Groups",
