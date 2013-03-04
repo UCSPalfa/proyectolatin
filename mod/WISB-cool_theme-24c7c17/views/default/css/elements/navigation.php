@@ -70,7 +70,7 @@ line-height: 14px;}
 /* ***************************************
 	RIVER
 *************************************** */
-.elgg-menu-river{color:#888;display:inline-block;margin:3px 0 0 -3px;}.elgg-menu-river > li{display:inline;}.elgg-menu-river > li:before{content:" \00B7 ";display:inline-block;margin:0 3px;} .elgg-menu-river > li > a{color:#3D3D3D;display:inline;}.elgg-menu-river > li > a:hover{text-decoration:underline;}
+.elgg-menu-river{color:#888;/*display:inline-block;*/display:none;margin:3px 0 0 -3px;}.elgg-menu-river > li{display:inline;}.elgg-menu-river > li:before{content:" \00B7 ";display:inline-block;margin:0 3px;} .elgg-menu-river > li > a{color:#3D3D3D;display:inline;}.elgg-menu-river > li > a:hover{text-decoration:underline;}
 /* ***************************************
 	SIDEBAR EXTRAS (rss, bookmark, etc)
 *************************************** */
