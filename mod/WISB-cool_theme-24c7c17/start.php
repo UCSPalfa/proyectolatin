@@ -10,7 +10,6 @@ function cool_theme_init() {
 	elgg_register_page_handler('thanks', 'cool_theme_credits_handler');
 	elgg_register_event_handler('pagesetup', 'system', 'friends_hack_pagesetup_handler');
 
-
 	
 	//What a hack!  Overriding groups page handler without blowing away other plugins doing the same
 	global $CONFIG, $facebook_theme_original_groups_page_handler;
@@ -102,6 +101,7 @@ function facebook_theme_groups_page_handler($segments, $handle) {
 			require_once "$pages_dir/groups/discussion.php";
 			break;
 			
+							
 		default:
 			global $facebook_theme_original_groups_page_handler;
 			return call_user_func($facebook_theme_original_groups_page_handler, $segments, $handle);
@@ -196,7 +196,26 @@ function facebook_theme_pagesetup_handler() {
 				
 				
 				
+				if (elgg_get_context() == 'groups' && !elgg_instanceof($page_owner, 'group') ) {
 				
+					$url = "groups/ginvitations/$owner->username";
+					$invitations = groups_get_invited_wgroups($owner->getGUID());
+					if (is_array($invitations) && !empty($invitations)) {
+						$invitation_count = count($invitations);
+						$text = elgg_echo('au_subgroups:invitations:pending', array($invitation_count));
+					} else {
+						$text = elgg_echo('au_subgroups:invitations');
+					}
+				
+					elgg_register_menu_item('page', array(
+					'name' => 'subgroups:invitations',
+					'text' => $text,
+					'href' => $url,
+					'priority' => 43,
+					));
+				
+				
+				}
 				
 				
 				/*if (elgg_get_context() == 'groups' && !elgg_instanceof($page_owner, 'group') ) {
@@ -758,13 +777,26 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
 		}
 		
 		
-		if ($owner->canEdit()) {
+		if ($owner->canEdit()  && !au_subgroups_get_parent_group($owner)) {
 			
 			$url = elgg_get_site_url() . "group_operators/manage/{$owner->getGUID()}";
 		
 			$items['moderators'] = ElggMenuItem::factory(array(
 					'name' => 'moderators',
 					'text' => elgg_view_icon('moderator') . elgg_echo('group_operators:manage'),
+					'href' => $url,
+					'priority' => 9,
+			));
+		
+		}
+		$user = elgg_get_logged_in_user_entity();
+		if ($owner->canEdit() && au_subgroups_get_parent_group($owner) && check_entity_relationship($user->guid, 'member', $owner->getGUID())) {
+				
+			$url = elgg_get_site_url() . "group_roles/manage/{$owner->getGUID()}";
+		
+			$items['roles'] = ElggMenuItem::factory(array(
+					'name' => 'roles',
+					'text' => elgg_view_icon('moderator') . elgg_echo('group_roles:manage'),
 					'href' => $url,
 					'priority' => 9,
 			));
@@ -796,8 +828,11 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
 			));
 			
 		}
-
 		
+		
+
+
+
 		
 
 	}
