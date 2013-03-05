@@ -166,6 +166,32 @@ function au_subgroups_get_subgroups($group, $limit = 10, $sortbytitle = false) {
     return elgg_get_entities_from_relationship($options);
 }
 
+function isSubgroup($group) {
+    $options = array(
+        'types' => array('group'),
+        'relationship' => AU_SUBGROUPS_RELATIONSHIP,
+        'relationship_guid' => $group->guid,
+        'inverse_relationship' => false,
+    );
+    $entities = elgg_get_entities_from_relationship($options);
+    return (count($entities) > 0);
+}
+
+function countSubgroups($group) {
+    $options = array(
+        'types' => array('group'),
+        'relationship' => AU_SUBGROUPS_RELATIONSHIP,
+        'relationship_guid' => $group->guid,
+        'inverse_relationship' => true,
+    );
+    $entities = elgg_get_entities_from_relationship($options);
+    return count($entities);
+}
+
+function hasSubgroups($group) {
+    return (countSubgroups($group) > 0);
+}
+
 function au_subgroups_handle_mine_page() {
     $display_subgroups = elgg_get_plugin_setting('display_subgroups', 'au_subgroups');
     $display_alphabetically = elgg_get_plugin_setting('display_alphabetically', 'au_subgroups');
@@ -352,7 +378,9 @@ function au_subgroups_list_subgroups($group, $limit = 10, $sortbytitle = false) 
         'relationship_guid' => $group->guid,
         'inverse_relationship' => true,
         'limit' => $limit,
-        'full_view' => false
+        'full_view' => false,
+        'rendering_mode' => 'as_google_plus',
+        'list_type' => 'gallery',
     );
 
     if ($sortbytitle) {
