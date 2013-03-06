@@ -47,7 +47,7 @@ function au_subgroups_init() {
   // Modification by: Gonzalo
   // By default, all communities MUST allow the creation of Writing Groups. This should not be optional, thus, I remove the radio button
   // placed by the au_subgroups to select yes or no at this point of the creation process of a group.
-  // add_group_tool_option('subgroups', elgg_echo('au_subgroups:group:enable'));
+//   add_group_tool_option('subgroups', elgg_echo('au_subgroups:group:enable'), false);
   
   
   // Modification by: Gonzalo
