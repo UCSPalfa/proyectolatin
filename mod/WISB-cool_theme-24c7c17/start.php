@@ -810,8 +810,8 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
                     ));
         }
 
-
-        if ($owner->canEdit()) {
+		
+        if ($owner->canEdit() && !au_subgroups_get_parent_group($owner)) {
 
             $url = elgg_get_site_url() . "group_operators/manage/{$owner->getGUID()}";
 
@@ -821,6 +821,15 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
                         'href' => $url,
                         'priority' => 9,
                     ));
+            
+            $url = elgg_get_site_url() . "relatedgroups/edit/{$owner->getGUID()}";
+            
+            $items['relatedgroups'] = ElggMenuItem::factory(array(
+            		'name' => 'relatedgroups',
+            		'text' => elgg_echo('relatedgroups:add'),
+            		'href' => $url,
+            		'priority' => 10,
+            ));
         }
         $user = elgg_get_logged_in_user_entity();
         if ($owner->canEdit() && au_subgroups_get_parent_group($owner) && check_entity_relationship($user->guid, 'member', $owner->getGUID())) {
