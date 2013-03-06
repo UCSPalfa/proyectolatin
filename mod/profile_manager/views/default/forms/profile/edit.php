@@ -157,8 +157,8 @@
 			if(count($cats) > 1){
 				$list_content .= "<h3 class='settings'>" . $title . "</h3>";
 			}
-			$list_content .= "<fieldset>";
-			
+			//$list_content .= "<fieldset>";
+			$list_content .= "<table width='100%'>"; //GC
 			// display each field for currect category
 			$hide_non_editables = elgg_get_plugin_setting("hide_non_editables", "profile_manager");
 			foreach($fields[$cat_guid] as $field){
@@ -186,18 +186,23 @@
 				}
 	
 				if($hide_non_editables == "yes" && ($valtype == "non_editable")){
-					$field_result = "<div class='hidden_non_editable'>";
+					//$field_result = "<div class='hidden_non_editable'>";
+					$field_result = "<tr class='hidden_non_editable'>";//GC
 				} else {
-					$field_result = "<div>";
+					//$field_result = "<div>";
+					$field_result = "<tr>";//GC
 				}	
 				
-				$field_result .= "<label>" . $title . "</label>";
+				//$field_result .= "<label>" . $title . "</label>";
+				$field_result .= "<td  width='10%'>" . $title . "</td>";
 				
 				if($hint = $field->getHint()){ 
+					$field_result .= "<td  width='5%'>";//GC
 					$field_result .= "<span class='custom_fields_more_info' id='more_info_". $metadata_name . "'></span>";		
 					$field_result .= "<span class='custom_fields_more_info_text' id='text_more_info_" . $metadata_name . "'>" . $hint . "</span>";
+					$field_result .= "</td>";//GC
 				}
-				
+				$field_result .="<td>";
 				if($valtype == "dropdown"){
 					// add div around dropdown to let it act as a block level element
 					$field_result .= "<div>";
@@ -212,17 +217,20 @@
 				if($valtype == "dropdown"){
 					$field_result .= "</div>";
 				}
-				
-				$field_result .= elgg_view('input/access', array('name' => 'accesslevel[' . $metadata_name . ']', 'value' => $access_id)); 
-				$field_result .= "</div>";
-				
+				$field_result .="</td>";
+				$field_result .="<td width='20%'>";
+				$field_result .= elgg_view('input/access', array('name' => 'accesslevel[' . $metadata_name . ']', 'value' => $access_id));
+				$field_result .="</td>";
+			//	$field_result .= "</div>";
+				$field_result .= "</tr>";//GC
 				$tab_content .= $field_result;
 				$list_content .= $field_result;
 			}
 			
 			$tab_content .= "</div>\n";
 			
-			$list_content .= "</fieldset>";
+			//$list_content .= "</fieldset>";
+			$list_content .= "</table>";//GC
 			$list_content .= "</div>\n";
 		}
 		

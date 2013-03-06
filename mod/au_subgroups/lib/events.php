@@ -153,7 +153,7 @@ function au_subgroups_join_group($event, $type, $object) {
                 $children_to_join = unserialize($children_to_join);
             }
 
-            if ($invited) {
+            /*if ($invited) {
                 elgg_set_config('au_subgroups_ignore_join', true);
                 // we have been invited in through the back door by a subgroup move
                 // join this user to all parent groups fo this group
@@ -176,7 +176,7 @@ function au_subgroups_join_group($event, $type, $object) {
                     // lets stop everything now
                     return false;
                 }
-            } elseif (!$parent->isMember($user)) {
+            } else*/if (!$parent->isMember($user)) {
                 register_error(elgg_echo('au_subgroups:error:notparentmember'));
                 return false;
             }

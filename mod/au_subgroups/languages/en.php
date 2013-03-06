@@ -70,6 +70,52 @@ automatically join you as a member of all parent groups.
 Click below to view your invitations:
 
 %s",
+		'au_subgroups:invitations' => 'Writing Group invitations',
+		'au_subgroups:invitations:pending' => 'Writing Group invitations (%s)',
+		'au_subgroups:invitations:selecttoinvite' => "Select users from the list or write your friends' emails",
+		'wgroups:invite:body' => "Hi %s,
+		
+%s invited you to join the '%s' writing group. Click below to view your invitations:
+		
+%s",
+		'wgroups:invitec:body' => "Hi %s,
+		
+%s invited you to join the '%s' writing group. First you must accept the invitation to join  %s community.
+
+		Click below to view your invitations:
+		
+%s 
+%s",
+		
+		'wgroups:invite:nouser:body' => "Hi,
+		
+			You have been invited by %s to join the %s writing group.  
+
+First you must register in %s site
+
+%s
+
+go to %s community and click on the Join button:
+
+%s
+
+and finally request membership in %s writing group
+
+%s",
+		
+		'groups:invite:nouser:body' => "Hi,
+		
+			You have been invited by %s to join the %s community.  
+
+First you must register in %s site
+
+%s
+
+and then go to the community's page and click on the Join button:
+
+%s
+		",
+		
 );
 
 add_translation("en", $english);

@@ -193,7 +193,7 @@ function groups_handle_invitations_page() {
     elgg_push_breadcrumb($title);
 
     // @todo temporary workaround for exts #287.
-    $invitations = groups_get_invited_groups(elgg_get_logged_in_user_guid());
+    $invitations = groups_get_invited_comm(elgg_get_logged_in_user_guid());
     $content = elgg_view('groups/invitationrequests', array('invitations' => $invitations));
 
     $params = array(
@@ -204,6 +204,33 @@ function groups_handle_invitations_page() {
     $body = elgg_view_layout('content', $params);
 
     echo elgg_view_page($title, $body);
+}
+
+
+
+/**
+ * Group invitations for a user
+ */
+function subgroups_handle_invitations_page() {
+	gatekeeper();
+
+	$user = elgg_get_page_owner_entity();
+
+	$title = elgg_echo('au_subgroups:invitations');
+	elgg_push_breadcrumb($title);
+
+	// @todo temporary workaround for exts #287.
+	$invitations = groups_get_invited_wgroups(elgg_get_logged_in_user_guid());
+	$content = elgg_view('groups/invitationrequests', array('invitations' => $invitations));
+
+	$params = array(
+			'content' => $content,
+			'title' => $title,
+			'filter' => '',
+	);
+	$body = elgg_view_layout('content', $params);
+
+	echo elgg_view_page($title, $body);
 }
 
 /**
@@ -533,4 +560,20 @@ function groups_prepare_form_vars($group = null) {
     elgg_clear_sticky_form('groups');
 
     return $values;
+}
+
+
+
+/**
+ * Prepare the manage form variables
+ *
+ * @param array $candidates Candidate entities
+ * @return array guids => 'name - username'
+ */
+function invite_prepare_combo_vars($candidates) {
+	$values = array('' => elgg_echo('group_roles:selectone'));
+	foreach($candidates as $candidate){
+		$values[$candidate->guid] = $candidate->name." - ".$candidate->username;
+	}
+	return $values;
 }

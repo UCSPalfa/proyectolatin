@@ -68,7 +68,7 @@ function groups_init() {
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'groups_entity_menu_setup');
 	
 	// group user hover menu	
-	elgg_register_plugin_hook_handler('register', 'menu:entity', 'groups_user_entity_menu_setup');
+	elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'groups_user_entity_menu_setup');
 
 	// delete and edit annotations for topic replies
 	elgg_register_plugin_hook_handler('register', 'menu:annotation', 'groups_annotation_menu_setup');
@@ -145,7 +145,7 @@ function groups_setup_sidebar_menus() {
 
 	// Get the page owner entity
 	$page_owner = elgg_get_page_owner_entity();
-
+/*
 	if (elgg_in_context('group_profile')) {
 		if (elgg_is_logged_in() && $page_owner->canEdit() && !$page_owner->isPublicMembership()) {
 			$url = elgg_get_site_url() . "groups/requests/{$page_owner->getGUID()}";
@@ -172,7 +172,7 @@ function groups_setup_sidebar_menus() {
 		}
 	}
 
-	
+	*/
  	if (elgg_get_context() == 'groups' && !elgg_instanceof($page_owner, 'group') ) {
 
  		$user = elgg_get_logged_in_user_entity();
@@ -220,7 +220,7 @@ function groups_setup_sidebar_menus() {
 			if ($page_owner->guid == $user->guid) {
 
 				$url = "groups/invitations/$page_owner->username";
-				$invitations = groups_get_invited_groups($page_owner->getGUID());
+				$invitations = groups_get_invited_comm($page_owner->getGUID());
 				if (is_array($invitations) && !empty($invitations)) {
 					$invitation_count = count($invitations);
 					$text = elgg_echo('groups:invitations:pending', array($invitation_count));
@@ -309,6 +309,10 @@ function groups_page_handler($page) {
 			set_input('username', $page[1]);
 			groups_handle_invitations_page();
 			break;
+		case 'ginvitations':
+				set_input('username', $page[1]);
+				subgroups_handle_invitations_page();
+				break;			
 		case 'add':
 			groups_handle_edit_page('add');
 			break;
@@ -426,13 +430,13 @@ function groups_entity_menu_setup($hook, $type, $return, $params) {
 	if (elgg_in_context('widgets')) {
 		return $return;
 	}
-
+	
 	$entity = $params['entity'];
 	$handler = elgg_extract('handler', $params, false);
 	if ($handler != 'groups') {
 		return $return;
 	}
-
+	
 	foreach ($return as $index => $item) {
 		if (in_array($item->getName(), array('access', 'likes', 'edit', 'delete'))) {
 			unset($return[$index]);
@@ -464,7 +468,7 @@ function groups_entity_menu_setup($hook, $type, $return, $params) {
 		'priority' => 200,
 	);
 	$return[] = ElggMenuItem::factory($options);
-
+	
 	// feature link
 	if (elgg_is_admin_logged_in()) {
 		if ($entity->featured_group == "yes") {

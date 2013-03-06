@@ -20,7 +20,16 @@ if (($user instanceof ElggUser) && ($group instanceof ElggGroup) && $group->canE
 			if (check_entity_relationship($user_guid, 'operator', $group_guid)) {
 				remove_entity_relationship($user_guid, 'operator', $group_guid);
 			}
+			//GC:delete from all subgroups
+			//get all subgroups
+			$subgroups = au_subgroups_get_subgroups($group,1000);
+			foreach ($subgroups as $subgroup){
+				if (check_entity_relationship($user_guid, 'member', $subgroup->guid)) {
+					remove_entity_relationship($user_guid, 'member', $subgroup->guid);
+				}
+			}
 			
+			//foreach subgroup check if is member and remove relation
 			system_message(elgg_echo("groups:removed", array($user->name)));
 		} else {
 			register_error(elgg_echo("groups:cantremove"));
