@@ -8,6 +8,7 @@
 
 .messages-container {
 	min-height: 200px;
+	vertical-align: middle;
 }
 .message.unread a {
 	color: #d40005;
@@ -20,27 +21,32 @@
 }
 
 /*** message metadata ***/
+.messages-check {
+	margin-right: 2%;
+    vertical-align: middle;
+}
 .messages-owner {
-	float: left;
+	font-weight:inherit;
 	width: 20%;
 	margin-right: 2%;
-        vertical-align: middle;
+    vertical-align: middle;
 }
 .messages-subject {
-	float: left;
+ 	font-weight:inherit;
 	width: 55%;
 	margin-right: 2%;
 	vertical-align: middle;
 }
 .messages-timestamp {
-	float: left;
+	font-weight:inherit;
 	width: 14%;
 	margin-right: 2%;
-        vertical-align: middle;
+    vertical-align: middle;
 }
 .messages-delete {
-	float: left;
+
 	width: 5%;
+	vertical-align: middle;
 }
 /*** topbar icon ***/
 .messages-new {
@@ -71,11 +77,14 @@
 
 .message-unread {
 	background-color: #DEDEDE;
-        height: 25px;
-        vertical-align: middle;
+    height: 25px;
+    vertical-align: middle;
+   font-weight:bold;
+
 }
 
 .message-read {
 	background-color: #FAFAFA;
-        height: 25px;
+    height: 25px;
+    vertical-align: middle;
 }
