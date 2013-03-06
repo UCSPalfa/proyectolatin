@@ -20,7 +20,7 @@
 	}
 	
 	echo '<div id="profile-details" class="elgg-body pll">';
-	echo "<h2>{$user->name}</h2>";
+	//echo "<h2>{$user->name}</h2>";
 	
 	echo elgg_view("profile/status", array("entity" => $user));
 
