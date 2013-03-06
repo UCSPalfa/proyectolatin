@@ -11,7 +11,7 @@
 */
 
 // new groups default to open membership
-if (isset($vars['entity'])) {
+if (isset($vars['entity'])) {        
 	$membership = $vars['entity']->membership;
 	$access = $vars['entity']->access_id;
 	if ($access != ACCESS_PUBLIC && $access != ACCESS_LOGGED_IN) {
@@ -197,11 +197,11 @@ if ($tools) {
 <div class="elgg-foot">
 	<?php
 	
-	if (isset($vars['entity'])) {
+	if (isset($vars['entity'])) {		
 		echo elgg_view('input/hidden', array(
-			'name' => 'group_guid',
-			'value' => $vars['entity']->getGUID(),
-		));
+			'name' => 'group_subtype',
+			'value' => 'pepe',
+		));                
 	}
 	
 	echo elgg_view('input/submit', array('value' => elgg_echo('save')));

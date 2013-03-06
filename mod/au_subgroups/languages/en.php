@@ -2,6 +2,15 @@
 
 $english = array(
    
+    'writingGroups:members' => 'Group collaborators',
+    'discussion:writinggroup' => 'Group discussion',
+    'file:writinggroup' => 'Group files',
+    'pages:writinggroup' => 'Group pages',
+    'bookmarks:writinggroup' => 'Group bookmarks',
+    'blog:writinggroup' => 'Group blogs',
+    'writingGroups:member' => 'collaborators',
+    
+    
     'au_subgroups:name' => "Writing group name",
     'au_subgroups:icon' => "Writing group icon (leave blank to leave unchanged)",
     

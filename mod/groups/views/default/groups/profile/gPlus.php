@@ -13,6 +13,11 @@ if (!isset($vars['entity']) || !$vars['entity']) {
 }
 
 $group = $vars['entity'];
+$isSubgroup = isSubgroup ($group);
+$text = 'groups:member';
+if ($isSubgroup) {
+    $text = 'writingGroups:member';
+}
 
 ?>
 	<div class="groupIcon">
@@ -26,7 +31,7 @@ $group = $vars['entity'];
 		</div>
 
 		<div class="numberMembers">
-			<b><?php echo $group->getMembers(0, 0, TRUE) ?> </b> <?php echo " " . elgg_echo('groups:member'); ?>
+			<b><?php echo $group->getMembers(0, 0, TRUE) ?> </b> <?php echo " " . elgg_echo($text); ?>
 		</div>
 	</div>
 

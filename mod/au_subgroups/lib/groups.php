@@ -85,7 +85,7 @@ function groups_handle_all_page() {
 
     $params = array(
         'content' => $content,
-        'sidebar' => $sidebar,
+        'sidebar-alt' => $sidebar,
         'filter' => $filter,
     );
     $body = elgg_view_layout('content', $params);
