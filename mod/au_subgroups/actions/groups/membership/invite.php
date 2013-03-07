@@ -237,7 +237,7 @@ function send_invitation($user,$group,$parent,$logged_in_user){
 					register_error($user->username.":".elgg_echo("groups:usernotinvited"));
 				}
 			} else {
-				register_error(elgg_echo($user->username.":"."groups:useralreadyinvited"));
+				register_error(elgg_echo($user->username.":".elgg_echo("groups:useralreadyinvited")));
 			}
 				
 		}elseif($user && !$parent->isMember($user)){
@@ -271,6 +271,8 @@ function send_invitation($user,$group,$parent,$logged_in_user){
 				} else {
 					register_error($user->username.":".elgg_echo("groups:usernotinvited"));
 				}
+			}else {
+				register_error(elgg_echo($user->username.":".elgg_echo("groups:useralreadyinvited")));
 			}
 		}
 	}else{

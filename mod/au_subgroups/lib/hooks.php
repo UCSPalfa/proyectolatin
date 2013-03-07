@@ -18,15 +18,16 @@ function au_subgroups_delete_group($hook, $type, $return, $params) {
     $parent = au_subgroups_get_parent_group($group);
     
     if ($child || $parent) {
+      //GC:no mostrar las opciones de delete ya que no se ajustan a los grupos de escritura, hacer directamente delete de todo
       // here we are, we're deleting something with subgroups or a parent
       // if we've already sorted out what happens to content
       // we'll have a special input
-      $content_policy = get_input('au_subgroups_content_policy', false);
+     /* $content_policy = get_input('au_subgroups_content_policy', false);
       
       if (!$content_policy) {
         forward(elgg_get_site_url() . "groups/subgroups/delete/{$group->guid}");
       }
-
+*/
       // this is the top level to delete, so if transferring content to parent, it's the parent of this
       // apply content policy recursively, then delete all subgroups recursively
       // this could take a while...
@@ -34,7 +35,7 @@ function au_subgroups_delete_group($hook, $type, $return, $params) {
       $guids = au_subgroups_get_all_children_guids($group);
       
       if (is_array($guids) && count($guids)) {
-        if ($content_policy != 'delete' && is_array($guids) && count($guids)) {
+        /*if ($content_policy != 'delete' && is_array($guids) && count($guids)) {
           $options = array(
             'container_guids' => $guids,
             'au_subgroups_content_policy' => $content_policy,
@@ -43,7 +44,7 @@ function au_subgroups_delete_group($hook, $type, $return, $params) {
           );
       
           $batch = new ElggBatch('elgg_get_entities', $options, 'au_subgroups_move_content', 25);
-        }
+        }*/
 
         // now delete the groups themselves
         $options = array(

@@ -28,6 +28,8 @@ $group_members = $group->getMembers(0);
 //remove group members of the list of site members
 $members = array_udiff($site_members,$group_members,'compare_member_id');
 
+
+
 /*
 $members = $group->getMembers(0);
 $operators = get_group_operators($group);
@@ -40,7 +42,8 @@ $group_guid =  $group->guid;
 $candidates = $members;
 
 foreach ($candidates as $user){
-	$response[] = array($user->guid, $user->name." - ".$user->username, null, $user->name." - ".$user->username);
+	$user_icon = elgg_view_entity_icon($user, 'tiny');
+	$response[] = array($user->guid, $user->name." - ".$user->username." - ".$user->email, $user->name." - ".$user->username, $user_icon.$user->name." - ".$user->username." - ".$user->email);
 }
 ?>
 <script type="text/javascript">
@@ -74,7 +77,7 @@ if ($members) {
 	elgg_load_js('JSTextboxList');
 	elgg_load_js('JSTextboxList.Autocomplete');
 	$title_to_invite = elgg_echo('au_subgroups:invitations:selecttoinvite');
-	
+	$note = elgg_echo('au_subgroups:invitations:note');
 	echo <<< HTML
 	<div>$title_to_invite</div>
 		<div class="form_friends">
@@ -82,7 +85,7 @@ if ($members) {
 	</div>
 	
 	<div>
-			<p class="note">Type the tag (one or more words) and press enter. Use left/right arrows, backspace, delete to navigate/remove boxes, and up/down/enter to navigate/add suggestions.</p>
+			<p class="note">$note</p>
 
 HTML;
 	echo '<div class="elgg-foot">';

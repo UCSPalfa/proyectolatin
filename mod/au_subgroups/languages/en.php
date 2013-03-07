@@ -72,7 +72,7 @@ Click below to view your invitations:
 %s",
 		'au_subgroups:invitations' => 'Writing Group invitations',
 		'au_subgroups:invitations:pending' => 'Writing Group invitations (%s)',
-		'au_subgroups:invitations:selecttoinvite' => "Select users from the list or write your friends' emails",
+		'au_subgroups:invitations:selecttoinvite' => "To find a friend type one or more words and press enter.  If your friend is not a member of the network write your friend's email.",
 		'wgroups:invite:body' => "Hi %s,
 		
 %s invited you to join the '%s' writing group. Click below to view your invitations:
@@ -84,12 +84,13 @@ Click below to view your invitations:
 
 		Click below to view your invitations:
 		
-%s 
+%s
+\n
 %s",
 		
 		'wgroups:invite:nouser:body' => "Hi,
 		
-			You have been invited by %s to join the %s writing group.  
+You have been invited by %s to join the %s writing group.  
 
 First you must register in %s site
 
@@ -105,7 +106,7 @@ and finally request membership in %s writing group
 		
 		'groups:invite:nouser:body' => "Hi,
 		
-			You have been invited by %s to join the %s community.  
+You have been invited by %s to join the %s community.  
 
 First you must register in %s site
 
@@ -116,6 +117,12 @@ and then go to the community's page and click on the Join button:
 %s
 		",
 		
+		'groups:delete:subject:operator' => "Delete community notification",
+		'groups:delete:body:operator' => "I deleted %s community.
+		
+		Message sent automatically to all moderators",
+		
+		'au_subgroups:invitations:note' => "Use left/right arrows, backspace, delete to navigate/remove boxes, and up/down/enter to navigate/add suggestions.",
 );
 
 add_translation("en", $english);
