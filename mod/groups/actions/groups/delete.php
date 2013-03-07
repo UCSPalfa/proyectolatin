@@ -14,9 +14,10 @@
 function get_group_operators($group){
 	if($group instanceof ElggGroup){
 		$operators = elgg_get_entities_from_relationship(
-			array('types'=>'user', 'limit'=>0, 'relationship_guid'=>$group->guid, 'relationship'=>'operator', 'inverse_relationship'=>true));
+				array('types'=>'user', 'limit'=>0, 'relationship_guid'=>$group->guid, 'relationship'=>'operator', 'inverse_relationship'=>true));
+		
 		$group_owner = get_entity($group->getOwnerGUID());
-
+		
 		if(!in_array($group_owner, $operators)){
 			$operators[$group_owner->guid] = $group_owner;
 		}
@@ -42,16 +43,21 @@ if (!$entity->canEdit()) {
 }
 
 if (($entity) && ($entity instanceof ElggGroup)) {
-	
-	//po5i: notificar a los moderadores
-	$operators = get_group_operators($entity);
-	foreach($operators as $op)
-	{
-		$recipient_guid = $op->guid;
-		$subject = "Notificación de eliminación de comunidad";
-		$body = "He borrado la comunidad: ".$entity->name;
-		$body .= "\nMensaje enviado a los moderadores automaticamente.";
-		$result = messages_send($subject, $body, $recipient_guid, 0);
+	//GC: only notify when is a community not a writing group
+	if (!au_subgroups_get_parent_group($entity)){
+		//po5i: notificar a los moderadores
+		$operators = get_group_operators($entity);
+		foreach($operators as $op)
+		{
+			//GC:no se deberia notificar al moderador que está ejecutando la acción
+			if ($op->guid != elgg_get_logged_in_user_entity()->guid){
+				//GC:cambiar los mensajes usando los mensajes de idioma, agregado nuevos en au_subgroups!
+				$recipient_guid = $op->guid;
+				$subject = elgg_echo('groups:delete:subject:operator');
+				$body = elgg_echo('groups:delete:body:operator',array($entity->name));
+				$result = messages_send($subject, $body, $recipient_guid, 0);
+			}
+		}
 	}
 	/////////////////////////////////////	
 
@@ -72,6 +78,7 @@ if (($entity) && ($entity instanceof ElggGroup)) {
 	} else {
 		register_error(elgg_echo('group:notdeleted'));
 	}
+	
 
 } else {
 	register_error(elgg_echo('group:notdeleted'));
