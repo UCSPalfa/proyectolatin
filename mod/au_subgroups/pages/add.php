@@ -1,6 +1,9 @@
 <?php
 
+
+
 $page_owner = elgg_get_page_owner_entity();
+
 
 $any_member = ($page_owner->subgroups_members_create_enable != 'no');
 
