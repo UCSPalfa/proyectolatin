@@ -45,6 +45,9 @@ if ($group_profile_fields > 0) {
 }
 ?>
 
+
+
+
 <div>
 	<label>
 		<?php echo elgg_echo('groups:membership'); ?><br />
