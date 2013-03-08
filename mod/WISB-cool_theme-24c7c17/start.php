@@ -113,7 +113,10 @@ function facebook_theme_groups_page_handler($segments, $handle) {
 function facebook_theme_pagesetup_handler() {
 
     $owner = elgg_get_page_owner_entity();
-
+    if (!$owner){
+    	$owner = elgg_get_logged_in_user_entity();
+    }
+ 
     if (elgg_is_logged_in()) {
 
 
@@ -630,7 +633,9 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
 
 
     $owner = elgg_get_page_owner_entity();
-
+    if (!$owner){
+    	$owner = elgg_get_logged_in_user_entity();
+    }
     // If the owner is a group
     if ($owner instanceof ElggGroup) {
 
@@ -845,7 +850,9 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
         
         }
 
-        if (elgg_is_logged_in() && $owner->canEdit() && !$owner->isPublicMembership()) {
+        
+        if (elgg_is_logged_in() && $owner->canEdit() && au_subgroups_get_parent_group($owner) && check_entity_relationship($user->guid, 'member', $owner->getGUID())) {
+        	
             $url = elgg_get_site_url() . "groups/requests/{$owner->getGUID()}";
 
             $count = elgg_get_entities_from_relationship(array(

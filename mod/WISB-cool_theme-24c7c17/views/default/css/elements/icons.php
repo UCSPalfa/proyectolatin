@@ -15,4 +15,4 @@
 /* ***************************************
 	AVATAR ICONS
 *************************************** */
-.elgg-avatar{position:relative;display:inline-block;}.elgg-avatar-tiny > a > img{width:25px;height:25px;}.elgg-avatar-small > a > img{width:40px;height:40px;}.elgg-avatar-medium > a > img{width:100px;height:100px;}.elgg-avatar-large > a > img{width:200px;height:180px;}
+.elgg-avatar{position:relative;display:inline-block;}.elgg-avatar-tiny > a > img{width:25px;height:25px;}.elgg-avatar-small > a > img{width:40px;height:40px;}.elgg-avatar-medium > a > img{width:100px;height:100px;}.elgg-avatar-large > a > img{width:180px;height:180px;}

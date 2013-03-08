@@ -16,6 +16,10 @@ elgg_push_context('owner_block');
 // groups and other users get owner block
 $owner = elgg_get_page_owner_entity();
 
+if (!$owner && $currentContext=='groups'){
+	$owner = elgg_get_logged_in_user_entity();
+}
+
 if (elgg_is_logged_in() && strcasecmp($currentContext, 'allGroups') == 0) {
 	$owner = elgg_get_logged_in_user_entity();
 }

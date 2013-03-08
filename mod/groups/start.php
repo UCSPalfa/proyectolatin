@@ -145,6 +145,9 @@ function groups_setup_sidebar_menus() {
 
 	// Get the page owner entity
 	$page_owner = elgg_get_page_owner_entity();
+	if (!$page_owner){
+		$page_owner = elgg_get_logged_in_user_entity();
+	}
 /*
 	if (elgg_in_context('group_profile')) {
 		if (elgg_is_logged_in() && $page_owner->canEdit() && !$page_owner->isPublicMembership()) {
@@ -364,7 +367,7 @@ function groups_icon_handler($page) {
 		set_input('size', $page[1]);
 	}
 	// Include the standard profile index
-	$plugin_dir = elgg_get_plugins_path();
+	$plugin_dir = elgg_get_plugins_path();echo $plugin_dir;
 	include("$plugin_dir/groups/icon.php");
 	return true;
 }
