@@ -36,7 +36,7 @@ function relatedgroups_init() {
 	elgg_extend_view('css/elements/components', 'groups/css/elements/components');
 
 	// Add group tool
-	add_group_tool_option('relatedgroups', elgg_echo('r elatedgroups:in_frontpage'), false);
+	//add_group_tool_option('relatedgroups', elgg_echo('relatedgroups:in_frontpage'), false);
 	elgg_extend_view('groups/tool_latest', 'relatedgroups/group_module');
 }
 
