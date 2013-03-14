@@ -367,7 +367,7 @@ function groups_icon_handler($page) {
 		set_input('size', $page[1]);
 	}
 	// Include the standard profile index
-	$plugin_dir = elgg_get_plugins_path();echo $plugin_dir;
+	$plugin_dir = elgg_get_plugins_path();
 	include("$plugin_dir/groups/icon.php");
 	return true;
 }
