@@ -8,6 +8,7 @@
  * List all groups
  */
 function groups_handle_all_page() {
+	
     $display_subgroups = elgg_get_plugin_setting('display_subgroups', 'au_subgroups');
     $db_prefix = elgg_get_config('dbprefix');
 
@@ -91,6 +92,8 @@ function groups_handle_all_page() {
     $body = elgg_view_layout('content', $params);
 
     echo elgg_view_page(elgg_echo('groups:all'), $body);
+    
+
 }
 
 function groups_search_page() {
@@ -472,15 +475,18 @@ function groups_register_profile_buttons($group) {
         // join - admins can always join.
         $url = elgg_get_site_url() . "action/groups/join?group_guid={$group->getGUID()}";
         $url = elgg_add_action_tokens_to_url($url);
-        
+
         if (!isSubgroup($group)) {
-            if ($group->isPublicMembership() || $group->canEdit()) {
-            $actions[$url] = 'groups:join';
-        } else {
-            // request membership
-            $actions[$url] = 'groups:joinrequest';
-        }
-            
+        	if ($group->isPublicMembership() || $group->canEdit()) {
+        		$actions[$url] = 'groups:join';
+        	} else {
+        		// request membership
+        		$actions[$url] = 'groups:joinrequest';
+        	}
+
+        }else {
+        		// request membership
+        		$actions[$url] = 'groups:joinrequest';
         }
         
         
