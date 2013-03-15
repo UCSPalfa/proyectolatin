@@ -477,13 +477,15 @@ function groups_register_profile_buttons($group) {
         $url = elgg_add_action_tokens_to_url($url);
 
         if (!isSubgroup($group)) {
+        	$actions[$url] = 'groups:join';
+        	/*
         	if ($group->isPublicMembership() || $group->canEdit()) {
         		$actions[$url] = 'groups:join';
         	} else {
         		// request membership
         		$actions[$url] = 'groups:joinrequest';
         	}
-
+			*/
         }else {
         		// request membership
         		$actions[$url] = 'groups:joinrequest';
