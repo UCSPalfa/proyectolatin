@@ -149,6 +149,9 @@ if (count($group_fields["fields"]) > 0) {
 
 
 <?php
+	if ($addingWritingGroup || $editingWritingGroup) {
+		$membership = ACCESS_PRIVATE;
+	}
 //Modification by Gonzalo:
 //Elegir si el grupo es privado o no, no deberia ser posible cuando el grupo creado es un Writing Group
 // The entity already exists, so the form is loaded TO EDIT a community or a writing group
@@ -156,21 +159,21 @@ if (count($group_fields["fields"]) > 0) {
 //if (!($addingWritingGroup || $editingWritingGroup)) {
 //    ?>
 
-    <!--<div>-->
-        <!--<label>-->
-            <!--//<?php // echo elgg_echo('groups:membership'); ?><br />-->
+    <div style="display:none">
+        <label>
+            <?php  echo elgg_echo('groups:membership'); ?><br />
             <?php
-//            echo elgg_view('input/access', array(
-//                'name' => 'membership',
-//                'value' => $membership,
-//                'options_values' => array(
-//                    ACCESS_PRIVATE => elgg_echo('groups:access:private'),
-//                    ACCESS_PUBLIC => elgg_echo('groups:access:public')
-//                )
-//            ));
-//            ?>
-        <!--</label>-->
-    <!--</div>-->
+            echo elgg_view('input/access', array(
+                'name' => 'membership',
+                'value' => $membership,
+                'options_values' => array(
+                    ACCESS_PRIVATE => elgg_echo('groups:access:private'),
+                    ACCESS_PUBLIC => elgg_echo('groups:access:public')
+                )
+            ));
+            ?>
+        </label>
+    </div>
     <?php
 //}
 
