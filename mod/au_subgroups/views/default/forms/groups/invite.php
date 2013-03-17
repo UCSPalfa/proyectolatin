@@ -80,18 +80,24 @@ if ($members) {
 	$note = elgg_echo('au_subgroups:invitations:note');
 	echo <<< HTML
 	<div>$title_to_invite</div>
-		<div class="form_friends">
+	<table><tr><td>
+			<div class="form_friends">
 	<input type="text" name="invite_list" value="" id="invite_list" />
 	</div>
-	
+	</td><td>&nbsp;
+HTML;
+	echo elgg_view('input/submit', array('value' => elgg_echo('invite')));
+
+	echo <<< HTML2
+	</td></tr></table>
 	<div>
 			<p class="note">$note</p>
 
-HTML;
+HTML2;
 	echo '<div class="elgg-foot">';
 	echo elgg_view('input/hidden', array('name' => 'forward_url', 'value' => $forward_url));
 	echo elgg_view('input/hidden', array('name' => 'group_guid', 'value' => $group->guid));
-	echo elgg_view('input/submit', array('value' => elgg_echo('invite')));
+
 	echo '</div>';
 
 

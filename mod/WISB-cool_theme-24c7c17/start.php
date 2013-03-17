@@ -571,7 +571,7 @@ function facebook_theme_composer_menu_handler($hook, $type, $items, $params) {
         elgg_view('thewire/composer');
     }
 
-    if (elgg_is_active_plugin('messageboard') && $entity->canAnnotate(0, 'messageboard')) {
+    if (elgg_is_active_plugin('messageboard') && $entity->canAnnotate(0, 'messageboard') && $entity->canWriteToContainer(0, 'object', 'messageboard')) {
         $items[] = ElggMenuItem::factory(array(
                     'name' => 'messageboard',
                     'href' => "/ajax/view/messageboard/composer?entity_guid=$entity->guid",
@@ -618,7 +618,6 @@ function facebook_theme_composer_menu_handler($hook, $type, $items, $params) {
         //trigger any javascript loads that we might need
         elgg_view('file/composer');
     }
-
     return $items;
 }
 

@@ -278,7 +278,7 @@ function send_invitation($user,$group,$parent,$logged_in_user){
 	}else{
 	
 		//is a communitty, send normal message
-		if ($user && $group && ($group instanceof ElggGroup) && $group->canEdit()) {
+		if ($user && $group && ($group instanceof ElggGroup)) {
 	
 			if (!check_entity_relationship($group->guid, 'invited', $user->guid)) {
 	

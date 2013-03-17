@@ -8,6 +8,7 @@
  * List all groups
  */
 function groups_handle_all_page() {
+	
     $display_subgroups = elgg_get_plugin_setting('display_subgroups', 'au_subgroups');
     $db_prefix = elgg_get_config('dbprefix');
 
@@ -91,6 +92,8 @@ function groups_handle_all_page() {
     $body = elgg_view_layout('content', $params);
 
     echo elgg_view_page(elgg_echo('groups:all'), $body);
+    
+
 }
 
 function groups_search_page() {
@@ -377,7 +380,7 @@ function groups_handle_invite_page($guid) {
     elgg_push_breadcrumb($group->name, $group->getURL());
     elgg_push_breadcrumb(elgg_echo('groups:invite'));
 
-    if ($group && $group->canEdit()) {
+    if ($group) {
         $content = elgg_view_form('groups/invite', array(
             'id' => 'invite_to_group',
             'class' => 'elgg-form-alt mtm',
@@ -456,8 +459,7 @@ function groups_register_profile_buttons($group) {
         // edit and invite
         $url = elgg_get_site_url() . "groups/edit/{$group->getGUID()}";
         $actions[$url] = 'groups:edit';
-        $url = elgg_get_site_url() . "groups/invite/{$group->getGUID()}";
-        $actions[$url] = 'groups:invite';
+
     }
 
     // group members
@@ -468,19 +470,26 @@ function groups_register_profile_buttons($group) {
             $url = elgg_add_action_tokens_to_url($url);
             $actions[$url] = 'groups:leave';
         }
+        $url = elgg_get_site_url() . "groups/invite/{$group->getGUID()}";
+        $actions[$url] = 'groups:invite';
     } elseif (elgg_is_logged_in()) {
         // join - admins can always join.
         $url = elgg_get_site_url() . "action/groups/join?group_guid={$group->getGUID()}";
         $url = elgg_add_action_tokens_to_url($url);
-        
+
         if (!isSubgroup($group)) {
-            if ($group->isPublicMembership() || $group->canEdit()) {
-            $actions[$url] = 'groups:join';
-        } else {
-            // request membership
-            $actions[$url] = 'groups:joinrequest';
-        }
-            
+        	$actions[$url] = 'groups:join';
+        	/*
+        	if ($group->isPublicMembership() || $group->canEdit()) {
+        		$actions[$url] = 'groups:join';
+        	} else {
+        		// request membership
+        		$actions[$url] = 'groups:joinrequest';
+        	}
+			*/
+        }else {
+        		// request membership
+        		$actions[$url] = 'groups:joinrequest';
         }
         
         
