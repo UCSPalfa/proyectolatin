@@ -18,20 +18,10 @@ if (isset($vars['class'])) {
 ?>
 
 <div class="<?php echo $class; ?>">
-
-        <?php if (elgg_get_context() == "main"): ?>
-                <div class="elgg-sidebar-right">
-        <?php else: ?>
-                <div class="elgg-sidebar">
-        <?php endif; ?>
-
+	<div class="elgg-sidebar">
 		<?php echo elgg_view('page/elements/sidebar', $vars); ?>
 	</div>
-
-        <?php if (elgg_get_context() == "main"): ?><div class="elgg-body" style="border:0; padding-left: 0">
-        <?php else: ?><div class="elgg-body">
-        <?php endif; ?>
-
+	<div class="elgg-body">
 		<div class="elgg-head">
 			<?php echo elgg_view('page/elements/title', $vars); ?>
 		</div>
@@ -45,15 +35,9 @@ if (isset($vars['class'])) {
 				if (isset($vars['area1'])) {
 					echo $vars['area1'];
 				}
-
-                        if (elgg_get_context() == "main") {
-                                echo elgg_view('page/elements/latin_info');
-                        }else{
-                                if (isset($vars['content'])) {
-                                        echo $vars['content'];
-                                }
-                        }
-
+				if (isset($vars['content'])) {
+					echo $vars['content'];
+				}
 			?>
 		</div>
 	</div>

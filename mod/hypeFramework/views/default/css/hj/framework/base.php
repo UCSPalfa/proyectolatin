@@ -71,7 +71,7 @@ visibility: hidden;
 
 div.mandatory {
 	padding-right:15px;
-	background:transparent url(<?php echo $graphics_url ?>mandatory.png) no-repeat 98% 23px;
+	background:transparent url(<?php echo $graphics_url ?>mandatory.png) no-repeat 100% 23px;
 }
 
 input.hj-input-processing {

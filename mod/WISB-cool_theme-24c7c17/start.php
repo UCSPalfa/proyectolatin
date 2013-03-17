@@ -9,6 +9,7 @@ function cool_theme_init() {
     elgg_register_page_handler('dashboard', 'facebook_theme_dashboard_handler');
     elgg_register_page_handler('thanks', 'cool_theme_credits_handler');
     elgg_register_event_handler('pagesetup', 'system', 'friends_hack_pagesetup_handler');
+    elgg_unregister_plugin_hook_handler('output:before', 'layout', 'elgg_views_add_rss_link');
 
 
 

@@ -119,6 +119,7 @@
 					$class = " class='mandatory'";
 				} 
 				
+				$fields_result .= "<br />";
 				$fields_result .= "<div" . $class . ">";
 				$fields_result .= "<label>" . $field->getTitle() . "</label>";
 				
@@ -132,7 +133,8 @@
 				$fields_result .= elgg_view("input/{$metadata_type}", array(
 														"name" => "custom_profile_fields_" . $field->metadata_name,
 														"value" => $value,
-														"options" => $field->getOptions()
+														"options" => $field->getOptions(),
+														"class" => "non-mandatory"
 														)); 
 				$fields_result .= "</div>";
 			}
