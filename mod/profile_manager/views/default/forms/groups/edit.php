@@ -256,6 +256,12 @@ if ($tools) {
 
 <div class="elgg-foot">
     <?php
+    if (isset($vars['entity'])) {
+    	echo elgg_view('input/hidden', array(
+    			'name' => 'group_guid',
+    			'value' => $vars['entity']->getGUID(),
+    	));
+    }
     echo elgg_view('input/submit', array('value' => elgg_echo('save')));
 
     if (isset($vars['entity'])) {
