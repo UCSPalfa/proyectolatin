@@ -837,7 +837,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
             ));
         }
         $user = elgg_get_logged_in_user_entity();
-        if ($owner->canEdit() && au_subgroups_get_parent_group($owner) && check_entity_relationship($user->guid, 'member', $owner->getGUID())) {
+     /*   if ($owner->canEdit() && au_subgroups_get_parent_group($owner) && check_entity_relationship($user->guid, 'member', $owner->getGUID())) {
         
         	$url = elgg_get_site_url() . "group_roles/manage/{$owner->getGUID()}";
         
@@ -848,7 +848,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
         			'priority' => 9,
         	));
         
-        }
+        }*/
 
         
         if (elgg_is_logged_in() && $owner->canEdit() && au_subgroups_get_parent_group($owner) && check_entity_relationship($user->guid, 'member', $owner->getGUID())) {
