@@ -292,7 +292,10 @@ function groups_page_handler($page) {
 		$page[0] = 'all';
 	}
 
-	elgg_push_breadcrumb(elgg_echo('groups'), "groups/all");
+	if (au_subgroups_get_parent_group( get_entity($page[1]))){
+		elgg_push_breadcrumb(elgg_echo('au_subgroups:subgroups'), "groups/all");
+	}else
+		elgg_push_breadcrumb(elgg_echo('groups'), "groups/all");
 
 	switch ($page[0]) {
 		case 'all':
