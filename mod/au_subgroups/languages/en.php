@@ -123,6 +123,25 @@ and then go to the community's page and click on the Join button:
 		Message sent automatically to all moderators",
 		
 		'au_subgroups:invitations:note' => "Use left/right arrows, backspace, delete to navigate/remove boxes, and up/down/enter to navigate/add suggestions.",
+		
+		/**
+		 * Form fields
+		 */
+		"groups:members:new" => 'Add another member',
+		"groups:members:new:button" => 'Add member',
+		"groups:members:selectone" => 'select one...',
+		
+		/**
+		 * System messages
+		 */
+		"groups:members:added" => '%s successfully added as group member',
+		"groups:members:add:error" => 'It was impossible to add %s as group member',
+		"groups:members:owner_changed" => '%s is the new owner',
+		"groups:members:change_owner:error" => 'Only the community owner can assign a new owner',
+		"groups:members:removed" => 'Member successfully removed',
+		"wgroups:removeuser" => 'Remove from group',
+		"wgroups:members" => 'Group members',
+		
 );
 
 add_translation("en", $english);

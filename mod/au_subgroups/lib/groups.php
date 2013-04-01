@@ -341,9 +341,23 @@ function groups_handle_members_page($guid) {
     $title = elgg_echo('groups:members:title', array($group->name));
 
     elgg_push_breadcrumb($group->name, $group->getURL());
-    elgg_push_breadcrumb(elgg_echo('groups:members'));
+    if (au_subgroups_get_parent_group($group))
+    	elgg_push_breadcrumb(elgg_echo('wgroups:members'));
+    else
+    	elgg_push_breadcrumb(elgg_echo('groups:members'));
+    
+    $content ="";
+    ////// only if is a writing group
+    if ($group->canEdit() && au_subgroups_get_parent_group($group)){
+    	$form_vars = array('id' => 'add_members_group',);
+    	$body_vars = group_members_prepare_form_vars($group);
+    
+    	$content .= elgg_view_form('groups/membership/add', $form_vars, $body_vars);
+    }
+    /////
+    
 
-    $content = elgg_list_entities_from_relationship(array(
+    $content .= elgg_list_entities_from_relationship(array(
         'relationship' => 'member',
         'relationship_guid' => $group->guid,
         'inverse_relationship' => true,
@@ -352,6 +366,7 @@ function groups_handle_members_page($guid) {
         'size' => 'medium',
         'limit' => 20,
             ));
+    
 
     $params = array(
         'content' => $content,
@@ -362,6 +377,65 @@ function groups_handle_members_page($guid) {
 
     echo elgg_view_page($title, $body);
 }
+function group_members_prepare_form_vars($group) {
+	$parent = au_subgroups_get_parent_group($group);
+	$com_members = $parent->getMembers(0);
+	$members = get_group_roles($group);
+	$no_members = array_obj_diff($com_members, $members);
+
+	// input names => defaults
+	$values = array(
+			'entity' => $group,
+			'candidates' => $no_members
+	);
+
+	return $values;
+}
+
+function group_members_prepare_combo_vars($candidates) {
+	$values = array('' => elgg_echo('group_roles:selectone'));
+	foreach($candidates as $candidate){
+		$values[$candidate->guid] = $candidate->name." - ".$candidate->username;
+	}
+	return $values;
+}
+
+
+
+function get_group_roles($group){
+	if($group instanceof ElggGroup){
+		$members_roles = elgg_get_entities_from_relationship(
+				array('types'=>'user', 'limit'=>0, 'relationship_guid'=>$group->guid, 'relationship'=>'member', 'inverse_relationship'=>true));
+		$group_owner = get_entity($group->getOwnerGUID());
+
+		if(!in_array($group_owner, $members_roles)){
+			$members_roles[$group_owner->guid] = $group_owner;
+		}
+		return $members_roles;
+	}
+	else {
+		return null;
+	}
+}
+function array_obj_diff ($array1, $array2) {
+
+	foreach ($array1 as $key => $value) {
+		$array1[$key] = serialize ($value);
+	}
+
+	foreach ($array2 as $key => $value) {
+		$array2[$key] = serialize ($value);
+	}
+
+	$array_diff = array_diff ($array1, $array2);
+
+	foreach ($array_diff as $key => $value) {
+		$array_diff[$key] = unserialize ($value);
+	}
+
+	return $array_diff;
+}
+
 
 /**
  * Invite users to a group

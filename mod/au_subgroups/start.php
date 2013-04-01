@@ -33,7 +33,11 @@ function au_subgroups_init() {
   $group_action_path = elgg_get_plugins_path() . 'au_subgroups/actions/groups';
   elgg_unregister_action('groups/invite');
   elgg_register_action("groups/invite", "$group_action_path/membership/invite.php");
- 
+  // Register actions
+  
+  
+  elgg_register_action("groups/membership/add", "$group_action_path/membership/add.php");
+  elgg_register_action("groups/membership/remove", "$group_action_path/membership/remove.php");
   //TextboxList
   elgg_register_js('mootools', 'mod/au_subgroups/vendors/TextboxList/mootools-1.2.1-core-yc.js');
   elgg_register_js('GrowingInput', 'mod/au_subgroups/vendors/TextboxList/GrowingInput.js');
@@ -152,9 +156,14 @@ function subgroups_user_entity_menu_setup($hook, $type, $return, $params) {
 
 		// Add remove link if we can edit the group, and if we're not trying to remove the group owner
 		if ($group->canEdit() && $group->getOwnerGUID() != $entity->guid) {
+			if (au_subgroups_get_parent_group($group)){
+				$text = elgg_echo('wgroups:removeuser');
+			}else{
+				$text = elgg_echo('groups:removeuser');
+			}
 			$remove = elgg_view('output/confirmlink', array(
 					'href' => "action/groups/remove?user_guid={$entity->guid}&group_guid={$group->guid}",
-					'text' => elgg_echo('groups:removeuser'),
+					'text' => $text,
 			));
 
 			$options = array(
