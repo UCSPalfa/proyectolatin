@@ -316,7 +316,7 @@ TextboxListBit.Editable = new Class({
 		growing: true,
 		growingOptions: {},
 		stopEnter: true,
-		addOnBlur: false,
+		addOnBlur: true,
 		addKeys: Event.Keys.enter
   },
   
@@ -344,6 +344,10 @@ TextboxListBit.Editable = new Class({
 				}
 			}.bind(this));
 		}
+		
+		this.element.addEvent('blur', function(ev) {
+			this.toBox();
+			}.bind(this));
   },
 
 	hide: function(){
