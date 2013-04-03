@@ -82,6 +82,7 @@ $english = array(
 	'groups:nofriendsatall' => 'You have no friends to invite!',
 	'groups:viagroups' => "via communities",
 	'groups:group' => "Community",
+	'groups:search' => "Search communities by tag",
 	'groups:search:tags' => "tag",
 	'groups:search:title' => "Search for communities tagged with '%s'",
 	'groups:search:none' => "No matching communities were found",

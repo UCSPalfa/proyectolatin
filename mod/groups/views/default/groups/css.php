@@ -120,3 +120,41 @@
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
+
+.miniGridGroup {
+    margin: 3px 2px 3px 7px;
+}
+
+.simpleBorder {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #999;
+    vertical-align: middle;
+}
+
+.searchInput {
+    color: #ccc;
+    float: left;
+    width: 85%;
+    margin-top: 17px;
+}
+
+.searchInput:active {
+    color: #fff;
+}
+
+.searchInput:focus {
+    color: #000;
+}
+
+.inLineButton {
+    float: right;
+    margin-top: 18px;
+}
+
+.bottonRight {
+    float: right;
+    margin-top: 30px;
+    margin-right: 5px;
+    color: rgb(0, 61, 121);
+}

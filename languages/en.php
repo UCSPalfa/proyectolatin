@@ -7,6 +7,15 @@
  */
 
 $english = array(
+    
+    
+    	'search:communities' => 'Search for communities',
+        'view:all' => "View all",
+        'popular:communities' => "Most Popular",
+        'latin:communities' => "LATIn Communities",
+    
+    
+    
 /**
  * Sites
  */

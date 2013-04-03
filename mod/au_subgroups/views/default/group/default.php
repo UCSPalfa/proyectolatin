@@ -47,6 +47,9 @@ if ($vars['full_view']) {
 } else if ($rendering_mode == 'as_google_plus') {
 	echo elgg_view('groups/profile/gPlus', $vars);
 
+} else if ($rendering_mode == 'mini_grid') {
+	echo elgg_view('groups/profile/miniGrid', $vars);
+
 } else {
 	// brief view
 	$params = array(
