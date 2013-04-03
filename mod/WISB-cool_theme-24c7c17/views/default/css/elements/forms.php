@@ -19,4 +19,4 @@ fieldset>div{margin-bottom:15px}fieldset>div:last-child{margin-bottom:0}label{fo
 	USER PICKER
 *************************************** */
 .user-picker .user-picker-entry {clear:both;height:25px;padding:5px;margin-top:5px;border-bottom:1px solid #cccccc;}.user-picker-entry .elgg-button-delete {margin-right:10px;}
-.non-mandatory{width: 97%}
+.non-mandatory{width: 100%}

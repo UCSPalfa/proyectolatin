@@ -51,7 +51,7 @@
 /*** topbar icon ***/
 .messages-new {
 	color: white;
-	background-color: red;
+	background-color: #277fcf;
 	
 	-webkit-border-radius: 10px; 
 	-moz-border-radius: 10px;
@@ -66,7 +66,7 @@
 	top: 0px;
 	left: 26px;
 	min-width: 16px;
-	height: 16px;
+	height: 14px;
 	font-size: 10px;
 	font-weight: bold;
 }

@@ -427,7 +427,8 @@ function facebook_theme_pagesetup_handler() {
             'href' => '/',
             'name' => 'logo',
             'priority' => 1,
-            'text' => "<h1 id=\"facebook-topbar-logo\">$site->name</h1>",
+//            'text' => "<h1 id=\"facebook-topbar-logo\">$site->name</h1>",
+	    'text' => "<div id=\"facebook-topbar-logo\"></div>",
         ));
 
         elgg_register_menu_item('topbar', array(

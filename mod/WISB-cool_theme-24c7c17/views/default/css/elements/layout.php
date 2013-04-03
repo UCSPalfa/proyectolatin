@@ -28,7 +28,7 @@ body{margin:0;padding:0;height:100%;}
 /***** PAGE HEADER ******/
 .elgg-page-header {position: relative; background: #277fcf;}.elgg-page-header > .elgg-inner {position: relative;}
 /***** PAGE BODY LAYOUT ******/
-.elgg-layout {min-height: 360px;}.elgg-layout-one-column {padding: 10px 0;}.elgg-sidebar {position: relative;padding: 20px 0;float: left;width: 181px;min-height: 360px;}.elgg-sidebar-alt {position: relative;float: right;width: 244px;margin-left: 20px;min-height: 360px;}.elgg-main {position: relative;min-height: 360px;}.elgg-layout-two-sidebar > .elgg-body,.elgg-layout-one-sidebar > .elgg-body {border: 1px solid #B3B3B3;border-top: 0;padding: 15px 20px;}.elgg-layout > .elgg-body > .elgg-head {padding-bottom: 3px;margin-bottom: 10px;}
+.elgg-layout {min-height: 360px;}.elgg-layout-one-column {padding: 10px 0;}.elgg-sidebar {margin-right: 15px;position: relative;padding: 20px 0;float: left;width: 181px;min-height: 360px;}.elgg-sidebar-alt {position: relative;float: right;width: 244px;margin-left: 20px;min-height: 360px;}.elgg-main {position: relative;min-height: 360px;}.elgg-layout-two-sidebar > .elgg-body,.elgg-layout-one-sidebar > .elgg-body {border: 1px solid #B3B3B3;border-top: 0;padding: 15px 20px;}.elgg-layout > .elgg-body > .elgg-head {padding-bottom: 3px;margin-bottom: 10px;}
 .elgg-sidebar-right {position: relative; padding-top: 20px; float: right; width: 190px; min-height: 360px;}
 /***** PAGE FOOTER ******/
 .elgg-page-default .elgg-page-footer > .elgg-inner {width: 981px; margin:0 auto;}
