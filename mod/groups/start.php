@@ -383,8 +383,9 @@ function groups_icon_handler($page) {
  */
 function groups_url($entity) {
 	$title = elgg_get_friendly_title($entity->name);
-
-	return "groups/profile/{$entity->guid}/$title";
+	//return "groups/profile/{$entity->guid}/$title";
+	//GC:ahora ha discusion
+	return "discussion/owner/{$entity->guid}";
 }
 
 /**

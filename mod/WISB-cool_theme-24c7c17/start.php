@@ -172,7 +172,7 @@ function facebook_theme_pagesetup_handler() {
         if ($owner instanceof ElggUser) {
 
             // Friends menu item
-            elgg_register_menu_item('page', array(
+            /*elgg_register_menu_item('page', array(
                 'name' => 'friends',
                 'text' => elgg_view_icon('friends') . elgg_echo('friends'),
                 'href' => "/friends/$owner->username",
@@ -189,7 +189,7 @@ function facebook_theme_pagesetup_handler() {
                     'priority' => 23,
                 );
                 elgg_register_menu_item('page', $params);
-            }
+            }*/
 
             if (elgg_is_active_plugin('groups')) {
 
@@ -428,7 +428,8 @@ function facebook_theme_pagesetup_handler() {
             'href' => '/',
             'name' => 'logo',
             'priority' => 1,
-            'text' => "<h1 id=\"facebook-topbar-logo\">$site->name</h1>",
+//            'text' => "<h1 id=\"facebook-topbar-logo\">$site->name</h1>",
+	    'text' => "<div id=\"facebook-topbar-logo\"></div>",
         ));
 
         elgg_register_menu_item('topbar', array(

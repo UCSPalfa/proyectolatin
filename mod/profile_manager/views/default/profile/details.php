@@ -152,5 +152,54 @@
 	if($description_position != "top"){
 		echo $about;
 	}
+	//show comunities where the user is member
+	
+	$db_prefix = elgg_get_config('dbprefix');
+	//count communities
+	$options['type'] = 'group';
+	$options['relationship'] = 'member';
+	$options['relationship_guid'] =  elgg_get_page_owner_guid();
+	$options['count'] = true;
+	$options['wheres'] = array("NOT EXISTS ( SELECT 1 FROM {$db_prefix}entity_relationships WHERE guid_one = e.guid AND relationship = '" . AU_SUBGROUPS_RELATIONSHIP . "' )");
+	$count_comm = elgg_get_entities_from_relationship($options);
+	$options['wheres'] = array("EXISTS ( SELECT 1 FROM {$db_prefix}entity_relationships WHERE guid_one = e.guid AND relationship = '" . AU_SUBGROUPS_RELATIONSHIP . "' )");
+	$count_wgroups = elgg_get_entities_from_relationship($options);
+	
+	$communities = elgg_list_entities_from_relationship(array(
+			'type' => 'group',
+			'relationship' => 'member',
+			'relationship_guid' => elgg_get_page_owner_guid(),
+			'inverse_relationship' => false,
+			'full_view' => false,
+			'rendering_mode' => 'as_google_plus',
+			'list_type' => 'gallery',
+			'limit' => 100,
+			'size' => 'small',
+			'wheres' => array("NOT EXISTS ( SELECT 1 FROM {$db_prefix}entity_relationships WHERE guid_one = e.guid AND relationship = '" . AU_SUBGROUPS_RELATIONSHIP . "' )"),
+	));
+	if ($count_comm==0) {
+		$communities = elgg_echo('profile_manager:profile:no_communities');
+	}
+	
+	$wgroups = elgg_list_entities_from_relationship(array(
+			'type' => 'group',
+			'relationship' => 'member',
+			'relationship_guid' => elgg_get_page_owner_guid(),
+			'inverse_relationship' => false,
+			'full_view' => false,
+			'rendering_mode' => 'as_google_plus',
+			'list_type' => 'gallery',
+			'limit' => 100,
+			'size' => 'small',
+			'wheres' => array(" EXISTS ( SELECT 1 FROM {$db_prefix}entity_relationships WHERE guid_one = e.guid AND relationship = '" . AU_SUBGROUPS_RELATIONSHIP . "' )"),
+	));
 
+	if ($count_wgroups==0) {
+		$wgroups = elgg_echo('profile_manager:profile:no_groups');
+	}
+	
+	echo "<br/><h3>". elgg_echo('profile_manager:profile:communities')."</h3>";
+	echo $communities;
+	echo "<br/><h3>". elgg_echo('profile_manager:profile:groups')."</h3>";
+	echo $wgroups;
 	echo '</div>';

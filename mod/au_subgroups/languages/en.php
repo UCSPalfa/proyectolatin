@@ -72,7 +72,7 @@ Click below to view your invitations:
 %s",
 		'au_subgroups:invitations' => 'Writing Group invitations',
 		'au_subgroups:invitations:pending' => 'Writing Group invitations (%s)',
-		'au_subgroups:invitations:selecttoinvite' => "To find a friend type one or more words and press enter.  If your friend is not a member of the network write your friend's email.",
+		'au_subgroups:invitations:selecttoinvite' => "To find a person type one or more words.  If he/she is not a member of the network write his/her email and press enter.",
 		'wgroups:invite:body' => "Hi %s,
 		
 %s invited you to join the '%s' writing group. Click below to view your invitations:
@@ -139,8 +139,9 @@ and then go to the community's page and click on the Join button:
 		"groups:members:owner_changed" => '%s is the new owner',
 		"groups:members:change_owner:error" => 'Only the community owner can assign a new owner',
 		"groups:members:removed" => 'Member successfully removed',
-		"wgroups:removeuser" => 'Remove from group',
+		"wgroups:removeuser" => 'Remove from writing group',
 		"wgroups:members" => 'Group members',
+		"wgroups:invite:title" => "Invite people to this writing group",
 		
 );
 
