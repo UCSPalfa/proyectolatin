@@ -385,7 +385,10 @@
 		'profile_manager:account:login_history' => "Login History",
 		'profile_manager:account:login_history:date' => "Date",
 		'profile_manager:account:login_history:ip' => "IP Address",
-		
+		'profile_manager:profile:communities' => "Communities",
+		'profile_manager:profile:groups' => "Writing Groups",
+		'profile_manager:profile:no_groups' => "No groups found",
+		'profile_manager:profile:no_communities' => "No communities found",
 	
 	);
 	

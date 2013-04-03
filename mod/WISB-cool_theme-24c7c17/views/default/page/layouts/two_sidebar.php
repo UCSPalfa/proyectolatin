@@ -28,9 +28,9 @@ if (isset($vars['class'])) {
 		<?php 
 			// allow page handlers to override the default header
 		?>
-		<div class="elgg-sidebar-alt">
-			<?php echo elgg_view('page/elements/sidebar_alt', $vars); ?>
-		</div>
+		<!-- <div class="elgg-sidebar-alt">
+			<?php //echo elgg_view('page/elements/sidebar_alt', $vars); ?>
+		</div> -->
 		<div class="elgg-body elgg-main">
 			<?php
 				// @todo deprecated so remove in Elgg 2.0

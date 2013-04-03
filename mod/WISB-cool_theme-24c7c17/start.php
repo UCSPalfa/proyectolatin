@@ -171,7 +171,7 @@ function facebook_theme_pagesetup_handler() {
         if ($owner instanceof ElggUser) {
 
             // Friends menu item
-            elgg_register_menu_item('page', array(
+            /*elgg_register_menu_item('page', array(
                 'name' => 'friends',
                 'text' => elgg_view_icon('friends') . elgg_echo('friends'),
                 'href' => "/friends/$owner->username",
@@ -188,7 +188,7 @@ function facebook_theme_pagesetup_handler() {
                     'priority' => 23,
                 );
                 elgg_register_menu_item('page', $params);
-            }
+            }*/
 
             if (elgg_is_active_plugin('groups')) {
 
@@ -838,7 +838,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
             ));
         }
         $user = elgg_get_logged_in_user_entity();
-        if ($owner->canEdit() && au_subgroups_get_parent_group($owner) && check_entity_relationship($user->guid, 'member', $owner->getGUID())) {
+     /*   if ($owner->canEdit() && au_subgroups_get_parent_group($owner) && check_entity_relationship($user->guid, 'member', $owner->getGUID())) {
         
         	$url = elgg_get_site_url() . "group_roles/manage/{$owner->getGUID()}";
         
@@ -849,7 +849,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
         			'priority' => 9,
         	));
         
-        }
+        }*/
 
         
         if (elgg_is_logged_in() && $owner->canEdit() && au_subgroups_get_parent_group($owner) && check_entity_relationship($user->guid, 'member', $owner->getGUID())) {

@@ -72,7 +72,7 @@ Click below to view your invitations:
 %s",
 		'au_subgroups:invitations' => 'Writing Group invitations',
 		'au_subgroups:invitations:pending' => 'Writing Group invitations (%s)',
-		'au_subgroups:invitations:selecttoinvite' => "To find a friend type one or more words and press enter.  If your friend is not a member of the network write your friend's email.",
+		'au_subgroups:invitations:selecttoinvite' => "To find a person type one or more words.  If he/she is not a member of the network write his/her email and press enter.",
 		'wgroups:invite:body' => "Hi %s,
 		
 %s invited you to join the '%s' writing group. Click below to view your invitations:
@@ -123,6 +123,26 @@ and then go to the community's page and click on the Join button:
 		Message sent automatically to all moderators",
 		
 		'au_subgroups:invitations:note' => "Use left/right arrows, backspace, delete to navigate/remove boxes, and up/down/enter to navigate/add suggestions.",
+		
+		/**
+		 * Form fields
+		 */
+		"groups:members:new" => 'Add another member',
+		"groups:members:new:button" => 'Add member',
+		"groups:members:selectone" => 'select one...',
+		
+		/**
+		 * System messages
+		 */
+		"groups:members:added" => '%s successfully added as group member',
+		"groups:members:add:error" => 'It was impossible to add %s as group member',
+		"groups:members:owner_changed" => '%s is the new owner',
+		"groups:members:change_owner:error" => 'Only the community owner can assign a new owner',
+		"groups:members:removed" => 'Member successfully removed',
+		"wgroups:removeuser" => 'Remove from writing group',
+		"wgroups:members" => 'Group members',
+		"wgroups:invite:title" => "Invite people to this writing group",
+		
 );
 
 add_translation("en", $english);
