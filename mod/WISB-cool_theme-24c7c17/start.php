@@ -631,7 +631,7 @@ function facebook_theme_group_profile_fields($hook, $type, $fields, $params) {
     );
 }
 
-function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) {
+function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) {        
 
 
     $owner = elgg_get_page_owner_entity();

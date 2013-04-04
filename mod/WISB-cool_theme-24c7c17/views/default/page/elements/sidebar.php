@@ -18,6 +18,10 @@ if (elgg_is_logged_in() && strcasecmp($currentContext, 'dashboard') == 0 ) {
 }
 
 
+if (!elgg_is_logged_in() && $currentContext == 'groups' ) {
+    echo elgg_view('page/elements/invitation', $vars);
+}
+
 echo elgg_view_menu('page', array('sort_by' => 'priority'));
 
 // optional 'sidebar' parameter

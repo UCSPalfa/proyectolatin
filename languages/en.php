@@ -13,6 +13,12 @@ $english = array(
         'view:all' => "View all",
         'popular:communities' => "Most Popular",
         'latin:communities' => "LATIn Communities",
+        'latin:invitation' => "Would you like to collaborate and share your ideas with people from all around the world?",
+        'latin:login_reister' => "Login or register",
+        'latin:login' => "Login",
+        'latin:or' => "or",
+        'latin:register' => "Register",
+        'latin:now' => "now",
     
     
     

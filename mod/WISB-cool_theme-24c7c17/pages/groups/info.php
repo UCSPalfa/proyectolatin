@@ -15,7 +15,17 @@ groups_register_profile_buttons($group);
 // This context is necessary to place the "Create a Writing Group" button
 elgg_push_context('group_profile');
 
-$content = elgg_view('groups/profile/layout', array('entity' => $group));
+
+// Modification by Gonzalo : Antes se llamaba a la vista groups/profile/layout para que muestre
+// el perfil del grupo. Ahora, se llama a la pagina profile
+//$content = elgg_view('groups/profile/layout', array('entity' => $group));
+
+$content = elgg_view('groups/profile/profile', array('entity' => $group));
+
+
+
+
+
 if (group_gatekeeper(false)) {
 	$sidebar = elgg_view('groups/sidebar/members', array('entity' => $group));
 } else {

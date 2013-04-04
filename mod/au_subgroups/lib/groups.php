@@ -7,7 +7,7 @@
 /**
  * List all groups
  */
-function groups_handle_all_page() {
+function groups_handle_all_page() {        
 	
     $display_subgroups = elgg_get_plugin_setting('display_subgroups', 'au_subgroups');
     $db_prefix = elgg_get_config('dbprefix');
