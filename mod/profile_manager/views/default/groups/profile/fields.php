@@ -3,6 +3,8 @@
  * Group profile fields
  */
 
+
+
 $group = $vars['entity'];
 
 $group_fields = profile_manager_get_categorized_group_fields();

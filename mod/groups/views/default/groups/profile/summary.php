@@ -7,6 +7,7 @@
  * @uses $vars['group']
  */
 
+
 if (!isset($vars['entity']) || !$vars['entity']) {
 	echo elgg_echo('groups:notfound');
 	return true;

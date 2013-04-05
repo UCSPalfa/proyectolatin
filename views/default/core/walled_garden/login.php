@@ -14,6 +14,7 @@ $menu = elgg_view_menu('walled_garden', array(
 
 $login_box = elgg_view('core/account/login_box', array('module' => 'walledgarden-login'));
 
+
 echo <<<HTML
 <div class="elgg-col elgg-col-1of2">
 	<div class="elgg-inner">

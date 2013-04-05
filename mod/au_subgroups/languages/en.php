@@ -2,6 +2,11 @@
 
 $english = array(
    
+    'Books' => 'Books',
+    'Members' => 'Members',
+    'Institutions:participating' => 'Institutions participating',
+    'Institutions:collaborating' => 'Institutions collaborating',
+    
     'writingGroups:members' => 'Group collaborators',
     'discussion:writinggroup' => 'Group discussion',
     'file:writinggroup' => 'Group files',
@@ -9,6 +14,7 @@ $english = array(
     'bookmarks:writinggroup' => 'Group bookmarks',
     'blog:writinggroup' => 'Group blogs',
     'writingGroups:member' => 'collaborators',
+    'writingGroups:Members' => 'Collaborators',
     
     
     'au_subgroups:name' => "Writing group name",
