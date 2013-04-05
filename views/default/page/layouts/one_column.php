@@ -26,9 +26,15 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 		if (isset($vars['title'])) {
 			echo elgg_view_title($vars['title']);
 		}
+//Clase añadida para modificar padding del formulario de registro en layout one_column
+		if (elgg_get_context() == "register"): ?>
+			<div class="register_form">
+				<?php echo $vars['content'];?>
+			</div>
+		<?php else:
+			echo $vars['content'];
+		endif;
 
-		echo $vars['content'];
-		
 		// @deprecated 1.8
 		if (isset($vars['area1'])) {
 			echo $vars['area1'];
