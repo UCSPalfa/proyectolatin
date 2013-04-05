@@ -192,12 +192,22 @@ img.grayscale {
     margin-right: 10px;
 }
 
+.interests {
+        float: left;
+        color: #3D3D3D;
+        margin-right: 8px;
+        margin-top: 10px;        
+        font-weight: bold;
+        vertical-align: middle;    
+        font-size: 14px;
+}
+
 .group-tags-div .tag {
-    float: left;
-    color: #0054A7;
-    font-size: 13px;
-    margin-right: 8px;
-    margin-top: 10px;
+        float: left;
+        color: #0054A7;
+        font-size: 14px;
+        margin-right: 8px;
+        margin-top: 10px;
 }
 
 .group-description-div {    

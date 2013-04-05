@@ -36,9 +36,11 @@ $options['tag_names'] = 'interests';
 echo "<div class='group-tags-div'>";
 
 $file = elgg_get_site_url() . '_graphics/tag.png';
-$icon = "<img src='$file'>";
+$icon = "<img src='$file' title='" . elgg_echo('community:interests') . "'>";
 
 echo $icon;
+
+echo "<label class='interests' >" . elgg_echo('community:interests') . ":</label>";
 
 foreach ($tags as $currentTag) {
     echo elgg_view('output/url', array('href' => 'search?tag=' . $currentTag, 'text' => $currentTag, 'class' => 'tag'));

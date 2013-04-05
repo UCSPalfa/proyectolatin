@@ -8,6 +8,8 @@
 
 
 $english = array(
+    
+        'community:interests' => 'Interests',
 
 	/**
 	 * Menu items and titles
