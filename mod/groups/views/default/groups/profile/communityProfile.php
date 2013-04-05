@@ -58,6 +58,11 @@ if (trim($description) != '') {
 }
 echo "</div>";
 
+
+
+
+
+
 $membersLimit = 6;
 $relatedCommunitiesLimit = 5;
 $booksLimit = 3;
@@ -158,16 +163,21 @@ $writingGroups = elgg_view('output/url', array(
         'is_trusted' => true,
         'class' => 'allBooks',
     ));
-$file = elgg_get_site_url() . '_graphics/book.png';
+$file = elgg_get_site_url() . '_graphics/note.png';
 $icon = "<img src='$file'>";
 echo $icon . "<label> " . $totalBooks . " " . $writingGroups . " </label>";
 echo "<hr />";
 
 $file = elgg_get_site_url() . '_graphics/institution.png';
 $icon = "<img src='$file'>";
-echo $icon . "<label> $totalInstitutions Institutions participating </label>";
+echo $icon . "<label> $totalInstitutions " . elgg_echo("Institutions:participating") . " </label>";
 
 echo "</div>";
+
+
+echo "<div style='clear:both; min-height: 25px;'></div>";
+
+
 
 echo "<div class='group-members-div'>";
 

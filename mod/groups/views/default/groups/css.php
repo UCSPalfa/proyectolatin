@@ -181,11 +181,12 @@ img.grayscale {
     margin-left: 20px;
     float: left;
     font: 13px/18px 'Lucida Grande', 'Helvetica', 'Arial', sans-serif !important;
-    vertical-align: middle;
+    vertical-align: bottom;
+    width: 100%;    
 }
 
 .group-tags-div img {
-    width: 5%;
+    width: 30px;
     float: left;
     vertical-align: middle;
     margin-right: 10px;
@@ -196,28 +197,30 @@ img.grayscale {
     color: #0054A7;
     font-size: 13px;
     margin-right: 8px;
+    margin-top: 10px;
 }
 
-.group-description-div {
-    // border: 1px solid #000;    
+.group-description-div {    
     margin-bottom: 20px;
-    width: 65%;
+    width: 63%;
     clear:both;
     float: left;
     font: 13px/18px 'Lucida Grande', 'Helvetica', 'Arial', sans-serif !important;
     vertical-align: top;
     text-align: justify;
-    padding-left: 10px;    
+    padding-left: 5px;
 }
 
 .group-stats-div {
-    // border: 1px solid #000;    
     margin-bottom: 20px;
-    max-width: 30%;
-    margin-left: 20px;
+    width: 31%;
+    margin-left: 15px;
     float: left;
     font: 13px/18px 'Lucida Grande', 'Helvetica', 'Arial', sans-serif !important;
     vertical-align: middle;
+    
+    padding-left: 10px;
+    border-left: 1px solid #d2d2d2;
 }
 
 .group-stats-div label {
@@ -229,7 +232,7 @@ img.grayscale {
     margin-left: 5px; 
     display: inline-block; 
     vertical-align: middle;
-    width: 10%;
+    width: 13%;
 }
 
 .group-stats-div hr {
@@ -240,12 +243,14 @@ img.grayscale {
 }
 
 .group-members-div {
-    clear: both;    
+
+    clear: both;
+    
     margin-left: 10px;
     margin-right: 10px;
     
     padding-top: 10px;
-    padding-left: 20px;
+    padding-left: 10px;
     
     border: 1px solid #d2d2d2;
     border-bottom-color: #afafaf;
@@ -253,6 +258,8 @@ img.grayscale {
     -webkit-border-radius: 3px;
     
     text-align: center;
+    
+    
 }
 
 .group-books-div label,
@@ -264,13 +271,12 @@ img.grayscale {
     text-align: left;
 }
 
-.group-members-div img {
+.group-members-div img {        
     clear: both;    
     border: 1px solid #000;
     floar: left;    
-    width: 15%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;    
+    width: 15%;    
+    margin-right: 1%;
 }
 
 .all-members-div {
@@ -355,6 +361,7 @@ img.grayscale {
     border: 1px solid #000;
     floar: left;    
     width: 18%;
+    height: 43%;
     margin-left: 0.5%;
     margin-right: 0.5%;
 }
@@ -364,8 +371,8 @@ img.grayscale {
     border: 1px solid #000;
     floar: left;    
     width: 22%;
-    margin-right: 2%;
-    vertical-align: middle;
+    height: 43%;
+    margin-right: 2%;    
 }
 
 .noContent {
@@ -373,4 +380,8 @@ img.grayscale {
     vertical-align:middle;
     margin-top: 20px;
     text-align: center;
+}
+
+.groupName {
+    font-family: "open sans",arial,sans-serif;
 }

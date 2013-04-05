@@ -128,7 +128,7 @@ if ($totalBooks > $booksLimit) {
 
 $membersLink = elgg_view('output/url', array(
     'href' => 'groups/members/' . $group->guid,
-    'text' => elgg_echo('Members'),
+    'text' => elgg_echo('writingGroups:Members'),
     'is_trusted' => true,
     'class' => 'allMembers',
         ));
@@ -141,20 +141,9 @@ $icon = "<img src='$file'>";
 echo $icon . "<label> " . $totalMembers . " " . $membersLink . " </label>";
 echo "<hr />";
 
-$relatedCommunitiesLink = elgg_view('output/url', array(
-        'href' => 'relatedgroups/owner/' . $vars['entity']->guid,
-        'text' => elgg_echo('relatedgroups'),
-        'is_trusted' => true,
-        'class' => 'allMembers',
-    ));
-$file = elgg_get_site_url() . '_graphics/link.png';
-$icon = "<img src='$file'>";
-echo $icon . "<label> $totalRelatedCommunities " . $relatedCommunitiesLink . "</label>";
-echo "<hr />";
-
 $writingGroups = elgg_view('output/url', array(
         'href' => 'groups/subgroups/list/' . $group->guid,
-        'text' => elgg_echo("au_subgroups"),
+        'text' => elgg_echo("Books"),
         'is_trusted' => true,
         'class' => 'allBooks',
     ));
@@ -165,14 +154,18 @@ echo "<hr />";
 
 $file = elgg_get_site_url() . '_graphics/institution.png';
 $icon = "<img src='$file'>";
-echo $icon . "<label> $totalInstitutions Institutions participating </label>";
+echo $icon . "<label> $totalInstitutions " . elgg_echo("Institutions:collaborating") . " </label>";
 
 echo "</div>";
+
+
+echo "<div style='clear:both; min-height: 25px;'></div>";
+
 
 echo "<div class='group-members-div'>";
 
 
-echo "<div style='text-align: left;'><label>" . elgg_echo("groups:members") . ":</label></div> <br />";
+echo "<div style='text-align: left;'><label>" . elgg_echo("writingGroups:Members") . ":</label></div> <br />";
 
 foreach ($members as $member) {
 

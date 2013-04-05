@@ -11,14 +11,12 @@ echo elgg_view('page/elements/owner_block', $vars);
 // When being on the dashboard context, I want to show the profile picture and the user name as Facebook does
 $currentContext = elgg_get_context();
 
-
-if (elgg_is_logged_in() && strcasecmp($currentContext, 'dashboard') == 0 ) {
+if (elgg_is_logged_in() && $currentContext == 'dashboard' ) {
 	$user = elgg_get_logged_in_user_entity();
 	echo elgg_view_entity_icon($user, 'large', array('href' => $user->getURL())) . "<br /><br /><b>" . elgg_view('output/url', array('href' => $user->getURL(), 'text' => $user->name, 'style' => 'font-size:13px; text-align: center;')) . "</b><br /><br />";
 }
 
-
-if (!elgg_is_logged_in() && $currentContext == 'groups' ) {
+if (!elgg_is_logged_in() && elgg_in_context("groups") && !elgg_in_context("group_profile") && !elgg_in_context("group_members") ) {
     echo elgg_view('page/elements/invitation', $vars);
 }
 

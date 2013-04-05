@@ -328,6 +328,8 @@ function groups_handle_activity_page($guid) {
  * @param int $guid Group entity GUID
  */
 function groups_handle_members_page($guid) {
+    
+    elgg_push_context('group_members');
 
     elgg_set_page_owner_guid($guid);
 
