@@ -78,7 +78,7 @@ if (sizeof($input) > 0) {
 		
 		if(!is_null($value) && ($value !== '')){
 			// only create metadata for non empty values (0 is allowed) to prevent metadata records with empty string values #4858
-			
+
 			if (isset($accesslevel[$shortname])) {
 				$access_id = (int) $accesslevel[$shortname];
 			} else {
@@ -93,8 +93,26 @@ if (sizeof($input) > 0) {
 					create_metadata($owner->guid, $shortname, $interval, 'text', $owner->guid, $access_id, $multiple);
 				}
 			} else {
-				create_metadata($owner->getGUID(), $shortname, $value, 'text', $owner->getGUID(), $access_id);
+					create_metadata($owner->getGUID(), $shortname, $value, 'text', $owner->getGUID(), $access_id);
 			}
+		}
+		//po5i-noelgg: manejar la subida de archivos
+		elseif(file_exists($_FILES[$shortname]['tmp_name']) || is_uploaded_file($_FILES[$shortname]['tmp_name']))
+		{
+			$name = $_FILES[$shortname]['name'];		
+			$filehandler = new ElggFile();
+			$filehandler->owner_guid = $guid; //$owner->getGUID();
+			$filehandler->setFilename($name);
+			$filehandler->open("write");
+			$filehandler->write(get_uploaded_file($shortname));			
+			$filehandler->close();
+			$filehandler->save();
+			$filename = $filehandler->getFilenameOnFilestore();
+
+			$value = $filehandler->getGUID();	//$filename;
+			//print_r($filehandler);
+			//die($value);
+			create_metadata($owner->getGUID(), $shortname, $value, '', $owner->getGUID(), $access_id);
 		}
 	}
 

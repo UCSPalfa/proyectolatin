@@ -24,6 +24,7 @@ extract($vars, EXTR_IF_EXISTS);
 	));
 	?>
 </div>
+
 <?php
 
 $group_profile_fields = elgg_get_config('group');

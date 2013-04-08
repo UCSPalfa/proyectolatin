@@ -119,6 +119,12 @@
 					} else {
 						$target = null;
 					}
+
+					//po5i: file
+					if($field->metadata_type == "file"){						
+						//$value = new ElggFile($value);
+					}
+
 					
 					// build result
 					$field_result .= "<div class='" . $even_odd . "'>";

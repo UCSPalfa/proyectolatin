@@ -38,6 +38,7 @@
 		add_custom_field_type("custom_profile_field_types", 'tags', elgg_echo('profile:field:tags'), $profile_options);
 		add_custom_field_type("custom_profile_field_types", 'location', elgg_echo('profile:field:location'), $location_options);
 		add_custom_field_type("custom_profile_field_types", 'url', elgg_echo('profile:field:url'), $profile_options);
+		add_custom_field_type("custom_profile_field_types", 'file', elgg_echo('profile:field:file'), $profile_options);		//po5i
 		add_custom_field_type("custom_profile_field_types", 'email', elgg_echo('profile:field:email'), $profile_options);
 		add_custom_field_type("custom_profile_field_types", 'date', elgg_echo('profile:field:date'), $profile_options);
 		add_custom_field_type("custom_profile_field_types", 'calendar', elgg_echo('calendar'), $profile_options);
@@ -46,7 +47,7 @@
 		add_custom_field_type("custom_profile_field_types", 'radio', elgg_echo('profile_manager:admin:options:radio'), $radio_options);
 		add_custom_field_type("custom_profile_field_types", 'multiselect', elgg_echo('profile_manager:admin:options:multiselect'), $profile_options);
 		add_custom_field_type("custom_profile_field_types", 'pm_rating', elgg_echo('profile_manager:admin:options:pm_rating'), $pm_rating_options);
-		//add_custom_field_type("custom_profile_field_types", 'pm_file', elgg_echo('profile_manager:admin:options:file'), $file_options);
+		add_custom_field_type("custom_profile_field_types", 'pm_file', elgg_echo('profile_manager:admin:options:file'), $file_options);
 		
 		if(elgg_view_exists("output/datepicker") && elgg_view_exists("input/datepicker")){
 			$datepicker_options = $profile_options;
