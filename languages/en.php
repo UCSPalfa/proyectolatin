@@ -409,6 +409,7 @@ $english = array(
 	'profile:field:longtext' => 'Large text area',
 	'profile:field:tags' => 'Tags',
 	'profile:field:url' => 'Web address',
+	'profile:field:file' => 'Upload file',		//po5i
 	'profile:field:email' => 'Email address',
 	'profile:field:location' => 'Location',
 	'profile:field:date' => 'Date',

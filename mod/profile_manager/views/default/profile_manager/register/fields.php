@@ -133,8 +133,7 @@
 				$fields_result .= elgg_view("input/{$metadata_type}", array(
 														"name" => "custom_profile_fields_" . $field->metadata_name,
 														"value" => $value,
-														"options" => $field->getOptions(),
-														"class" => "non-mandatory"
+														"options" => $field->getOptions()
 														)); 
 				$fields_result .= "</div>";
 			}

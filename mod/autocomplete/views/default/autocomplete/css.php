@@ -43,10 +43,10 @@
 }
 
 .ac_over {
-	background-color: #0A246A;
+	background-color: rgba(82,168,236,.8); /*#0A246A;*/
 	color: white;
 }
 
 .autocomplete {
-	width:300px;
+	/*width:300px;*/
 }

@@ -34,10 +34,10 @@
 			if($entity->description)
 				$description = (strlen($entity->description) > 40) ? substr($entity->description, 0, 40) . '...' : $entity->description;
 			if(empty($str_entities)){
-				 $str_entities .= "{id: '" . $entity->getGUID() . "', name: '" . str_replace("'","\'",$entity->name) . "', description: '" . str_replace("\r\n"," ", str_replace("'","\'",$description)) . "'{$members}}
+				 $str_entities .= "{id: '" . $entity->guid . "', name: '" . str_replace("'","\'",$entity->name) . "', description: '" . str_replace("\r\n"," ", str_replace("'","\'",$description)) . "'{$members}}
                 ";
             }else{
-                $str_entities .= ", {id: '" . $entity->getGUID() . "', name: '" . str_replace("'","\'",$entity->name) . "', description: '" . str_replace("\r\n"," ",str_replace("'","\'",$description)) . "'{$members}}
+                $str_entities .= ", {id: '" . $entity->guid . "', name: '" . str_replace("'","\'",$entity->name) . "', description: '" . str_replace("\r\n"," ",str_replace("'","\'",$description)) . "'{$members}}
                 ";
 			}
 		}
@@ -55,7 +55,6 @@
 ?>
 <!-- include autocomplete -->
 <script language="javascript" type="text/javascript" src="<?php echo $vars['url']; ?>mod/autocomplete/vendors/autocomplete/jquery.autocomplete.pack.js"></script>
-
 
 <?php
 

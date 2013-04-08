@@ -59,24 +59,41 @@ if ($currentContext == 'au_subgroups_creation') {
 ?>
 
 <div>
-    <label><?php echo elgg_echo($iconField); ?></label><br />
+    <label><?php echo elgg_echo($iconField); ?></label>
     <?php echo elgg_view("input/file", array('name' => 'icon')); ?>
 </div>
 
 
 <div>
-    <label><?php echo elgg_echo($nameField); ?></label><br />
+    <label><?php echo elgg_echo($nameField); ?> (*) </label>
+    <!-- po5i -->
     <?php
-    echo elgg_view("input/text", array(
+    /*echo elgg_view("input/text", array(
         'name' => 'name',
         'value' => $vars['entity']->name,
+        //'js' => 'onKeyDown="alert(11)";'    //po5i
+    ));*/
+    $params = array(
+        'types' => 'group',   
+        //'limit' => 10,
+        //'offset' => 0,
+    );
+    $groups = elgg_get_entities($params );
+    echo elgg_view('input/autocomplete', array(
+        'entities' => $groups,
+        'internalname' => 'namehidden',
+        'internalname_text' => 'name',
+        'value_text' => $vars['entity']->name,
     ));
     ?>
-
-
-
-
-
+</div>
+<div><!-- po5i -->
+    <label><?php echo elgg_echo("groups:description"); ?></label>
+    <?php echo elgg_view("input/text", array(
+        'name' => 'description',
+        'value' => $vars['entity']->description
+    ));
+    ?>
 </div>
 
 <?php

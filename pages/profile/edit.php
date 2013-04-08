@@ -21,7 +21,7 @@ elgg_set_context('profile_edit');
 
 $title = elgg_echo('profile:edit');
 
-$content = elgg_view_form('profile/edit', array(), array('entity' => $user));
+$content = elgg_view_form('profile/edit', array('enctype'=>'multipart/form-data'), array('entity' => $user));      //po5i-noelgg:'multipart/form-data'
 
 $params = array(
 	'content' => $content,

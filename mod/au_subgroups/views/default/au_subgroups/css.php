@@ -18,6 +18,8 @@ ul.elgg-menu-owner-block-z-au_subgroups {
 .au_subgroups_group_icon {
   display: inline-block;
   position: relative;
+  width: initial !important;  /* po5i: fix */
+  height: initial !important;  /* po5i: fix */
 }
 
 .au_subgroups_group_icon span.au_subgroup {

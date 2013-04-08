@@ -36,6 +36,7 @@ body{margin:0;padding:0;height:100%;}
 .elgg-page-footer {width: 100%; height: 80px; position: absolute; bottom: 0; left: 0;}
 .elgg-page-footer {color: #fff; background-color: #000000;}
 .elgg-page-footer a:hover {color: #666;}
+/***** ESTILOS AÑADIDOS ******/
 .footer_izq{width: 200px; float: left;}
 .footer_der{margin-left:0; width: 350px; float: right;}
 .footer_izq .titulo, .footer_der .titulo{display: block;letter-spacing: normal;line-height: 1em; font-size: 140%; color: #277fcf; margin-bottom: 10px; padding-top: 10px; margin:0}
@@ -58,3 +59,7 @@ body{margin:0;padding:0;height:100%;}
 .elgg-form-login .elgg-input-password{width: 100%}
 .elgg-menu-general li{display: inline-block; padding: 0; margin:0}
 .elgg-menu-general li a:hover {text-decoration: underline;}
+/*Para formulario de registro */
+.register_form{padding-top: 40px}
+.elgg-form-register #profile_manager_register_left input{padding: 5px}
+.elgg-form-register #profile_manager_register_left .label_captcha{display: block; margin-top: 15px}
