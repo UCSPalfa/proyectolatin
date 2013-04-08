@@ -28,7 +28,7 @@ body{margin:0;padding:0;height:100%;}
 /***** PAGE HEADER ******/
 .elgg-page-header {position: relative; background: #277fcf;}.elgg-page-header > .elgg-inner {position: relative;}
 /***** PAGE BODY LAYOUT ******/
-.elgg-layout {min-height: 360px;}.elgg-layout-one-column {padding: 10px 0;}.elgg-sidebar {position: relative;padding: 20px 0;float: left;width: 181px;min-height: 360px;}.elgg-sidebar-alt {position: relative;float: right;width: 244px;margin-left: 20px;min-height: 360px;}.elgg-main {position: relative;min-height: 360px;}.elgg-layout-two-sidebar > .elgg-body,.elgg-layout-one-sidebar > .elgg-body {border: 1px solid #B3B3B3;border-top: 0;padding: 15px 20px;}.elgg-layout > .elgg-body > .elgg-head {padding-bottom: 3px;margin-bottom: 10px;}
+.elgg-layout {min-height: 360px;}.elgg-layout-one-column {padding: 10px 0;}.elgg-sidebar {margin-right: 15px;position: relative;padding: 20px 0;float: left;width: 181px;min-height: 360px;}.elgg-sidebar-alt {position: relative;float: right;width: 244px;margin-left: 20px;min-height: 360px;}.elgg-main {position: relative;min-height: 360px;}.elgg-layout-two-sidebar > .elgg-body,.elgg-layout-one-sidebar > .elgg-body {border: 1px solid #B3B3B3;border-top: 0;padding: 15px 20px;}.elgg-layout > .elgg-body > .elgg-head {padding-bottom: 3px;margin-bottom: 10px;}
 .elgg-sidebar-right {position: relative; padding-top: 20px; float: right; width: 190px; min-height: 360px;}
 /***** PAGE FOOTER ******/
 .elgg-page-default .elgg-page-footer > .elgg-inner {width: 981px; margin:0 auto;}
@@ -36,6 +36,7 @@ body{margin:0;padding:0;height:100%;}
 .elgg-page-footer {width: 100%; height: 80px; position: absolute; bottom: 0; left: 0;}
 .elgg-page-footer {color: #fff; background-color: #000000;}
 .elgg-page-footer a:hover {color: #666;}
+/***** ESTILOS AÑADIDOS ******/
 .footer_izq{width: 200px; float: left;}
 .footer_der{margin-left:0; width: 350px; float: right;}
 .footer_izq .titulo, .footer_der .titulo{display: block;letter-spacing: normal;line-height: 1em; font-size: 140%; color: #277fcf; margin-bottom: 10px; padding-top: 10px; margin:0}
@@ -58,3 +59,7 @@ body{margin:0;padding:0;height:100%;}
 .elgg-form-login .elgg-input-password{width: 100%}
 .elgg-menu-general li{display: inline-block; padding: 0; margin:0}
 .elgg-menu-general li a:hover {text-decoration: underline;}
+/*Para formulario de registro */
+.register_form{padding-top: 40px}
+.elgg-form-register #profile_manager_register_left input{padding: 5px}
+.elgg-form-register #profile_manager_register_left .label_captcha{display: block; margin-top: 15px}

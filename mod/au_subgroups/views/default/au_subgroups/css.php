@@ -89,6 +89,11 @@ ul.elgg-menu-owner-block-z-au_subgroups {
   width: <?php echo $value['w']; ?>px;
   height: <?php echo $value['h']; ?>px;
   overflow: hidden;
+  
+}
+
+.au_subgroups_group_icon-small {
+  border: 1px solid #555;
 }
 
 .au_subgroup_icon-<?php echo $size; ?> {

@@ -8,6 +8,8 @@
 
 
 $english = array(
+    
+        'community:interests' => 'Interests',
 
 	/**
 	 * Menu items and titles
@@ -45,9 +47,16 @@ $english = array(
 	'groups:my_status:group_member' => 'You are in this community',
 	'groups:subscribed' => 'Community notifications on',
 	'groups:unsubscribed' => 'Community notifications off',
+    
+        'community:no:books' => 'This community does not have books yet',
+        'community:no:members' => 'This community does not have members yet',
+        'community:no:related' => 'This community is not related with other ones yet',
+        'community:no:description' => 'This community does not have a description yet',
 
 	'groups:members:title' => 'Members of %s',
 	'groups:members:more' => "View all members",
+	'groups:related:more' => "View all related communities",
+	'groups:book:more' => "View all books",
 	'groups:membership' => "Community membership permissions",
 	'groups:access' => "Access permissions",
 	'groups:owner' => "Owner",
@@ -70,8 +79,8 @@ $english = array(
 	'groups:joinrequest' => 'Request membership',
 	'groups:join' => 'Join community',
 	'groups:leave' => 'Leave community',
-	'groups:invite' => 'Invite friends',
-	'groups:invite:title' => 'Invite friends to this community',
+	'groups:invite' => 'Invite people',
+	'groups:invite:title' => 'Invite people to this community',
 	'groups:inviteto' => "Invite friends to '%s'",
 	'groups:link' => 'Link to communities',
 	'groups:links' => 'Linked to',
@@ -82,6 +91,7 @@ $english = array(
 	'groups:nofriendsatall' => 'You have no friends to invite!',
 	'groups:viagroups' => "via communities",
 	'groups:group' => "Community",
+	'groups:search' => "Search communities by tag",
 	'groups:search:tags' => "tag",
 	'groups:search:title' => "Search for communities tagged with '%s'",
 	'groups:search:none' => "No matching communities were found",

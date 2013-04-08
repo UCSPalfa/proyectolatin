@@ -140,7 +140,7 @@ function au_subgroups_get_parent_group($group) {
         'limit' => 1,
         'relationship' => AU_SUBGROUPS_RELATIONSHIP,
         'relationship_guid' => $group->guid,
-            ));
+    ));
 
     if (is_array($parent)) {
         return $parent[0];
@@ -193,6 +193,9 @@ function hasSubgroups($group) {
 }
 
 function au_subgroups_handle_mine_page() {
+
+
+
     $display_subgroups = elgg_get_plugin_setting('display_subgroups', 'au_subgroups');
     $display_alphabetically = elgg_get_plugin_setting('display_alphabetically', 'au_subgroups');
     $db_prefix = elgg_get_config('dbprefix');

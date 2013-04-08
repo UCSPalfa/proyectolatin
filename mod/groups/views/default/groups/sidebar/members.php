@@ -8,6 +8,8 @@
  * @uses $vars['limit']  The number of members to display
  */
 
+
+
 $limit = elgg_extract('limit', $vars, 14);
 
 $all_link = elgg_view('output/url', array(
@@ -15,6 +17,7 @@ $all_link = elgg_view('output/url', array(
 	'text' => elgg_echo('groups:members:more'),
 	'is_trusted' => true,
 ));
+
 
 $body = elgg_list_entities_from_relationship(array(
 	'relationship' => 'member',

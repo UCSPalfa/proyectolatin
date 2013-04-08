@@ -9,7 +9,7 @@
 
 if (!isset($vars['entity']) || !$vars['entity']) {
 	echo elgg_echo('groups:notfound');
-	return true;
+	return true;    
 }
 
 echo elgg_view_module('info', 'Info', elgg_view('groups/profile/fields', $vars));

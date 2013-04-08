@@ -79,6 +79,7 @@ function cool_theme_init() {
             elgg_unextend_view('page/elements/header', 'search/header');
         }
     }
+    
 }
 
 function friends_hack_pagesetup_handler() {
@@ -171,7 +172,7 @@ function facebook_theme_pagesetup_handler() {
         if ($owner instanceof ElggUser) {
 
             // Friends menu item
-            elgg_register_menu_item('page', array(
+            /*elgg_register_menu_item('page', array(
                 'name' => 'friends',
                 'text' => elgg_view_icon('friends') . elgg_echo('friends'),
                 'href' => "/friends/$owner->username",
@@ -188,7 +189,7 @@ function facebook_theme_pagesetup_handler() {
                     'priority' => 23,
                 );
                 elgg_register_menu_item('page', $params);
-            }
+            }*/
 
             if (elgg_is_active_plugin('groups')) {
 
@@ -427,7 +428,8 @@ function facebook_theme_pagesetup_handler() {
             'href' => '/',
             'name' => 'logo',
             'priority' => 1,
-            'text' => "<h1 id=\"facebook-topbar-logo\">$site->name</h1>",
+//            'text' => "<h1 id=\"facebook-topbar-logo\">$site->name</h1>",
+	    'text' => "<div id=\"facebook-topbar-logo\"></div>",
         ));
 
         elgg_register_menu_item('topbar', array(
@@ -629,7 +631,7 @@ function facebook_theme_group_profile_fields($hook, $type, $fields, $params) {
     );
 }
 
-function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) {
+function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) {        
 
 
     $owner = elgg_get_page_owner_entity();
@@ -764,19 +766,21 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
                     ));
         }
         
-        $text = 'pages:group';
-        if ($isSubGroup) {
-            $text = 'pages:writinggroup';
-        }
-
-        if ($params['entity']->pages_enable != "no") {
-            $items['pages'] = ElggMenuItem::factory(array(
-                        'name' => 'pages',
-                        'text' => elgg_view_icon('list') . elgg_echo($text),
-                        'href' => "pages/group/{$params['entity']->guid}/all",
-                        'priority' => 6,
-                    ));
-        }
+//        $text = 'pages:group';
+//        if ($isSubGroup) {
+//            $text = 'pages:writinggroup';
+//        }
+//
+//        if ($params['entity']->pages_enable != "no") {
+//            $items['pages'] = ElggMenuItem::factory(array(
+//                        'name' => 'pages',
+//                        'text' => elgg_view_icon('list') . elgg_echo($text),
+//                        'href' => "pages/group/{$params['entity']->guid}/all",
+//                        'priority' => 6,
+//                    ));
+//        }
+        
+        
         
         $text = 'bookmarks:group';
         if ($isSubGroup) {
@@ -792,19 +796,19 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
                     ));
         }
 
-        $text = 'blog:group';
-        if ($isSubGroup) {
-            $text = 'blog:writinggroup';
-        }
-
-        if ($params['entity']->blogs_enable != "no") {
-            $items['blog'] = ElggMenuItem::factory(array(
-                        'name' => 'blog',
-                        'text' => elgg_view_icon('speech-bubble-alt') . elgg_echo($text),
-                        'href' => "blog/group/{$params['entity']->guid}/all",
-                        'priority' => 8,
-                    ));
-        }
+//        $text = 'blog:group';
+//        if ($isSubGroup) {
+//            $text = 'blog:writinggroup';
+//        }
+//
+//        if ($params['entity']->blogs_enable != "no") {
+//            $items['blog'] = ElggMenuItem::factory(array(
+//                        'name' => 'blog',
+//                        'text' => elgg_view_icon('speech-bubble-alt') . elgg_echo($text),
+//                        'href' => "blog/group/{$params['entity']->guid}/all",
+//                        'priority' => 8,
+//                    ));
+//        }
         
         if (!$isSubGroup) {
              $items['writingGroups'] = ElggMenuItem::factory(array(

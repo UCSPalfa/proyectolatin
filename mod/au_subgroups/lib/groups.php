@@ -7,7 +7,7 @@
 /**
  * List all groups
  */
-function groups_handle_all_page() {
+function groups_handle_all_page() {        
 	
     $display_subgroups = elgg_get_plugin_setting('display_subgroups', 'au_subgroups');
     $db_prefix = elgg_get_config('dbprefix');
@@ -328,6 +328,8 @@ function groups_handle_activity_page($guid) {
  * @param int $guid Group entity GUID
  */
 function groups_handle_members_page($guid) {
+    
+    elgg_push_context('group_members');
 
     elgg_set_page_owner_guid($guid);
 
@@ -448,8 +450,11 @@ function groups_handle_invite_page($guid) {
     elgg_set_page_owner_guid($guid);
 
     $group = get_entity($guid);
-
-    $title = elgg_echo('groups:invite:title');
+    if (au_subgroups_get_parent_group($group))
+    	$title = elgg_echo('wgroups:invite:title');
+    else
+    	 $title = elgg_echo('groups:invite:title');
+   
 
     elgg_push_breadcrumb($group->name, $group->getURL());
     elgg_push_breadcrumb(elgg_echo('groups:invite'));

@@ -12,7 +12,7 @@ $english = array(
 	'email:validate:subject' => "%s please confirm your email address for %s!",
 	'email:validate:body' => "%s,
 
-Before you can start you using %s, you must confirm your email address.
+Before you can start using %s, you must confirm your email address.
 
 Please confirm your email address by clicking on the link below:
 
