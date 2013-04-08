@@ -35,14 +35,14 @@ if (!isset($CONFIG)) {
  * @global string $CONFIG->dbuser
  * @name $CONFIG->dbuser
  */
-$CONFIG->dbuser = 'user_latin';
+$CONFIG->dbuser = 'root';
 
 /**
  * The database password
  *
  * @global string $CONFIG->dbpass
  */
-$CONFIG->dbpass = 'latin123';
+$CONFIG->dbpass = 'root';
 
 /**
  * The database name
