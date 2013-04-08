@@ -683,7 +683,23 @@ text-align: center;
 
 .groupSearchBar {
     width: 97%;
-    margin-left: 10px;|
+    margin-left: 10px;
     margin-top: -10px;
     margin-bottom: 10px;
+}
+
+
+.float-alt {                
+    /*float: left;*/
+    float: none;
+    display: inline-block;
+}
+
+.elgg-main label {
+  float:left;
+  width:15%;
+  margin-right:0.5em;
+  padding-top:1.2em;
+  text-align:right;
+  font-weight:normal;
 }
