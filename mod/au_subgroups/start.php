@@ -12,11 +12,20 @@ elgg_register_event_handler('init', 'system', 'au_subgroups_init');
 
 
 function au_subgroups_init() {
+    
+    elgg_register_simplecache_view('js/groups/css-pop');
+    $url = elgg_get_simplecache_url('js', 'groups/css-pop');
+    elgg_register_js('groups', $url);
+    
   // add in our own css
   elgg_extend_view('css/elgg', 'au_subgroups/css');
   elgg_extend_view('forms/groups/edit', 'forms/au_subgroups/edit');
   elgg_extend_view('navigation/breadcrumbs', 'au_subgroups/breadcrumb_override', 1);
+  
   elgg_extend_view('group/elements/summary', 'au_subgroups/group/elements/summary');
+  
+  
+  
   elgg_extend_view('groups/tool_latest', 'au_subgroups/group_module');
   elgg_extend_view('groups/sidebar/members', 'au_subgroups/sidebar/subgroups');
   

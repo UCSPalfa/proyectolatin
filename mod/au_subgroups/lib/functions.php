@@ -166,6 +166,89 @@ function au_subgroups_get_subgroups($group, $limit = 10, $sortbytitle = false) {
     return elgg_get_entities_from_relationship($options);
 }
 
+// TODO: This function should be implemented
+function getBooks ($community) {
+    return array();
+}
+
+function getMembers($community) {
+    $members = elgg_get_entities_from_relationship(array(
+        'relationship' => 'member',
+        'relationship_guid' => $community->guid,
+        'inverse_relationship' => true,
+        'types' => 'user',
+        'limit' => 0,
+    ));
+    return $members;
+}
+
+function getCommunities ($user) {
+    $allGroups = elgg_get_entities_from_relationship(array(
+        'relationship' => 'member',
+        'relationship_guid' => $user->guid,
+        'inverse_relationship' => false,
+        'types' => 'group',
+        'limit' => 0,
+    ));
+    $communities = array();
+    foreach ($allGroups as $group) {
+        if (!isSubgroup($group)) {
+            array_push($communities, $group);
+        }
+    }
+    return $communities;    
+}
+
+function getUserWritingGroups ($user) {
+    $allGroups = elgg_get_entities_from_relationship(array(
+        'relationship' => 'member',
+        'relationship_guid' => $user->guid,
+        'inverse_relationship' => false,
+        'types' => 'group',
+        'limit' => 0,
+    ));
+    $writingGroups = array();
+    foreach ($allGroups as $group) {
+        if (isSubgroup($group)) {
+            array_push($writingGroups, $group);
+        }
+    }
+    return $writingGroups;    
+}
+
+function getInstitutions($community) {
+    $members =  getMembers($community);
+    $institutions = array();
+    foreach ($members as $member) {
+        $institution = $member->Institution;
+        if ($institution != '' && !array_search($institution, $institutions)) {
+            array_push($institutions, $institution);
+        }
+    }
+    return $institutions;
+}
+
+function getWritingGroups($community) {
+    $writingGroups = elgg_get_entities_from_relationship(array(
+        'types' => array('group'),
+        'relationship' => AU_SUBGROUPS_RELATIONSHIP,
+        'relationship_guid' => $community->guid,
+        'inverse_relationship' => true,
+        'limit' => 0,
+    ));
+    return $writingGroups;
+}
+
+function getRelatedCommunities($community) {
+    $relatedCommunities = elgg_get_entities_from_relationship(array(
+        'relationship' => 'related',
+        'relationship_guid' => $community->guid,
+        'types' => 'group',
+        'limit' => 0,
+    ));
+    return $relatedCommunities;
+}
+
 function isSubgroup($group) {
     $options = array(
         'types' => array('group'),

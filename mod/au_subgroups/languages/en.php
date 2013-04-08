@@ -2,6 +2,8 @@
 
 $english = array(
    
+    
+    'latin:close' => 'Close',
     'Books' => 'Books',
     'Members' => 'Members',
     'Institutions:participating' => 'Institutions participating',

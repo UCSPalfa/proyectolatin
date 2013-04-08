@@ -3,10 +3,10 @@
  * Group tag-based search form body
  */
 
-$tag_string = elgg_echo('groups:search');
+$tag_string = elgg_echo('groups:search:all');
 
 $params = array(
-	'name' => 'tag',
+	'name' => 'q',
 	'class' => 'elgg-input-search mbm searchInput',
 	'value' => $tag_string,
 	'onclick' => "if (this.value=='$tag_string') { this.value='' }",

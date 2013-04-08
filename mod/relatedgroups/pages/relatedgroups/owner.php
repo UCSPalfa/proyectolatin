@@ -27,7 +27,10 @@ $content = elgg_list_entities_from_relationship(array(
 	'relationship_guid' => $owner->guid,
 	'types' => 'group',
 	'limit' => 10,
-	'full_view' => FALSE,
+	'full_view' => false,
+        'rendering_mode' => 'as_google_plus',
+        'list_type' => 'gallery',
+        
 ));
 if (!$content) {
 	$content = elgg_echo("relatedgroups:none");

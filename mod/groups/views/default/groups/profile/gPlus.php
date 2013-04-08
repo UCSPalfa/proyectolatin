@@ -20,10 +20,13 @@ if ($isSubgroup) {
 }
 
 ?>
-	<div class="groupIcon">
+	<div class="groupIcon" title="<?php echo $group->name; ?>">
 
-		<div class="groupName">
+            
+		<div class="groupNameContainer">
+                    <div class="groupName">
 			<?php echo $group->name; ?>
+                    </div>
 		</div>
 
 		<div class="iconBorder">

@@ -11,6 +11,7 @@ elgg_register_event_handler('init', 'system', 'relatedgroups_init');
  * Related groups plugin initialization functions.
  */
 function relatedgroups_init() {
+    
 	// register a library of helper functions
 	elgg_register_library('elgg:relatedgroups', elgg_get_plugins_path() . 'relatedgroups/lib/relatedgroups.php');
 

@@ -6,14 +6,14 @@
  */
 
 $tabs = array(
-	'newest' => array(
-		'text' => elgg_echo('groups:newest'),
-		'href' => 'groups/all?filter=newest',
-		'priority' => 200,
-	),
 	'popular' => array(
 		'text' => elgg_echo('groups:popular'),
 		'href' => 'groups/all?filter=popular',
+		'priority' => 200,
+	),
+        'newest' => array(
+		'text' => elgg_echo('groups:newest'),
+		'href' => 'groups/all?filter=newest',
 		'priority' => 300,
 	),
 	'discussion' => array(

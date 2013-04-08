@@ -7,20 +7,39 @@
 /**
  * List all groups
  */
-function groups_handle_all_page() {        
-	
+function groups_handle_all_page() {
+
     $display_subgroups = elgg_get_plugin_setting('display_subgroups', 'au_subgroups');
     $db_prefix = elgg_get_config('dbprefix');
 
     // all groups doesn't get link to self
     elgg_pop_breadcrumb();
     elgg_push_breadcrumb(elgg_echo('groups'));
+        
+    $title = elgg_echo('latin:communities');
 
     if (elgg_get_plugin_setting('limited_groups', 'groups') != 'yes' || elgg_is_admin_logged_in()) {
         elgg_register_title_button();
     }
+    
+    if (!elgg_is_logged_in()) {
+        
+        $content .= "<div class='groupSearchBar'>";
+            $content .= elgg_view_form('groups/find', array(
+            'action' => elgg_get_site_url() . 'groups/search',
+            'method' => 'get',
+            'disable_security' => true, ));
+        $content .= "</div>";
+        $content .= "<hr style='margin-bottom: 10px;' />";
+        
+    }
 
-    $selected_tab = get_input('filter', 'newest');
+    $selected_tab = get_input('filter', 'popular');
+    $filter = "<div style='margin-bottom: 10px;'>" . elgg_view('groups/group_sort_menu', array('selected' => $selected_tab)) . "</div>";
+    
+    if (!elgg_is_logged_in()) {
+        $content .= $filter;
+    }
 
     switch ($selected_tab) {
         case 'popular':
@@ -38,14 +57,14 @@ function groups_handle_all_page() {
                 $options['wheres'] = array("NOT EXISTS ( SELECT 1 FROM {$db_prefix}entity_relationships WHERE guid_one = e.guid AND relationship = '" . AU_SUBGROUPS_RELATIONSHIP . "' )");
             }
 
-            $content = elgg_list_entities_from_relationship_count($options);
+            $content .= elgg_list_entities_from_relationship_count($options);
 
             if (!$content) {
-                $content = elgg_echo('groups:none');
+                $content .= "<div class='center' style='padding-top: 30px;'> " . elgg_echo('groups:none') . " </div>";        
             }
             break;
         case 'discussion':
-            $content = elgg_list_entities(array(
+            $content .= elgg_list_entities(array(
                 'type' => 'object',
                 'subtype' => 'groupforumtopic',
                 'order_by' => 'e.last_action desc',
@@ -53,9 +72,9 @@ function groups_handle_all_page() {
                 'rendering_mode' => 'as_google_plus',
                 'list_type' => 'gallery',
                 'limit' => 20,
-                    ));
+            ));
             if (!$content) {
-                $content = elgg_echo('discussion:none');
+                $content .= "<div class='center' style='padding-top: 30px;'> " . elgg_echo('discussion:none') . " </div>";
             }
             break;
         case 'newest':
@@ -72,57 +91,182 @@ function groups_handle_all_page() {
                 $options['wheres'] = array("NOT EXISTS ( SELECT 1 FROM {$db_prefix}entity_relationships WHERE guid_one = e.guid AND relationship = '" . AU_SUBGROUPS_RELATIONSHIP . "' )");
             }
 
-            $content = elgg_list_entities($options);
+            $content .= elgg_list_entities($options);
             if (!$content) {
-                $content = elgg_echo('groups:none');
+                $content .= "<div class='center' style='padding-top: 30px;'> " . elgg_echo('groups:none') . " </div>";
             }
             break;
     }
 
-    $filter = elgg_view('groups/group_sort_menu', array('selected' => $selected_tab));
-
-    $sidebar = elgg_view('groups/sidebar/find');
-    $sidebar .= elgg_view('groups/sidebar/featured');
+    
 
     $params = array(
         'content' => $content,
-        'sidebar-alt' => $sidebar,
-        'filter' => $filter,
-    );
-    $body = elgg_view_layout('content', $params);
+        'title' => $title,
+    );        
+    
+    $body = elgg_view_layout('content', $params);        
 
     echo elgg_view_page(elgg_echo('groups:all'), $body);
-    
-
 }
 
 function groups_search_page() {
+    
     elgg_push_breadcrumb(elgg_echo('search'));
 
-    $tag = get_input("tag");
-    $title = elgg_echo('groups:search:title', array($tag));
+    $tag = get_input("q");
+    
+    $title .= elgg_echo('groups:search:all:title', array($tag));
+    
+    $content .= "<div class='groupSearchBar' >";
+        $content .= elgg_view_form('groups/find', array(
+        'action' => elgg_get_site_url() . 'groups/search',
+        'method' => 'get',
+        'disable_security' => true, ));
+    $content .= "</div>";
+    $content .= "<hr style='margin-bottom: 20px;' />";
+    
+    $type = 'group';
 
-    // groups plugin saves tags as "interests" - see groups_fields_setup() in start.php
+    // set up search params
     $params = array(
-        'metadata_name' => 'interests',
-        'metadata_value' => $tag,
-        'types' => 'group',
-        'full_view' => FALSE,
-    );
-    $content = elgg_list_entities_from_metadata($params);
+        'query' => $tag,
+        'search_type' => 'entity',
+        'type' => $type,
+        'subtype' => '',
+        'pagination' => true
+    );    
+    
+    $current_params = $params;
+    $current_params['search_type'] = 'entities';
+    $current_params['type'] = $type;
+    $current_params['subtype'] = ELGG_ENTITIES_NO_VALUE;
+    $results = elgg_trigger_plugin_hook('search', $type, $current_params, array());
+
+    $results = $results['entities'];
+    
+    if (!count($results)) {
+        $content .= "<div class='center' style='padding-top: 30px;'> " . elgg_echo('notfound') . " </div>";        
+    }
+
+    foreach ($results as $currentCommunity) {
+        
+        if (isSubgroup($currentCommunity)) {
+            continue;
+        }
+
+//        
+//        echo "<br />";
+//        echo strlen($currentGroup->getVolatileData('search_matched_description'));
+//        
+//        echo "<br />";
+//        echo $currentGroup->getVolatileData('search_matched_description');
+//        
+//        
+//        echo "<br />";
+//        echo print_r($currentGroup);
+//        echo "<br />";
+//        echo "<br />";
+//        
+
+        $file = $currentCommunity->getIconURL();
+        $icon = "<img src='$file'>";
+        $theUrl = $currentCommunity->getURL();
+                
+        $name = $currentCommunity->getVolatileData('search_matched_title');
+        
+        $description = $currentCommunity->getVolatileData('search_matched_description');
+
+        $members = getMembers($currentCommunity);
+        $totalMembers = count($members);
+
+        $relatedCommunities = getRelatedCommunities($currentCommunity);
+        $totalRelatedCommunities = count($relatedCommunities);
+
+        $writingGroups = getWritingGroups($currentCommunity);
+        $totalWritingGroups = count($writingGroups);
+
+        $content .= "<div class='group-found-div'>";
+
+        $content .= "<div class='groupFoundIcon'>";
+
+        $content .= elgg_view('output/url', array(
+            'href' => $theUrl,
+            'text' => $icon,
+            'title' => $name,
+            'is_trusted' => true,));
+
+        $content .= "</div>";
+
+
+        $content .= "<div class='groupInformation'>";
+
+        $content .= "<div class='groupFoundName'>";
+
+        $content .= elgg_view('output/url', array(
+            'href' => $theUrl,
+            'text' => $name,
+            'is_trusted' => true,));
+
+        $content .= "</div>";
+
+        $content .= "<div class='groupFoundDescription'> <p>" . $description . "</p></div>";
+
+
+        $content .= "</div>";
+
+
+
+
+
+
+
+
+
+
+
+        $content .= "<div class='group-stats-div' style='text-align: left; margin-bottom: 10px;'>";
+
+        $file = elgg_get_site_url() . '_graphics/communities.png';
+        $icon = "<img src='$file'>";
+        $content .= $icon . "<label> " . $totalMembers . " " . elgg_echo('Members') . " </label>";
+        $content .= "<hr />";
+        
+        $file = elgg_get_site_url() . '_graphics/link.png';
+        $icon = "<img src='$file'>";
+        $content .= $icon . "<label> $totalRelatedCommunities " . elgg_echo('relatedgroups') . "</label>";
+        $content .= "<hr />";
+        
+        $file = elgg_get_site_url() . '_graphics/note.png';
+        $icon = "<img src='$file'>";
+        $content .= $icon . "<label> " . $totalWritingGroups . " " . elgg_echo("au_subgroups") . " </label>";
+
+        $content .= "</div>";
+
+
+
+
+
+
+
+
+
+
+
+        $content .= "</div>";
+    }
+
+
     if (!$content) {
         $content = elgg_echo('groups:search:none');
     }
 
-    $sidebar = elgg_view('groups/sidebar/find');
-    $sidebar .= elgg_view('groups/sidebar/featured');
-
     $params = array(
         'content' => $content,
-        'sidebar' => $sidebar,
         'filter' => false,
         'title' => $title,
     );
+
     $body = elgg_view_layout('content', $params);
 
     echo elgg_view_page($title, $body);
@@ -209,31 +353,29 @@ function groups_handle_invitations_page() {
     echo elgg_view_page($title, $body);
 }
 
-
-
 /**
  * Group invitations for a user
  */
 function subgroups_handle_invitations_page() {
-	gatekeeper();
+    gatekeeper();
 
-	$user = elgg_get_page_owner_entity();
+    $user = elgg_get_page_owner_entity();
 
-	$title = elgg_echo('au_subgroups:invitations');
-	elgg_push_breadcrumb($title);
+    $title = elgg_echo('au_subgroups:invitations');
+    elgg_push_breadcrumb($title);
 
-	// @todo temporary workaround for exts #287.
-	$invitations = groups_get_invited_wgroups(elgg_get_logged_in_user_guid());
-	$content = elgg_view('groups/invitationrequests', array('invitations' => $invitations));
+    // @todo temporary workaround for exts #287.
+    $invitations = groups_get_invited_wgroups(elgg_get_logged_in_user_guid());
+    $content = elgg_view('groups/invitationrequests', array('invitations' => $invitations));
 
-	$params = array(
-			'content' => $content,
-			'title' => $title,
-			'filter' => '',
-	);
-	$body = elgg_view_layout('content', $params);
+    $params = array(
+        'content' => $content,
+        'title' => $title,
+        'filter' => '',
+    );
+    $body = elgg_view_layout('content', $params);
 
-	echo elgg_view_page($title, $body);
+    echo elgg_view_page($title, $body);
 }
 
 /**
@@ -249,7 +391,7 @@ function groups_handle_profile_page($guid) {
     $autofeed = true;
 
     elgg_push_context('group_profile');
-    
+
     $group = get_entity($guid);
     if (!$group) {
         forward('groups/all');
@@ -307,7 +449,7 @@ function groups_handle_activity_page($guid) {
     $content = elgg_list_river(array(
         'joins' => array("JOIN {$db_prefix}entities e ON e.guid = rv.object_guid"),
         'wheres' => array("e.container_guid = $guid")
-            ));
+    ));
     if (!$content) {
         $content = '<p>' . elgg_echo('groups:activity:none') . '</p>';
     }
@@ -328,7 +470,7 @@ function groups_handle_activity_page($guid) {
  * @param int $guid Group entity GUID
  */
 function groups_handle_members_page($guid) {
-    
+
     elgg_push_context('group_members');
 
     elgg_set_page_owner_guid($guid);
@@ -344,31 +486,62 @@ function groups_handle_members_page($guid) {
 
     elgg_push_breadcrumb($group->name, $group->getURL());
     if (au_subgroups_get_parent_group($group))
-    	elgg_push_breadcrumb(elgg_echo('wgroups:members'));
+        elgg_push_breadcrumb(elgg_echo('wgroups:members'));
     else
-    	elgg_push_breadcrumb(elgg_echo('groups:members'));
-    
-    $content ="";
+        elgg_push_breadcrumb(elgg_echo('groups:members'));
+
+    $content = "";
     ////// only if is a writing group
-    if ($group->canEdit() && au_subgroups_get_parent_group($group)){
-    	$form_vars = array('id' => 'add_members_group',);
-    	$body_vars = group_members_prepare_form_vars($group);
-    
-    	$content .= elgg_view_form('groups/membership/add', $form_vars, $body_vars);
+    if ($group->canEdit() && au_subgroups_get_parent_group($group)) {
+        $form_vars = array('id' => 'add_members_group',);
+        $body_vars = group_members_prepare_form_vars($group);
+
+        $content .= elgg_view_form('groups/membership/add', $form_vars, $body_vars);
     }
     /////
-    
 
-    $content .= elgg_list_entities_from_relationship(array(
+
+    $members = elgg_get_entities_from_relationship(array(
         'relationship' => 'member',
         'relationship_guid' => $group->guid,
         'inverse_relationship' => true,
         'types' => 'user',
+        'limit' => 0,
         'list_type' => 'gallery',
-        'size' => 'medium',
-        'limit' => 20,
-            ));
-    
+        'gallery_class' => 'members',
+        'pagination' => false
+    ));
+
+    $content .= "<div style='padding-left: 4%; padding-right: 2%;'>";
+
+    foreach ($members as $member) {
+
+        $categorized_fields = profile_manager_get_categorized_fields($member);
+        $cats = $categorized_fields['categories'];
+        $fields = $categorized_fields['fields'];
+
+        $file = $member->getIconURL();
+        $icon = "<img src='$file' class='communityMemberIcon'>";
+
+        $content .= elgg_view('output/url', array(
+            'href' => $member->getURL(),
+            'text' => $icon,
+            'title' => $member->name,
+            'is_trusted' => true,));
+    }
+
+    $content .= "</div>";
+
+//    $content .= elgg_list_entities_from_relationship(array(
+//        'relationship' => 'member',
+//        'relationship_guid' => $group->guid,
+//        'inverse_relationship' => true,
+//        'types' => 'user',
+//        'list_type' => 'gallery',
+//        'size' => 'medium',
+//        'limit' => 20,
+//            ));
+
 
     $params = array(
         'content' => $content,
@@ -379,65 +552,63 @@ function groups_handle_members_page($guid) {
 
     echo elgg_view_page($title, $body);
 }
+
 function group_members_prepare_form_vars($group) {
-	$parent = au_subgroups_get_parent_group($group);
-	$com_members = $parent->getMembers(0);
-	$members = get_group_roles($group);
-	$no_members = array_obj_diff($com_members, $members);
+    $parent = au_subgroups_get_parent_group($group);
+    $com_members = $parent->getMembers(0);
+    $members = get_group_roles($group);
+    $no_members = array_obj_diff($com_members, $members);
 
-	// input names => defaults
-	$values = array(
-			'entity' => $group,
-			'candidates' => $no_members
-	);
+    // input names => defaults
+    $values = array(
+        'entity' => $group,
+        'candidates' => $no_members
+    );
 
-	return $values;
+    return $values;
 }
 
 function group_members_prepare_combo_vars($candidates) {
-	$values = array('' => elgg_echo('group_roles:selectone'));
-	foreach($candidates as $candidate){
-		$values[$candidate->guid] = $candidate->name." - ".$candidate->username;
-	}
-	return $values;
+    $values = array('' => elgg_echo('group_roles:selectone'));
+    foreach ($candidates as $candidate) {
+        $values[$candidate->guid] = $candidate->name . " - " . $candidate->username;
+    }
+    return $values;
 }
 
+function get_group_roles($group) {
+    if ($group instanceof ElggGroup) {
+        $members_roles = elgg_get_entities_from_relationship(
+                array('types' => 'user', 'limit' => 0, 'relationship_guid' => $group->guid, 'relationship' => 'member', 'inverse_relationship' => true));
+        $group_owner = get_entity($group->getOwnerGUID());
 
-
-function get_group_roles($group){
-	if($group instanceof ElggGroup){
-		$members_roles = elgg_get_entities_from_relationship(
-				array('types'=>'user', 'limit'=>0, 'relationship_guid'=>$group->guid, 'relationship'=>'member', 'inverse_relationship'=>true));
-		$group_owner = get_entity($group->getOwnerGUID());
-
-		if(!in_array($group_owner, $members_roles)){
-			$members_roles[$group_owner->guid] = $group_owner;
-		}
-		return $members_roles;
-	}
-	else {
-		return null;
-	}
-}
-function array_obj_diff ($array1, $array2) {
-
-	foreach ($array1 as $key => $value) {
-		$array1[$key] = serialize ($value);
-	}
-
-	foreach ($array2 as $key => $value) {
-		$array2[$key] = serialize ($value);
-	}
-
-	$array_diff = array_diff ($array1, $array2);
-
-	foreach ($array_diff as $key => $value) {
-		$array_diff[$key] = unserialize ($value);
-	}
-
-	return $array_diff;
+        if (!in_array($group_owner, $members_roles)) {
+            $members_roles[$group_owner->guid] = $group_owner;
+        }
+        return $members_roles;
+    } else {
+        return null;
+    }
 }
 
+function array_obj_diff($array1, $array2) {
+
+    foreach ($array1 as $key => $value) {
+        $array1[$key] = serialize($value);
+    }
+
+    foreach ($array2 as $key => $value) {
+        $array2[$key] = serialize($value);
+    }
+
+    $array_diff = array_diff($array1, $array2);
+
+    foreach ($array_diff as $key => $value) {
+        $array_diff[$key] = unserialize($value);
+    }
+
+    return $array_diff;
+}
 
 /**
  * Invite users to a group
@@ -451,10 +622,10 @@ function groups_handle_invite_page($guid) {
 
     $group = get_entity($guid);
     if (au_subgroups_get_parent_group($group))
-    	$title = elgg_echo('wgroups:invite:title');
+        $title = elgg_echo('wgroups:invite:title');
     else
-    	 $title = elgg_echo('groups:invite:title');
-   
+        $title = elgg_echo('groups:invite:title');
+
 
     elgg_push_breadcrumb($group->name, $group->getURL());
     elgg_push_breadcrumb(elgg_echo('groups:invite'));
@@ -465,7 +636,7 @@ function groups_handle_invite_page($guid) {
             'class' => 'elgg-form-alt mtm',
                 ), array(
             'entity' => $group,
-                ));
+        ));
     } else {
         $content .= elgg_echo('groups:noaccess');
     }
@@ -505,11 +676,11 @@ function groups_handle_requests_page($guid) {
             'relationship_guid' => $guid,
             'inverse_relationship' => true,
             'limit' => 0,
-                ));
+        ));
         $content = elgg_view('groups/membershiprequests', array(
             'requests' => $requests,
             'entity' => $group,
-                ));
+        ));
     } else {
         $content = elgg_echo("groups:noaccess");
     }
@@ -538,7 +709,6 @@ function groups_register_profile_buttons($group) {
         // edit and invite
         $url = elgg_get_site_url() . "groups/edit/{$group->getGUID()}";
         $actions[$url] = 'groups:edit';
-
     }
 
     // group members
@@ -557,23 +727,19 @@ function groups_register_profile_buttons($group) {
         $url = elgg_add_action_tokens_to_url($url);
 
         if (!isSubgroup($group)) {
-        	$actions[$url] = 'groups:join';
-        	/*
-        	if ($group->isPublicMembership() || $group->canEdit()) {
-        		$actions[$url] = 'groups:join';
-        	} else {
-        		// request membership
-        		$actions[$url] = 'groups:joinrequest';
-        	}
-			*/
-        }else {
-        		// request membership
-        		$actions[$url] = 'groups:joinrequest';
+            $actions[$url] = 'groups:join';
+            /*
+              if ($group->isPublicMembership() || $group->canEdit()) {
+              $actions[$url] = 'groups:join';
+              } else {
+              // request membership
+              $actions[$url] = 'groups:joinrequest';
+              }
+             */
+        } else {
+            // request membership
+            $actions[$url] = 'groups:joinrequest';
         }
-        
-        
-        
-        
     }
 
     if ($actions) {
@@ -650,8 +816,6 @@ function groups_prepare_form_vars($group = null) {
     return $values;
 }
 
-
-
 /**
  * Prepare the manage form variables
  *
@@ -659,9 +823,9 @@ function groups_prepare_form_vars($group = null) {
  * @return array guids => 'name - username'
  */
 function invite_prepare_combo_vars($candidates) {
-	$values = array('' => elgg_echo('group_roles:selectone'));
-	foreach($candidates as $candidate){
-		$values[$candidate->guid] = $candidate->name." - ".$candidate->username;
-	}
-	return $values;
+    $values = array('' => elgg_echo('group_roles:selectone'));
+    foreach ($candidates as $candidate) {
+        $values[$candidate->guid] = $candidate->name . " - " . $candidate->username;
+    }
+    return $values;
 }

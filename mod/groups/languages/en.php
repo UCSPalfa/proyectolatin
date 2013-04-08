@@ -8,8 +8,10 @@
 
 
 $english = array(
+
     
         'community:interests' => 'Interests',
+        'community:no:interests' => 'No interests yet',
 
 	/**
 	 * Menu items and titles
@@ -48,10 +50,15 @@ $english = array(
 	'groups:subscribed' => 'Community notifications on',
 	'groups:unsubscribed' => 'Community notifications off',
     
-        'community:no:books' => 'This community does not have books yet',
+        'community:no:books' => 'This community does not have Writing Groups yet',
         'community:no:members' => 'This community does not have members yet',
         'community:no:related' => 'This community is not related with other ones yet',
         'community:no:description' => 'This community does not have a description yet',
+    
+        'writingGroup:no:books' => 'This Writing Group does not have books yet',
+        'writingGroup:no:members' => 'This Writing Group does not have members yet',
+        'writingGroup:no:related' => 'This Writing Group is not related with other ones yet',
+        'writingGroup:no:description' => 'This Writing Group does not have a description yet',
 
 	'groups:members:title' => 'Members of %s',
 	'groups:members:more' => "View all members",
@@ -92,8 +99,10 @@ $english = array(
 	'groups:viagroups' => "via communities",
 	'groups:group' => "Community",
 	'groups:search' => "Search communities by tag",
+	'groups:search:all' => "Search communities",
 	'groups:search:tags' => "tag",
 	'groups:search:title' => "Search for communities tagged with '%s'",
+	'groups:search:all:title' => "Results for communities containing '%s'",
 	'groups:search:none' => "No matching communities were found",
 	'groups:search_in_group' => "Search in this community",
 	'groups:acl' => "Community: %s",

@@ -87,7 +87,8 @@ $img .= elgg_view('output/img', array(
 	'width' => $img_width,
 	'height' => $img_height,
 ));
-$img .= "{$span}</div>";
+//$img .= "{$span}</div>";
+$img .= "</div>";
 
 if ($url) {
 	$params = array(

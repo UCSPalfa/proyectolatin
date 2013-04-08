@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 /**
  * Group entity view
  * 
@@ -33,7 +34,10 @@ if (elgg_get_context() == 'gallery') {
 		'subtitle' => $group->briefdescription,
 	);
 	$params = $params + $vars;
+        
 	$list_body = elgg_view('group/elements/summary', $params);
+        
+	
 
 	echo elgg_view_image_block($icon, $list_body, $vars);
 }

@@ -40,7 +40,7 @@
 padding-left: 12px;
 margin-right: 2px;
 line-height: 14px;}
-.elgg-menu-filter > .elgg-state-selected, .elgg-menu-filter > li > a{padding-top: 5px;padding-bottom: 5px;margin-top: 2px;margin-bottom: 2px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;color:#08C;}
+.elgg-menu-filter > .elgg-state-selected, .elgg-menu-filter > li > a{font-size: 12px; margin-top: 2px;margin-bottom: 2px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;color:#08C;}
 .elgg-menu-filter > .elgg-state-selected{color: white;background-color: #08C;}
 .elgg-menu-filter .elgg-state-selected a{color: white;background-color: #08C;}
 /* ***************************************

@@ -67,6 +67,10 @@ if (!$type_str) {
 	$type_str = elgg_echo('search:unknown_entity');
 }
 
+if ($type_str == "Groups") {
+    $type_str = "Communities and Writing Groups";    
+} 
+
 // allow overrides for titles
 $search_type_str = elgg_echo("search_types:{$vars['params']['search_type']}");
 if (array_key_exists('search_type', $vars['params'])
@@ -83,7 +87,7 @@ if ($more) {
 	$title_key = ($more == 1) ? 'comment' : 'comments';
 	$more_str = elgg_echo('search:more', array($count, $type_str));
 	$more_url = elgg_http_remove_url_query_element($url, 'limit');
-	$more_link = "<li class='elgg-item'><a href=\"$more_url\">$more_str</a></li>";
+	$more_link = "<li class='elgg-item' style='border-bottom: none'><a href=\"$more_url\">$more_str</a></li>";
 } else {
 	$more_link = '';
 }
@@ -99,7 +103,7 @@ if ($view) {
 	$body .= '<ul class="elgg-list search-list">';
 	foreach ($entities as $entity) {
 		$id = "elgg-{$entity->getType()}-{$entity->getGUID()}";
-		$body .= "<li id=\"$id\" class=\"elgg-item\">";
+		$body .= "<li id=\"$id\" class=\"elgg-item\" style='border-bottom: none'>";
 		$body .= elgg_view($view, array(
 			'entity' => $entity,
 			'params' => $vars['params'],

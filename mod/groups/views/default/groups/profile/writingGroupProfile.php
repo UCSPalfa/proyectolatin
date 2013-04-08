@@ -40,8 +40,18 @@ $icon = "<img src='$file'>";
 
 echo $icon;
 
-foreach ($tags as $currentTag) {
-    echo elgg_view('output/url', array('href' => 'search?tag=' . $currentTag, 'text' => $currentTag, 'class' => 'tag'));
+echo "<label class='interests' >" . elgg_echo('community:interests') . ":</label>";
+
+if (count($tags) == 0) {
+    
+    echo "<label class='noInterests' >" . elgg_echo('community:no:interests') . "</label>";
+    
+} else {
+
+    foreach ($tags as $currentTag) {
+        echo elgg_view('output/url', array('href' => 'search?tag=' . $currentTag, 'text' => $currentTag, 'class' => 'tag'));
+    }
+    
 }
 
 
@@ -54,7 +64,7 @@ echo "<div class='group-description-div'>";
 if (trim($description) != '') {
     echo $description;
 } else {
-    echo "<div class='noContent'>" . elgg_echo("community:no:description") . "</div>";
+    echo "<div class='noContent'>" . elgg_echo("writingGroup:no:description") . "</div>";
 }
 echo "</div>";
 
@@ -83,6 +93,7 @@ foreach ($members as $member) {
     }
 }
 $totalInstitutions = count($institutions);
+$allInstitutions = implode("\n", $institutions);
 
 if ($totalMembers > $membersLimit) {
     $rand_keys = array_rand($members, $membersLimit);
@@ -153,8 +164,8 @@ echo $icon . "<label> " . $totalBooks . " " . $writingGroups . " </label>";
 echo "<hr />";
 
 $file = elgg_get_site_url() . '_graphics/institution.png';
-$icon = "<img src='$file'>";
-echo $icon . "<label> $totalInstitutions " . elgg_echo("Institutions:collaborating") . " </label>";
+$icon = "<img src='$file' title='" . $allInstitutions . "'>";
+echo $icon . "<label title='" . $allInstitutions . "'> $totalInstitutions " . elgg_echo("Institutions:collaborating") . " </label>";
 
 echo "</div>";
 
@@ -191,7 +202,7 @@ $allMembersLink = elgg_view('output/url', array(
         ));
 
 if ($totalMembers == 0) {
-    echo "<div class='noContent'>" . elgg_echo("community:no:members") . "</div>";
+    echo "<div class='noContent'>" . elgg_echo("writingGroup:no:members") . "</div>";
 } else if ($totalMembers > $membersLimit) {
     echo "<div class='all-members-div'>$allMembersLink</div>";
 } else {
@@ -227,7 +238,7 @@ foreach ($relatedCommunities as $community) {
 }
 
 if ($totalRelatedCommunities == 0) {
-    echo "<div class='noContent'>" . elgg_echo("community:no:related") . "</div>";
+    echo "<div class='noContent'>" . elgg_echo("writingGroup:no:related") . "</div>";
 } else if ($totalRelatedCommunities > $relatedCommunitiesLimit) {
 
     $allRelatedCommunitiesLink = elgg_view('output/url', array(
@@ -249,7 +260,7 @@ echo "</div>";
 
 echo "<div class='group-books-div'>";
 
-echo "<div style='text-align: left;'><label>" . elgg_echo("au_subgroups") . ":</label></div> <br />";
+echo "<div style='text-align: left;'><label>" . elgg_echo("Books") . ":</label></div> <br />";
 
 foreach ($books as $book) {
 
@@ -265,8 +276,11 @@ foreach ($books as $book) {
 }
 
 if (!$totalBooks) {
+    
+    $file = elgg_get_site_url() . '_graphics/book.png';
+    $icon = "<img src='$file'>";
 
-    echo "<div class='noContent'>" . elgg_echo("community:no:books") . "</div>";
+    echo "<div class='noContent'>" . elgg_echo("writingGroup:no:books") . "</div>";
 } else if ($totalBooks > $booksLimit) {
 
     $allWritingGroups = elgg_view('output/url', array(

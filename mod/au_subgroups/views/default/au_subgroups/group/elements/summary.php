@@ -1,4 +1,5 @@
-<?php
+<?php    
+
   $group = $vars['entity'];
   $parent = au_subgroups_get_parent_group($group);
   
