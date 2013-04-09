@@ -39,18 +39,29 @@ unset($params['aname']);
 unset($params['entity']);
 $likes_view = hj_alive_view_likes_list($params);
 ?>
-<div id="hj-annotations-<?php echo $entity->guid ?>" class="hj-annotations-bar clearfix">
-    <div class="hj-annotations-menu">
-        <?php echo $menu ?>
-    </div>
-    <ul class="hj-annotations-list hj-syncable">
-        <div class="hj-comments-bubble hj-comments-input hidden"><?php echo $comments_input ?></div>
-        <div class="annotations">
-            <?php echo $comments_view ?>
-        </div>
-        <div class="likes">
-            <?php echo $likes_view ?>
-        </div>
-    </ul>
+<br/>
+<div id="hj-annotations-<?php echo $entity->guid ?>"
+	class="hj-annotations-bar clearfix">
+	<div class="topic-menu-section">
+		<div class="hj-annotations-menu">
+			<!-- menu de comentario y like aqui -->
+			<?php echo $menu ?>
+		</div>
+		<ul class="hj-annotations-list hj-syncable">
+
+			<div class="hj-comments-bubble hj-comments-input hidden">
+				<?php echo $comments_input ?>
+			</div>
+			<div class="likes">
+				<?php echo $likes_view ?>
+			</div>
+
+
+		</ul>
+
+	</div>
+	<div class="annotations">
+		<?php echo $comments_view ?>
+	</div>
 
 </div>

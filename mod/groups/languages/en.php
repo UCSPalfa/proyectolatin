@@ -325,7 +325,7 @@ or click below to view the community's join requests:
 	// ecml
 	'groups:ecml:discussion' => 'Community Discussions',
 	'groups:ecml:groupprofile' => 'Community profiles',
-
+	'group:all:replies' => 'See all replies',
 );
 
 add_translation("en", $english);

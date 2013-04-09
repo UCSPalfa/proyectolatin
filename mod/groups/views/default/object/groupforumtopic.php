@@ -70,29 +70,28 @@ if ($full) {
 	);
 	$params = $params + $vars;
 	$list_body = elgg_view('object/elements/summary', $params);
+	$message= elgg_view('output/longtext', array('value' => $topic->description));
+	//$info = elgg_view_image_block($poster_icon, $list_body);
+	$info = elgg_view_image_block($poster_icon, $list_body."<br/>".$message);
 
-	$info = elgg_view_image_block($poster_icon, $list_body);
-
-	$body = elgg_view('output/longtext', array('value' => $topic->description));
-
-	echo <<<HTML
-$info
-$body
-HTML;
+	echo $info;
 
 } else {
 	// brief view
 	$subtitle = "$poster_text $date $replies_link <span class=\"groups-latest-reply\">$reply_text</span>";
-
+	$subtitle = "$poster_text $date";
 	$params = array(
 		'entity' => $topic,
-		'metadata' => $metadata,
+		//'metadata' => $metadata,
 		'subtitle' => $subtitle,
 		'tags' => $tags,
 		'content' => $excerpt,
 	);
 	$params = $params + $vars;
-	$list_body = elgg_view('object/elements/summary', $params);
 
+	$list_body = elgg_view('object/elements/topic', $params);
+
+	echo "<div style='width:85%'>";
 	echo elgg_view_image_block($poster_icon, $list_body);
+	echo "</div>";
 }

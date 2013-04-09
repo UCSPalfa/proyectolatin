@@ -199,7 +199,7 @@ function hj_alive_comments_menu($hook, $type, $return, $params) {
 			'entity' => $entity,
 			'text' => elgg_view_friendly_time($timestamp),
 			'href' => false,
-			'priority' => 500
+			'priority' => 90
 		);
 		$return[] = ElggMenuItem::factory($time);
 	}
@@ -259,7 +259,7 @@ function hj_alive_comments_menu($hook, $type, $return, $params) {
 		$container = get_entity($entity->container_guid);
 		$show_comment = $container->canWriteToContainer();
 	} else if ($entity->canComment() || $entity->canAnnotate()) {
-		$show_comment = true;
+		$show_comment = false;
 	}
 
 	if ($show_comment) {
