@@ -347,6 +347,8 @@ border-top: 1px solid rgba(0, 0, 0, 0.1);
 border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+
+.user-members-div,
 .group-members-div {
 
 clear: both;
@@ -376,8 +378,11 @@ margin-right: 1%;
 margin-bottom: 1%;
 }
 
+
+.user-writing-groups-div label,
 .group-books-div label,
 .group-related-communities-div label,
+.user-members-div label,
 .group-members-div label {
 color: #444;
 font: bold 15px "Helvetica Neue", "Helvetica", "Arial", sans-serif;    
@@ -385,6 +390,7 @@ clear: both;
 text-align: left;
 }
 
+.user-members-div img,
 .group-members-div img {        
 clear: both;    
 border: 1px solid #000;
@@ -444,6 +450,7 @@ width: 50%;
 height: 150px;    
 }
 
+.user-writing-groups-div,
 .group-books-div {
 
 padding-left: 20px;
@@ -480,6 +487,7 @@ margin-left: 0.5%;
 margin-right: 0.5%;
 }
 
+.user-writing-groups-div img,
 .group-books-div img {
 clear: both;    
 border: 1px solid #000;
@@ -703,3 +711,53 @@ text-align: center;
   text-align:right;
   font-weight:normal;
 }*/
+
+
+.user-writing-groups-div .groupIcon,
+.user-members-div .groupIcon {    
+    width: 15%;
+    margin-right: 1%;
+    margin-left: 0px;    
+}
+
+.user-writing-groups-div .groupIcon {
+    width: 25%;
+    margin-right: 3%;    
+}
+
+.user-writing-groups-div .groupNameContainer,
+.user-members-div .groupNameContainer {
+    position: relative;
+    width: 95%;
+    height: 50px;
+    text-align: left;
+    padding-left: 5%;
+    padding-top: 5px;
+    color:#FFFFFF;
+    display:block;
+    text-shadow: 0px 2px 2px rgb(0, 0, 0);
+    word-wrap:break-word;  
+    font-family:arial, sans-serif;
+    font-size:12px;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    line-height:normal;
+    z-index:444;
+}
+
+.user-writing-groups-div .groupNameContainer {
+    padding-top: 3spx;
+}
+
+.user-writing-groups-div img {
+    width: 100%;
+    margin-top: -55px;
+}
+
+.user-members-div img {
+    width: 100%;
+    margin-top: -55px;
+    display: inline;    
+}
+

@@ -10,6 +10,9 @@
 $english = array(
 
     
+        'languages' => 'Languages',
+        'no:languages' => 'No Languages yet',
+    
         'community:interests' => 'Interests',
         'community:no:interests' => 'No interests yet',
 
@@ -60,6 +63,7 @@ $english = array(
         'writingGroup:no:related' => 'This Writing Group is not related with other ones yet',
         'writingGroup:no:description' => 'This Writing Group does not have a description yet',
 
+	'member:of' => 'Member of',
 	'groups:members:title' => 'Members of %s',
 	'groups:members:more' => "View all members",
 	'groups:related:more' => "View all related communities",

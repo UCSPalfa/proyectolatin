@@ -68,10 +68,6 @@ if ($entityType == 'user') {
         
         $writingGroups = getUserWritingGroups ($theUser);
         $totalWritingGroups = count($writingGroups);
-        
-
-        $institutions = getInstitutions($theUser);
-        $totalInstitutions = count($institutions);
 
 
         // ************************* //

@@ -5,6 +5,10 @@
  * @uses vars['entity']
  */
 
+
+echo "este es el tema";
+
+
 ?>
 
 <div class="elgg-module  elgg-module-info"><div class="elgg-head">
