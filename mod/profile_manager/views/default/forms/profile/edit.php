@@ -15,10 +15,10 @@
 	
 	// id profile_edit_form
 	?>	
-	<div>
-		<label><?php echo elgg_echo('user:name:label'); ?></label>
+	<div class="elgg-module  elgg-module-info"><div class="elgg-head">
+		<h3><?php echo elgg_echo('user:name:label'); ?></h3>
 		<?php echo elgg_view('input/text', array('name' => 'name', 'value' => $vars['entity']->name)); ?>
-	</div>
+	</div></div>
 	<?php 
 	
 	// Build fields
@@ -80,15 +80,15 @@
 				</script>
 				<?php
 				 
-				echo "<div>";
-				echo "<label>" . elgg_echo("profile_manager:profile:edit:custom_profile_type:label") . "</label>";
+				echo '<div class="elgg-module  elgg-module-info"><div class="elgg-head">';
+				echo "<h3>" . elgg_echo("profile_manager:profile:edit:custom_profile_type:label") . "</h3>";
 				echo elgg_view("input/dropdown", array("name" => "custom_profile_type",
 														"id" => "custom_profile_type",
 														"options_values" => $dropdown_options,
 														"onchange" => "elgg.profile_manager.change_profile_type();",
 														"value" => profile_manager_get_user_profile_data_value($user_metadata, "custom_profile_type")));
 				echo elgg_view('input/hidden', array('name' => 'accesslevel[custom_profile_type]', 'value' => ACCESS_PUBLIC)); 
-				echo "</div>";
+				echo "</div></div>";
 				
 				echo $types_description;
 			}
@@ -186,14 +186,14 @@
 				}
 	
 				if($hide_non_editables == "yes" && ($valtype == "non_editable")){
-					$field_result = "<div class='hidden_non_editable'>";
+					$field_result = '<div class="elgg-module hidden_non_editable elgg-module-info"><div class="elgg-head">';
 					//$field_result = "<tr class='hidden_non_editable'>";//GC
 				} else {
-					$field_result = "<div>";
+					$field_result = '<div class="elgg-module  elgg-module-info"><div class="elgg-head">';
 					//$field_result = "<tr>";//GC
 				}	
 				
-				$field_result .= "<label>" . $title . "</label>";
+				$field_result .= "<h3>" . $title . "</h3>";
 				//$field_result .= "<td  width='10%'>" . $title . "</td>";
 				
 				if($hint = $field->getHint()){ 
@@ -215,12 +215,13 @@
 																));
 				
 				if($valtype == "dropdown"){
-					//$field_result .= "</div>";	//comentado por po5i
+					//$field_result .= "</div></div>";	//comentado por po5i
 				}
 				//$field_result .="</td>";
 				//$field_result .="<td width='20%'>";
-				$field_result .= elgg_view('input/access', array('name' => 'accesslevel[' . $metadata_name . ']', 'value' => $access_id));
+				$field_result .= elgg_view('input/access', array('name' => 'accesslevel[' . $metadata_name . ']', 'value' => $access_id, 'style' => 'display:none;'));
 				//$field_result .="</td>";
+				$field_result .= "</div>";
 				$field_result .= "</div>";
 				//$field_result .= "</tr>";//GC
 				$tab_content .= $field_result;
@@ -250,10 +251,10 @@
 
 	if($simple_access_control == "yes"){ 
 		?>
-		<div>
-			<label><?php echo elgg_echo("profile_manager:simple_access_control"); ?></label>
+		<div class="elgg-module  elgg-module-info"><div class="elgg-head">
+			<h3><?php echo elgg_echo("profile_manager:simple_access_control"); ?></h3>
 			<?php echo elgg_view('input/access',array('name' => 'simple_access_control', 'value' => $access_id, 'class' => 'simple_access_control', 'js' => 'onchange="set_access_control(this.value)"')); ?>
-		</div>
+		</div></div>
 		<?php 
 	} 
 	?>
