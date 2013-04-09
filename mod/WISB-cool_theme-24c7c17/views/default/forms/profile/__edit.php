@@ -12,9 +12,9 @@ echo "este es el tema";
 ?>
 
 <div class="elgg-module  elgg-module-info"><div class="elgg-head">
-	<h3><?php echo elgg_echo('user:name:label'); ?></h3></div>
+	<h3><?php echo elgg_echo('user:name:label'); ?></h3>
 	<?php echo elgg_view('input/text', array('name' => 'name', 'value' => $vars['entity']->name)); ?>
-</div>
+</div></div>
 <?php
 
 $profile_fields = elgg_get_config('profile_fields');
@@ -58,7 +58,7 @@ if (is_array($profile_fields) && count($profile_fields) > 0) {
 		);
 		echo elgg_view('input/access', $params);
 	?>
-</div>
+</div></div>
 <?php
 	}
 }

@@ -12,6 +12,11 @@ padding:0 5px;
 }
 
 .elgg-menu-comments li a {
+ 	text-align: center;
+    color: #0054A7;
+    font-size: 12px;
+    font-weight: bold;
+
 }
 
 li.elgg-menu-item-showallcomments {
@@ -66,5 +71,49 @@ display:block;
 }
 
 .elgg-menu-comments li a.hidden {
-display:none;
+ 	text-align: center;
+    color: #0054A7;
+    font-size: 12px;
+    font-weight: bold;
+    display:none;
 }
+
+.comments-link{
+    text-align: center;
+    color: #0054A7;
+    font-size: 12px;
+    font-weight: bold;
+ }
+ 
+ 
+ .menu-hidden{
+    text-align: center;
+    color: #0054A7;
+    font-size: 12px;
+    font-weight: bold;
+   display:none;
+ }
+ 
+ 
+ .menu-visible{
+    text-align: center;
+    color: #0054A7;
+    font-size: 12px;
+    font-weight: bold;
+ }
+ 
+ .title_link{
+    text-align: center;
+    color: #0054A7;
+    font-size: 14px;
+    font-weight: bold;
+ }
+ 
+ 
+ .topic-menu-section{
+ margin-left:50px;
+ }
+ 
+
+
+ 

@@ -40,7 +40,7 @@ $comment = elgg_view('output/text', array(
 $comment = elgg_echo('hj:alive:comments:commentcontent', array($author, $comment));
 
 $bar = elgg_view('hj/comments/bar', $vars);
-
+/*
 $content = <<<HTML
     <div class="clearfix">
         $menu
@@ -49,4 +49,28 @@ $content = <<<HTML
     $bar
 HTML;
 
-echo elgg_view_image_block($icon, $content);
+echo elgg_view_image_block($icon, $content);*/
+
+
+$content = <<<HTML
+
+
+    <div class="bubble-left">
+        $menu
+        $comment
+        <div style="padding-top:5px;">
+        $bar
+    
+        </div>
+    </div><br/>
+
+HTML;
+$comment = <<<HTML2
+<div class="elgg-image-block clearfix">
+<div style="float:left;vertical-align: middle;">$icon</div>
+<div class="elgg-body">$content</div>
+</div>
+HTML2;
+
+
+echo $comment;

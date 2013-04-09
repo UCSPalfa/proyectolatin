@@ -58,25 +58,26 @@ if ($currentContext == 'au_subgroups_creation') {
 }
 ?>
 
-<div>
-    <label><?php echo elgg_echo($iconField); ?></label>
+<div class="elgg-module  elgg-module-info">
+<div class="elgg-head">
+    <h3><?php echo elgg_echo($iconField); ?></h3>
     <?php echo elgg_view("input/file", array('name' => 'icon')); ?>
 </div>
+</div>
 
-
-<div>
-    <label><?php echo elgg_echo($nameField); ?> (*) </label>
+<div class="elgg-module  elgg-module-info">
+<div class="elgg-head">
+    <h3><?php echo elgg_echo($nameField); ?> (*) </h3>
     <!-- po5i -->
     <?php
-    /*echo elgg_view("input/text", array(
+    echo elgg_view("input/text", array(
         'name' => 'name',
         'value' => $vars['entity']->name,
         //'js' => 'onKeyDown="alert(11)";'    //po5i
-    ));*/
-    $params = array(
+    ));
+    
+    /*$params = array(
         'types' => 'group',   
-        //'limit' => 10,
-        //'offset' => 0,
     );
     $groups = elgg_get_entities($params );
     echo elgg_view('input/autocomplete', array(
@@ -84,16 +85,28 @@ if ($currentContext == 'au_subgroups_creation') {
         'internalname' => 'namehidden',
         'internalname_text' => 'name',
         'value_text' => $vars['entity']->name,
-    ));
+    ));*/
+
+    /*echo elgg_view('input/autocomplete', array(
+        'value' => $vars['entity']->name,
+        'match_on' =>$groups,
+        'match_owner' =>false,
+        'name' =>'name',
+        ));*/
     ?>
 </div>
-<div><!-- po5i -->
-    <label><?php echo elgg_echo("groups:description"); ?></label>
+</div>
+
+<!-- po5i -->
+<div class="elgg-module  elgg-module-info">
+<div class="elgg-head">
+    <h3><?php echo elgg_echo("groups:description"); ?></h3>
     <?php echo elgg_view("input/text", array(
         'name' => 'description',
         'value' => $vars['entity']->description
     ));
     ?>
+</div>
 </div>
 
 <?php
@@ -179,7 +192,7 @@ if (count($group_fields["fields"]) > 0) {
 //    ?>
 
     <div style="display:none">
-        <label>
+        <h3>
             <?php  echo elgg_echo('groups:membership'); ?><br />
             <?php
             echo elgg_view('input/access', array(
@@ -191,7 +204,7 @@ if (count($group_fields["fields"]) > 0) {
                 )
             ));
             ?>
-        </label>
+        </h3>
     </div>
     <?php
 //}
@@ -251,10 +264,11 @@ if ($tools) {
         }
         $value = $vars['entity']->$group_option_toggle_name ? $vars['entity']->$group_option_toggle_name : $group_option_default_value;
         ?>	
-        <div>
-            <label>
+        <div class="elgg-module  elgg-module-info">
+        <div class="elgg-head">
+            <h3>
                 <?php echo $group_option->label; ?><br />
-            </label>
+            </h3>
             <?php
             echo elgg_view("input/radio", array(
                 "name" => $group_option_toggle_name,
@@ -265,6 +279,7 @@ if ($tools) {
                 )
             ));
             ?>
+        </div>
         </div>
         <?php
 
