@@ -69,7 +69,7 @@ if ($currentContext == 'au_subgroups_creation' or $is_subgroup) {
 
 <div class="elgg-module  elgg-module-info">
 <div class="elgg-head">
-    <h3><?php echo elgg_echo($nameField); ?> (*) </h3>
+    <h3 class="mandatory"><?php echo elgg_echo($nameField); ?></h3>
     <!-- po5i -->
     <?php
     echo elgg_view("input/text", array(
@@ -105,7 +105,7 @@ if ($currentContext == 'au_subgroups_creation' or $is_subgroup) {
     <h3><?php echo elgg_echo("groups:description"); ?></h3>
     <?php echo elgg_view("input/text", array(
         'name' => 'description',
-        'value' => $vars['entity']->description
+        'value' => $vars['entity']->description,
     ));
     ?>
 </div>
@@ -203,9 +203,9 @@ if (count($group_fields["fields"]) > 0) {
         if ($valtype == 'longtext') {
             $line_break = '';
         }
-        echo '<div class="elgg-module  elgg-module-info"><div class="elgg-head"><h3>';
-        echo $title;
-        echo "</h3>";
+        echo '<div class="elgg-module  elgg-module-info"><div class="elgg-head">';
+        $mandatory = $field->mandatory == "yes" ? ' class="mandatory"' : '';
+        echo "<h3" . $mandatory . ">" . $title . "</h3>";
 
         if ($hint = $field->getHint()) {
             ?>
@@ -224,7 +224,7 @@ if (count($group_fields["fields"]) > 0) {
         echo elgg_view("input/{$valtype}", array(
             'name' => $metadata_name,
             'value' => $value,
-            'options' => $options
+            'options' => $options,
         ));
 
         if ($valtype == "dropdown") {

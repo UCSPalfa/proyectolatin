@@ -53,6 +53,9 @@
 	// output_as_tags
 	$metadata .= elgg_view("profile_manager/toggle_metadata", array("entity" => $vars['entity'], "metadata_name" => "output_as_tags"));
 
+	// mandatory: po5i
+	$metadata .= elgg_view("profile_manager/toggle_metadata", array("entity" => $vars['entity'], "metadata_name" => "mandatory"));
+
 	// subgroups_only: po5i
 	$metadata .= elgg_view("profile_manager/toggle_metadata", array("entity" => $vars['entity'], "metadata_name" => "subgroups_only"));
 	

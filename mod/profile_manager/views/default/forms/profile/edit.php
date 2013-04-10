@@ -16,7 +16,7 @@
 	// id profile_edit_form
 	?>	
 	<div class="elgg-module  elgg-module-info"><div class="elgg-head">
-		<h3><?php echo elgg_echo('user:name:label'); ?></h3>
+		<h3 class="mandatory"><?php echo elgg_echo('user:name:label'); ?></h3>
 		<?php echo elgg_view('input/text', array('name' => 'name', 'value' => $vars['entity']->name)); ?>
 	</div></div>
 
@@ -197,8 +197,8 @@
 					$field_result = '<div class="elgg-module  elgg-module-info"><div class="elgg-head">';
 					//$field_result = "<tr>";//GC
 				}	
-				
-				$field_result .= "<h3>" . $title . "</h3>";
+				$mandatory = $field->mandatory == "yes" ? ' class="mandatory"' : '';
+				$field_result .= "<h3" . $mandatory . ">" . $title . "</h3>";
 				//$field_result .= "<td  width='10%'>" . $title . "</td>";
 				
 				if($hint = $field->getHint()){ 
@@ -216,7 +216,7 @@
 				$field_result .= elgg_view("input/" . $valtype, array(
 																'name' => $metadata_name,
 																'value' => $value,
-																'options' => $options
+																'options' => $options,
 																));
 				
 				if($valtype == "dropdown"){
