@@ -100,6 +100,7 @@
 		'profile_manager:admin:count_for_completeness' => 'Count this field in profile completeness widget',
 		'profile_manager:admin:blank_available' => 'Field has a blank option',		
 		'profile_manager:admin:option_unavailable' => 'Option unavailable',
+		'profile_manager:admin:subgroups_only' => 'Subgroups only',	//po5i
 	
 		// field options additionals description
 		'profile_manager:admin:show_on_register:description' => "If you want this field to be on the register form.",	

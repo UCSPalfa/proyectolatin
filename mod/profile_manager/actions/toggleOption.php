@@ -10,7 +10,7 @@
 	* @link http://www.coldtrick.com/
 	*/
  	
-	$allowed = array("mandatory", "show_on_register", "user_editable", "output_as_tags", "admin_only", "count_for_completeness");
+	$allowed = array("mandatory", "show_on_register", "user_editable", "output_as_tags", "subgroups_only", "admin_only", "count_for_completeness");
 	
 	$guid = get_input("guid");
 	$field = get_input("field");

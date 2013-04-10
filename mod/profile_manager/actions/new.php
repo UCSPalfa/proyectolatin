@@ -22,6 +22,7 @@
 	$mandatory = get_input("mandatory");
 	$user_editable = get_input("user_editable");
 	$output_as_tags = get_input("output_as_tags");
+	$subgroups_only = get_input("subgroups_only");	//po5i
 	$admin_only = get_input("admin_only");
 	$blank_available = get_input("blank_available");
 	
@@ -127,6 +128,7 @@
 				
 				$field->admin_only = $admin_only;
 				$field->output_as_tags = $output_as_tags;
+				$field->subgroups_only = $subgroups_only;	//po5i
 				$field->blank_available = $blank_available;
 
 				if(empty($current_field)){

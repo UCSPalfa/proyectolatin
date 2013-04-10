@@ -112,10 +112,9 @@ if ($currentContext == 'au_subgroups_creation' or $is_subgroup) {
 </div>
 
 <?php
-if($is_subgroup):       //po5i
-
-    /////////////////////////////////////////////////////////
-    //TODO: Agregar usuarios dinamicamente (solo para create)
+/////////////////////////////////////////////////////////
+//TODO: Agregar usuarios dinamicamente (solo para create)
+if($is_subgroup):    
     if ($currentContext == 'au_subgroups_creation') {
         $candidates = elgg_get_site_entity()->getMembers(0);
 
@@ -147,76 +146,6 @@ if($is_subgroup):       //po5i
         </div></div>
         <?
     }
-    /////////////////////////////////////////////////////////
-
-    // retrieve group fields
-    $group_fields = profile_manager_get_categorized_group_fields();
-
-    if (count($group_fields["fields"]) > 0) {
-        $group_fields = $group_fields["fields"];
-
-        foreach ($group_fields as $field) {
-            $metadata_name = $field->metadata_name;
-
-            // get options
-            $options = $field->getOptions();
-
-            // get type of field
-            $valtype = $field->metadata_type;
-
-            // get title
-            $title = $field->getTitle();
-
-            // get value
-            $value = '';
-            if ($metadata = $vars['entity']->$metadata_name) {
-                if (is_array($metadata)) {
-                    foreach ($metadata as $md) {
-                        if (!empty($value))
-                            $value .= ', ';
-                        $value .= $md;
-                    }
-                } else {
-                    $value = $metadata;
-                }
-            }
-
-            $line_break = '<br />';
-            if ($valtype == 'longtext') {
-                $line_break = '';
-            }
-            echo '<div class="elgg-module  elgg-module-info"><div class="elgg-head"><h3>';
-            echo $title;
-            echo "</h3>";
-
-            if ($hint = $field->getHint()) {
-                ?>
-                <span class='custom_fields_more_info' id='more_info_<?php echo $metadata_name; ?>'></span>		
-                <span class="custom_fields_more_info_text" id="text_more_info_<?php echo $metadata_name; ?>"><?php echo $hint; ?></span>
-                <?php
-            }
-
-            echo $line_break;
-
-            if ($valtype == "dropdown") {
-                // add div around dropdown to let it act as a block level element
-                echo "<div>";
-            }
-
-            echo elgg_view("input/{$valtype}", array(
-                'name' => $metadata_name,
-                'value' => $value,
-                'options' => $options
-            ));
-
-            if ($valtype == "dropdown") {
-                echo "</div>";
-            }
-
-            echo '</div>';
-            echo '</div>';
-        }
-    }
 
     //po5i:politicas
     ?>
@@ -226,7 +155,87 @@ if($is_subgroup):       //po5i
     </div></div>
     <?    
 
-endif;  //po5i
+endif; 
+/////////////////////////////////////////////////////////
+
+
+
+// retrieve group fields
+$group_fields = profile_manager_get_categorized_group_fields();
+
+if (count($group_fields["fields"]) > 0) {
+    $group_fields = $group_fields["fields"];
+
+    foreach ($group_fields as $field) {
+        
+        //po5i: validacion para mostrar campos de subgrupos exclusivamente en subgrupos:
+        if($field->subgroups_only == "yes" and !$is_subgroup)
+            continue;
+        elseif($field->subgroups_only == "no" and !$is_subgroup)
+            continue;
+
+        $metadata_name = $field->metadata_name;
+
+        // get options
+        $options = $field->getOptions();
+
+        // get type of field
+        $valtype = $field->metadata_type;
+
+        // get title
+        $title = $field->getTitle();
+
+        // get value
+        $value = '';
+        if ($metadata = $vars['entity']->$metadata_name) {
+            if (is_array($metadata)) {
+                foreach ($metadata as $md) {
+                    if (!empty($value))
+                        $value .= ', ';
+                    $value .= $md;
+                }
+            } else {
+                $value = $metadata;
+            }
+        }
+
+        $line_break = '<br />';
+        if ($valtype == 'longtext') {
+            $line_break = '';
+        }
+        echo '<div class="elgg-module  elgg-module-info"><div class="elgg-head"><h3>';
+        echo $title;
+        echo "</h3>";
+
+        if ($hint = $field->getHint()) {
+            ?>
+            <span class='custom_fields_more_info' id='more_info_<?php echo $metadata_name; ?>'></span>		
+            <span class="custom_fields_more_info_text" id="text_more_info_<?php echo $metadata_name; ?>"><?php echo $hint; ?></span>
+            <?php
+        }
+
+        echo $line_break;
+
+        if ($valtype == "dropdown") {
+            // add div around dropdown to let it act as a block level element
+            echo "<div>";
+        }
+
+        echo elgg_view("input/{$valtype}", array(
+            'name' => $metadata_name,
+            'value' => $value,
+            'options' => $options
+        ));
+
+        if ($valtype == "dropdown") {
+            echo "</div>";
+        }
+
+        echo '</div>';
+        echo '</div>';
+    }
+}
+
 ?>
 
 

@@ -46,11 +46,15 @@
 	// set default display values
 	if(empty($vars['entity']->user_editable)) $vars['entity']->user_editable = "yes";
 	if(empty($vars['entity']->output_as_tags)) $vars['entity']->output_as_tags = "no";
+	if(empty($vars['entity']->subgroups_only)) $vars['entity']->subgroups_only = "no";	//po5i
 	
 	$metadata = "<div class='field_config_metadata'>";
 	
 	// output_as_tags
 	$metadata .= elgg_view("profile_manager/toggle_metadata", array("entity" => $vars['entity'], "metadata_name" => "output_as_tags"));
+
+	// subgroups_only: po5i
+	$metadata .= elgg_view("profile_manager/toggle_metadata", array("entity" => $vars['entity'], "metadata_name" => "subgroups_only"));
 	
 	// admin_only
 	$metadata .= elgg_view("profile_manager/toggle_metadata", array("entity" => $vars['entity'], "metadata_name" => "admin_only"));
