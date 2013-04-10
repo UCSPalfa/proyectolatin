@@ -19,6 +19,11 @@
 		<h3><?php echo elgg_echo('user:name:label'); ?></h3>
 		<?php echo elgg_view('input/text', array('name' => 'name', 'value' => $vars['entity']->name)); ?>
 	</div></div>
+
+	<!--div class="elgg-module  elgg-module-info"><div class="elgg-head">
+		<h3><?php echo elgg_echo('email:address:label'); ?></h3>
+		<?php echo elgg_view('input/text', array('name' => 'email', 'value' => $vars['entity']->email)); ?>
+	</div></div-->
 	<?php 
 	
 	// Build fields

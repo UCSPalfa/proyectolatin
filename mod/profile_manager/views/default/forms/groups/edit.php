@@ -52,7 +52,9 @@ $currentContext = elgg_get_context();
 $nameField = 'groups:name';
 $iconField = 'groups:icon';
 
-if ($currentContext == 'au_subgroups_creation') {
+$is_subgroup = isSubgroup($vars['entity']); //po5i
+
+if ($currentContext == 'au_subgroups_creation' or $is_subgroup) {
     $nameField = 'au_subgroups:name';
     $iconField = 'au_subgroups:icon';
 }
@@ -110,73 +112,121 @@ if ($currentContext == 'au_subgroups_creation') {
 </div>
 
 <?php
-// retrieve group fields
-$group_fields = profile_manager_get_categorized_group_fields();
+if($is_subgroup):       //po5i
 
-if (count($group_fields["fields"]) > 0) {
-    $group_fields = $group_fields["fields"];
+    /////////////////////////////////////////////////////////
+    //TODO: Agregar usuarios dinamicamente (solo para create)
+    if ($currentContext == 'au_subgroups_creation') {
+        $candidates = elgg_get_site_entity()->getMembers(0);
 
-    foreach ($group_fields as $field) {
-        $metadata_name = $field->metadata_name;
-
-        // get options
-        $options = $field->getOptions();
-
-        // get type of field
-        $valtype = $field->metadata_type;
-
-        // get title
-        $title = $field->getTitle();
-
-        // get value
-        $value = '';
-        if ($metadata = $vars['entity']->$metadata_name) {
-            if (is_array($metadata)) {
-                foreach ($metadata as $md) {
-                    if (!empty($value))
-                        $value .= ', ';
-                    $value .= $md;
-                }
-            } else {
-                $value = $metadata;
-            }
+        foreach ($candidates as $user){
+            $user_icon = elgg_view_entity_icon($user, 'tiny');
+            $response[] = array($user->guid, $user->name." - ".$user->username." - ".$user->email, $user->name." - ".$user->username, $user_icon.$user->name." - ".$user->username." - ".$user->email);
         }
+        ?>
+        <script type="text/javascript">
+            window.addEvent('load', function(){
+                // Autocomplete initialization
+                var t4 = new TextboxList('recipient_guid', {unique: true, plugins: {autocomplete: {}}});
+                var autocomplete = t4.plugins['autocomplete'];
+                autocomplete.setValues(
+                    <?php echo json_encode($response); ?>
+                );
+        });
+        </script>
+        <?php 
+        elgg_load_js('mootools');
+        elgg_load_js('GrowingInput');
+        elgg_load_js('JSTextboxList');
+        elgg_load_js('JSTextboxList.Autocomplete')
+        ?>
 
-        $line_break = '<br />';
-        if ($valtype == 'longtext') {
-            $line_break = '';
-        }
-        echo '<div><label>';
-        echo $title;
-        echo "</label>";
-
-        if ($hint = $field->getHint()) {
-            ?>
-            <span class='custom_fields_more_info' id='more_info_<?php echo $metadata_name; ?>'></span>		
-            <span class="custom_fields_more_info_text" id="text_more_info_<?php echo $metadata_name; ?>"><?php echo $hint; ?></span>
-            <?php
-        }
-
-        echo $line_break;
-
-        if ($valtype == "dropdown") {
-            // add div around dropdown to let it act as a block level element
-            echo "<div>";
-        }
-
-        echo elgg_view("input/{$valtype}", array(
-            'name' => $metadata_name,
-            'value' => $value,
-            'options' => $options
-        ));
-
-        if ($valtype == "dropdown") {
-            echo "</div>";
-        }
-
-        echo '</div>';
+        <div class="elgg-module  elgg-module-info"><div class="elgg-head">
+            <h3><?php echo elgg_echo('au_subgroups:invite:subgroup') ?></h3>
+            <input type="text" name="recipient_guid" value="" id="recipient_guid" /><!--csv-->
+        </div></div>
+        <?
     }
-}
+    /////////////////////////////////////////////////////////
+
+    // retrieve group fields
+    $group_fields = profile_manager_get_categorized_group_fields();
+
+    if (count($group_fields["fields"]) > 0) {
+        $group_fields = $group_fields["fields"];
+
+        foreach ($group_fields as $field) {
+            $metadata_name = $field->metadata_name;
+
+            // get options
+            $options = $field->getOptions();
+
+            // get type of field
+            $valtype = $field->metadata_type;
+
+            // get title
+            $title = $field->getTitle();
+
+            // get value
+            $value = '';
+            if ($metadata = $vars['entity']->$metadata_name) {
+                if (is_array($metadata)) {
+                    foreach ($metadata as $md) {
+                        if (!empty($value))
+                            $value .= ', ';
+                        $value .= $md;
+                    }
+                } else {
+                    $value = $metadata;
+                }
+            }
+
+            $line_break = '<br />';
+            if ($valtype == 'longtext') {
+                $line_break = '';
+            }
+            echo '<div class="elgg-module  elgg-module-info"><div class="elgg-head"><h3>';
+            echo $title;
+            echo "</h3>";
+
+            if ($hint = $field->getHint()) {
+                ?>
+                <span class='custom_fields_more_info' id='more_info_<?php echo $metadata_name; ?>'></span>		
+                <span class="custom_fields_more_info_text" id="text_more_info_<?php echo $metadata_name; ?>"><?php echo $hint; ?></span>
+                <?php
+            }
+
+            echo $line_break;
+
+            if ($valtype == "dropdown") {
+                // add div around dropdown to let it act as a block level element
+                echo "<div>";
+            }
+
+            echo elgg_view("input/{$valtype}", array(
+                'name' => $metadata_name,
+                'value' => $value,
+                'options' => $options
+            ));
+
+            if ($valtype == "dropdown") {
+                echo "</div>";
+            }
+
+            echo '</div>';
+            echo '</div>';
+        }
+    }
+
+    //po5i:politicas
+    ?>
+    <div class="elgg-module  elgg-module-info"><div class="elgg-head">
+        <h3>Politicas</h3>
+        <a href='#'>Quemado en codigo (profile_manager form group edit)</a>
+    </div></div>
+    <?    
+
+endif;  //po5i
 ?>
 
 
@@ -301,7 +351,7 @@ if ($tools) {
     if (isset($vars['entity'])) {
         $delete_url = 'action/groups/delete?guid=' . $vars['entity']->getGUID();
         echo elgg_view('output/confirmlink', array(
-            'text' => elgg_echo('groups:delete'),
+            'text' => isSubgroup($vars['entity']) ? elgg_echo('au_subgroups:delete:subgroup') : elgg_echo('groups:delete'),     //po5i:edit
             'href' => $delete_url,
             'confirm' => elgg_echo('groups:deletewarning'),
             'class' => 'elgg-button elgg-button-delete float-alt',

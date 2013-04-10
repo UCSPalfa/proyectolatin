@@ -308,6 +308,8 @@ function groups_handle_edit_page($page, $guid = 0) {
         $title = elgg_echo("groups:edit");
         $group = get_entity($guid);
 
+        $title = isSubgroup($group) ? elgg_echo("au_subgroups:edit:subgroup") : $title; //po5i
+
         if ($group && $group->canEdit()) {
             elgg_set_page_owner_guid($group->getGUID());
             elgg_push_breadcrumb($group->name, $group->getURL());
