@@ -56,7 +56,9 @@ function au_subgroups_init() {
   elgg_load_css('TextboxList.Autocomplete');
   elgg_register_css('TextboxList', 'mod/au_subgroups/vendors/TextboxList/TextboxList.css');
   elgg_load_css('TextboxList');
-  
+  elgg_register_js('JTabContent', 'mod/au_subgroups/vendors/TabContent/tabcontent.js');
+  elgg_register_css('TabContent', 'mod/au_subgroups/vendors/TabContent/tabcontent.css');
+  elgg_load_css('TabContent');
   // after group creation or editing we need to check the permissions
   elgg_register_event_handler('update', 'group', 'au_subgroups_group_visibility');
   elgg_register_event_handler('create', 'member', 'au_subgroups_join_group', 0);
