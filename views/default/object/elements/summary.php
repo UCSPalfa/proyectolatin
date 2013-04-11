@@ -18,7 +18,7 @@
  */
 
 $entity = $vars['entity'];
-
+$title_class = elgg_extract('title_class', $vars, '');
 $title_link = elgg_extract('title', $vars, '');
 if ($title_link === '') {
 	if (isset($entity->title)) {
@@ -31,6 +31,7 @@ if ($title_link === '') {
 		'href' => $entity->getURL(),
 		'is_trusted' => true,
 	);
+	if ($title_class) $params['class'] =$title_class;
 	$title_link = elgg_view('output/url', $params);
 }
 
@@ -49,7 +50,7 @@ if ($metadata) {
 if ($title_link) {
 	echo "<h3>$title_link</h3>";
 }
-echo "<div class=\"elgg-subtext\">$subtitle</div>";
+//echo "<div class=\"elgg-subtext\">$subtitle</div>";
 echo $tags;
 
 echo elgg_view('object/summary/extend', $vars);

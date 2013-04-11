@@ -11,12 +11,12 @@ $topic = elgg_extract('entity', $vars, FALSE);
 if (!$topic) {
 	return true;
 }
-
+elgg_load_js('JTabContent');
 $poster = $topic->getOwnerEntity();
 $group = $topic->getContainerEntity();
 $excerpt = elgg_get_excerpt($topic->description);
 
-$poster_icon = elgg_view_entity_icon($poster, 'tiny');
+$poster_icon = elgg_view_entity_icon($poster, 'small');
 $poster_link = elgg_view('output/url', array(
 	'href' => $poster->getURL(),
 	'text' => $poster->name,
@@ -61,28 +61,33 @@ if (elgg_in_context('widgets')) {
 
 if ($full) {
 	$subtitle = "$poster_text $date $replies_link";
-
+	$subtitle = "<div style='margin-top:4px;'>$poster_text $date</div>";
 	$params = array(
 		'entity' => $topic,
 		'metadata' => $metadata,
 		'subtitle' => $subtitle,
 		'tags' => $tags,
+		'title_class' => "title_link",
 	);
 	$params = $params + $vars;
 	$list_body = elgg_view('object/elements/summary', $params);
+	
 	$message= elgg_view('output/longtext', array('value' => $topic->description));
+	$message .=  "<div class=\"elgg-subtext\">$subtitle</div>";
 	//$info = elgg_view_image_block($poster_icon, $list_body);
 	$info = elgg_view_image_block($poster_icon, $list_body."<br/>".$message);
-
+	echo "<div style='width:90%'>";
 	echo $info;
-
+	echo "</div>";
 } else {
 	// brief view
+	$metadata_name="menu_topic_".$topic->getGUID();
+	$metadata = "<div id='$metadata_name' style='display:none'>$metadata</div>";
 	$subtitle = "$poster_text $date $replies_link <span class=\"groups-latest-reply\">$reply_text</span>";
-	$subtitle = "$poster_text $date";
+	$subtitle = "<div style='margin-top:4px;'>$poster_text $date</div>";
 	$params = array(
 		'entity' => $topic,
-		//'metadata' => $metadata,
+		'metadata' => $metadata,
 		'subtitle' => $subtitle,
 		'tags' => $tags,
 		'content' => $excerpt,
@@ -91,7 +96,7 @@ if ($full) {
 
 	$list_body = elgg_view('object/elements/topic', $params);
 
-	echo "<div style='width:85%'>";
+	echo "<div onmouseover=\"show_element('$metadata_name');\"  onmouseout=\"hide_element('$metadata_name');\" style='width:85%'>";
 	echo elgg_view_image_block($poster_icon, $list_body);
 	echo "</div>";
 }

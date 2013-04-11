@@ -30,6 +30,7 @@ if ($title_link === '') {
 		'text' => $text,
 		'href' => $entity->getURL(),
 		'is_trusted' => true,
+		'class' => "title_link",
 	);
 	$title_link = elgg_view('output/url', $params);
 }
@@ -50,7 +51,7 @@ if ($title_link) {
 	echo "<h3>$title_link</h3>";
 }
 if ($content) {
-	echo "<div class=\"elgg-content\">$content</div>";
+	echo "<div class=\"elgg-content space_top\">$content</div>";
 }
 $num_replies = elgg_get_annotations(array(
 		'annotation_name' => 'group_topic_post',
@@ -95,7 +96,7 @@ $selected="";
 
 if ($idx == $maxidx-1 ) $selected="class=\"selected\"";
 echo <<<tab
-<li><a href="#" rel="comment$comment_id" $selected><img src="$iconurl"></a></li>
+<li><a href="#" rel="comment$comment_id" $selected ><img class="img_bordered" src="$iconurl"></a></li>
 tab;
 }
 
@@ -119,7 +120,7 @@ foreach ($first_replies as $idx => $infoComment){
 	$comment_value = elgg_get_excerpt($infoComment->value,150);
 	echo <<<tab
 <div id="comment$comment_id" class="speech-comment">
-<div style="float:left;padding-right:5px;">$author</div> 
+<div style="float:left;padding-right:5px;">$author</div>
 <div style="float:left;padding-right:5px;" class="elgg-subtext">$date_comment </div>-
 $comment_value
 		
@@ -148,5 +149,4 @@ jscommentsinit;
 
 }
 //echo elgg_view('object/summary/extend', $vars);
-
 
