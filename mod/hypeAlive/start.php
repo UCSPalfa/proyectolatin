@@ -246,6 +246,7 @@ function hj_alive_comments_menu($hook, $type, $return, $params) {
 			'priority' => 105
 		);
 
+		
 		if (!($entity->getType() == 'river' && $entity->subtype=='groupforumtopic')) {
 			$return[] = ElggMenuItem::factory($likes);
 			$return[] = ElggMenuItem::factory($unlikes);

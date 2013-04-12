@@ -585,6 +585,7 @@ function groups_annotation_menu_setup($hook, $type, $return, $params) {
             'encode_text' => false,
             'rel' => 'toggle',
         );
+        
         //$return[] = ElggMenuItem::factory($options);
     }
 

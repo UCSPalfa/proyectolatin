@@ -65,12 +65,7 @@ HTML;
 
 //echo elgg_view_image_block($icon, $body);
 
-
-
-
 $content = <<<HTML
-
-
     <div class="bubble-left">
        $body
     </div><br/>
