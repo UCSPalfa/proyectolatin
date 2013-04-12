@@ -54,7 +54,7 @@ $iconField = 'groups:icon';
 
 $is_subgroup = isSubgroup($vars['entity']); //po5i
 
-if ($currentContext == 'au_subgroups_creation' or $is_subgroup) {
+if ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgroups_edition') {
     $nameField = 'au_subgroups:name';
     $iconField = 'au_subgroups:icon';
 }
@@ -148,12 +148,14 @@ if($is_subgroup):
     }
 
     //po5i:politicas
-    ?>
-    <div class="elgg-module  elgg-module-info"><div class="elgg-head">
-        <h3><?php echo elgg_echo('au_subgroups:policies:title') ?></h3>
-        <a href='<?php echo elgg_echo('au_subgroups:policies:link') ?>' target='_blank'><?php echo elgg_echo('au_subgroups:policies:link') ?></a>
-    </div></div>
-    <?    
+    if ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgroups_edition') {
+        ?>
+        <div class="elgg-module  elgg-module-info"><div class="elgg-head">
+            <h3><?php echo elgg_echo('au_subgroups:policies:title') ?></h3>
+            <a href='<?php echo elgg_echo('au_subgroups:policies:link') ?>' target='_blank'><?php echo elgg_echo('au_subgroups:policies:link') ?></a>
+        </div></div>
+        <?    
+    }
 
 endif; 
 /////////////////////////////////////////////////////////
@@ -167,11 +169,15 @@ if (count($group_fields["fields"]) > 0) {
     $group_fields = $group_fields["fields"];
 
     foreach ($group_fields as $field) {
-        
+
         //po5i: validacion para mostrar campos de subgrupos exclusivamente en subgrupos:
-        if($field->subgroups_only == "yes" and !$is_subgroup)
-            continue;
-        elseif($field->subgroups_only == "no" and !$is_subgroup)
+        if(
+            $field->subgroups_only == "yes" and ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgroups_edition')
+            or
+            $field->subgroups_only == "no" and $currentContext == 'groups'
+            )
+            echo "";    //pass
+        else
             continue;
 
         $metadata_name = $field->metadata_name;

@@ -307,8 +307,13 @@ function groups_handle_edit_page($page, $guid = 0) {
     } else {
         $title = elgg_echo("groups:edit");
         $group = get_entity($guid);
-
-        $title = isSubgroup($group) ? elgg_echo("au_subgroups:edit:subgroup") : $title; //po5i
+        
+        if(isSubgroup($group)){ //po5i
+            elgg_push_context('au_subgroups_edition'); //po5i
+            $title = elgg_echo("au_subgroups:edit:subgroup");   //po5i
+            //TODO: arreglar el breadcrumb que abajo se agrega como community (Deberia decir writing group)
+            //asi como se lo hace en au_subgroups/pages/add
+        }
 
         if ($group && $group->canEdit()) {
             elgg_set_page_owner_guid($group->getGUID());
