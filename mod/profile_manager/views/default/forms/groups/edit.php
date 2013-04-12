@@ -150,8 +150,8 @@ if($is_subgroup):
     //po5i:politicas
     ?>
     <div class="elgg-module  elgg-module-info"><div class="elgg-head">
-        <h3>Politicas</h3>
-        <a href='#'>Quemado en codigo (profile_manager form group edit)</a>
+        <h3><?php echo elgg_echo('au_subgroups:policies:title') ?></h3>
+        <a href='<?php echo elgg_echo('au_subgroups:policies:link') ?>' target='_blank'><?php echo elgg_echo('au_subgroups:policies:link') ?></a>
     </div></div>
     <?    
 

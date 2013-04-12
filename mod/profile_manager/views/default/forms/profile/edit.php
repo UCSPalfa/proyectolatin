@@ -212,19 +212,38 @@
 					// add div around dropdown to let it act as a block level element
 					//$field_result .= "<div>";	//comentado por po5i
 				}
-				
-				$field_result .= elgg_view("input/" . $valtype, array(
+
+				//po5i:
+				if($metadata_name == "public_email"){
+					$value = $vars['entity']->email;
+
+					$field_result .= elgg_view("input/" . $valtype, array(
+																'name' => $metadata_name,
+																'value' => $value,
+																'options' => $options,
+																'readonly' => "readonly",
+																));
+				}
+				else{
+					$field_result .= elgg_view("input/" . $valtype, array(
 																'name' => $metadata_name,
 																'value' => $value,
 																'options' => $options,
 																));
+				}
+
+				
 				
 				if($valtype == "dropdown"){
 					//$field_result .= "</div></div>";	//comentado por po5i
 				}
 				//$field_result .="</td>";
 				//$field_result .="<td width='20%'>";
-				$field_result .= elgg_view('input/access', array('name' => 'accesslevel[' . $metadata_name . ']', 'value' => $access_id, 'style' => 'display:none;'));
+				$field_result .= elgg_view('input/access', array(
+																	'name' => 'accesslevel[' . $metadata_name . ']', 
+																	'value' => $access_id, 
+																	'style' => $metadata_name == "public_email" ? '' : 'display:none;'
+																));
 				//$field_result .="</td>";
 				$field_result .= "</div>";
 				$field_result .= "</div>";
