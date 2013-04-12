@@ -25,7 +25,7 @@ $menu = elgg_view_menu('commentshead', array(
     'sort_by' => 'priority',
     'params' => $params
 	));
-$icon = elgg_view_entity_icon($owner, 'tiny', array('use_hover' => false));
+$icon = elgg_view_entity_icon($owner, 'small', array('use_hover' => false));
 
 $author = elgg_view('output/url', array(
     'text' => $owner->name,

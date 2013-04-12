@@ -1,4 +1,4 @@
-//** Tab Content script v2.0- © Dynamic Drive DHTML code library (http://www.dynamicdrive.com)
+//** Tab Content script v2.0- ï¿½ Dynamic Drive DHTML code library (http://www.dynamicdrive.com)
 //** Updated Oct 7th, 07 to version 2.0. Contains numerous improvements:
 //   -Added Auto Mode: Script auto rotates the tabs based on an interval, until a tab is explicitly selected
 //   -Ability to expand/contract arbitrary DIVs on the page as the tabbed content is expanded/ contracted
@@ -147,3 +147,17 @@ ddtabcontent.prototype={
 	} //END int() function
 
 } //END Prototype assignment
+
+function show_element(id){
+	
+    obj = document.getElementById(id);
+    obj.style.display = "block";
+ 
+}
+
+function hide_element(id){
+
+    obj = document.getElementById(id);
+    obj.style.display = "none";
+ 
+}

@@ -46,6 +46,7 @@ $likes_view = hj_alive_view_likes_list($params);
 		<div class="hj-annotations-menu">
 			<!-- menu de comentario y like aqui -->
 			<?php echo $menu ?>
+			</br>
 		</div>
 		<ul class="hj-annotations-list hj-syncable">
 
