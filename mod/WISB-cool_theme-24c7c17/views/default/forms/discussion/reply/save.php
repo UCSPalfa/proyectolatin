@@ -10,8 +10,8 @@ if (isset($vars['entity']) && elgg_is_logged_in()) {
 	$inline = elgg_extract('inline', $vars, false);
 
 	if ($inline) {
-		echo elgg_view('input/text', array('name' => 'group_topic_post', 'placeholder' => elgg_echo('annotation:group_topic_post:value:placeholder')));
-		echo elgg_view('input/submit', array('value' => elgg_echo('reply'), 'class' => 'hidden'));
+		//echo elgg_view('input/text', array('name' => 'group_topic_post', 'placeholder' => elgg_echo('annotation:group_topic_post:value:placeholder')));
+		//echo elgg_view('input/submit', array('value' => elgg_echo('reply'), 'class' => 'hidden'));
 	} else {
 ?>
 	<div>
