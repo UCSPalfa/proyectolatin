@@ -319,7 +319,7 @@ function au_subgroups_handle_mine_page() {
     }
     elgg_push_breadcrumb($title);
 
-    elgg_register_title_button();
+    elgg_register_title_button("groups");
 
     $options = array(
         'type' => 'group',
