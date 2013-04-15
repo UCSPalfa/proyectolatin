@@ -24,6 +24,7 @@
 		$metadata_options = $vars["entity"]->metadata_options;
 		
 		$output_as_tags = $vars["entity"]->output_as_tags;
+		$subgroups_only = $vars["entity"]->subgroups_only;	//po5i
 		$blank_available = $vars["entity"]->blank_available;
 		$admin_only = $vars["entity"]->admin_only;
 	}	
@@ -50,6 +51,7 @@
 	
 	$formbody .= "<table>";
 	$formbody .= "<tr><td>" . elgg_echo('profile_manager:admin:output_as_tags') . ":</td><td>" . elgg_view('input/dropdown', array('name' => 'output_as_tags', 'options_values' => $no_yes_options, 'value' => $output_as_tags)) . "</td></tr>";
+	$formbody .= "<tr><td>" . elgg_echo('profile_manager:admin:subgroups_only') . ":</td><td>" . elgg_view('input/dropdown', array('name' => 'subgroups_only', 'options_values' => $no_yes_options, 'value' => $output_as_tags)) . "</td></tr>";
 	$formbody .= "<tr><td>" . elgg_echo('profile_manager:admin:admin_only') . ":</td><td>" . elgg_view('input/dropdown', array('name' => 'admin_only', 'options_values' => $no_yes_options, 'value' => $admin_only)) . "</td></tr>";
 	$formbody .= "<tr><td>" . elgg_echo('profile_manager:admin:blank_available') . ":</td><td>" . elgg_view('input/dropdown', array('name' => 'blank_available', 'options_values' => $no_yes_options, 'value' => $blank_available)) . "</td></tr>";
 	$formbody .= "</table></div></div>";

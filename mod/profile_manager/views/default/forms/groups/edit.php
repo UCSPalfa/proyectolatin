@@ -52,7 +52,9 @@ $currentContext = elgg_get_context();
 $nameField = 'groups:name';
 $iconField = 'groups:icon';
 
-if ($currentContext == 'au_subgroups_creation') {
+$is_subgroup = isSubgroup($vars['entity']); //po5i
+
+if ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgroups_edition') {
     $nameField = 'au_subgroups:name';
     $iconField = 'au_subgroups:icon';
 }
@@ -67,7 +69,7 @@ if ($currentContext == 'au_subgroups_creation') {
 
 <div class="elgg-module  elgg-module-info">
 <div class="elgg-head">
-    <h3><?php echo elgg_echo($nameField); ?> (*) </h3>
+    <h3 class="mandatory"><?php echo elgg_echo($nameField); ?></h3>
     <!-- po5i -->
     <?php
     echo elgg_view("input/text", array(
@@ -103,13 +105,63 @@ if ($currentContext == 'au_subgroups_creation') {
     <h3><?php echo elgg_echo("groups:description"); ?></h3>
     <?php echo elgg_view("input/text", array(
         'name' => 'description',
-        'value' => $vars['entity']->description
+        'value' => $vars['entity']->description,
     ));
     ?>
 </div>
 </div>
 
 <?php
+/////////////////////////////////////////////////////////
+//TODO: Agregar usuarios dinamicamente (solo para create)
+if($is_subgroup):    
+    if ($currentContext == 'au_subgroups_creation') {
+        $candidates = elgg_get_site_entity()->getMembers(0);
+
+        foreach ($candidates as $user){
+            $user_icon = elgg_view_entity_icon($user, 'tiny');
+            $response[] = array($user->guid, $user->name." - ".$user->username." - ".$user->email, $user->name." - ".$user->username, $user_icon.$user->name." - ".$user->username." - ".$user->email);
+        }
+        ?>
+        <script type="text/javascript">
+            window.addEvent('load', function(){
+                // Autocomplete initialization
+                var t4 = new TextboxList('recipient_guid', {unique: true, plugins: {autocomplete: {}}});
+                var autocomplete = t4.plugins['autocomplete'];
+                autocomplete.setValues(
+                    <?php echo json_encode($response); ?>
+                );
+        });
+        </script>
+        <?php 
+        elgg_load_js('mootools');
+        elgg_load_js('GrowingInput');
+        elgg_load_js('JSTextboxList');
+        elgg_load_js('JSTextboxList.Autocomplete')
+        ?>
+
+        <div class="elgg-module  elgg-module-info"><div class="elgg-head">
+            <h3><?php echo elgg_echo('au_subgroups:invite:subgroup') ?></h3>
+            <input type="text" name="recipient_guid" value="" id="recipient_guid" /><!--csv-->
+        </div></div>
+        <?
+    }
+
+    //po5i:politicas
+    if ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgroups_edition') {
+        ?>
+        <div class="elgg-module  elgg-module-info"><div class="elgg-head">
+            <h3><?php echo elgg_echo('au_subgroups:policies:title') ?></h3>
+            <a href='<?php echo elgg_echo('au_subgroups:policies:link') ?>' target='_blank'><?php echo elgg_echo('au_subgroups:policies:link') ?></a>
+        </div></div>
+        <?    
+    }
+
+endif; 
+/////////////////////////////////////////////////////////
+
+
+
 // retrieve group fields
 $group_fields = profile_manager_get_categorized_group_fields();
 
@@ -117,6 +169,17 @@ if (count($group_fields["fields"]) > 0) {
     $group_fields = $group_fields["fields"];
 
     foreach ($group_fields as $field) {
+
+        //po5i: validacion para mostrar campos de subgrupos exclusivamente en subgrupos:
+        if(
+            $field->subgroups_only == "yes" and ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgroups_edition')
+            or
+            $field->subgroups_only == "no" and $currentContext == 'groups'
+            )
+            echo "";    //pass
+        else
+            continue;
+
         $metadata_name = $field->metadata_name;
 
         // get options
@@ -146,9 +209,9 @@ if (count($group_fields["fields"]) > 0) {
         if ($valtype == 'longtext') {
             $line_break = '';
         }
-        echo '<div><label>';
-        echo $title;
-        echo "</label>";
+        echo '<div class="elgg-module  elgg-module-info"><div class="elgg-head">';
+        $mandatory = $field->mandatory == "yes" ? ' class="mandatory"' : '';
+        echo "<h3" . $mandatory . ">" . $title . "</h3>";
 
         if ($hint = $field->getHint()) {
             ?>
@@ -167,7 +230,7 @@ if (count($group_fields["fields"]) > 0) {
         echo elgg_view("input/{$valtype}", array(
             'name' => $metadata_name,
             'value' => $value,
-            'options' => $options
+            'options' => $options,
         ));
 
         if ($valtype == "dropdown") {
@@ -175,8 +238,10 @@ if (count($group_fields["fields"]) > 0) {
         }
 
         echo '</div>';
+        echo '</div>';
     }
 }
+
 ?>
 
 
@@ -301,7 +366,7 @@ if ($tools) {
     if (isset($vars['entity'])) {
         $delete_url = 'action/groups/delete?guid=' . $vars['entity']->getGUID();
         echo elgg_view('output/confirmlink', array(
-            'text' => elgg_echo('groups:delete'),
+            'text' => isSubgroup($vars['entity']) ? elgg_echo('au_subgroups:delete:subgroup') : elgg_echo('groups:delete'),     //po5i:edit
             'href' => $delete_url,
             'confirm' => elgg_echo('groups:deletewarning'),
             'class' => 'elgg-button elgg-button-delete float-alt',

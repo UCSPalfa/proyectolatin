@@ -32,7 +32,14 @@ function messages_init() {
 			'priority' => 31,
 		));		
 	}
+	elgg_register_js('autosuggest', 'mod/messages/vendors/autosuggest/jquery.autoSuggest.js');
+	elgg_register_js('autosuggest1', 'mod/messages/vendors/autosuggest/jquery.autoSuggest.minified.js');
+	elgg_register_js('autosuggest2', 'mod/messages/vendors/autosuggest/jquery.autoSuggest.packed.js');
+	elgg_register_css('CSSautosuggest','mod/messages/vendors/autosuggest/autoSuggest.css');
+	elgg_load_css('CSSautosuggest');
+	
 
+	
 	elgg_register_event_handler('pagesetup', 'system', 'messages_notifier');
 
 	// Extend system CSS with our own styles, which are defined in the messages/css view

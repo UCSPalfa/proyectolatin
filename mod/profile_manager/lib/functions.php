@@ -61,7 +61,9 @@
 		// registering group field types		
 		$group_options = array(
 				"output_as_tags" => true,
-				"admin_only" => true
+				"mandatory" => true,			//po5i
+				"admin_only" => true,
+				"subgroups_only" => true, 		//po5i
 			);	
 		
 		$datepicker_options = $group_options;

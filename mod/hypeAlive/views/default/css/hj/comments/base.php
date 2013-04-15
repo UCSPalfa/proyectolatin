@@ -31,7 +31,7 @@ font-color:#666;
 .hj-comments-bubble,
 .hj-comments-list .elgg-list > li
 {
-background:#f4f4f4;
+/*background:#f4f4f4;*/
 border-bottom:1px solid #ddd;
 padding:2px 5px;
 margin-bottom:2px;
@@ -115,5 +115,9 @@ display:block;
  }
  
 
+ .space_top{
+ margin-top:8px;
+ }
+ 
 
  
