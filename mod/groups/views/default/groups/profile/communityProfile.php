@@ -64,7 +64,7 @@ echo "</div>";
 // *** Group Description *** //
 // ************************* //
 
-echo "<div class='group-description-div'>";
+echo "<div class='group-description-div' style='height: 165px; overflow-y: auto; padding-right: 10px;'>";
 
 if (trim($description) != '') {
     echo $description;
@@ -118,6 +118,7 @@ if ($totalWritingGroups > $writingGroupsLimit) {
     $writingGroups = $tmpArray;
 }
 
+$booksTitles = getCommunityBooks($group);
 
 // ************************ //
 // *** Group Statistics *** //
@@ -187,7 +188,40 @@ if ($totalMembers == 0) {
     echo "<div class='all-members-div'></div>";
 }
 
-echo "</div>";
+echo "</div>"; // end div members
+
+
+
+
+
+
+// ********************* //
+// *** Group's Books *** //
+// ********************* //
+
+if (count($booksTitles) > 0) {
+
+    echo "<div class='group-members-div' style='height: 160px; margin-top: 20px;' >";
+
+    echo "<div style='text-align: left;'><label>" . elgg_echo("books:communities") . ":</label></div> <br />";
+
+        echo "<div style='overflow-y: auto; height: 70%; text-align: left; margin-right: 10px; '>";
+
+            echo "<ol style='' >";
+
+                foreach ($booksTitles as $bookTitle) {
+
+                    echo '<li class="institution" style="margin-bottom: 10px;" >' . $bookTitle . '<li>';
+
+                }        
+
+            echo '</ol>';
+
+        echo "</div>";
+
+    echo "</div>"; // end div books
+    
+}
 
 
 
@@ -195,7 +229,8 @@ echo "</div>";
 
 
 
-echo "<div class='lowerContainer'>";
+
+echo "<div class='lowerContainer' style='margin-right: 10px;'>";
 
 
 // *************************** //
@@ -206,17 +241,10 @@ echo "<div class='group-related-communities-div'>";
 
 echo "<div style='text-align: left;'><label>" . elgg_echo("Related Communities") . ":</label></div> <br />";
 
-foreach ($relatedCommunities as $community) {
-
-    $file = $community->getIconURL();
-    $icon = "<img src='$file'>";
-
-    echo elgg_view('output/url', array(
-        'href' => $community->getURL(),
-        'text' => $icon,
-        'title' => $community->name,
-        'is_trusted' => true,
-    ));
+foreach ($relatedCommunities as $community) {    
+    
+    echo elgg_view('groups/profile/groupIcon', array('entity' => $community));
+    
 }
 
 if ($totalRelatedCommunities == 0) {
@@ -249,15 +277,19 @@ echo "<div style='text-align: left;'><label>" . elgg_echo("au_subgroups") . ":</
 
 foreach ($writingGroups as $book) {
 
-    $file = $book->getIconURL();
-    $icon = "<img src='$file'>";
-
-    echo elgg_view('output/url', array(
-        'href' => $book->getURL(),
-        'text' => $icon,
-        'title' => $book->name,
-        'is_trusted' => true,
-    ));
+//    $file = $book->getIconURL();
+//    $icon = "<img src='$file'>";
+//
+//    echo elgg_view('output/url', array(
+//        'href' => $book->getURL(),
+//        'text' => $icon,
+//        'title' => $book->name,
+//        'is_trusted' => true,
+//    ));
+    
+    echo elgg_view('groups/profile/groupIcon', array('entity' => $book));
+    
+    
 }
 
 if (!$totalWritingGroups) {
@@ -277,8 +309,24 @@ if (!$totalWritingGroups) {
     echo "<div class='all-members-div'></div>";
 }
 
-echo "</div>";
-echo "</div>";
+echo "</div>"; // end Writing Groups
+
+
+echo "</div>"; // end lower container
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // ************************ //

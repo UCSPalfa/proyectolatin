@@ -286,6 +286,53 @@ function groups_handle_mine_page() {
     au_subgroups_handle_mine_page();
 }
 
+
+// Esta función se ejecuta cuando se accede a la URL groups/writting_groups/username
+function list_mine_subgroups($user) {
+    
+    elgg_push_context('mine_groups');
+    $page_owner = elgg_get_page_owner_entity();
+    
+    if ($page_owner->guid == elgg_get_logged_in_user_guid()) {
+        $title = elgg_echo('writing:groups:yours');
+    } else {
+        $title = elgg_echo('writing:groups:user', array($page_owner->name));
+    }
+    
+    elgg_push_breadcrumb($title);
+    
+    $allGroups = elgg_get_entities_from_relationship(array(
+        'relationship' => 'member',
+        'relationship_guid' => $user->guid,
+        'inverse_relationship' => false,
+        'types' => 'group',
+        'limit' => 0,
+    ));
+    
+    $content .=  '<ul class="elgg-gallery">';
+        
+
+        foreach ($allGroups as $group) {
+            if (isSubgroup($group)) {
+                $content .=  '<li class="elgg-item">';
+                    $content .= elgg_view('groups/profile/gPlus', array('entity' => $group));
+                $content .=  '</li>';
+            }
+        }
+
+        
+    $content .=  '</ul>';
+    
+    $params = array(
+        'content' => $content,
+        'filter' => '',
+    );
+    $body = elgg_view_layout('content', $params);
+
+    echo elgg_view_page($title, $body);
+    
+}
+
 /**
  * Create or edit a group
  *
@@ -512,22 +559,12 @@ function groups_handle_members_page($guid) {
         'pagination' => false
     ));
 
-    $content .= "<div style='padding-left: 4%; padding-right: 2%;'>";
+    $content .= "<div style=''>";
 
     foreach ($members as $member) {
-
-        $categorized_fields = profile_manager_get_categorized_fields($member);
-        $cats = $categorized_fields['categories'];
-        $fields = $categorized_fields['fields'];
-
-        $file = $member->getIconURL();
-        $icon = "<img src='$file' class='communityMemberIcon'>";
-
-        $content .= elgg_view('output/url', array(
-            'href' => $member->getURL(),
-            'text' => $icon,
-            'title' => $member->name,
-            'is_trusted' => true,));
+        
+        $content .= elgg_view('groups/profile/communityMember', array('entity' => $member));
+        
     }
 
     $content .= "</div>";

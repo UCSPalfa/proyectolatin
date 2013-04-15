@@ -61,6 +61,12 @@ if (array_key_exists('type', $vars['params']) && array_key_exists('subtype', $va
 
 if (!$type_str && array_key_exists('type', $vars['params'])) {
 	$type_str = elgg_echo("item:{$vars['params']['type']}");
+        
+        if ($type_str == "Groups") {
+            
+            $type_str = elgg_echo("communities:and:writing:groups");
+            
+        }
 }
 
 if (!$type_str) {
@@ -68,7 +74,7 @@ if (!$type_str) {
 }
 
 if ($type_str == "Groups") {
-    $type_str = "Communities and Writing Groups";    
+    $type_str = elgg_echo("communities:and:writing:groups");
 } 
 
 // allow overrides for titles

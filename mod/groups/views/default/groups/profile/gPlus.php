@@ -22,12 +22,13 @@ if ($isSubgroup) {
 ?>
 	<div class="groupIcon" title="<?php echo $group->name; ?>">
 
-            
+            <a href="<?php echo $group->getURL(); ?>">                
 		<div class="groupNameContainer">
                     <div class="groupName">
 			<?php echo $group->name; ?>
                     </div>
 		</div>
+            </a>
 
 		<div class="iconBorder">
 			<?php echo elgg_view_entity_icon($group, 'medium', array('href' => $group->getURL())); ?>

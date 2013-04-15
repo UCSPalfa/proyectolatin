@@ -23,7 +23,17 @@ if ($isSubgroup) {
     <div class="groupIcon" title="<?php echo $group->name; ?>" >
             
         <div class="groupNameContainer">
-                <?php echo $group->name; ?>
+                <?php // echo $group->name; ?>
+            
+                <?php echo elgg_view('output/url', array(
+                'href' => $group->getURL(),
+                'text' => $group->name,
+                'title' => $group->name,
+                'is_trusted' => true,
+            ));
+                
+                
+                ?>
         </div>
 
             <?php $file = $group->getIconURL();

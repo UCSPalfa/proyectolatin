@@ -10,6 +10,8 @@
 $english = array(
 
     
+        'communities:and:writing:groups' => 'Communities and Writing Groups',
+    
         'languages' => 'Languages',
         'no:languages' => 'No Languages yet',
     
@@ -23,7 +25,10 @@ $english = array(
 	'groups:owned' => "Communities I own",
 	'groups:owned:user' => 'Communities %s owns',
 	'groups:yours' => "My communities",
+	'writing:groups:yours' => "My writing groups",
+	'groups:yours' => "My communities",
 	'groups:user' => "%s's communities",
+	'writing:groups:user' => "%s's writing groups",
 	'groups:all' => "All communities",
 	'groups:add' => "Create a new community",
 	'groups:edit' => "Edit community",
@@ -53,15 +58,27 @@ $english = array(
 	'groups:subscribed' => 'Community notifications on',
 	'groups:unsubscribed' => 'Community notifications off',
     
+    
+        
         'community:no:books' => 'This community does not have Writing Groups yet',
         'community:no:members' => 'This community does not have members yet',
         'community:no:related' => 'This community is not related with other ones yet',
         'community:no:description' => 'This community does not have a description yet',
     
+        'user:no:communities' => 'This user has not jont to any community yet',
+        'user:no:writing:books' => 'This user is not currently collaborating in any writing group yet',
+        'user:no:bio' => 'This user has not specified a bio yet',
+    
+        'you:no:communities' => 'You have not jont to any community yet',
+        'you:no:bio' => 'You have not specified a bio yet. Edit pofile and fill this field.',
+        'you:no:writing:books' => 'You are not currently collaborating in any writing group yet',
+    
         'writingGroup:no:books' => 'This Writing Group does not have books yet',
         'writingGroup:no:members' => 'This Writing Group does not have members yet',
         'writingGroup:no:related' => 'This Writing Group is not related with other ones yet',
         'writingGroup:no:description' => 'This Writing Group does not have a description yet',
+    
+        'user:cv' => '%s\'s CV',
 
 	'member:of' => 'Member of',
 	'groups:members:title' => 'Members of %s',

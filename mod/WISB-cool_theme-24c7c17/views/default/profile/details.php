@@ -1,18 +1,37 @@
 <?php
+
+
 /**
  * Elgg user display (details)
  * @uses $vars['entity'] The user entity
  */
 
     $theUser = elgg_get_page_owner_entity();
+    $theViewer = elgg_get_logged_in_user_entity();
 
         $name = $theUser->name;
-
+        $bio = $theUser->Bio;
         
         $institution = $theUser->Institution;
         $email = $theUser->email;
         $city = $theUser->City;
         $country = $theUser->Country; 
+        $twitter = $theUser->Twitter; 
+        
+        if ($city) {
+            if ($country) {
+                $cityAndCountry = elgg_view('output/url', array('style' => 'color: #0054A7;', 'href' => 'search?tag=' . $city, 'text' => $city, 'title' => $city,  'class' => 'tag', 'style' => 'margin-top: 6px; font-size: 13px;')) . " <label style='float: left; margin-top: 6px; margin-right: 8px; font-weight: normal; font-size: 13px;'>-</label> " . elgg_view('output/url', array('style' => 'color: #0054A7;', 'href' => 'search?tag=' . $country, 'title' => $country, 'text' => $country, 'class' => 'tag', 'style' => 'margin-top: 6px; font-size: 13px;'));
+            } else {
+                $cityAndCountry = elgg_view('output/url', array('style' => 'color: #0054A7;', 'href' => 'search?tag=' . $city, 'text' => $city, 'title' => $city, 'class' => 'tag', 'style' => 'margin-top: 6px; font-size: 13px;'));
+            }
+        } else {
+            if ($country) {
+                $cityAndCountry = elgg_view('output/url', array('style' => 'color: #0054A7;', 'href' => 'search?tag=' . $country, 'text' => $country, 'title' => $country, 'class' => 'tag', 'style' => 'margin-top: 6px; font-size: 13px;'));
+            } else {
+                $cityAndCountry = '';
+            }
+        }
+        
         $interests = $theUser->Interests;
         $languages = $theUser->Languages;
 
@@ -43,196 +62,210 @@
             $writingGroups = $tmpArray;
         }
         
+        $bookTitles = getUserBooksTitles($theUser);
         
         
-        // ************************* //
-        // User Information //
-        // ************************* //
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
-        $content .= "<div class='group-found-div' style='padding-left: 20px;' >";
+// ******************************************** //
+// *** User's Institution, City and Country *** //
+// ******************************************** //
 
-        $content .= "<div class='groupFoundIcon'>";
+        
+if ($institution) {
+    if ($cityAndCountry) {
+        
+        $file = elgg_get_site_url() . '_graphics/institution.png';
+        $institutionIcon = "<img src='$file' style='width: 25px;'>";
+        $institutionCityCountry .= $institutionIcon . elgg_view('output/url', array('href' => 'search?tag=' . $institution, 'text' => $institution, 'class' => 'tag', 'style' => 'color: #0054A7; margin-top: 6px; font-size: 13px; margin-right: 40px; '));
 
-        $content .= elgg_view('output/url', array(
-            'href' => $theUrl,
-            'text' => $icon,
-            'title' => $name,
-            'is_trusted' => true,));
+        $file = elgg_get_site_url() . '_graphics/home.png';
+        $cityCountryIcon = "<img src='$file' style='width: 25px;'>";
+        $institutionCityCountry .= $cityCountryIcon . "<label style='font-weight: normal;'> " . $cityAndCountry . " </label>";
+        
+    } else {
+        
+        $file = elgg_get_site_url() . '_graphics/institution.png';
+        $institutionIcon = "<img src='$file' style='width: 25px;'>";
+        $institutionCityCountry .= $institutionIcon . elgg_view('output/url', array('href' => 'search?tag=' . $institution, 'text' => $institution, 'class' => 'tag', 'style' => 'color: #0054A7; margin-top: 6px; font-size: 13px; margin-right: 40px; '));
 
-        $content .= "</div>";
+        
+    }
+} else {
+    if ($cityAndCountry) {
+        
+        $file = elgg_get_site_url() . '_graphics/home.png';
+        $cityCountryIcon = "<img src='$file' style='width: 25px;'>";
+        $institutionCityCountry .= $cityCountryIcon . "<label style='font-weight: normal;'> " . $cityAndCountry . " </label>";
+        
+    } else {
+        
+        $institutionCityCountry = '';
+    }
+}
+        
+if ($institutionCityCountry) {
+    $content .= "<div class='group-tags-div' style='margin-left: 10px; '>";
+        $content .= $institutionCityCountry;
+    $content .= "</div>";
+}
 
 
-        $content .= "<div class='groupInformation'>";
-        
-        
-        // ************************** //
-        // *** User's Institution *** //
-        // ************************** //
-        
-        
-        if ($institution) {            
-            
-            $content .=  "<div class='user-institution-div'>";
 
-            $file = elgg_get_site_url() . '_graphics/institution.png';
-            $icon = "<img src='$file'>";
 
-            $content .=  $icon;
+        
 
-            $content .=  "<label class='institution' style='height: 25px;' >" . $institution . "</label>";
+// ************************ //
+// *** User's Interests *** //
+// ************************ //
 
-            $content .= "</div>";
-            
-        }
-        
-        
-        // ************************** //
-        // *** User's Country *** //
-        // ************************** //
-        
-        
-        if ($city || $country) {
-            
-            $content .=  "<div class='user-institution-div'>";
+if (count($interests)) {
 
-            $file = elgg_get_site_url() . '_graphics/home.png';
-            $icon = "<img src='$file'>";
+    $content .= "<div class='group-tags-div' style='margin-left: 10px;'>";
 
-            $content .=  $icon;
+    $file = elgg_get_site_url() . '_graphics/tag.png';
+    $icon = "<img src='$file' style='width: 25px;'>";
 
-            $content .=  "<label class='institution' style='height: 25px;' >" . $city . ' , ' . $country . "</label>";
+    $content .= $icon;
 
-            $content .= "</div>";
-            
-        }
-        
-        
-        // ************************** //
-        // *** User's Email *** //
-        // ************************** //
-        
-        
-        if ($email) {
-            
-            $content .=  "<div class='user-institution-div'>";
+    $content .= "<label class='interests' style='margin-top: 4px; font-size: 13px;' >" . elgg_echo('community:interests') . ":</label>";
+    
+    foreach ($interests as $currentTag) {
+        $content .= elgg_view('output/url', array('href' => 'search?tag=' . $currentTag, 'text' => $currentTag, 'class' => 'tag', 'style' => 'margin-top: 4px; font-size: 13px;'));
+    }
+    
+    $content .= "</div>";
+}
 
-            $file = elgg_get_site_url() . '_graphics/email.png';
-            $icon = "<img src='$file'>";
+// ************************ //
+// *** User's Languages *** //
+// ************************ //
+if (count($languages)) {
+    
+    $content .= "<div class='group-tags-div' style='margin-left: 10px; margin-bottom: 20px;'>";
 
-            $content .=  $icon;
+    $file = elgg_get_site_url() . '_graphics/world.png';
+    $icon = "<img src='$file' style='width: 25px;'>";
 
-            $content .=  "<label class='institution'  style='margin-top: 3px;' ><a class='allMembers' style='font-weight: normal;' href='mailto: " . $email . "'>" . $email . "</a></label>";
+    $content .= $icon;
 
-            $content .= "</div>";
-            
-        }
-        
-        
-                        
-        
-        
-        
-        
-        $content .= "</div>"; // End of groupInformation
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        // ********** //
-        // User Stats //
-        // ********** //
+    $content .= "<label class='interests' style='margin-top: 4px; font-size: 13px;' >" . elgg_echo('languages') . ":</label>";
 
-        $content .= "<div class='group-stats-div' style='text-align: left; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #d2d2d2; float:right; margin-right: 10px;'>";
+    foreach($languages as $key => $language) {
+        $content .= elgg_view('output/url', array('href' => 'search?tag=' . $language, 'text' => $language, 'class' => 'tag', 'style' => 'margin-top: 4px; font-size: 13px;'));
+    }
 
-        $file = elgg_get_site_url() . '_graphics/communities.png';
-        $icon = "<img src='$file'>";
-        $content .= $icon . "<label> " . $totalUserCommunities . " " . elgg_echo('groups') . " </label>";
-        $content .= "<hr />";
+    $content .= "</div>";
 
-        $file = elgg_get_site_url() . '_graphics/note.png';
-        $icon = "<img src='$file'>";
-        $content .= $icon . "<label> $totalWritingGroups " . elgg_echo('au_subgroups') . "</label>";
-       
-       
+}
 
-        $content .= "</div>";
-        
-        
-        
-        
-        
-        
-        // ************************* //
-        // *** User's Interests *** //
-        // ************************* //
-        
-        $content .=  "<div class='user-interests-div' style='margin-top: 7px; margin-bottom: 0px; width: auto; '>";
 
-        $file = elgg_get_site_url() . '_graphics/tag.png';
-        $icon = "<img src='$file'>";
+$content .= "<div class='lowerContainer' style='margin-top: 0px; padding-right: 10px; height: 200px;'>";
 
-        $content .=  $icon;
 
-        $content .=  "<label class='interests'  style='height: 25px;' >" . elgg_echo('community:interests') . ":</label>";
+// *************************** //
+// *** Book Titltes *** //
+// *************************** //
 
-        if (count($interests) == 0) {
-            $content .=  "<label class='noInterests' >" . elgg_echo('community:no:interests') . "</label>";
+$content .= "<div class='group-related-communities-div' style='text-align: left; width: 61%; margin-top: 0px;' >";
+
+$file = elgg_get_site_url() . '_graphics/info.png';
+$icon = "<img src='$file' style='float: left; width: 25px; height: 25px; border: none; margin-top: -5px; margin-left: -10px;'>";
+//$content .= $icon . "<div style='padding-left: 0px;'><label>" . elgg_echo("Bio") . ":</label></div> <br />";
+$content .= "<div style='padding-left: 0px;'><label>" . elgg_echo("Bio") . ":</label></div> <br />";
+
+    $content .= "<div style='overflow-y: auto; height: 78%; text-align: justify; margin-top: -5px; margin-left: -5px; '>";
+
+
+        if (trim($bio) != '') {
+            $content .= "<div style='margin-right: 10px;'>$bio</div>";
         } else {
-            foreach ($interests as $currentInterest) {
-                
-                $currentInterest = str_replace($query, "<strong>" . $query . "</strong>", $currentInterest);
-                
-                $content .=  elgg_view('output/url', array('href' => 'search?tag=' . $currentInterest, 'text' => $currentInterest, 'class' => 'tag'));
-            }
+            if ($theUser->guid == $theViewer->guid) {                
+                $content .= "<div class='noContent' style='margin-top: 55px;'>" . elgg_echo("you:no:bio") . "</div>";
+            } else {
+                $content .= "<div class='noContent' style='margin-top: 55px;'>" . elgg_echo("user:no:bio") . "</div>";
+            }            
         }
+        
 
-        $content .= "</div>"; //user's interests
-        
-        
-        
-        
-        
-        
-        
-        // ************************* //
-        // *** User's Languages *** //
-        // ************************* //
-        
-        $content .=  "<div class='user-interests-div' style='margin-top: 7px; width: auto; '>";
+    $content .= "</div>";
 
-        $file = elgg_get_site_url() . '_graphics/world.png';
-        $icon = "<img src='$file'>";
 
-        $content .=  $icon;
+$content .= "</div>";
 
-        $content .=  "<label class='interests'  style='height: 25px;' >" . elgg_echo('languages') . ":</label>";
 
-        if (count($languages) == 0) {
-            $content .=  "<label class='noInterests' >" . elgg_echo('no:languages') . "</label>";
-        } else {
-            foreach ($languages as $currentLanguage) {
-                
-                $currentLanguage = str_replace($query, "<strong>" . $query . "</strong>", $currentLanguage);
-                
-                $content .=  elgg_view('output/url', array('href' => 'search?tag=' . $currentLanguage, 'text' => $currentLanguage, 'class' => 'tag'));
-            }
-        }
+// ******************************** //
+// *** User Info and Statistics *** //
+// ******************************** //
 
-        $content .= "</div>"; //user's languages
-        
-        
-        
-        
-        
-        $content .= "</div>";
-        
-        
+$iconStyle = "width: 25px;";
+
+$content .= "<div class='group-stats-div' style='border-left: none; margin-left: 0px; width: 30%;'>";
+
+if ($email)  {
+    $file = elgg_get_site_url() . '_graphics/email.png';
+    $icon = "<img src='$file' style='$iconStyle' title='Email'>";
+    $content .=  $icon  . "<label'><a class='allMembers' style='margin-left: 6px; font-weight: normal;' href='mailto: " . $email . "'>" . $email . "</a></label>";
+    $content .= "<hr />";
+}
+
+if ($theUser->CV) {
+    $firstName = strtok($name, " ");
+    $file = elgg_get_site_url() . '_graphics/download.png';
+    $icon = "<img src='$file' style='$iconStyle' title='Download CV'>";
+    $cvLink = "/file/download/$theUser->CV";
+    $content .= $icon . "<label style='font-weight: normal;'> " . elgg_view('output/url', array('href' => $cvLink, 'text' => elgg_echo('user:cv', array($firstName)), 'class' => 'tag', 'style' => 'margin-top: 4px; font-size: 13px; color: #0054A7;')) . " </label>";
+    $content .= "<hr />";
+}
+
+$file = elgg_get_site_url() . '_graphics/communities.png';
+$icon = "<img src='$file' style='$iconStyle' title='Member of'>";
+$content .= $icon . "<label style='font-weight: normal;'> " . $totalUserCommunities . " " . elgg_echo('groups') . " </label>";
+$content .= "<hr />";
+
+$file = elgg_get_site_url() . '_graphics/note.png';
+$icon = "<img src='$file' style='$iconStyle' title='Collaborating in'>";
+$content .= $icon . "<label style='font-weight: normal;'> " . $totalUserCommunities . " " . elgg_echo('au_subgroups') . " </label>";
+
+
+if ($twitter) {
+    $content .= "<hr />";
+    $file = elgg_get_site_url() . '_graphics/twitter.png';
+    $icon = "<img src='$file' style='$iconStyle' title='Twitter account'>";
+    $content .= $icon . "<label style='font-weight: normal;'> " . elgg_view('output/url', array('href' => "www.twitter.com/$twitter", 'text' => "@$twitter", 'class' => 'tag', 'style' => 'color: #0054A7;')) . " </label>";    
+}
+
+$content .= "</div>"; // user stats
+
+
+
+
+
+
+$content .= "</div>"; // end lower container
+    
+    
+
+
+
+
+
+
+
+
+$content .= "<div style='clear:both; min-height: 25px;'></div>";
+
+
         
         
         
@@ -244,23 +277,16 @@
         
     
 
-    $content .= "<div class='user-members-div' style='padding-left: 20px;'>";
+    $content .= "<div class='user-members-div' style='padding-left: 20px; margin-top: -20px;'>";
 
     $content .= "<div style='text-align: left;'><label>" . elgg_echo("member:of") . ":</label></div> <br />";
     
-    $content .= "<div style='margin-left: 10px; width:100%;'>";
+    $content .= "<div style='padding-right: 10px; '>";
 
     foreach ($userCommunities as $community) {
 
         $file = $community->getIconURL();
         $icon = "<img src='$file'>";
-
-//        $content .= elgg_view('output/url', array(
-//            'href' => $community->getURL(),
-//            'text' => $icon,
-//            'title' => $community->name,
-//            'is_trusted' => true,
-//        ));
         
         $content .= elgg_view('groups/profile/groupIcon', array('entity' => $community));
         
@@ -268,12 +294,14 @@
     
     
     $content .= "</div>";
-    
-    
-    
 
     if ($totalUserCommunities == 0) {
-        $content .= "<div class='noContent'>" . elgg_echo("community:no:related") . "</div>";
+        if ($theUser->guid == $theViewer->guid) {                
+            $content .= "<div class='noContent' style='margin-bottom: 40px;'><label style='font-size: 13px; font-weight: normal; color: #ccc';>" . elgg_echo("you:no:communities") . "</label></div>";
+        } else {
+            $content .= "<div class='noContent' style='margin-bottom: 40px;'><label style='font-size: 13px; font-weight: normal; color: #ccc';>" . elgg_echo("user:no:communities") . "</label></div>";
+        }
+        
     } else if ($totalUserCommunities > $displayableCommunitiesLimit) {
 
         $allRelatedCommunitiesLink = elgg_view('output/url', array(
@@ -295,41 +323,67 @@
 
         
         
+
+    
+    
         
-$content .= "<div class='lowerContainer' style='padding-right: 10px; height: 153px;'>";    
     
-// ********************** //
-// *** Writing Groups *** //
-// ********************** //
-
-$content .= "<div class='user-writing-groups-div'>";
-
-$content .= "<div style='text-align: left;'><label>" . elgg_echo("au_subgroups") . ":</label></div> <br />";
 
 
-$content .= "<div style='margin-left: 10px; width:100%;'>";
 
-foreach ($writingGroups as $book) {
 
-    $file = $book->getIconURL();
-    $icon = "<img src='$file'>";
 
-//    $content .= elgg_view('output/url', array(
-//        'href' => $book->getURL(),
-//        'text' => $icon,
-//        'title' => $book->name,
-//        'is_trusted' => true,
-//    ));
-    
-    $content .= elgg_view('groups/profile/groupIcon', array('entity' => $book));
-}
+
+
+$content .= "<div class='lowerContainer' style='padding-right: 10px; height: 153px;'>";
+
+
+// *************************** //
+// *** Book Titltes *** //
+// *************************** //
+
+$content .= "<div class='group-related-communities-div' style='text-align: left; width: 55%;' >";
+
+$content .= "<div style='padding-left: 0px;'><label>" . elgg_echo("books:user") . ":</label></div> <br />";
+
+    $content .= "<div style='overflow-y: auto; height: 70%; '>";
+
+
+        $content .= "<ol style='margin-left: -8px; ' >";
+
+            foreach ($bookTitles as $bookTitle) {
+
+                $content .= '<li class="institution" style="margin-bottom: 10px;" >' . $bookTitle . '<li>';
+
+            }        
+
+        $content .= '</ol>';
+
+    $content .= "</div>";
+
 
 $content .= "</div>";
 
 
-if (!$totalWritingGroups) {
+// ********************** //
+// *** Writing Groups *** //
+// ********************** //
 
-    $content .= "<div class='noContent'>" . elgg_echo("community:no:books") . "</div>";
+$content .= "<div class='group-books-div' style='width: 33%;'>";
+
+$content .= "<div style='text-align: left;'><label>" . elgg_echo("au_subgroups") . ":</label></div> <br />";
+
+foreach ($writingGroups as $book) {
+    $content .= elgg_view('groups/profile/groupIcon', array('entity' => $book));
+}
+
+if (!$totalWritingGroups) {
+    if ($theUser->guid == $theViewer->guid) {                
+        $content .= "<div class='noContent'>" . elgg_echo("you:no:writing:books") . "</div>";
+    } else {
+        $content .= "<div class='noContent'>" . elgg_echo("user:no:writing:books") . "</div>";
+    }
+    
 } else if ($totalWritingGroups > $writingGroupsLimit) {
 
     $allWritingGroups = elgg_view('output/url', array(
@@ -339,22 +393,15 @@ if (!$totalWritingGroups) {
         'class' => 'allBooks',
     ));
 
-    $content .= "<div class='all-members-div' style='clear:both;' >$allWritingGroups</div>";
+    $content .= "<div class='all-members-div'>$allWritingGroups</div>";
 } else {
     $content .= "<div class='all-members-div'></div>";
 }
 
-$content .= "</div>"; // writing groups div
+$content .= "</div>"; // end Writing Groups
 
 
-
-
-$content .= "</div>";
-
-    
-    
-        
-    
+$content .= "</div>"; // end lower container
     
     
         
@@ -365,11 +412,13 @@ $content .= "</div>";
 
 
 
-
-
+//
+//
 //$user = elgg_get_page_owner_entity();
 //
 //$profile_fields = elgg_get_config('profile_fields');
+//
+//print_r($profile_fields);
 //
 //echo "<dl class=\"elgg-profile\">";
 //if (is_array($profile_fields) && sizeof($profile_fields) > 0) {
@@ -380,9 +429,9 @@ $content .= "</div>";
 //		}
 //		$value = $user->$shortname;
 //		if (!empty($value)) {
-?>
-			<!--<dt><?php echo elgg_echo("profile:{$shortname}"); ?></dt>-->
-			<!--<dd><?php echo elgg_view("output/{$valtype}", array('value' => $user->$shortname)); ?></dd>-->
+//?>
+			<!--<dt><?php // echo elgg_echo("profile:{$shortname}"); ?></dt>-->
+			<!--<dd><?php // echo elgg_view("output/{$valtype}", array('value' => $user->$shortname)); ?></dd>-->
 <?php
 //		}
 //	}
@@ -405,3 +454,7 @@ $content .= "</div>";
 
 
 //echo "Aqui se dibuja el profile de cada usuario del sitio";
+
+
+
+

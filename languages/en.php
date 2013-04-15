@@ -9,6 +9,8 @@
 $english = array(
     
     
+    	'books:communities' => 'Books written whitin this community',
+    	'books:user' => 'This user collaborates in these books',
     	'search:communities' => 'Search for communities',
         'view:all' => "View all",
         'popular:communities' => "Most Popular",
