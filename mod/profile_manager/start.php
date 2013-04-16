@@ -28,6 +28,14 @@
 	function profile_manager_init(){
 		// register libraries
 		elgg_register_js("jquery.ui.multiselect", elgg_get_site_url() . "mod/profile_manager/vendors/jquery_ui_multiselect/jquery.multiselect.js");
+
+		//po5i-ajax: registrado js para buscar grupos
+        $search_js = elgg_get_simplecache_url('js', 'search-group');
+        elgg_register_simplecache_view('js/search-group');
+        elgg_register_js('elgg.searchgroup', $search_js);
+
+        // po5i-ajax: registrada vista ajax para procesamiento de eliminar posts
+        elgg_register_ajax_view('groups/search_group_process');
 		
 		// Extend CSS
 		elgg_extend_view("css/admin", "profile_manager/css/global");

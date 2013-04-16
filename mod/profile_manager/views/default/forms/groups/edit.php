@@ -15,6 +15,10 @@
 $editingWritingGroup = false;
 $addingWritingGroup = false;
 
+//po5i-ajax: cargar js
+elgg_load_js('elgg.searchgroup');
+elgg_extend_view('js/elgg', 'js/search-group');
+
 $currentContext = elgg_get_context();
 // The entity already exists, so the form is loaded TO EDIT a community or a writing group
 if (isset($vars['entity'])) {
@@ -75,28 +79,58 @@ if ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgrou
     echo elgg_view("input/text", array(
         'name' => 'name',
         'value' => $vars['entity']->name,
+        'id'    => 'name_ajax_group_search'
         //'js' => 'onKeyDown="alert(11)";'    //po5i
     ));
-    
-    /*$params = array(
-        'types' => 'group',   
-    );
-    $groups = elgg_get_entities($params );
-    echo elgg_view('input/autocomplete', array(
-        'entities' => $groups,
-        'internalname' => 'namehidden',
-        'internalname_text' => 'name',
-        'value_text' => $vars['entity']->name,
-    ));*/
-
-    /*echo elgg_view('input/autocomplete', array(
-        'value' => $vars['entity']->name,
-        'match_on' =>$groups,
-        'match_owner' =>false,
-        'name' =>'name',
-        ));*/
     ?>
 </div>
+</div>
+
+<!-- po5i: hidden div con sugerencias: diseño -->
+<style>
+#name_ajax_recommendations{
+    display:none;
+    /*position:absolute;*/
+    background: #eeeeee;
+    border: solid 1px #aaaaaa;
+    padding:20px;
+    border-radius: 5px;
+    width: 300px;
+    height: 123px;
+    overflow: scroll;    
+}
+#name_ajax_close{
+    cursor: pointer;
+    font-weight: bold;
+    text-align: right;
+}
+#nane_ajax_legend{
+    padding-bottom: 5px;
+}
+#name_title{
+    font-size: 150%;
+}
+#name_ajax_results{
+    display: table;
+}
+#name_ajax_results img {
+  vertical-align: middle;
+  display: table-cell;
+  border: solid thin #DDDDDD;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+#name_ajax_results span {
+  vertical-align: middle;
+  display: table-cell;
+}
+</style>
+<div id="name_ajax_recommendations">
+    <div id="nane_ajax_legend"><?php echo elgg_echo('profile_manager:groups:similar'); ?></div>
+    <div id="name_ajax_results"></div>
+    <div id="name_ajax_close"><?php echo elgg_echo('profile_manager:groups:close'); ?></div>
 </div>
 
 <!-- po5i -->

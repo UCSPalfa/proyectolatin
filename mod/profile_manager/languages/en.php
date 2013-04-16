@@ -101,6 +101,10 @@
 		'profile_manager:admin:blank_available' => 'Field has a blank option',		
 		'profile_manager:admin:option_unavailable' => 'Option unavailable',
 		'profile_manager:admin:subgroups_only' => 'Subgroups only',	//po5i
+
+		// po5i: para las sugerencias de nombres:
+		'profile_manager:groups:similar' => 'Similar communities have been found. Would you consider joining one of them?',
+		'profile_manager:groups:close' => 'Close',
 	
 		// field options additionals description
 		'profile_manager:admin:show_on_register:description' => "If you want this field to be on the register form.",	

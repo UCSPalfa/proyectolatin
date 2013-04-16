@@ -66,6 +66,15 @@ if ($name) {
 	}
 }
 
+// po5i:email
+$email = strip_tags(get_input('email'));
+if ($email) {
+	if ($owner->email != $email) {
+		$owner->email = $email;
+		$owner->save();
+	}
+}
+
 // go through custom fields
 if (sizeof($input) > 0) {
 	foreach ($input as $shortname => $value) {

@@ -256,7 +256,7 @@ function thewire_save_post($text, $userid, $access_id, $parent_guid = 0, $method
 	$post->access_id = $access_id;
 
 	// only 200 characters allowed
-	$text = elgg_substr($text, 0, 200);
+	//$text = elgg_substr($text, 0, 200);		//po5i:https://github.com/Elgg/Elgg/commit/c2fc484d08cd3f9b080d7e8847aad335cc00ca88
 
 	// no html tags allowed so we escape
 	$post->description = htmlspecialchars($text, ENT_NOQUOTES, 'UTF-8');

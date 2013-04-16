@@ -65,6 +65,28 @@ if (!$group->name) {
 	forward(REFERER);
 }
 
+//po5i: validar que el nombre existe al guardar:
+if ($is_new_group){
+	$current_params = Array(
+							'query' => $group->name,
+							'search_type' => 'entities',
+							'offset' => 0,
+							'limit' => 10,
+							'sort' => 'relevance',
+							'order' => 'desc',
+							'type' => 'group',
+							'subtype' => '',
+
+						);
+	$results = elgg_trigger_plugin_hook('search', "group", $current_params, NULL);
+	/*if(count($results['entities'])>0){
+		//echo elgg_view('groups/recommend',array('results'=>$results['entities']));		
+		register_error(elgg_echo("groups:cantcreate"));	//probablemente salten resultados que deberian dejarse pasar
+		forward(REFERER);
+	}*/
+}
+/////////////////////////////////////
+
 
 // Set group tool options
 $tool_options = elgg_get_config('group_tool_options');
