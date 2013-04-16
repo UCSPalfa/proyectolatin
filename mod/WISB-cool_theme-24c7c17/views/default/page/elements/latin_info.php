@@ -7,10 +7,11 @@
  */
 echo "<div class=\"bloque_vd\">";
 echo "<h1>";
+echo elgg_echo("The");
 echo "<span>";
-echo elgg_echo("LATIn");
+echo elgg_echo(" LATIn ");
 echo "</span>";
-echo elgg_echo("Community");
+echo elgg_echo("Project");
 echo "</h1>";
 echo "<p>";
 echo elgg_echo("");

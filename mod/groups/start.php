@@ -306,6 +306,10 @@ function groups_page_handler($page) {
             set_input('username', $page[1]);
             groups_handle_mine_page();
             break;
+        case 'writting_groups':
+            set_input('username', $page[1]);
+            list_mine_subgroups(elgg_get_page_owner_entity());
+            break;
         case 'invitations':
             set_input('username', $page[1]);
             groups_handle_invitations_page();
@@ -585,7 +589,8 @@ function groups_annotation_menu_setup($hook, $type, $return, $params) {
             'encode_text' => false,
             'rel' => 'toggle',
         );
-        $return[] = ElggMenuItem::factory($options);
+        
+        //$return[] = ElggMenuItem::factory($options);
     }
 
     return $return;

@@ -79,7 +79,6 @@ function cool_theme_init() {
             elgg_unextend_view('page/elements/header', 'search/header');
         }
     }
-    
 }
 
 function friends_hack_pagesetup_handler() {
@@ -115,42 +114,39 @@ function facebook_theme_groups_page_handler($segments, $handle) {
 function facebook_theme_pagesetup_handler() {
 
     $owner = elgg_get_page_owner_entity();
-    if (!$owner){
-    	$owner = elgg_get_logged_in_user_entity();
+    if (!$owner) {
+        $owner = elgg_get_logged_in_user_entity();
     }
- 
+
     if (elgg_is_logged_in()) {
 
-
         $user = elgg_get_logged_in_user_entity();
-
 
         // The following code is executed when the current user explore anothe user's profile
         // Checking that the observed profile is not my profile
         if ($owner instanceof ElggUser && $owner->guid != $user->guid) {
 
-
             // Are they friends?
-            if (check_entity_relationship($user->guid, 'friend', $owner->guid)) {
-                elgg_register_menu_item('extras', array(
-                    'name' => 'removefriend',
-                    'text' => elgg_echo('friend:remove'),
-                    'href' => "/action/friends/remove?friend=$owner->guid",
-                    'is_action' => TRUE,
-                    'contexts' => array('profile'),
-                ));
-            } else {
-                // If they are not friends: Adding the button to invite to this person
-                elgg_register_menu_item('title', array(
-                    'name' => 'addfriend',
-                    'text' => elgg_view_icon('addfriend') . elgg_echo('friend:add'),
-                    'href' => "/action/friends/add?friend=$owner->guid",
-                    'is_action' => TRUE,
-                    'link_class' => 'elgg-button elgg-button-special',
-                    'contexts' => array('profile'),
-                    'priority' => 1,
-                ));
-            }
+//            if (check_entity_relationship($user->guid, 'friend', $owner->guid)) {
+//                elgg_register_menu_item('extras', array(
+//                    'name' => 'removefriend',
+//                    'text' => elgg_echo('friend:remove'),
+//                    'href' => "/action/friends/remove?friend=$owner->guid",
+//                    'is_action' => TRUE,
+//                    'contexts' => array('profile'),
+//                ));
+//            } else {
+//                // If they are not friends: Adding the button to invite to this person
+//                elgg_register_menu_item('title', array(
+//                    'name' => 'addfriend',
+//                    'text' => elgg_view_icon('addfriend') . elgg_echo('friend:add'),
+//                    'href' => "/action/friends/add?friend=$owner->guid",
+//                    'is_action' => TRUE,
+//                    'link_class' => 'elgg-button elgg-button-special',
+//                    'contexts' => array('profile'),
+//                    'priority' => 1,
+//                ));
+//            }
 
             // Adding the button to send messages to the observed user.
             // Notice that, since this code is out of the "Are we friends?" question, a user can write another one, even if they are not friends
@@ -165,31 +161,7 @@ function facebook_theme_pagesetup_handler() {
             }
         }
 
-
-
-
-
         if ($owner instanceof ElggUser) {
-
-            // Friends menu item
-            /*elgg_register_menu_item('page', array(
-                'name' => 'friends',
-                'text' => elgg_view_icon('friends') . elgg_echo('friends'),
-                'href' => "/friends/$owner->username",
-                'priority' => 20,
-            ));
-
-            if (elgg_is_logged_in() && !elgg_instanceof($page_owner, 'group') && $owner->guid == $user->guid) {
-
-                $params = array(
-                    'name' => 'invite',
-                    'text' => elgg_echo('friends:invite'),
-                    'href' => 'invite',
-                    'contexts' => array('friends'),
-                    'priority' => 23,
-                );
-                elgg_register_menu_item('page', $params);
-            }*/
 
             if (elgg_is_active_plugin('groups')) {
 
@@ -200,101 +172,53 @@ function facebook_theme_pagesetup_handler() {
                     'priority' => 40,
                 ));
 
-                if (elgg_get_context() == 'groups' && !elgg_instanceof($page_owner, 'group') ) {
-                
-                	$url = "groups/ginvitations/$owner->username";
-                	$invitations = groups_get_invited_wgroups($owner->getGUID());
-                	if (is_array($invitations) && !empty($invitations)) {
-                		$invitation_count = count($invitations);
-                		$text = elgg_echo('au_subgroups:invitations:pending', array($invitation_count));
-                	} else {
-                		$text = elgg_echo('au_subgroups:invitations');
-                	}
-                
-                	elgg_register_menu_item('page', array(
-                	'name' => 'subgroups:invitations',
-                	'text' => $text,
-                	'href' => $url,
-                	'priority' => 43,
-                	));
-                
-                
+                if (elgg_get_context() == 'groups' && !elgg_instanceof($page_owner, 'group')) {
+
+                    $url = "groups/ginvitations/$owner->username";
+                    $invitations = groups_get_invited_wgroups($owner->getGUID());
+                    if (is_array($invitations) && !empty($invitations)) {
+                        $invitation_count = count($invitations);
+                        $text = elgg_echo('au_subgroups:invitations:pending', array($invitation_count));
+                    } else {
+                        $text = elgg_echo('au_subgroups:invitations');
+                    }
+
+                    elgg_register_menu_item('page', array(
+                        'name' => 'subgroups:invitations',
+                        'text' => $text,
+                        'href' => $url,
+                        'priority' => 43,
+                    ));
                 }
-
-
-
-
-                /* if (elgg_get_context() == 'groups' && !elgg_instanceof($page_owner, 'group') ) {
-
-
-                  if ($owner->guid != $user->guid) {
-                  $text = elgg_echo('groups:user', array(strtok($owner->name, " ")));
-                  } else {
-                  $text = elgg_echo('groups:yours');
-                  }
-
-                  elgg_register_menu_item('page', array(
-                  'name' => 'groups:member',
-                  'text' => $text,
-                  'href' => 'groups/member/' . $owner->username,
-                  'priority' => 41,
-                  ));
-
-                  if ($owner->guid != $user->guid) {
-                  $text = elgg_echo('groups:owned:user', array(strtok($owner->name, " ")));
-                  } else {
-                  $text = elgg_echo('groups:owned');
-                  }
-
-
-                  elgg_register_menu_item('page', array(
-                  'name' => 'groups:owned',
-                  'text' => $text,
-                  'href' => 'groups/owner/' . $owner->username,
-                  'priority' => 42,
-                  ));
-
-                  if ($owner->guid == $user->guid) {
-
-                  $url = "groups/invitations/$owner->username";
-                  $invitations = groups_get_invited_groups($owner->getGUID());
-                  if (is_array($invitations) && !empty($invitations)) {
-                  $invitation_count = count($invitations);
-                  $text = elgg_echo('groups:invitations:pending', array($invitation_count));
-                  } else {
-                  $text = elgg_echo('groups:invitations');
-                  }
-
-                  elgg_register_menu_item('page', array(
-                  'name' => 'groups:invitations',
-                  'text' => $text,
-                  'href' => $url,
-                  'priority' => 43,
-                  ));
-
-                  elgg_register_menu_item('page', array(
-                  'name' => 'groups:all',
-                  'text' => elgg_echo('groups:all'),
-                  'href' => 'groups/all',
-                  'priority' => 44,
-                  ));
-                  }
-
-                  }
-
-                 */
             }
         }
 
 
         // The following elements are shown ONLY when the current user OWNS what it is being observed
 
-
         $currentContext = elgg_get_context();
 
         if ($owner->guid == $user->guid || (strcasecmp($currentContext, 'allGroups') == 0 && $user)) {
+            
+            
 
-
+            // Newsfeed menu item		
+            elgg_register_menu_item('page', array(
+                 'name' => 'profile',
+                    'text' => elgg_view_icon('userwall') . elgg_echo('profile:wall'),
+                    'href' => "/profile/$owner->username",
+                    'priority' => 1,
+            ));
+            
+            // Newsfeed menu item		
+            elgg_register_menu_item('page', array(
+                 'name' => 'info',
+                        'text' => elgg_view_icon('info') . elgg_echo('profile:info'),
+                        'href' => "/profile/$owner->username/info",
+                        'priority' => 2,
+            ));
+            
+            
             // Newsfeed menu item		
             elgg_register_menu_item('page', array(
                 'name' => 'news',
@@ -317,7 +241,6 @@ function facebook_theme_pagesetup_handler() {
                     'priority' => 30,
                 ));
             }
-
 
             // If this is MY profile, I should be able to have a button to edit my personal information
             elgg_register_menu_item('title', array(
@@ -429,7 +352,7 @@ function facebook_theme_pagesetup_handler() {
             'name' => 'logo',
             'priority' => 1,
 //            'text' => "<h1 id=\"facebook-topbar-logo\">$site->name</h1>",
-	    'text' => "<div id=\"facebook-topbar-logo\"></div>",
+            'text' => "<div id=\"facebook-topbar-logo\"></div>",
         ));
 
         elgg_register_menu_item('topbar', array(
@@ -566,7 +489,7 @@ function facebook_theme_composer_menu_handler($hook, $type, $items, $params) {
                     'href' => "/ajax/view/thewire/composer?container_guid=$entity->guid",
                     'text' => elgg_view_icon('share') . elgg_echo("composer:object:thewire"),
                     'priority' => 100,
-                ));
+        ));
 
 
         //trigger any javascript loads that we might need
@@ -579,7 +502,7 @@ function facebook_theme_composer_menu_handler($hook, $type, $items, $params) {
                     'href' => "/ajax/view/messageboard/composer?entity_guid=$entity->guid",
                     'text' => elgg_view_icon('speech-bubble-alt') . elgg_echo("composer:annotation:messageboard"),
                     'priority' => 200,
-                ));
+        ));
 
         //trigger any javascript loads that we might need
         elgg_view('messageboard/composer');
@@ -591,7 +514,7 @@ function facebook_theme_composer_menu_handler($hook, $type, $items, $params) {
                     'href' => "/ajax/view/bookmarks/composer?container_guid=$entity->guid",
                     'text' => elgg_view_icon('push-pin') . elgg_echo("composer:object:bookmarks"),
                     'priority' => 300,
-                ));
+        ));
 
         //trigger any javascript loads that we might need
         elgg_view('bookmarks/composer');
@@ -603,7 +526,7 @@ function facebook_theme_composer_menu_handler($hook, $type, $items, $params) {
                     'href' => "/ajax/view/blog/composer?container_guid=$entity->guid",
                     'text' => elgg_view_icon('speech-bubble') . elgg_echo("composer:object:blog"),
                     'priority' => 600,
-                ));
+        ));
 
         //trigger any javascript loads that we might need
         elgg_view('blog/composer');
@@ -615,7 +538,7 @@ function facebook_theme_composer_menu_handler($hook, $type, $items, $params) {
                     'href' => "/ajax/view/file/composer?container_guid=$entity->guid",
                     'text' => elgg_view_icon('clip') . elgg_echo("composer:object:file"),
                     'priority' => 700,
-                ));
+        ));
 
         //trigger any javascript loads that we might need
         elgg_view('file/composer');
@@ -631,79 +554,56 @@ function facebook_theme_group_profile_fields($hook, $type, $fields, $params) {
     );
 }
 
-function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) {        
+function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) {
 
 
     $owner = elgg_get_page_owner_entity();
-    if (!$owner){
-    	$owner = elgg_get_logged_in_user_entity();
+    if (!$owner) {
+        $owner = elgg_get_logged_in_user_entity();
     }
     // If the owner is a group
     if ($owner instanceof ElggGroup) {
-
-
-        /* $items['profile'] = ElggMenuItem::factory(array(
-          'name' => 'profile',
-          'text' => elgg_view_icon('userwall') . elgg_echo('activity'),
-          'href' => "/groups/profile/$owner->guid/" . elgg_get_friendly_title($owner->name),
-          'priority' => 2,
-          )); */
+        
     }
-
-
-
-    // If the owner is a user
-    if ($owner instanceof ElggUser) {
-
-
-        $items['profile'] = ElggMenuItem::factory(array(
+    
+    if (elgg_is_logged_in() && $owner != elgg_get_logged_in_user_entity()) {
+        
+                $items['profile'] = ElggMenuItem::factory(array(
                     'name' => 'profile',
                     'text' => elgg_view_icon('userwall') . elgg_echo('profile:wall'),
                     'href' => "/profile/$owner->username",
                     'priority' => 1,
-                ));
+        ));
 
         $items['info'] = ElggMenuItem::factory(array(
                     'name' => 'info',
                     'text' => elgg_view_icon('info') . elgg_echo('profile:info'),
                     'href' => "/profile/$owner->username/info",
                     'priority' => 2,
-                ));
-
-
-
-        // The friends are already shown in the sidebar, in all the contexts, so there is no need to show them here again
-        /* $items['friends'] = ElggMenuItem::factory(array(
-          'name' => 'friends',
-          'text' => elgg_view_icon('friends') . elgg_echo('friends'),
-          'href' => "/friends/$owner->username"
-          )); */
+        ));
+        
     }
 
-    /* $top_level_pages = elgg_get_entities(array(
-      'type' => 'object',
-      'subtype' => 'page_top',
-      'container_guid' => $owner->guid,
-      'limit' => 0,
-      ));
+    // If the owner is a user
+    if ($owner instanceof ElggUser && !elgg_is_logged_in()) {
 
-      foreach ($top_level_pages as $page) {
-      $items["pages-$page->guid"] = ElggMenuItem::factory(array(
-      'name' => "pages-$page->guid",
-      'href' => $page->getURL(),
-      'text' => elgg_view_icon('page') . elgg_view('output/text', array('value' => $page->title)),
-      ));
-      } */
+
+//        $items['profile'] = ElggMenuItem::factory(array(
+//                    'name' => 'profile',
+//                    'text' => elgg_view_icon('userwall') . elgg_echo('profile:wall'),
+//                    'href' => "/profile/$owner->username",
+//                    'priority' => 1,
+//        ));
+
+        $items['info'] = ElggMenuItem::factory(array(
+                    'name' => 'info',
+                    'text' => elgg_view_icon('info') . elgg_echo('profile:info'),
+                    'href' => "/profile/$owner->username/info",
+                    'priority' => 2,
+        ));
+    }
 
     if (elgg_instanceof($params['entity'], 'group')) {
-
-//        if (true) {
-//            echo print_r($params['entity']);
-//            echo '<br /><br /> Has subgroups: ' . hasSubgroups($params['entity']);
-//            echo '<br /><br /> Number of subgroups: ' . countSubgroups($params['entity']);
-//            echo '<br /><br /> Is Subgroup: ' . isSubgroup($params['entity']);
-//            echo "<br /><br />Current context: " . elgg_get_context();
-//        }
 
 
         $isSubGroup = isSubgroup($params['entity']);
@@ -715,7 +615,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
                         'href' => "/groups/profile/$owner->guid/" . elgg_get_friendly_title($owner->name),
                         'text' => elgg_view_icon('userwall') . elgg_echo('activity'),
                         'priority' => 1,
-                    ));
+            ));
         }
 
         $items['info'] = ElggMenuItem::factory(array(
@@ -723,7 +623,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
                     'text' => elgg_view_icon('info') . elgg_echo('profile:info'),
                     'href' => "/groups/info/$owner->guid/" . elgg_get_friendly_title($owner->name),
                     'priority' => 2,
-                ));
+        ));
 
         $text = 'groups:members';
         if ($isSubGroup) {
@@ -735,7 +635,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
                     'text' => elgg_view_icon('friends') . elgg_echo($text),
                     'href' => "/groups/members/" . $owner->guid,
                     'priority' => 3,
-                ));
+        ));
 
         $text = 'discussion:group';
         if ($isSubGroup) {
@@ -749,9 +649,9 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
                         'text' => elgg_view_icon('share') . elgg_echo($text),
                         'href' => "discussion/owner/{$params['entity']->guid}",
                         'priority' => 4,
-                    ));
+            ));
         }
-        
+
         $text = 'file:group';
         if ($isSubGroup) {
             $text = 'file:writinggroup';
@@ -763,25 +663,9 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
                         'text' => elgg_view_icon('clip') . elgg_echo($text),
                         'href' => "file/group/{$params['entity']->guid}/all",
                         'priority' => 5,
-                    ));
+            ));
         }
-        
-//        $text = 'pages:group';
-//        if ($isSubGroup) {
-//            $text = 'pages:writinggroup';
-//        }
-//
-//        if ($params['entity']->pages_enable != "no") {
-//            $items['pages'] = ElggMenuItem::factory(array(
-//                        'name' => 'pages',
-//                        'text' => elgg_view_icon('list') . elgg_echo($text),
-//                        'href' => "pages/group/{$params['entity']->guid}/all",
-//                        'priority' => 6,
-//                    ));
-//        }
-        
-        
-        
+
         $text = 'bookmarks:group';
         if ($isSubGroup) {
             $text = 'bookmarks:writinggroup';
@@ -793,33 +677,19 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
                         'text' => elgg_view_icon('push-pin') . elgg_echo($text),
                         'href' => "bookmarks/group/{$params['entity']->guid}/all",
                         'priority' => 7,
-                    ));
+            ));
         }
 
-//        $text = 'blog:group';
-//        if ($isSubGroup) {
-//            $text = 'blog:writinggroup';
-//        }
-//
-//        if ($params['entity']->blogs_enable != "no") {
-//            $items['blog'] = ElggMenuItem::factory(array(
-//                        'name' => 'blog',
-//                        'text' => elgg_view_icon('speech-bubble-alt') . elgg_echo($text),
-//                        'href' => "blog/group/{$params['entity']->guid}/all",
-//                        'priority' => 8,
-//                    ));
-//        }
-        
         if (!$isSubGroup) {
-             $items['writingGroups'] = ElggMenuItem::factory(array(
+            $items['writingGroups'] = ElggMenuItem::factory(array(
                         'name' => 'writingGroups',
                         'text' => elgg_view_icon('writing') . elgg_echo('Writing groups'),
-                        'href' => elgg_get_site_url() . "groups/subgroups/list/{$owner->getGUID()}",     
+                        'href' => elgg_get_site_url() . "groups/subgroups/list/{$owner->getGUID()}",
                         'priority' => 8,
-                    ));
+            ));
         }
 
-		
+
         if ($owner->canEdit() && !au_subgroups_get_parent_group($owner)) {
 
             $url = elgg_get_site_url() . "group_operators/manage/{$owner->getGUID()}";
@@ -829,34 +699,21 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
                         'text' => elgg_view_icon('moderator') . elgg_echo('group_operators:manage'),
                         'href' => $url,
                         'priority' => 9,
-                    ));
-            
+            ));
+
             $url = elgg_get_site_url() . "relatedgroups/edit/{$owner->getGUID()}";
-            
+
             $items['relatedgroups'] = ElggMenuItem::factory(array(
-            		'name' => 'relatedgroups',
-            		'text' => elgg_echo('relatedgroups:add'),
-            		'href' => $url,
-            		'priority' => 10,
+                        'name' => 'relatedgroups',
+                        'text' => elgg_echo('relatedgroups:add'),
+                        'href' => $url,
+                        'priority' => 10,
             ));
         }
         $user = elgg_get_logged_in_user_entity();
-     /*   if ($owner->canEdit() && au_subgroups_get_parent_group($owner) && check_entity_relationship($user->guid, 'member', $owner->getGUID())) {
-        
-        	$url = elgg_get_site_url() . "group_roles/manage/{$owner->getGUID()}";
-        
-        	$items['roles'] = ElggMenuItem::factory(array(
-        			'name' => 'roles',
-        			'text' => elgg_view_icon('moderator') . elgg_echo('group_roles:manage'),
-        			'href' => $url,
-        			'priority' => 9,
-        	));
-        
-        }*/
 
-        
         if (elgg_is_logged_in() && $owner->canEdit() && au_subgroups_get_parent_group($owner) && check_entity_relationship($user->guid, 'member', $owner->getGUID())) {
-        	
+
             $url = elgg_get_site_url() . "groups/requests/{$owner->getGUID()}";
 
             $count = elgg_get_entities_from_relationship(array(
@@ -865,7 +722,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
                 'relationship_guid' => $owner->getGUID(),
                 'inverse_relationship' => true,
                 'count' => true,
-                    ));
+            ));
 
             if ($count) {
                 $text = elgg_echo('groups:membershiprequests:pending', array($count));
@@ -878,7 +735,7 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
                         'text' => $text,
                         'href' => $url,
                         'priority' => 10,
-                    ));
+            ));
         }
     }
 
@@ -920,7 +777,7 @@ function facebook_theme_river_menu_handler($hook, $type, $items, $params) {
                         'title' => elgg_echo('comment:this'),
                         'rel' => "toggle",
                         'priority' => 50,
-                    ));
+            ));
         }
 
         if ($object instanceof ElggUser && !$object->isFriend() && $owner->guid != $user->guid) {
@@ -929,7 +786,7 @@ function facebook_theme_river_menu_handler($hook, $type, $items, $params) {
                         'href' => "/action/friends/add?friend=$object->guid",
                         'text' => elgg_view_icon('addfriend') . elgg_echo('friend:user:add', array($object->name)),
                         'is_action' => TRUE,
-                    ));
+            ));
         }
         if (elgg_instanceof($object, 'object', 'groupforumtopic')) {
             $items[] = ElggMenuItem::factory(array(
@@ -937,7 +794,7 @@ function facebook_theme_river_menu_handler($hook, $type, $items, $params) {
                         'href' => "#groups-reply-$object->guid",
                         'title' => elgg_echo('reply:this'),
                         'text' => elgg_echo('reply'),
-                    ));
+            ));
         }
     }
 

@@ -26,7 +26,7 @@ body{margin:0;padding:0;height:100%;}
 /***** PAGE MESSAGES ******/
 .elgg-system-messages {position: fixed;top: 24px;right: 20px;max-width: 500px;z-index: 1000;}.elgg-system-messages li {margin-top: 10px;}.elgg-system-messages li p {margin: 0;}
 /***** PAGE HEADER ******/
-.elgg-page-header {position: relative; background: #277fcf;}.elgg-page-header > .elgg-inner {position: relative;}
+.elgg-page-header {position: relative; background: #000000;}.elgg-page-header > .elgg-inner {position: relative;}
 /***** PAGE BODY LAYOUT ******/
 .elgg-layout {min-height: 360px;}.elgg-layout-one-column {padding: 10px 0;}.elgg-sidebar {margin-right: 15px;position: relative;padding: 20px 0;float: left;width: 181px;min-height: 360px;}.elgg-sidebar-alt {position: relative;float: right;width: 244px;margin-left: 20px;min-height: 360px;}.elgg-main {position: relative;min-height: 360px;}.elgg-layout-two-sidebar > .elgg-body,.elgg-layout-one-sidebar > .elgg-body {border: 1px solid #B3B3B3;border-top: 0;padding: 15px 20px;}.elgg-layout > .elgg-body > .elgg-head {padding-bottom: 3px;margin-bottom: 10px;}
 .elgg-sidebar-right {position: relative; padding-top: 20px; float: right; width: 190px; min-height: 360px;}
@@ -43,7 +43,7 @@ body{margin:0;padding:0;height:100%;}
 .footer_izq p, .footer_der p{margin-bottom:3px;}
 /*Algunos cambios de estilo en página principal*/
 .bloque_vd{float:left;width:97%;border:1px solid silver;border-bottom-left-radius:8px;border-bottom-right-radius:8px;border-top-left-radius:8px;border-top-right-radius:8px;min-height:240px;padding:10px;position:relative}
-.bloque_vd h1{color:#666666;font-family:Arial, sans-serif;font-size:2.8em;font-weight:normal;line-height:1.4em;}
+.bloque_vd h1{color:#000000;font-family:Arial, sans-serif;font-size:2.8em;font-weight:normal;line-height:1.4em;}
 .bloque_vd h1 span{font-weight: bold}
 .bloque_t1{width: 45%; float:left; margin-top: 30px;border:1px solid silver;border-bottom-left-radius:8px;border-bottom-right-radius:8px;border-top-left-radius:8px;border-top-right-radius:8px;height:280px;padding:10px;position:relative}
 .bloque_t1{background-image: url(<?php echo $url; ?>_graphics/p_box.gif);background-position: 50% 100%;background-repeat: no-repeat no-repeat; margin-right: 0; background-size: 100%}

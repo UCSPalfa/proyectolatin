@@ -47,6 +47,7 @@ if (array_key_exists('type', $vars['params']) && array_key_exists('subtype', $va
     }
 }
 
+
 if (!$type_str && array_key_exists('type', $vars['params'])) {
     $type_str = elgg_echo("item:{$vars['params']['type']}");
 }
@@ -62,7 +63,13 @@ if (array_key_exists('search_type', $vars['params']) && $search_type_str != "sea
     $type_str = $search_type_str;
 }
 
-// get any more links.
+if ($type_str == "Groups") {
+    $type_str = elgg_echo("communities:and:writing:groups");
+} 
+
+if ($search_type_str != "Comments") {
+
+    // get any more links.
 $more_check = $vars['results']['count'] - ($vars['params']['offset'] + $vars['params']['limit']);
 $more = ($more_check > 0) ? $more_check : 0;
 
@@ -70,7 +77,7 @@ if ($more) {
     $title_key = ($more == 1) ? 'comment' : 'comments';
     $more_str = elgg_echo('search:more', array($count, $type_str));
     $more_url = elgg_http_remove_url_query_element($url, 'limit');
-    $more_link = "<li class='elgg-item' style='border-bottom: none' ><a href=\"$more_url\">$more_str</a></li>";
+    $more_link = "<li class='elgg-item' style='font-weight: bold; margin-left: 5px;' ><a style='color: #0054A7;' href=\"$more_url\">$more_str</a></li>";
 } else {
     $more_link = '';
 }
@@ -85,7 +92,7 @@ $view = 'search/listedEntity';
 $body .= '<ul class="elgg-list livesearch-list">';
 foreach ($entities as $entity) {
     $id = "elgg-{$entity->getType()}-{$entity->getGUID()}";
-    $body .= "<li id=\"$id\" class=\"elgg-item\" style='border-bottom: none' >";
+    $body .= "<li id=\"$id\" class=\"elgg-item\" style='border-bottom: none;' >";
     $body .= elgg_view($view, array(
         'entity' => $entity,
         'params' => $vars['params'],
@@ -98,3 +105,8 @@ $body .= '</ul>';
 
 
 echo elgg_view_module('livesearch', $title, $body);
+
+    
+    
+}
+

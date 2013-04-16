@@ -1,4 +1,8 @@
 <?php
+
+
+
+
 $user = elgg_get_page_owner_entity();
 
 $body = elgg_view_layout('two_sidebar', array(

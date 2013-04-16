@@ -109,6 +109,7 @@ width: 82%;
 margin-left: 1px;
 }
 
+
 .groupName {
 color:#FFFFFF;
 display:block;
@@ -126,9 +127,8 @@ font-variant:normal;
 font-weight:normal;
 line-height:normal;
 z-index:444;
-
-
 }
+
 
 .iconBorder {
 border-color:#DDDDDD;
@@ -347,6 +347,8 @@ border-top: 1px solid rgba(0, 0, 0, 0.1);
 border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+
+.user-members-div,
 .group-members-div {
 
 clear: both;
@@ -364,20 +366,24 @@ border-bottom-color: #afafaf;
 
 text-align: center;
 
+overflow-y: auto;
+
 
 }
 
 .communityMemberIcon {
 clear: both;    
 border: 1px solid #000;
-floar: left;
 width: 15%;
 margin-right: 1%;   
 margin-bottom: 1%;
 }
 
+
+.user-writing-groups-div label,
 .group-books-div label,
 .group-related-communities-div label,
+.user-members-div label,
 .group-members-div label {
 color: #444;
 font: bold 15px "Helvetica Neue", "Helvetica", "Arial", sans-serif;    
@@ -385,13 +391,14 @@ clear: both;
 text-align: left;
 }
 
+.user-members-div img,
 .group-members-div img {        
 clear: both;    
 border: 1px solid #000;
-floar: left;    
 width: 15%;    
 margin-right: 1%;
 }
+
 
 .all-members-div {
 text-align: center;
@@ -441,9 +448,10 @@ width: 50%;
 }
 
 .lowerContainer {
-height: 150px;    
+    height: 160px;    
 }
 
+.user-writing-groups-div,
 .group-books-div {
 
 padding-left: 20px;
@@ -473,20 +481,20 @@ width: 38%;
 .group-related-communities-div img {
 clear: both;    
 border: 1px solid #000;
-floar: left;    
 width: 18%;
 height: 43%;
-margin-left: 0.5%;
-margin-right: 0.5%;
+margin-left: 1%;
+margin-right: 1%;
 }
 
+.user-writing-groups-div img,
 .group-books-div img {
 clear: both;    
 border: 1px solid #000;
-floar: left;    
-width: 22%;
+width: 18%;
 height: 43%;
-margin-right: 2%;    
+margin-left: 1%;
+margin-right: 1%;
 }
 
 .noContent {
@@ -703,3 +711,77 @@ text-align: center;
   text-align:right;
   font-weight:normal;
 }*/
+
+.group-related-communities-div .groupIcon,
+.group-books-div .groupIcon,
+.user-writing-groups-div .groupIcon,
+.user-members-div .groupIcon {    
+    width: 14%;
+    margin-right: 0.5%;
+    margin-left: 0.5%;
+    float: none;
+    display: inline-block;
+}
+
+.group-books-div .groupIcon,
+.user-writing-groups-div .groupIcon {
+    width: 25%;    
+}
+
+.group-related-communities-div .groupIcon {
+    width: 18%;
+}
+
+.group-related-communities-div .groupNameContainer,
+.group-related-communities-div .groupNameContainer a,
+.group-books-div .groupNameContainer,
+.group-books-div .groupNameContainer a,
+.user-writing-groups-div .groupNameContainer,
+.user-writing-groups-div .groupNameContainer a,
+.user-members-div .groupNameContainer,
+.user-members-div .groupNameContainer a {
+    position: relative;
+    width: 96%;
+    height: 50px;
+    text-align: left;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-left: 2px;
+    color: white;
+    text-shadow: 0px 2px 2px black;
+    word-wrap: break-word;
+    font-family: arial, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: normal;
+    z-index: 444;
+    display: block;
+}
+
+.group-books-div .groupNameContainer,
+.group-related-communities-div .groupNameContainer,
+.user-writing-groups-div .groupNameContainer {
+    width: 94%;
+}
+
+.group-books-div img,
+.user-writing-groups-div img {
+    width: 100%;
+    margin-top: -53px;
+    display: inline;
+}
+
+.user-members-div img {
+    width: 100%;
+    margin-top: -53px;
+    display: inline;    
+}
+
+.group-related-communities-div img {
+    width: 100%;
+    margin-top: -53px;
+    display: inline;
+}
+

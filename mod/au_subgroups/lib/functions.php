@@ -167,8 +167,35 @@ function au_subgroups_get_subgroups($group, $limit = 10, $sortbytitle = false) {
 }
 
 // TODO: This function should be implemented
-function getBooks ($community) {
-    return array();
+function getCommunityBooks ($community) {
+    $bookTitles = array();
+    array_push($bookTitles, "Middle School, The Worst Years of My Life - Free Preview: The First 20 Chapters");
+    array_push($bookTitles, "Sounds from The Great Animal Orchestra (Enhanced)");
+    array_push($bookTitles, "Tortured");
+    array_push($bookTitles, "Remedial Magic");
+    array_push($bookTitles, "Beasts and BFFs");
+    array_push($bookTitles, "Raven Strike: A Dreamland Thriller");
+    array_push($bookTitles, "Middle School: Get Me out of Here! - Free Preview (The First 19 Chapters)");
+    array_push($bookTitles, "Some of the Best from Tor.com: 2011 Edition");
+    array_push($bookTitles, "How to Survive The Hunger Games");
+    array_push($bookTitles, "The Jennifer Weiner Reader's Companion");
+    return $bookTitles;
+}
+
+// TODO: This function should be implemented
+function getUserBooksTitles ($user) {
+    $bookTitles = array();
+    array_push($bookTitles, "Middle School, The Worst Years of My Life - Free Preview: The First 20 Chapters");
+    array_push($bookTitles, "Sounds from The Great Animal Orchestra (Enhanced)");
+    array_push($bookTitles, "Tortured");
+    array_push($bookTitles, "Remedial Magic");
+    array_push($bookTitles, "Beasts and BFFs");
+    array_push($bookTitles, "Raven Strike: A Dreamland Thriller");
+    array_push($bookTitles, "Middle School: Get Me out of Here! - Free Preview (The First 19 Chapters)");
+    array_push($bookTitles, "Some of the Best from Tor.com: 2011 Edition");
+    array_push($bookTitles, "How to Survive The Hunger Games");
+    array_push($bookTitles, "The Jennifer Weiner Reader's Companion");
+    return $bookTitles;
 }
 
 function getMembers($community) {
@@ -278,6 +305,7 @@ function hasSubgroups($group) {
 function au_subgroups_handle_mine_page() {
 
 
+    elgg_push_context('mine_groups');
 
     $display_subgroups = elgg_get_plugin_setting('display_subgroups', 'au_subgroups');
     $display_alphabetically = elgg_get_plugin_setting('display_alphabetically', 'au_subgroups');
@@ -291,7 +319,7 @@ function au_subgroups_handle_mine_page() {
     }
     elgg_push_breadcrumb($title);
 
-    elgg_register_title_button();
+    elgg_register_title_button("groups");
 
     $options = array(
         'type' => 'group',
@@ -409,6 +437,7 @@ function au_subgroups_handle_openclosed_tabs() {
 }
 
 function au_subgroups_handle_owned_page() {
+    
     $db_prefix = elgg_get_config('dbprefix');
     $page_owner = elgg_get_page_owner_entity();
 

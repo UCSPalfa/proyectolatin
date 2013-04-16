@@ -1,4 +1,8 @@
 <?php
+
+
+echo "este es el profile mamanger";
+
 	/**
 	* Profile Manager
 	* 
