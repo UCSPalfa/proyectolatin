@@ -56,6 +56,9 @@ $english = array(
 	'thewire:notify:reply' => '%s responded to %s on the wire:',
 	'thewire:notify:post' => '%s posted on the wire:',
 
+/*AO: Abril 16, añadida pregunta*/
+        'thewire:deletequestion' => "Are you sure?",
+
 );
 
 add_translation("en", $english);
