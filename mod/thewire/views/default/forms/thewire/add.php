@@ -27,7 +27,7 @@ echo elgg_view('input/plaintext', array(
 	'id' => 'thewire-textarea',
 ));
 ?>
-<div id="thewire-characters-remaining">
+<div id="thewire-characters-remaining" style="display:none">	<!-- po5i: display:none -->
 	<span>140</span> <?php echo elgg_echo('thewire:charleft'); ?>
 </div>
 <div class="elgg-foot mts">

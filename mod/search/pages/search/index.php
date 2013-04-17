@@ -245,6 +245,7 @@ if ($search_type == 'all' || $search_type == 'entities') {
 
 // call custom searches
 if ($search_type != 'entities' || $search_type == 'all') {
+
     if (is_array($custom_types)) {
         foreach ($custom_types as $type) {
             if ($search_type != 'all' && $search_type != $type) {
@@ -271,6 +272,7 @@ if ($search_type != 'entities' || $search_type == 'all') {
             }
         }
     }
+
 }
 
 // highlight search terms

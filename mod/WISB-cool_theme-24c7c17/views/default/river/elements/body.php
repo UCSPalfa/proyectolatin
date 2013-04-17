@@ -29,7 +29,6 @@ if ($summary === false) {
 		'class' => 'elgg-river-subject',
 	));
 }
-
 $message = elgg_extract('message', $vars, false);
 if ($message !== false) {
 	$message = "<div class=\"elgg-river-message\">$message</div>";

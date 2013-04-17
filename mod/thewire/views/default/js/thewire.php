@@ -9,13 +9,13 @@ $site_url = elgg_get_site_url();
 
 elgg.provide('elgg.thewire');
 
-elgg.thewire.init = function() {
-	$("#thewire-textarea").live('keydown', function() {
+elgg.thewire.init = function() {	//po5i: comentado
+	/*$("#thewire-textarea").live('keydown', function() {
 		elgg.thewire.textCounter(this, $("#thewire-characters-remaining span"), 140);
 	});
 	$("#thewire-textarea").live('keyup', function() {
 		elgg.thewire.textCounter(this, $("#thewire-characters-remaining span"), 140);
-	});
+	});*/
 
 	$(".thewire-previous").live('click', elgg.thewire.viewPrevious);
 };
