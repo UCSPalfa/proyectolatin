@@ -172,7 +172,7 @@ function facebook_theme_pagesetup_handler() {
                     'priority' => 40,
                 ));
 
-                if (elgg_get_context() == 'groups' && !elgg_instanceof($page_owner, 'group')) {
+                if ((elgg_get_context() == 'groups' || elgg_get_context() == 'mine_groups') && !elgg_instanceof($page_owner, 'group')) {
 
                     $url = "groups/ginvitations/$owner->username";
                     $invitations = groups_get_invited_wgroups($owner->getGUID());
