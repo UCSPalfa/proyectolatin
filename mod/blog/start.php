@@ -115,10 +115,11 @@ function blog_page_handler($page) {
 			$user = get_user_by_username($page[1]);
 			$params = blog_get_page_content_list($user->guid);
 			break;
-		case 'friends':
+/*AO: Abril 13, comentada vista friends*/
+/*		case 'friends':
 			$user = get_user_by_username($page[1]);
 			$params = blog_get_page_content_friends($user->guid);
-			break;
+			break;*/
 		case 'archive':
 			$user = get_user_by_username($page[1]);
 			$params = blog_get_page_content_archive($user->guid, $page[2], $page[3]);

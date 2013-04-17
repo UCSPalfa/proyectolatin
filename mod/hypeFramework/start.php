@@ -33,6 +33,14 @@ function hj_framework_init() {
     hj_framework_register_js();
     hj_framework_register_view_extentions();
 
+    /*AO: Abril 13, registrado js para eliminar posts*/
+    $delete_hjcomm = elgg_get_simplecache_url('js', 'delete-hjcomm');
+    elgg_register_simplecache_view('js/delete-hjcomm');
+    elgg_register_js('elgg.deletehjcomm', $delete_hjcomm);
+
+    /*AO: Abril 13, registrada vista ajax para procesamiento de eliminar hjcomments*/
+    elgg_register_ajax_view('delete_hjcomm_process');
+
     //Check if the initial setup has been performed, if not perform it
     if (!elgg_get_plugin_setting('hj:framework:setup')) {
         elgg_load_library('hj:framework:setup');

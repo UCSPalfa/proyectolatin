@@ -10,7 +10,8 @@ $title = elgg_echo('thewire:everyone');
 
 $content = '';
 if (elgg_is_logged_in()) {
-	$form_vars = array('class' => 'thewire-form');
+/*AO: Abril 13, añadida clase thewire-form2*/
+	$form_vars = array('class' => 'thewire-form', 'class' => 'thewire-form2');
 	$content .= elgg_view_form('thewire/add', $form_vars);
 	$content .= elgg_view('input/urlshortener');
 }

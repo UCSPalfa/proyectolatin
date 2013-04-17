@@ -34,12 +34,13 @@ if (elgg_is_logged_in() && $context) {
 			'selected' => ($filter_context == 'mine'),
 			'priority' => 300,
 		),
-		'friend' => array(
+/*AO: Abril 8, comentada opción friends del filtro*/
+/*		'friend' => array(
 			'text' => elgg_echo('friends'),
 			'href' => (isset($vars['friend_link'])) ? $vars['friend_link'] : "$context/friends/$username",
 			'selected' => ($filter_context == 'friends'),
 			'priority' => 400,
-		),
+		),*/
 	);
 	
 	foreach ($tabs as $name => $tab) {

@@ -8,9 +8,19 @@
 The Wire
 *********************************/
 #thewire-textarea {
-	height: 40px;
-	padding: 6px;
+/*      height: 40px;*/
+/*      padding: 6px;*/
+/* AO: Abril 13, cambios de estilo en textarea del composer de dashboard de usuario*/
+        height: 35px;
+        box-sizing: border-box; /*For IE and modern versions of Chrome*/
+        -moz-box-sizing: border-box; /*For Firefox*/
+        -webkit-box-sizing: border-box;
+        display: block;
+        max-width: 600px;
+        margin: 0 auto;
+        resize: none;
 }
+
 #thewire-characters-remaining {
 	text-align: right;
 	float: right;
@@ -32,4 +42,16 @@ The Wire
 }
 .thewire-parent {
 	margin-left: 40px;
+/*AO: Abril 17, añadido width no estaba al descargar del repo*/
+        width: 80%;
+}
+
+/*AO: Abril 13, añadidos estilos para formulario de thewire*/
+.thewire-form2{
+        width: 70%;
+        margin-bottom: 15px;
+}
+
+.thewire-form2 #thewire-textarea{
+        margin: 0;
 }

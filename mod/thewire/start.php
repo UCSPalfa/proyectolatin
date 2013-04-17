@@ -24,7 +24,14 @@ function thewire_init() {
 	elgg_register_simplecache_view('js/thewire');
 	elgg_register_js('elgg.thewire', $thewire_js, 'footer');
 
-	elgg_register_ajax_view('thewire/previous');
+        /*AO: Abril 8, registrado js para eliminar posts*/
+        $delete_js = elgg_get_simplecache_url('js', 'delete-post');
+        elgg_register_simplecache_view('js/delete-post');
+        elgg_register_js('elgg.deletepost', $delete_js);
+
+        elgg_register_ajax_view('thewire/previous');
+        /*AO: Abril 8, registrada vista ajax para procesamiento de eliminar posts*/
+        elgg_register_ajax_view('thewire/delete_post_process');
 
 	// add a site navigation item
 	$item = new ElggMenuItem('thewire', elgg_echo('thewire'), 'thewire/all');
@@ -99,9 +106,11 @@ function thewire_page_handler($page) {
 			include "$base_dir/everyone.php";
 			break;
 
-		case "friends":
+/*AO: Abril 13, comentado para que no exista opción de ver los post de friends en the wire*/
+/*		case "friends":
 			include "$base_dir/friends.php";
 			break;
+*/
 
 		case "owner":
 			include "$base_dir/owner.php";

@@ -11,6 +11,13 @@ function cool_theme_init() {
     elgg_register_event_handler('pagesetup', 'system', 'friends_hack_pagesetup_handler');
     elgg_unregister_plugin_hook_handler('output:before', 'layout', 'elgg_views_add_rss_link');
 
+    /*AO: Abril 17, registro de js para eliminar annotation. Puedo eliminar mis annotations en muro de otro usuario o grupo o eliminar anotations de otros en mi muro*/
+    $delete_js = elgg_get_simplecache_url('js', 'delete-opost');
+    elgg_register_simplecache_view('js/delete-opost');
+    elgg_register_js('elgg.deleteopost', $delete_js);
+
+    /*AO: Abril 17, registrada vista ajax para procesamiento de eliminar annotation en muro de otro usuario o grupo o eliminar annotations de otros en mi muro*/
+    elgg_register_ajax_view('messageboard/delete_opost_process');
 
 
     //What a hack!  Overriding groups page handler without blowing away other plugins doing the same
@@ -496,13 +503,19 @@ function facebook_theme_composer_menu_handler($hook, $type, $items, $params) {
         elgg_view('thewire/composer');
     }
 
-    if (elgg_is_active_plugin('messageboard') && $entity->canAnnotate(0, 'messageboard') && $entity->canWriteToContainer(0, 'object', 'messageboard')) {
+    /* AO: Abril 12, condición modificada para que el composer de muro de usuario esté habilitado en el muro de todos los usuarios para todos, no pasa lo mismo con el composer de groups */
+    if(elgg_get_context()=="profile"){
+        $cond = true;
+    }else{
+        $cond = $entity->canWriteToContainer(0, 'object', 'messageboard');
+    }
+    if (elgg_is_active_plugin('messageboard') && $cond && $entity->canAnnotate(0, 'messageboard')) {
         $items[] = ElggMenuItem::factory(array(
                     'name' => 'messageboard',
                     'href' => "/ajax/view/messageboard/composer?entity_guid=$entity->guid",
                     'text' => elgg_view_icon('speech-bubble-alt') . elgg_echo("composer:annotation:messageboard"),
                     'priority' => 200,
-        ));
+                ));
 
         //trigger any javascript loads that we might need
         elgg_view('messageboard/composer');

@@ -52,5 +52,11 @@ add_translation('en', array(
 	'see:all' => 'See all',
 	
 	'settings:user' => 'Account Settings',
+
+        /* AO: Abril 17, añadidas traducciones*/
+        'river:annotation:deleted' => "The post was successfully deleted.",
+        'river:annotation:notdeleted' => "Sorry. We could not delete this post.",
+        'river:annotation:deletequestion' => "Are you sure?",
+        /* AO*/
 	
 ));

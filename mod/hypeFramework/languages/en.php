@@ -188,6 +188,12 @@ $english = array(
     'hj:framework:success' => 'Successfully completed',
     'hj:framework:error' => 'Something went wrong',
 
+    /* AO: Abril 16, añadidas traducciones*/
+    'hj:framework:deleted' => "The comment was successfully deleted.",
+    'hj:framework:notdeleted' => "Sorry. We could not delete this comment.",
+    'hj:framework:deletequestion' => "Are you sure?",
+    /* AO*/
+
 	'hj:framework:pagination:loadmore' => 'Show More',
 );
 

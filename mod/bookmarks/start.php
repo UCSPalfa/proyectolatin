@@ -121,9 +121,10 @@ function bookmarks_page_handler($page) {
 			include "$pages/owner.php";
 			break;
 
-		case "friends":
+/*AO: Abril 13, comentada vista friends*/
+/*		case "friends":
 			include "$pages/friends.php";
-			break;
+			break;*/
 
 		case "read":
 		case "view":

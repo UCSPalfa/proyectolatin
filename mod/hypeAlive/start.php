@@ -296,6 +296,7 @@ function hj_alive_commentshead_menu($hook, $type, $return, $params) {
 			'name' => 'delete',
 			'text' => elgg_view_icon('delete'),
 			'entity' => $entity,
+/* AO: Abril 13, puesto en hidden. No utilizaré ni modificaré el remove de hypealive, creé el mío para hjannotations*/
 			'class' => 'hj-ajaxed-remove hidden',
 			'id' => "hj-ajaxed-remove-$entity->guid",
 			'href' => "action/framework/entities/delete?e=$entity->guid",

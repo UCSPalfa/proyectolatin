@@ -18,6 +18,7 @@
         $('.elgg-menu-item-comment')
         .unbind('click')
         .bind('click', function(event) {
+
             event.preventDefault();
 
             $(this)
@@ -25,6 +26,7 @@
             .siblings('ul:first')
             .find('.hj-comments-input:first')
             .toggle();
+
         });
 
         // Toggle loading of older comments
@@ -104,6 +106,34 @@
                                     commentsList
                                     .append(new_item.fadeIn(1000));
                                 }
+
+                                /*AO: Abril 16, agregado bind para que delete funcione en respuesta ajax del nuevo item añadido*/
+                                $('.delete_hjcomm')
+                                .unbind('click')
+                                .bind('click', function() {
+                                        var $id_hjcomment = $(this).attr("id");
+                                        var $comment_container = $(this).closest('li');
+
+                                        if(confirm('Are you sure?')){
+
+                                                $.ajax({
+                                                        type: "GET",
+                                                        url: elgg.config.wwwroot + "ajax/view/delete_hjcomm_process",
+                                                        data: {'guid': $id_hjcomment},
+                                                        dataType: "json",
+                                                        success: function(data){
+                                                                if(data.success){
+                                                                        $comment_container.slideUp('slow', function() {$comment_container.remove();});
+                                                                        $content = "<li class='elgg-message elgg-state-success'><p>" + data.msg + "</p></li>";
+                                                                        $(".elgg-page-messages ul").append($content).fadeIn('slow', function () {$(".elgg-message").fadeOut('slow');});
+                                                                }else{
+                                                                        $content = "<li class='elgg-message elgg-state-success'>" + data.msg + "</p></li>";
+                                                                        $(".elgg-page-messages ul").append($content).fadeIn('slow').animate({opacity: 1.0}, 3000).fadeOut('slow', function() { $($this).remove(); });
+                                                                }
+                                                        }
+                                                });
+                                       }
+                                });
                             });
                         });
                     }
@@ -155,11 +185,12 @@
                 .val('')
                 .parents('div.hj-comments-input:first')
                 .toggle();
+
             }
         });
     }
 
     elgg.register_hook_handler('init', 'system', hj.comments.init);
-    //elgg.register_hook_handler('init', 'system', hj.comments.triggerRefresh);
+    elgg.register_hook_handler('init', 'system', hj.comments.triggerRefresh);
     elgg.register_hook_handler('success', 'hj:framework:ajax', hj.comments.init, 500);
 <?php if (FALSE) : ?></script><?php endif; ?>

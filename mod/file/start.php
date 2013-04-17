@@ -117,10 +117,11 @@ function file_page_handler($page) {
 			file_register_toggle();
 			include "$file_dir/owner.php";
 			break;
-		case 'friends':
+/*AO: Abril 13, comentada vista friends*/
+/*		case 'friends':
 			file_register_toggle();
 			include "$file_dir/friends.php";
-			break;
+			break;*/
 		case 'view':
 		case 'read': // Elgg 1.7 compatibility
 			set_input('guid', $page[1]);

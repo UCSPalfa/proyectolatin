@@ -12,3 +12,38 @@ $url = elgg_get_site_url();
 .ui-autocomplete{background-color: #FFF;border: 1px solid #555;max-width:450px;}
 .elgg-autocomplete-item{border-top: 1px solid #E9E9E9;}
 #facebook-topbar-logo{background: url(<?php echo $url; ?>_graphics/logo.png) 0 0 no-repeat; width: 115px; height: 20px; background-size: 115px 20px}
+
+/*AO: Abril 13, modificado tamaño de elgg-composer del muro de usuarios y grupos*/
+.elgg-composer{
+        width: 80%;
+/*      margin: 0px auto;*/
+}
+
+/* AO: Abril 13, cambios de estilo en textarea del composer de dashboard de grupos*/
+.messageboard-input{
+        height: 35px;
+        box-sizing: border-box; /*For IE and modern versions of Chrome*/
+        -moz-box-sizing: border-box; /*For Firefox*/
+        -webkit-box-sizing: border-box;
+        display: block;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5px;
+        resize: none;
+}
+
+/* AO: Abril 13, botón para eliminar post de dashboard de usuario*/
+.delete_button_post{
+        float: right;
+}
+
+/* AO: Abril 13, botón para eliminar comentario hjcomment*/
+.delete_hjcomm{
+        float: right;
+}
+
+/* AO: Abril 17, botón para eliminar post en muro de otro usuario o grupo*/
+.delete_opost{
+        float: right;
+}

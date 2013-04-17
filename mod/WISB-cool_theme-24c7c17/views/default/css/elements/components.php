@@ -56,3 +56,9 @@
 .elgg-tags {display: inline;font-size: 85%;}.elgg-tags li {display: inline;margin-right: 5px;}.elgg-tags li:after {content: ",";}.elgg-tags li:last-child:after {content: "";}.elgg-tagcloud {text-align: justify;}
 /* MISCELLANEOUS */
 .elgg-photo {border: 1px solid #ccc;padding: 3px;background-color: white;}.elgg-comments {margin-top: 25px;}.elgg-comments > form {margin-top: 15px;}
+
+/*AO: Abril 13, modificado tamaño de lista elgg-river*/
+.elgg-main .elgg-river{
+        width: 80%;
+/*      margin: 0px auto;*/
+}

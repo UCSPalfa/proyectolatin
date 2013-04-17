@@ -119,9 +119,10 @@ function pages_page_handler($page) {
 		case 'owner':
 			include "$base_dir/owner.php";
 			break;
-		case 'friends':
+/*AO: Abril 13, comentada vista friends*/
+/*		case 'friends':
 			include "$base_dir/friends.php";
-			break;
+			break;*/
 		case 'view':
 			set_input('guid', $page[1]);
 			include "$base_dir/view.php";

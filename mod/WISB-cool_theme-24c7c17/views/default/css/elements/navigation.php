@@ -83,3 +83,6 @@ line-height: 14px;}
     SCROLLBAR
 *************************************** */
 ::-webkit-scrollbar{width:10px;height:10px;}::-webkit-scrollbar-track-piece{background-color:#EEE;-webkit-border-radius:0;-webkit-border-bottom-right-radius:8px;-webkit-border-bottom-left-radius:8px;}::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#999;-webkit-border-radius:8px;}::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#999;-webkit-border-radius:8px;}
+
+/* AO: Abril 13, quitado el padding izquierdo del menú top de thewire */
+.elgg-menu-filter{padding-left:0;}
