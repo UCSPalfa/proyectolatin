@@ -39,7 +39,13 @@ function au_subgroups_breadcrumb_override($params) {
                 $breadcrumbs[] = $parentcrumb;
             }
             $breadcrumbs[] = array('title' => $group->name, 'link' => $group->getURL());
-            $breadcrumbs[] = array('title' => elgg_echo('groups:edit'), 'link' => NULL);
+            
+            $text = elgg_echo('groups:edit');
+            if (isSubgroup($group)){
+                 $text = elgg_echo('au_subgroups:edit:subgroup');
+            }
+            
+            $breadcrumbs[] = array('title' => $text, 'link' => NULL);
 
             set_input('au_subgroups_breadcrumbs', $breadcrumbs);
             break;
@@ -167,34 +173,28 @@ function au_subgroups_get_subgroups($group, $limit = 10, $sortbytitle = false) {
 }
 
 // TODO: This function should be implemented
-function getCommunityBooks ($community) {
+function getCommunityBooks ($writingGroups) {    
     $bookTitles = array();
-    array_push($bookTitles, "Middle School, The Worst Years of My Life - Free Preview: The First 20 Chapters");
-    array_push($bookTitles, "Sounds from The Great Animal Orchestra (Enhanced)");
-    array_push($bookTitles, "Tortured");
-    array_push($bookTitles, "Remedial Magic");
-    array_push($bookTitles, "Beasts and BFFs");
-    array_push($bookTitles, "Raven Strike: A Dreamland Thriller");
-    array_push($bookTitles, "Middle School: Get Me out of Here! - Free Preview (The First 19 Chapters)");
-    array_push($bookTitles, "Some of the Best from Tor.com: 2011 Edition");
-    array_push($bookTitles, "How to Survive The Hunger Games");
-    array_push($bookTitles, "The Jennifer Weiner Reader's Companion");
+    foreach ($writingGroups as $writingGroup) {
+        $title = $writingGroup->BookTitle;        
+        if ($title) {
+            array_push($bookTitles, $title);
+        }
+    }
+    sort($bookTitles);
     return $bookTitles;
 }
 
 // TODO: This function should be implemented
-function getUserBooksTitles ($user) {
+function getUserBooksTitles ($writingGroups) {
     $bookTitles = array();
-    array_push($bookTitles, "Middle School, The Worst Years of My Life - Free Preview: The First 20 Chapters");
-    array_push($bookTitles, "Sounds from The Great Animal Orchestra (Enhanced)");
-    array_push($bookTitles, "Tortured");
-    array_push($bookTitles, "Remedial Magic");
-    array_push($bookTitles, "Beasts and BFFs");
-    array_push($bookTitles, "Raven Strike: A Dreamland Thriller");
-    array_push($bookTitles, "Middle School: Get Me out of Here! - Free Preview (The First 19 Chapters)");
-    array_push($bookTitles, "Some of the Best from Tor.com: 2011 Edition");
-    array_push($bookTitles, "How to Survive The Hunger Games");
-    array_push($bookTitles, "The Jennifer Weiner Reader's Companion");
+    foreach ($writingGroups as $writingGroup) {
+        $title = $writingGroup->BookTitle;        
+        if ($title) {
+            array_push($bookTitles, $title);
+        }
+    }
+    sort($bookTitles);
     return $bookTitles;
 }
 

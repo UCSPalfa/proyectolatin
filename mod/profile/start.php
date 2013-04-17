@@ -97,7 +97,9 @@ function profile_page_handler($page) {
  * @return string User URL
  */
 function profile_url($user) {
-	return elgg_get_site_url() . "profile/" . $user->username;
+//	return elgg_get_site_url() . "profile/" . $user->username;
+//    Modification by Gonzalo. The user profile should point to his/her info
+	return elgg_get_site_url() . "profile/" . $user->username . "/info";
 }
 
 /**

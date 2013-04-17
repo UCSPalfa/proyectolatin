@@ -93,7 +93,7 @@ ul.elgg-menu-owner-block-z-au_subgroups {
 }
 
 .au_subgroups_group_icon-small {
-  border: 1px solid #555;
+  border: none;
 }
 
 .au_subgroup_icon-<?php echo $size; ?> {

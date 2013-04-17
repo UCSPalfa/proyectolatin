@@ -30,7 +30,7 @@ $name = $theFile->getVolatileData('search_matched_title');
 // File Information //
 // **************** //
 
-$content .= "<div class='group-found-div' style='margin-top: -2px; margin-bottom: -2px; '>";
+$content .= "<div class='group-found-div' style='margin-top: 0px; margin-bottom: -5px; '>";
 
 $foundIconStyle = "margin-right: 10px; margin-bottom: 2px; margin-top: -5px; width: 60px; margin-left: -5px;";
 

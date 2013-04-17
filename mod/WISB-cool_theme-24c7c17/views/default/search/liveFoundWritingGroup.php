@@ -11,6 +11,7 @@ $name = $theWritingGroup->getVolatileData('search_matched_title');
 $institution = $theWritingGroup->Institution;
 $city = $theWritingGroup->City;
 $country = $theWritingGroup->Country;
+$bookTitle = $theWritingGroup->BookTitle;
 
 $matchedDescription = $theWritingGroup->getVolatileData('search_matched_description');
 
@@ -30,12 +31,11 @@ if ($matchedDescription) {
     }
 }
 
-$writingGroups = getWritingGroups($theWritingGroup);
-$totalWritingGroups = count($writingGroups);
-
-$members = getMembers($theWritingGroup);
+$members = getMembers($writingGroup);
 $totalMembers = count($members);
 
+$institutions = getInstitutions($writingGroup);
+$totalInstitutions = count($institutions);
 
 // ********************* //
 // Community Information //
@@ -56,7 +56,7 @@ $content .= elgg_view('output/url', array(
 $content .= "</div>";
 
 
-$content .= "<div class='groupInformation' style='width: 70%;'>";
+$content .= "<div class='groupInformation' style='width: 80%;'>";
 
 
 
@@ -83,16 +83,28 @@ $labelStyle = "margin-top: 1px; white-space: nowrap; max-width: 86%; overflow-x:
 
 
 $content .= "<div class='user-institution-div' style='margin-top: 2px;'>";
+$file1 = elgg_get_site_url() . '_graphics/book.png';
+$icon1 = "<img src='$file1' style='$iconStyle'>";
 
-    $title1 = elgg_echo('Members');
-    $file1 = elgg_get_site_url() . '_graphics/communities.png';
-    $icon1 = "<img src='$file1' title='$title1' style='$iconStyle'>";
-    
-    $title2 = elgg_echo('au_subgroups');
-    $file2 = elgg_get_site_url() . '_graphics/note.png';
-    $icon2 = "<img src='$file2' title='$title2' style='$iconStyle'>";
 
-    $content .= "$icon1 <label class='institution' style='$labelStyle border-right: 1px solid #D2D2D2; padding-right: 20px; margin-right: 20px;' > $totalMembers $title1 </label> $icon2 <label class='institution' style='$labelStyle' > $totalWritingGroups $title2 </label>";
+$content .= "$icon1 <label class='institution' style='$labelStyle' > $bookTitle </label>";
+
+
+
+
+$content .= "</div>";
+
+$content .= "<div class='user-institution-div' style='margin-top: 2px;'>";
+
+$title1 = elgg_echo('writingGroups:Members');
+$file1 = elgg_get_site_url() . '_graphics/communities.png';
+$icon1 = "<img src='$file1' title='$title1' style='$iconStyle'>";
+
+$title2 = elgg_echo("Institutions");
+$file2 = elgg_get_site_url() . '_graphics/institution.png';
+$icon2 = "<img src='$file2' title='$title2' style='$iconStyle'>";
+
+$content .= "$icon1 <label class='institution' style='$labelStyle border-right: 1px solid #D2D2D2; padding-right: 20px; margin-right: 20px;' > $totalMembers $title1 </label> $icon2 <label class='institution' style='$labelStyle' > $totalInstitutions $title2 </label>";
 
 $content .= "</div>";
 

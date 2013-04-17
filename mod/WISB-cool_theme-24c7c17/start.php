@@ -566,7 +566,8 @@ function facebook_theme_owner_block_menu_handler($hook, $type, $items, $params) 
         
     }
     
-    if (elgg_is_logged_in() && $owner != elgg_get_logged_in_user_entity()) {
+    //Cuando un usuario que ha iniciado sesion esta viendo el perfil de otro usuario
+    if (elgg_is_logged_in() && $owner instanceof ElggUser && $owner != elgg_get_logged_in_user_entity()) {
         
                 $items['profile'] = ElggMenuItem::factory(array(
                     'name' => 'profile',

@@ -107,6 +107,8 @@ $english = array(
 	'groups:joinrequest' => 'Request membership',
 	'groups:join' => 'Join community',
 	'groups:leave' => 'Leave community',
+	'writing:group:leave' => 'Leave Writing Group',
+	'book:title' => 'Book Title',
 	'groups:invite' => 'Invite people',
 	'groups:invite:title' => 'Invite people to this community',
 	'groups:inviteto' => "Invite friends to '%s'",
@@ -217,6 +219,8 @@ View and reply to the discussion:
 
 	'reply:this' => 'Reply to this',
 
+	'by' => 'By %s',
+	'posted:by' => 'Posted by %s',
 	'group:replies' => 'Replies',
 	'groups:forum:created' => 'Created %s with %d comments',
 	'groups:forum:created:single' => 'Created %s with %d reply',

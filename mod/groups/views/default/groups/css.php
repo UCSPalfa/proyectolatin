@@ -540,8 +540,7 @@ text-align: center;
 #popUpDiv {
     position: absolute;    
     width: 50%;    
-    height: 37%;
-    max-height: 40%;
+    max-height: 37%;
     background-color: #ffffff;    
     z-index: 9002;
     color: black;
@@ -552,7 +551,7 @@ text-align: center;
 }
 
 .header-institutions-div {
-    height: 16%;
+    height: 40px;
     background-color: #fff;
     border-top: 1px solid rgb(82, 82, 82);
     border-bottom: 1px solid rgb(82, 82, 82);
@@ -580,7 +579,7 @@ text-align: center;
 }
 
 .div-institutions {
-    height: 65%;
+    max-height: 135px;
     overflow-y: auto;
     margin-left: 1%;
     width: 98%;
@@ -588,7 +587,7 @@ text-align: center;
 }
 
 .close-div {
-    height: 11%;
+    height: 25px;
     background-color: #CCC;
     border-top: 1px solid #525252;
     border-bottom: 1px solid #525252;
@@ -785,3 +784,6 @@ text-align: center;
     display: inline;
 }
 
+div.miniGridGroup div a div.au_subgroups_group_icon img {
+    border: 1px solid black;
+}

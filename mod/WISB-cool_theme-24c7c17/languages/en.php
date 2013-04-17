@@ -1,5 +1,10 @@
 <?php
 add_translation('en', array(
+    
+	'created:by' => 'Created by %s',
+	'published:by' => 'Published by %s',
+    
+    
 	'annotation:group_topic_post:value:placeholder' => 'Leave a reply...',
 	'annotation:generic_comment:value:placeholder' => 'Leave a comment...',
 	
@@ -10,6 +15,7 @@ add_translation('en', array(
 	'composer:object:file' => 'File',
 	'composer:prompt' => 'Share',
 
+	'file:uploaded:by' => 'Uploaded by %s',
 	'file:river:create' => 'uploaded a file',
 	'files' => 'Files',
 	

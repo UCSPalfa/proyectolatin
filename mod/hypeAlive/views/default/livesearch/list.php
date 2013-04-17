@@ -63,7 +63,7 @@ if (array_key_exists('search_type', $vars['params']) && $search_type_str != "sea
     $type_str = $search_type_str;
 }
 
-if ($type_str == "Groups") {
+if ($type_str == elgg_echo('item:group')) {
     $type_str = elgg_echo("communities:and:writing:groups");
 } 
 

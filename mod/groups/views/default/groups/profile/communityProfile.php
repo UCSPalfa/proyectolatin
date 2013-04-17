@@ -32,9 +32,6 @@ $tags = $group->interests;
 
 //$options = array('value' => $tags);
 //$options['tag_names'] = 'interests';
-
-
-
 // ******************** //
 // *** Group's Tags *** //
 // ******************** //
@@ -109,6 +106,9 @@ if ($totalRelatedCommunities > $relatedCommunitiesLimit) {
 $writingGroups = getWritingGroups($group);
 $totalWritingGroups = count($writingGroups);
 
+$booksTitles = getCommunityBooks($writingGroups);
+
+
 if ($totalWritingGroups > $writingGroupsLimit) {
     $rand_keys = array_rand($writingGroups, $writingGroupsLimit);
     $tmpArray = array();
@@ -118,7 +118,6 @@ if ($totalWritingGroups > $writingGroupsLimit) {
     $writingGroups = $tmpArray;
 }
 
-$booksTitles = getCommunityBooks($group);
 
 // ************************ //
 // *** Group Statistics *** //
@@ -189,38 +188,30 @@ if ($totalMembers == 0) {
 }
 
 echo "</div>"; // end div members
-
-
-
-
-
-
 // ********************* //
 // *** Group's Books *** //
 // ********************* //
 
 if (count($booksTitles) > 0) {
 
-    echo "<div class='group-members-div' style='height: 160px; margin-top: 20px;' >";
+    echo "<div class='group-members-div' style='font-size: 13px; min-height: 60px; height: 160px; margin-top: 20px;' >";
 
     echo "<div style='text-align: left;'><label>" . elgg_echo("books:communities") . ":</label></div> <br />";
 
-        echo "<div style='overflow-y: auto; height: 70%; text-align: left; margin-right: 10px; '>";
+    echo "<div style='overflow-y: auto; height: 70%; text-align: left; margin-right: 10px; '>";
 
-            echo "<ol style='' >";
+    echo "<ol style='' >";
 
-                foreach ($booksTitles as $bookTitle) {
+    foreach ($booksTitles as $bookTitle) {
 
-                    echo '<li class="institution" style="margin-bottom: 10px;" >' . $bookTitle . '<li>';
+        echo '<li class="institution" style="margin-bottom: 10px;" >' . $bookTitle . '<li>';
+    }
 
-                }        
+    echo '</ol>';
 
-            echo '</ol>';
-
-        echo "</div>";
+    echo "</div>";
 
     echo "</div>"; // end div books
-    
 }
 
 
@@ -241,10 +232,9 @@ echo "<div class='group-related-communities-div'>";
 
 echo "<div style='text-align: left;'><label>" . elgg_echo("Related Communities") . ":</label></div> <br />";
 
-foreach ($relatedCommunities as $community) {    
-    
+foreach ($relatedCommunities as $community) {
+
     echo elgg_view('groups/profile/groupIcon', array('entity' => $community));
-    
 }
 
 if ($totalRelatedCommunities == 0) {
@@ -256,7 +246,7 @@ if ($totalRelatedCommunities == 0) {
         'text' => elgg_echo('relatedgroups:more'),
         'is_trusted' => true,
         'class' => 'allMembers',
-    ));
+            ));
 
     echo "<div class='all-members-div'>$allRelatedCommunitiesLink</div>";
 } else {
@@ -275,21 +265,8 @@ echo "<div class='group-books-div'>";
 
 echo "<div style='text-align: left;'><label>" . elgg_echo("au_subgroups") . ":</label></div> <br />";
 
-foreach ($writingGroups as $book) {
-
-//    $file = $book->getIconURL();
-//    $icon = "<img src='$file'>";
-//
-//    echo elgg_view('output/url', array(
-//        'href' => $book->getURL(),
-//        'text' => $icon,
-//        'title' => $book->name,
-//        'is_trusted' => true,
-//    ));
-    
-    echo elgg_view('groups/profile/groupIcon', array('entity' => $book));
-    
-    
+foreach ($writingGroups as $writingGroup) {
+    echo elgg_view('groups/profile/groupIcon', array('entity' => $writingGroup));
 }
 
 if (!$totalWritingGroups) {
@@ -302,7 +279,7 @@ if (!$totalWritingGroups) {
         'text' => elgg_echo('au_subgroups:subgroups:more'),
         'is_trusted' => true,
         'class' => 'allBooks',
-    ));
+            ));
 
     echo "<div class='all-members-div'>$allWritingGroups</div>";
 } else {
@@ -313,61 +290,41 @@ echo "</div>"; // end Writing Groups
 
 
 echo "</div>"; // end lower container
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ************************ //
 // *** Institutions DIV *** //
 // ************************ //
-
 ?>
 
 <div id="popUpDiv" style="display:none;">
-    
+
     <div class="header-institutions-div">
-        
-            <?php
-                $file = elgg_get_site_url() . '_graphics/institution.png';
-                $icon = "<img src='$file'>";
-                echo $icon . "<label>" . elgg_echo("Institutions:participating") . "</label>"; 
-            ?>
-    </div>
-    
-    <div class="div-institutions">
-        <?php 
-        
-        echo '<ol>';
-        
-        foreach ($institutions as $institution) {
-            
-            echo '<li class="institution">' . $institution . '<li>';
-            
-        }        
-        
-        echo '</ol>';
-        
+
+        <?php
+        $file = elgg_get_site_url() . '_graphics/institution.png';
+        $icon = "<img src='$file'>";
+        echo $icon . "<label>" . elgg_echo("Institutions:participating") . "</label>";
         ?>
     </div>
-    
+
+    <div class="div-institutions">
+        <?php
+        echo '<ol>';
+
+        foreach ($institutions as $institution) {
+
+            echo '<li class="institution">' . $institution . '<li>';
+        }
+
+        echo '</ol>';
+        ?>
+    </div>
+
     <div class="close-div">
         <a href="#" onclick="myPopup('popUpDiv')">
             <?php echo elgg_echo("latin:close"); ?> 
         </a>
     </div>
-    
-    
+
+
 </div>
 

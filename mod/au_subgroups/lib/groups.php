@@ -287,7 +287,7 @@ function groups_handle_mine_page() {
 }
 
 
-// Esta función se ejecuta cuando se accede a la URL groups/writting_groups/username
+// Esta función se ejecuta cuando se accede a la URL groups/writing_groups/username
 function list_mine_subgroups($user) {
     
     elgg_push_context('mine_groups');
@@ -750,9 +750,16 @@ function groups_register_profile_buttons($group) {
 
     // group owners
     if ($group->canEdit()) {
+        
         // edit and invite
         $url = elgg_get_site_url() . "groups/edit/{$group->getGUID()}";
-        $actions[$url] = 'groups:edit';
+        
+        if (isSubgroup($group)) {
+            $actions[$url] = 'au_subgroups:edit:subgroup';
+        } else {
+            $actions[$url] = 'groups:edit';
+        }
+        
     }
 
     // group members
@@ -761,7 +768,14 @@ function groups_register_profile_buttons($group) {
             // leave
             $url = elgg_get_site_url() . "action/groups/leave?group_guid={$group->getGUID()}";
             $url = elgg_add_action_tokens_to_url($url);
-            $actions[$url] = 'groups:leave';
+            
+            
+            if (isSubgroup($group)) {
+                $actions[$url] = 'writing:group:leave';
+            } else {
+                $actions[$url] = 'groups:leave';
+            }
+     
         }
         $url = elgg_get_site_url() . "groups/invite/{$group->getGUID()}";
         $actions[$url] = 'groups:invite';

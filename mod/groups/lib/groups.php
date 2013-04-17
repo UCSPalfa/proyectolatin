@@ -209,9 +209,8 @@ function groups_handle_edit_page($page, $guid = 0) {
         } else {
             $content = elgg_echo('groups:cantcreate');
         }
-    } else if ($page == 'edit') {
-
-        $title = elgg_echo("groups:edit");
+    } else if ($page == 'edit') {        
+        
         $group = get_entity($guid);
 
         if ($group && $group->canEdit()) {

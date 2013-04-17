@@ -55,11 +55,6 @@ if (count($communities) >= $limit) {
 
 $content = elgg_view_entity_list($communities, array('limit' => 24, 'full_view' => false, 'list_type' => 'gallery', 'pagination' => false, 'rendering_mode' => 'mini_grid',));
 
-
-
-
-
-
 $url = elgg_get_site_url() . 'groups/search';
 $body = elgg_view_form('groups/find', array(
     'action' => $url,

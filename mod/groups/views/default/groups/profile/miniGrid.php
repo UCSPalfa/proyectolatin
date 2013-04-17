@@ -23,7 +23,7 @@ if ($isSubgroup) {
             <div class="miniGridGroup">
 
                 <div title="<?php echo $group->name . ' - ' . $group->getMembers(0, 0, TRUE) . ' members'; ?>">
-			<?php echo elgg_view_entity_icon($group, 'small', array('href' => $group->getURL(), 'class' => 'pepe')); ?>
+			<?php echo elgg_view_entity_icon($group, 'small', array('href' => $group->getURL())); ?>
 		</div>
 
 
