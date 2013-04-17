@@ -175,10 +175,14 @@ function groups_setup_sidebar_menus() {
       }
 
      */
-    if (elgg_get_context() == 'groups' && !elgg_instanceof($page_owner, 'group')) {
+    
+    
+    
+    
+    
+    if ((elgg_get_context() == 'groups' || elgg_get_context() == 'mine_groups') && !elgg_instanceof($page_owner, 'group')) {
 
         $user = elgg_get_logged_in_user_entity();
-
 
         if ($user) {
 
