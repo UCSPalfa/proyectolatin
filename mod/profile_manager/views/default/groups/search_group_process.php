@@ -4,13 +4,11 @@ if (elgg_is_xhr()){
     $query = get_input('query');
     $current_params = Array(
                             'query' => $query,
-                            'search_type' => 'entities',
                             'offset' => 0,
                             'limit' => 10,
                             'sort' => 'relevance',
                             'order' => 'desc',
                             'type' => 'group',
-                            'subtype' => '',
 
                         );
     $results = elgg_trigger_plugin_hook('search', "group", $current_params, NULL);

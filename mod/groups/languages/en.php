@@ -97,6 +97,7 @@ $english = array(
 	'groups:ingroup' => 'in the community',
 	'groups:cantcreate' => 'You can not create a community. Only admins can.',
 	'groups:cantedit' => 'You can not edit this community',
+	'groups:exists' => 'This community already exists',
 	'groups:saved' => 'Community saved',
 	'groups:featured' => 'Featured communities',
 	'groups:makeunfeatured' => 'Unfeature',
