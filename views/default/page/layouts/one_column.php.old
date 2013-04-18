@@ -31,9 +31,6 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 			<div class="register_form">
 				<?php echo $vars['content'];?>
 			</div>
-			<div class="sidebar_r">
-				<?php echo elgg_view('page/elements/latin_benefits'); ?>
-			</div>
 		<?php else:
 			echo $vars['content'];
 		endif;

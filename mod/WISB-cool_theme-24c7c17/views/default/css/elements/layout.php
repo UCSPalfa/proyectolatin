@@ -61,5 +61,14 @@ body{margin:0;padding:0;height:100%;}
 .elgg-menu-general li a:hover {text-decoration: underline;}
 /*Para formulario de registro */
 .register_form{padding-top: 40px}
+.register_form{
+	float: left;
+	width: 40%;
+}
+.sidebar_r{
+	float: right;
+	width: 40%;
+}
+
 .elgg-form-register #profile_manager_register_left input{padding: 5px}
 .elgg-form-register #profile_manager_register_left .label_captcha{display: block; margin-top: 15px}
