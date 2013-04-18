@@ -76,7 +76,7 @@ div.mandatory {
 
 .mandatory {    /*po5i*/
 	padding-right:15px;
-	background:transparent url(<?php echo $graphics_url ?>mandatory.png) no-repeat 100% 2px;
+	background:transparent url(<?php echo $graphics_url ?>mandatory.png) no-repeat 440px 2px;
 }
 
 input.hj-input-processing {
