@@ -20,6 +20,7 @@ function search_init() {
 	elgg_register_plugin_hook_handler('search', 'object', 'search_objects_hook');
 	elgg_register_plugin_hook_handler('search', 'user', 'search_users_hook');
 	elgg_register_plugin_hook_handler('search', 'group', 'search_groups_hook');
+	elgg_register_plugin_hook_handler('search', 'groupname', 'search_groupnames_hook');	//po5i
 
 	// tags and comments are a bit different.
 	// register a search types and a hooks for them.
@@ -446,6 +447,40 @@ function search_get_where_sql($table, $fields, $params, $use_fulltext = TRUE) {
 		$fields_str = implode(',', $fields);
 		$where = "(MATCH ($fields_str) AGAINST ('$query' $options))";
 	}
+
+	return $where;
+}
+
+
+/**
+ * po5i: Returns a normal where clause for a search query.
+ *
+ * @param str $table Prefix for table to search on
+ * @param array $fields Fields to match against
+ * @param array $params Original search params
+ * @return str
+ */
+function search_get_literal_where_sql($table, $fields, $params) {
+	global $CONFIG;
+	$query = $params['query'];
+
+	// add the table prefix to the fields
+	foreach ($fields as $i => $field) {
+		if ($table) {
+			$fields[$i] = "$table.$field";
+		}
+	}
+	
+	$where = '';
+
+	$likes = array();
+	$query = sanitise_string($query);
+	foreach ($fields as $field) {
+		$likes[] = "$field LIKE '%$query%'";
+	}
+	$likes_str = implode(' OR ', $likes);
+	$where = "($likes_str)";
+	
 
 	return $where;
 }

@@ -79,7 +79,8 @@ if ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgrou
     echo elgg_view("input/text", array(
         'name' => 'name',
         'value' => $vars['entity']->name,
-        'id'    => 'name_ajax_group_search'
+        'id'    => 'name_ajax_group_search',
+        'autocomplete' => 'off'
         //'js' => 'onKeyDown="alert(11)";'    //po5i
     ));
     ?>
