@@ -18,7 +18,7 @@
 ?>	
 <div class="elgg-module  elgg-module-info"><div class="elgg-head">
         <h3 class="mandatory"><?php echo elgg_echo('user:name:label'); ?></h3>
-<?php echo elgg_view('input/text', array('name' => 'name', 'value' => $vars['entity']->name)); ?>
+        <?php echo elgg_view('input/text', array('name' => 'name', 'value' => $vars['entity']->name)); ?>
     </div></div>
 
 <!--div class="elgg-module  elgg-module-info"><div class="elgg-head">
@@ -259,10 +259,10 @@ if (!empty($cats)) {
     if (($edit_profile_mode == "tabbed") && (count($cats) > 1)) {
         ?>
         <div id="profile_manager_profile_edit_tabs">
-        <?php echo elgg_view('navigation/tabs', array('tabs' => $tabs)); ?>
+            <?php echo elgg_view('navigation/tabs', array('tabs' => $tabs)); ?>
         </div>
         <div id="profile_manager_profile_edit_tab_content_wrapper">
-        <?php echo $tab_content; ?>
+            <?php echo $tab_content; ?>
         </div>
         <?php
     } else {
@@ -274,28 +274,28 @@ if ($simple_access_control == "yes") {
     ?>
     <div class="elgg-module  elgg-module-info"><div class="elgg-head">
             <h3><?php echo elgg_echo("profile_manager:simple_access_control"); ?></h3>
-    <?php echo elgg_view('input/access', array('name' => 'simple_access_control', 'value' => $access_id, 'class' => 'simple_access_control', 'js' => 'onchange="set_access_control(this.value)"')); ?>
+            <?php echo elgg_view('input/access', array('name' => 'simple_access_control', 'value' => $access_id, 'class' => 'simple_access_control', 'js' => 'onchange="set_access_control(this.value)"')); ?>
         </div></div>
     <?php
 }
 ?>
 
 <div class="elgg-foot">
-        <?php
-        echo elgg_view('input/hidden', array('name' => 'guid', 'value' => $vars['entity']->guid));
-        echo elgg_view('input/submit', array('value' => elgg_echo('save')));
-        ?>
+    <?php
+    echo elgg_view('input/hidden', array('name' => 'guid', 'value' => $vars['entity']->guid));
+    echo elgg_view('input/submit', array('value' => elgg_echo('save')));
+    ?>
 </div>
 
 
-    <?php
-    if ($simple_access_control == "yes") {
-        ?>
+<?php
+if ($simple_access_control == "yes") {
+    ?>
     <script type="text/javascript">
         $(document).ready(function(){
             $(".simple_access_control").val($(".elgg-input-access:first").val()).trigger("change");
         });
-    		
+        		
         function set_access_control(val){
             $(".elgg-input-access").not(".simple_access_control").val(val);
         }
