@@ -1,4 +1,6 @@
 <?php
+
+/*AO: Abril 18, añadida clase registerf junto a campos mandatory de la página de registro de usuario */
 	/**
 	* Profile Manager
 	* 
@@ -116,8 +118,12 @@
 				}
 				$class = "";
 				if($field->mandatory == "yes"){
-					$class = " class='mandatory'";
-				} 
+					if(elgg_get_context()!= "register"){
+						$class = " class='mandatory'";
+					}else{
+						$class = " class='mandatory registerf'";
+					}
+				}
 				
 				$fields_result .= "<br />";
 				$fields_result .= "<div" . $class . ">";
