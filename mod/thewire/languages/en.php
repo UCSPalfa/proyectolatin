@@ -57,7 +57,7 @@ $english = array(
 	'thewire:notify:post' => '%s posted on the wire:',
 
 /*AO: Abril 16, añadida pregunta*/
-        'thewire:deletequestion' => "Are you sure?",
+        'thewire:deletequestion' => "Are you sure you want to delete this?",
 
 );
 

@@ -191,7 +191,7 @@ $english = array(
     /* AO: Abril 16, añadidas traducciones*/
     'hj:framework:deleted' => "The comment was successfully deleted.",
     'hj:framework:notdeleted' => "Sorry. We could not delete this comment.",
-    'hj:framework:deletequestion' => "Are you sure?",
+    'hj:framework:deletequestion' => "Are you sure you want to delete this?",
     /* AO*/
 
 	'hj:framework:pagination:loadmore' => 'Show More',
