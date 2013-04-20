@@ -29,12 +29,20 @@ body {
     PAGE LAYOUT
 *************************************** */
 /***** DEFAULT LAYOUT ******/
-.elgg-page-default .elgg-page-header > .elgg-inner {
+
+/*AO: Abril 18, modificados los sgtes 2 estilos para que el banner sea link */
+
+.elgg-page-default .elgg-page-header > .elgg-inner{
     width: 981px;
     margin: 0 auto;
     height: 128px;
+}
+
+.elgg-page-header .elgg-inner #logo_sitio{
     background: url(<?php echo $url; ?>_graphics/banner_latin.png) 0 0 no-repeat;
-    background-size: 995px 128px;
+    width: 995px;
+    height: 128px;
+    display: block;
 }
 
 .elgg-page-default .elgg-page-body > .elgg-inner {
