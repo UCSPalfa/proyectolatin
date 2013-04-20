@@ -6,6 +6,8 @@
  * @subpackage Core
  */
 
+/*AO: Abril 18, añadida clase registerf junto a mandatory*/
+
 $password = $password2 = '';
 $username = get_input('u');
 $email = get_input('e');
@@ -31,7 +33,7 @@ echo "<div id='profile_manager_register_left'>";
 ?>
 
 <fieldset>
-	<div class="mtm mandatory">
+	<div class="mtm mandatory registerf">
 		<label for='register-name'><?php echo elgg_echo('name'); ?></label><br />
 		<?php
 		echo elgg_view('input/text', array(
@@ -42,7 +44,7 @@ echo "<div id='profile_manager_register_left'>";
 		));
 		?>
 	</div>
-	<div class="mandatory">
+	<div class="mandatory registerf">
 		<label for='register-email'><?php echo elgg_echo('email'); ?></label><br />
 		<div class='profile_manager_register_input_container'>
 			<?php
@@ -55,7 +57,7 @@ echo "<div id='profile_manager_register_left'>";
 			<span class='elgg-icon profile_manager_validate_icon'></span>
 		</div>
 	</div>
-	<div class="mandatory">
+	<div class="mandatory registerf">
 		<label for='register-username'><?php echo elgg_echo('username'); ?></label><br />
 		<div class='profile_manager_register_input_container'>
 			<?php
@@ -68,7 +70,7 @@ echo "<div id='profile_manager_register_left'>";
 			<div class='elgg-icon profile_manager_validate_icon'></div>
 		</div>
 	</div>
-	<div class="mandatory">
+	<div class="mandatory registerf">
 		<label for='register-password'><?php echo elgg_echo('password'); ?></label><br />
 		<div class='profile_manager_register_input_container'>
 			<?php
@@ -81,7 +83,7 @@ echo "<div id='profile_manager_register_left'>";
 			<span class='elgg-icon profile_manager_validate_icon'></span>
 		</div>
 	</div>
-	<div class="mandatory">
+	<div class="mandatory registerf">
 		<label for='register-password2'><?php echo elgg_echo('passwordagain'); ?></label><br />
 		<div class='profile_manager_register_input_container'>
 			<?php

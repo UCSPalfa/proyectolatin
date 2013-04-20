@@ -1,8 +1,8 @@
 <?php
 
 /**
- * LACLO info page
- *
+ * LATIn info page
+ * AO: Marzo, añadido para mostrar info de LATIn es página de inicio
  *
  */
 echo "<div class=\"bloque_vd\">";
