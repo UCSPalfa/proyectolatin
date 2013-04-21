@@ -12,6 +12,23 @@
 
 	$spanish = array(
 					
+		// LATIn field names:
+		'latin:field:bio' => 'Bio',
+		'latin:field:institution' => 'Institución',
+		'latin:field:country' => 'País',
+		'latin:field:city' => 'Ciudad',
+		'latin:field:interests' => 'Intereses',
+		'latin:field:curriculum' => 'Curriculum',
+		'latin:field:languages' => 'Lenguajes',
+		'latin:field:email_visibility' => 'Visibilidad de Email',
+		'latin:field:areas' => 'Áreas de interés',
+		'latin:field:proposal' => 'Propuesta del contenido',
+		'latin:field:booktitle' => 'Título del Libro',
+		'latin:field:description' => 'Descripción del grupo',
+		'latin:field:policies' => '¿Acepta usted las políticas?',
+		'latin:field:policies:title' => 'Link de las políticas',
+		'latin:field:policies:link' => 'https://www.google.com',
+
 		// entity names
 		'item:object:custom_profile_field' => 'Campo de perfil personalizado',
 		'item:object:custom_profile_field_category' => 'Categoria de campo de perfil personalizado',
@@ -218,52 +235,52 @@
 		'profile_manager:actions:restore:error:nofile' => "Error al restaurar: no se ha subido el archivo",
 	
 		// new
-		'profile_manager:actions:new:success' => 'Succesfully added new custom profile field',	
-		'profile_manager:actions:new:error:metadata_name_missing' => 'No metadata name provided',	
-		'profile_manager:actions:new:error:metadata_name_invalid' => 'Metadata name is an invalid name',	
-		'profile_manager:actions:new:error:metadata_options' => 'You need to enter options when using this type',	
-		'profile_manager:actions:new:error:unknown' => 'Unknown error occurred when saving a new custom profile field',
-		'profile_manager:action:new:error:type' => 'Wrong profile field type (group or profile)',
+		'profile_manager:actions:new:success' => 'El nuevo campo del perfil se ha agregado exitosamente',	
+		'profile_manager:actions:new:error:metadata_name_missing' => 'No se proporcionó un nombre de metadata',	
+		'profile_manager:actions:new:error:metadata_name_invalid' => 'El nombre de metadata no es válido',	
+		'profile_manager:actions:new:error:metadata_options' => 'Usted necesita ingresar opciones si desea usar este tipo de campo',	
+		'profile_manager:actions:new:error:unknown' => 'Ha ocurrido un error al guardar el campo',
+		'profile_manager:action:new:error:type' => 'Tipo de campo incorrecto',
 		
 		// edit
-		'profile_manager:actions:edit:error:unknown' => 'Error fetching profile field data',
+		'profile_manager:actions:edit:error:unknown' => 'Error al traer los datos del campo',
 	
 		//delete
-		'profile_manager:actions:delete:confirm' => 'Are you sure you wish to delete this field?',
-		'profile_manager:actions:delete:error:unknown' => 'Unknown error occurred while deleting',
+		'profile_manager:actions:delete:confirm' => '¿Está seguro de querer eliminar este campo?',
+		'profile_manager:actions:delete:error:unknown' => 'Ha ocurrido un error al eliminar',
 
 		// toggle option
-		'profile_manager:actions:toggle_option:error:unknown' => 'Unknown error occurred while changing the option',
+		'profile_manager:actions:toggle_option:error:unknown' => 'Ha ocurrido un error al cambiar la opción',
 	
 		// category to field
-		'profile_manager:actions:change_category:error:unknown' => "An unknown error occured while changing the category",
+		'profile_manager:actions:change_category:error:unknown' => "Ha ocurrido un error al cambiar la categoría",
 	
 		// add category
-		'profile_manager:action:category:add:error:name' => "No name or an invalid name provided for the category",
-		'profile_manager:action:category:add:error:object' => "Error while creating the category object",
-		'profile_manager:action:category:add:error:save' => "Error while saving the category object",
-		'profile_manager:action:category:add:succes' => "The category was created succesfully",
+		'profile_manager:action:category:add:error:name' => "Se ha proporcionado un nombre incorrecto a esta categoría",
+		'profile_manager:action:category:add:error:object' => "Se ha producido un error al crear la categoría",
+		'profile_manager:action:category:add:error:save' => "Se ha producido un error al guardar la categoría",
+		'profile_manager:action:category:add:succes' => "La categoría ha sido guardada exitosamente",
 	
 		// delete category
-		'profile_manager:action:category:delete:error:guid' => "No GUID provided",
-		'profile_manager:action:category:delete:error:type' => "The provided GUID is not a custom profile field category",
-		'profile_manager:action:category:delete:error:delete' => "An error occured while deleting the category",
-		'profile_manager:action:category:delete:succes' => "The category was deleted succesfully",
+		'profile_manager:action:category:delete:error:guid' => "No se ha proporcionado un GUID",
+		'profile_manager:action:category:delete:error:type' => "El GUID proporcionado no es una categoría válida",
+		'profile_manager:action:category:delete:error:delete' => "Un error ha ocurrido mientras se borraba la categoría",
+		'profile_manager:action:category:delete:succes' => "La categoría fue borrada exitosamente",
 	
 		// add profile type
-		'profile_manager:action:profile_types:add:error:name' => "No name or an invalid name provided for the Custom Profile Type",
-		'profile_manager:action:profile_types:add:error:object' => "Error while creating the Custom Profile Type",
-		'profile_manager:action:profile_types:add:error:save' => "Error while saving the Custom Profile Type",
-		'profile_manager:action:profile_types:add:succes' => "The Custom profile Type was created succesfully",
+		'profile_manager:action:profile_types:add:error:name' => "El nombre proporcionado para el tipo de campo personalizado es incorrecto",
+		'profile_manager:action:profile_types:add:error:object' => "Error al crear el tipo de campo personalizado",
+		'profile_manager:action:profile_types:add:error:save' => "Error al guardar el tipo de campo personalizado",
+		'profile_manager:action:profile_types:add:succes' => "El tipo de campo personalizado ha sido guardado exitosamente",
 		
 		// delete profile type
-		'profile_manager:action:profile_types:delete:error:guid' => "No GUID provided",
-		'profile_manager:action:profile_types:delete:error:type' => "The provided GUID is not an Custom Profile Type",
-		'profile_manager:action:profile_types:delete:error:delete' => "An unknown error occured while deleting the Custom Profile Type",
-		'profile_manager:action:profile_types:delete:succes' => "The Custom Profile Type was deleted succesfully",
+		'profile_manager:action:profile_types:delete:error:guid' => "No se ha proporcionado un GUID",
+		'profile_manager:action:profile_types:delete:error:type' => "El GUID proporcionado no es un tipo de campo válido",
+		'profile_manager:action:profile_types:delete:error:delete' => "Un error ha ocurrido al intentar eliminar el tipo de campo",
+		'profile_manager:action:profile_types:delete:succes' => "El tipo de campo ha sido eliminado exitosamente",
 		
 		// change username action
-		'profile_manager:action:username:change:succes' => "Successfully changed your username",
+		'profile_manager:action:username:change:succes' => "Su nombre de usuario ha sido cambiado exitosamente",
 	
 		// Tooltips
 		'profile_manager:tooltips:profile_field' => "
@@ -330,70 +347,70 @@
 		",
 	
 		// widgets
-		'widgets:profile_completeness:title' => 'Profile Completeness',
-		'widgets:profile_completeness:description' => 'Show the profile completeness',
-		'widgets:profile_completeness:view:tips' => 'Tip! Update your %s to improve the Profile Completeness.',
-		'widgets:profile_completeness:view:complete' => 'Congratulations! Your profile is 100% complete!',
+		'widgets:profile_completeness:title' => 'Completitud del perfil',
+		'widgets:profile_completeness:description' => 'Mostrar la completitud del perfil',
+		'widgets:profile_completeness:view:tips' => 'Consejo: actualice %s para mejorar su perfil.',
+		'widgets:profile_completeness:view:complete' => 'Felicidades, Su perfil está al 100%',
 		
-		'widgets:register:title' => "Register",
-		'widgets:register:description' => "Show a register box",
-		'widgets:register:loggedout' => "You need to be logged out to use this widget",
+		'widgets:register:title' => "Registrarse",
+		'widgets:register:description' => "Mostrar un cuadro de registro",
+		'widgets:register:loggedout' => "Necesita haber cerrado sesión para ver este widget",
 	
 		// datepicker		
-		'profile_manager:datepicker:trigger' => 'Select a date',
+		'profile_manager:datepicker:trigger' => 'Seleccione una fecha',
 		'profile_manager:datepicker:output:dateformat' => '%a %d %b %Y', // For available notations see http://nl.php.net/manual/en/function.strftime.php
 		'profile_manager:datepicker:input:localisation' => '', // change it to the available localized js files in custom_profile_fields/vendors/jquery.datepick.package-3.5.2 (e.g. jquery.datepick-nl.js), leave blank for default 
 		'profile_manager:datepicker:input:dateformat' => '%m/%d/%Y', // Notation is based on strftime, but must result in output like http://keith-wood.name/datepick.html#format
 		'profile_manager:datepicker:input:dateformat_js' => 'mm/dd/yyyy', // Notation is based on strftime, but must result in output like http://keith-wood.name/datepick.html#format
 
-		'profile_manager:input:multi_select:empty_text' => 'Please select ...',
+		'profile_manager:input:multi_select:empty_text' => 'Por favor seleccione ...',
 	
 		// Edit profile => profile type selector
-		'profile_manager:profile:edit:custom_profile_type:label' => "Select your profile type",
-		'profile_manager:profile:edit:custom_profile_type:description' => "Description of selected profile type",
-		'profile_manager:profile:edit:custom_profile_type:default' => "Default",
+		'profile_manager:profile:edit:custom_profile_type:label' => "Seleccione su tipo de perfil",
+		'profile_manager:profile:edit:custom_profile_type:description' => "Descripción del tipo de perfil seleccionado",
+		'profile_manager:profile:edit:custom_profile_type:default' => "Predeterminado",
 	
 		// non_editable
-		'profile_manager:non_editable:info' => 'This field can not be edited',
+		'profile_manager:non_editable:info' => 'Este campo no puede ser editado',
 		
 		// register form mandatory notice
-		'profile_manager:register:mandatory' => "Items marked with a * are mandatory",
+		'profile_manager:register:mandatory' => "Los items marcados con un * son obligatorios",
 		
 		// register profile icon
-		'profile_manager:register:profile_icon' => 'This site requires you to upload a profile icon',
+		'profile_manager:register:profile_icon' => 'Este sitio requiere que ingrese una imágen',
 		
 		// register accept terms
-		'profile_manager:registration:accept_terms' => "I have read and accept the %sTerms of Service%s",
+		'profile_manager:registration:accept_terms' => "He leído y aceptado los %sTérminos de servicio%s",
 	
 		// simple access control
-		'profile_manager:simple_access_control' => 'Select who can view your profile information',
+		'profile_manager:simple_access_control' => 'Seleccione quién puede ver su información de perfil',
 	
 		// register pre check
-		'profile_manager:register_pre_check:missing' => 'The next field must be filled: %s',
-		'profile_manager:register_pre_check:terms' => 'You need to accept the terms to complete the registration',
-		'profile_manager:register_pre_check:profile_icon:error' => 'Error uploading your profile icon (probably related to the file size)',
-		'profile_manager:register_pre_check:profile_icon:nosupportedimage' => 'Uploaded profile icon is not the right type (jpg, gif, png)',
+		'profile_manager:register_pre_check:missing' => 'El siguiente campo debe ser ingresado: %s',
+		'profile_manager:register_pre_check:terms' => 'Necesita aceptar los términos para continuar con el registro',
+		'profile_manager:register_pre_check:profile_icon:error' => 'Ha ocurrido un error al subir su imagen (propablemente sea el tamaño)',
+		'profile_manager:register_pre_check:profile_icon:nosupportedimage' => 'La imágen subida para su perfil no tiene el formato correcto (jpg, gif, png)',
 	
 		// Admin add user form
-		'profile_manager:admin:adduser:notify' => "Notify user",
-		'profile_manager:admin:adduser:use_default_access' => "Extra metadata created based on site default access level",
-		'profile_manager:admin:adduser:extra_metadata' => "Add extra profile data",
+		'profile_manager:admin:adduser:notify' => "Notificar al usuario",
+		'profile_manager:admin:adduser:use_default_access' => "Metadata adicional creada a partir del nivel de acceso predeterminado del sitio",
+		'profile_manager:admin:adduser:extra_metadata' => "Agregar información extra al perfil",
 		
 		// change username form
-		'profile_manager:account:username:button' => "Click to change your username",
-		'profile_manager:account:username:info' => "Change your username. An icon will tell you if the username entered is valid and available.",
+		'profile_manager:account:username:button' => "Haga clic para cambiar su usuario",
+		'profile_manager:account:username:info' => "Cambiar su nombre de usuario. Un ícono le indicará si es válido y que está disponible.",
 		
 		// river events
-		'river:join:site:default' => '%s joined the site',
+		'river:join:site:default' => '%s se acaba de unir al sitio',
 	
 		// login history
-		'profile_manager:account:login_history' => "Login History",
-		'profile_manager:account:login_history:date' => "Date",
-		'profile_manager:account:login_history:ip' => "IP Address",
-		'profile_manager:profile:communities' => "Communities",
-		'profile_manager:profile:groups' => "Writing Groups",
-		'profile_manager:profile:no_groups' => "No groups found",
-		'profile_manager:profile:no_communities' => "No communities found",
+		'profile_manager:account:login_history' => "Bitácora de sesiones",
+		'profile_manager:account:login_history:date' => "Fecha",
+		'profile_manager:account:login_history:ip' => "Dirección IP",
+		'profile_manager:profile:communities' => "Comunidades",
+		'profile_manager:profile:groups' => "Grupos de escritura",
+		'profile_manager:profile:no_groups' => "No hay grupos",
+		'profile_manager:profile:no_communities' => "No hay comunidades",
 	
 	);
 	

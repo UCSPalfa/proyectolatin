@@ -11,7 +11,7 @@ if (elgg_is_xhr()){
                             'type' => 'group',
 
                         );
-    $results = elgg_trigger_plugin_hook('search', "group", $current_params, NULL);
+    $results = elgg_trigger_plugin_hook('search', "groupname", $current_params, NULL);
     if(count($results['entities'])>0){        
         $return = Array();       
         foreach($results['entities'] as $r){    

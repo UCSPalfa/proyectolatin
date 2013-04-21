@@ -8,7 +8,7 @@ $site_url = elgg_get_site_url();
 ?>
 //funcion JS para procesar el ajax
 $(function() {
-        $("#name_ajax_group_search").keydown(function (){
+        $("#name_ajax_group_search").keyup(function (){
             var $query = $(this).val();
 
             if($query.length < 3)
@@ -33,7 +33,9 @@ $(function() {
                                         $("#name_ajax_results").append(div);
                                     }
                             }else{
-                                    //no pasa nada
+                                    //limpiar
+                                    $("#name_ajax_results").text("");
+                                    $("#name_ajax_recommendations").hide();
                             }
                     }
             });
