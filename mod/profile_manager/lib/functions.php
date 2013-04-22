@@ -79,6 +79,7 @@
 		add_custom_field_type("custom_group_field_types", 'longtext', elgg_echo('profile:field:longtext'), $group_options);
 		add_custom_field_type("custom_group_field_types", 'tags', elgg_echo('profile:field:tags'), $group_options);
 		add_custom_field_type("custom_group_field_types", 'url', elgg_echo('profile:field:url'), $group_options);
+		add_custom_field_type("custom_group_field_types", 'file', elgg_echo('profile:field:file'), $group_options);
 		add_custom_field_type("custom_group_field_types", 'email', elgg_echo('profile:field:email'), $group_options);
 		add_custom_field_type("custom_group_field_types", 'date', elgg_echo('profile:field:date'), $group_options);
 		add_custom_field_type("custom_group_field_types", 'calendar', elgg_echo('calendar'), $group_options);

@@ -32,7 +32,7 @@ foreach (elgg_get_config('group') as $shortname => $valuetype) {
 }
 
 $input['name'] = htmlspecialchars(get_input('name', '', false), ENT_QUOTES, 'UTF-8');
-$input['description'] = htmlspecialchars(get_input('description', '', false), ENT_QUOTES, 'UTF-8');		//po5i
+$input['description'] = get_input('description', '', false);		//po5i
 
 $user = elgg_get_logged_in_user_entity();
 
@@ -55,6 +55,27 @@ if ($group_guid && !$group->canEdit()) {
 // Assume we can edit or this is a new group
 if (sizeof($input) > 0) {
 	foreach($input as $shortname => $value) {
+		//po5i-noelgg: manejar la subida de archivos
+		if(file_exists($_FILES[$shortname]['tmp_name']) || is_uploaded_file($_FILES[$shortname]['tmp_name']))
+		{
+			$filename = $_FILES[$shortname]['name'];		
+			$filehandler = new ElggFile();
+			$filehandler->owner_guid = $is_new_group ? 0 : $group->owner_guid;
+			$filehandler->setFilename($filename);
+			$filehandler->open("write");
+			$filehandler->write(get_uploaded_file($shortname));			
+			$filehandler->close();
+			$filehandler->save();
+			$filename = $filehandler->getFilenameOnFilestore();
+
+			$value = $filehandler->getGUID();	//$filename;
+			//print_r($filehandler);
+			//echo $shortname;
+			//die($value);
+		}
+
+
+
 		$group->$shortname = $value;
 	}
 }
@@ -67,16 +88,20 @@ if (!$group->name) {
 
 //po5i: validar que el nombre existe al guardar:
 //se tuvo que usar un nuevo hook para buscar solo por nombre
+//fix: lineas perdidas
 if ($is_new_group){
+
 	$current_params = Array(
 							'query' => $group->name,
 							'order' => 'desc',
 							'type' => 'group',
 
 						);
+
 	$results = elgg_trigger_plugin_hook('search', "groupname", $current_params, NULL);
+
 	if(count($results['entities'])>0){
-		register_error(elgg_echo("groups:exists"));	//probablemente salten resultados que deberian dejarse pasar
+		register_error(elgg_echo("groups:exists"));	
 		forward(REFERER);
 	}
 }
