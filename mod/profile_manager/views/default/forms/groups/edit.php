@@ -72,8 +72,8 @@ if ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgrou
 </div>
 
 <div class="elgg-module  elgg-module-info">
-<div class="elgg-head">
-    <h3 class="mandatory"><?php echo elgg_echo($nameField); ?></h3>
+<div class="elgg-head mandatory">
+    <h3><?php echo elgg_echo($nameField); ?></h3>
     <!-- po5i -->
     <?php
     echo elgg_view("input/text", array(
@@ -138,7 +138,7 @@ if ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgrou
 <div class="elgg-module  elgg-module-info">
 <div class="elgg-head">
     <h3><?php echo elgg_echo("groups:description"); ?></h3>
-    <?php echo elgg_view("input/text", array(
+    <?php echo elgg_view("input/longtext", array(
         'name' => 'description',
         'value' => $vars['entity']->description,
     ));
@@ -230,13 +230,13 @@ if (count($group_fields["fields"]) > 0) {
             }
         }
 
-        $line_break = '<br />';
+        $line_break = ''; //'<br />';
         if ($valtype == 'longtext') {
             $line_break = '';
         }
-        echo '<div class="elgg-module  elgg-module-info"><div class="elgg-head">';
-        $mandatory = $field->mandatory == "yes" ? ' class="mandatory"' : '';
-        echo "<h3" . $mandatory . ">" . elgg_echo($title) . "</h3>";        //po5i: multilang support
+        $mandatory = $field->mandatory == "yes" ? 'mandatory' : ''; //po5i
+        echo '<div class="elgg-module  elgg-module-info"><div class="elgg-head '.$mandatory.'">';        
+        echo "<h3>" . elgg_echo($title) . "</h3>";        //po5i: multilang support
 
         if ($hint = $field->getHint()) {
             ?>

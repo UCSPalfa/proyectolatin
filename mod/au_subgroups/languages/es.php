@@ -152,7 +152,7 @@ y luego ir a la pagina de la Comunidad y hacer clic en el boton \"Unirse\":
 		"groups:members:change_owner:error" => 'Solo el propietario del Grupo de Escritura o Comunidad puede asignar un nuevo propietario',
 		"groups:members:removed" => 'Miembro removido exitosamente',
 		"wgroups:removeuser" => 'Remover del Grupo de Escritura',
-		"wgroups:members" => 'Miembros del Grupo de Escritura',
+		"wgroups:members" => 'Colaboradores del Grupo de Escritura',
 		"wgroups:invite:title" => "Invitar personas a este Grupo de Escritura",
 		
 );

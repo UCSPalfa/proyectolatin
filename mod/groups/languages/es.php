@@ -81,6 +81,7 @@ $spanish = array(
         'user:cv' => 'CV de %s',
 
 	'member:of' => 'Miembro de',
+        'writing:groups:members:title' => 'Colaboradores de %s',    
 	'groups:members:title' => 'Miembros de %s',
 	'groups:members:more' => "Ver todos los miembros",
 	'groups:related:more' => "Ver todas las Comunidades relacionadas",
@@ -351,6 +352,10 @@ o a haga clic a continuación para ver las solicitudes de membresía de esta Com
 	'groups:ecml:discussion' => 'Community Discussions',
 	'groups:ecml:groupprofile' => 'Community profiles',
 	'group:all:replies' => 'See all replies',
+    
+        'information:of' => "Informacion de %s",
+        'you:no:writing:groups' => "Usted no colabora en ningun Grupo de Escritura todavia",
+        'user:no:writing:groups' => "El usuario %s no colabora en ningun Grupo de Escritura todavia",
 );
 
 add_translation("es", $spanish);
