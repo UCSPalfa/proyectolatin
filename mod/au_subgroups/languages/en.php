@@ -153,7 +153,7 @@ and then go to the community's page and click on the Join button:
 		"groups:members:change_owner:error" => 'Only the community owner can assign a new owner',
 		"groups:members:removed" => 'Member successfully removed',
 		"wgroups:removeuser" => 'Remove from writing group',
-		"wgroups:members" => 'Group members',
+		"wgroups:members" => 'Group collaborators',
 		"wgroups:invite:title" => "Invite people to this writing group",
 		
 );
