@@ -179,6 +179,10 @@ function hj_alive_comments_menu($hook, $type, $return, $params) {
 	$entity = elgg_extract('entity', $params, false);
 	$container_guid = elgg_extract('container_guid', $params['params'], null);
 	$river_id = elgg_extract('river_id', $params['params'], null);
+	$user = elgg_get_logged_in_user_entity();
+
+
+
 
 	if (!$guid = $container_guid) {
 		$guid = $river_id;
@@ -191,30 +195,55 @@ function hj_alive_comments_menu($hook, $type, $return, $params) {
 
 	/**
 	 * TimeStamp
-	 */
+	*/
 	if (elgg_instanceof($entity, 'object', 'hjannotation') && $timestamp = $entity->time_created) {
 		$time = array(
-			'handler' => $handler,
-			'name' => 'time',
-			'entity' => $entity,
-			'text' => elgg_view_friendly_time($timestamp),
-			'href' => false,
-			'priority' => 90
+				'handler' => $handler,
+				'name' => 'time',
+				'entity' => $entity,
+				'text' => elgg_view_friendly_time($timestamp),
+				'href' => false,
+				'priority' => 90
 		);
 		$return[] = ElggMenuItem::factory($time);
 	}
+	if (elgg_in_context("group_profile")){
+		//get group id from request uri
+		//echo $_SERVER['REQUEST_URI'];
+		$data = explode("profile/",$_SERVER['REQUEST_URI']);
+		if (isset($data[1])){
+			$info = explode("/",$data[1]);
+			//
+			$group = get_entity($info[0]);
+			if (!is_group_member($info[0], $user->getGUID())){
+				return $return;
+			}
+		}
 
+	}
 	/**
 	 * Like / Unlike
 	 */
+	$can_like = 1;
 	if ($entity->getType() == 'river') {
 		$show_like = true;
 	} else if (elgg_instanceof($entity, 'object', 'groupforumtopic')) {
 		$container = get_entity($entity->container_guid);
 		$show_like = $container->canWriteToContainer();
+
 	} else if ($entity->canAnnotate()) {
+		$topic = get_entity($entity->container_guid);
+		$container = get_entity($topic->container_guid);
 		$show_like = true;
+		if ($container){
+			if (!is_group_member($container->getGUID(), $user->getGUID())){
+				$show_like = false;
+			}
+		}
+
 	}
+
+
 	if ($show_like) {
 		unset($params['entity']);
 		$likes_owner = hj_alive_does_user_like($params['params']);
@@ -228,25 +257,25 @@ function hj_alive_comments_menu($hook, $type, $return, $params) {
 			$likes_class = "visible";
 		}
 		$likes = array(
-			'name' => 'like',
-			'text' => elgg_echo('hj:alive:comments:likebutton'),
-			'entity' => $entity,
-			'title' => elgg_echo('hj:alive:comments:likebutton'),
-			'class' => $likes_class,
-			'rel' => 'like',
-			'priority' => 100
+				'name' => 'like',
+				'text' => elgg_echo('hj:alive:comments:likebutton'),
+				'entity' => $entity,
+				'title' => elgg_echo('hj:alive:comments:likebutton'),
+				'class' => $likes_class,
+				'rel' => 'like',
+				'priority' => 100
 		);
 		$unlikes = array(
-			'name' => 'unlike',
-			'text' => elgg_echo('hj:alive:comments:unlikebutton'),
-			'entity' => $entity,
-			'title' => elgg_echo('hj:alive:comments:unlikebutton'),
-			'class' => $unlikes_class,
-			'rel' => 'unlike',
-			'priority' => 105
+				'name' => 'unlike',
+				'text' => elgg_echo('hj:alive:comments:unlikebutton'),
+				'entity' => $entity,
+				'title' => elgg_echo('hj:alive:comments:unlikebutton'),
+				'class' => $unlikes_class,
+				'rel' => 'unlike',
+				'priority' => 105
 		);
 
-		
+
 		if (!($entity->getType() == 'river' && $entity->subtype=='groupforumtopic')) {
 			$return[] = ElggMenuItem::factory($likes);
 			$return[] = ElggMenuItem::factory($unlikes);
@@ -267,13 +296,13 @@ function hj_alive_comments_menu($hook, $type, $return, $params) {
 
 	if ($show_comment) {
 		$comment = array(
-			'name' => 'comment',
-			'text' => elgg_echo('hj:alive:comments:commentsbutton'),
-			'entity' => $entity,
-			'priority' => 200
+				'name' => 'comment',
+				'text' => elgg_echo('hj:alive:comments:commentsbutton'),
+				'entity' => $entity,
+				'priority' => 200
 		);
 		if (!($entity->getType() == 'river' && $entity->subtype=='groupforumtopic')) {
-		$return[] = ElggMenuItem::factory($comment);
+			$return[] = ElggMenuItem::factory($comment);
 		}
 	}
 
