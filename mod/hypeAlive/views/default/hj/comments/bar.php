@@ -44,10 +44,34 @@ $menu = elgg_view_menu('comments', array(
 $params['entity'] = $entity;
 $comments_input = elgg_view('hj/comments/input', $params);
 
+$options = array(
+		'type' => 'object',
+		'subtype' => 'hjannotation',
+		'owner_guid' => null,
+		'container_guid' =>$guid,
+		'metadata_name_value_pairs' => array(
+				array('name' => 'annotation_name', 'value' => $params['aname']),
+				array('name' => 'annotation_value', 'value' => '', 'operand' => '!='),
+				array('name' => 'river_id', 'value' => $params['river_id'] )
+		),
+		'count' => true,
+		'limit' => 3,
+		'order_by' => 'e.time_created desc'
+);
+
+$options['count'] = true;
+$count_comments = elgg_get_entities_from_metadata($options);
+
+
 unset($params['aname']);
 unset($params['entity']);
 $likes_view = hj_alive_view_likes_list($params);
+
+if ($count_comments==0 && strlen($menu)==0){
+	
+}else{
 ?>
+
 <div id="hj-annotations-<?php echo $selector_id ?>" class="hj-annotations-bar clearfix">
     <div class="hj-annotations-menu">
 	<?php echo $menu ?>
@@ -63,3 +87,6 @@ $likes_view = hj_alive_view_likes_list($params);
     </ul>
 
 </div>
+<?php 
+}
+?>

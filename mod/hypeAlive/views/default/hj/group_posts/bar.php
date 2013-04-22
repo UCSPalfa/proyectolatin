@@ -34,6 +34,8 @@ $menu = elgg_view_menu('comments', array(
 
 $params['entity'] = $entity;
 $comments_input = elgg_view('hj/comments/input', $params);
+$user = elgg_get_logged_in_user_entity();
+$group = get_entity($entity->container_guid);
 
 unset($params['aname']);
 unset($params['entity']);
@@ -44,11 +46,19 @@ $likes_view = hj_alive_view_likes_list($params);
 	class="hj-annotations-bar clearfix">
 	<div class="topic-menu-section">
 		<div class="hj-annotations-menu">
-			<!-- menu de comentario y like aqui -->
-			<ul
+			<!-- menu de comentario solo si es miembro del grupo -->
+			<?php 
+			if ($group->isMember($user)) {
+		
+			?>
+				<ul
 				class="elgg-menu elgg-menu-comments elgg-menu-hz elgg-menu-comments-default">
 				<li class="elgg-menu-item-comment"><a href="">Comment</a>&nbsp;&nbsp;</li>
-			</ul>
+				</ul>
+			<?php 
+			}
+			?>
+
 			<?php //echo $menu ?>
 			</br>
 		</div>
