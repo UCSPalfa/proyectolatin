@@ -196,7 +196,7 @@ if (!empty($cats)) {
                 //$field_result = "<tr>";//GC
             }
             $mandatory = $field->mandatory == "yes" ? ' class="mandatory"' : '';
-            $field_result .= "<h3" . $mandatory . ">" . $title . "</h3>";
+            $field_result .= "<h3" . $mandatory . ">" . elgg_echo($title) . "</h3>";        //po5i: multilang support
             //$field_result .= "<td  width='10%'>" . $title . "</td>";
 
             if ($hint = $field->getHint()) {

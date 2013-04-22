@@ -29,12 +29,21 @@ body {
     PAGE LAYOUT
 *************************************** */
 /***** DEFAULT LAYOUT ******/
-.elgg-page-default .elgg-page-header > .elgg-inner {
+
+/*AO: Abril 18, modificados los sgtes 2 estilos para que el banner sea link */
+
+.elgg-page-default .elgg-page-header > .elgg-inner{
     width: 981px;
     margin: 0 auto;
     height: 128px;
+}
+
+.elgg-page-header .elgg-inner #logo_sitio{
     background: url(<?php echo $url; ?>_graphics/banner_latin.png) 0 0 no-repeat;
     background-size: 995px 128px;
+    width: 995px;
+    height: 128px;
+    display: block;
 }
 
 .elgg-page-default .elgg-page-body > .elgg-inner {
@@ -323,15 +332,82 @@ body {
     text-decoration: underline;
 }
 /*Para formulario de registro */
-.register_form {
-    padding-top: 40px;
+.register_form{
+	float: left;
+	width: 40%;
+	padding: 25px;
+	margin: 15px 0 0 0;
+	background: #f1f1f1;
+	border: 1px solid #e5e5e5;
 }
 
-.elgg-form-register #profile_manager_register_left input {
-    padding: 5px;
+.register_form label{
+	font-size: 13px;
+}
+/******************************/
+
+.elgg-form-register #profile_manager_register_left input{padding: 5px}
+.elgg-form-register #profile_manager_register_left .label_captcha{display: block; margin-top: 15px}
+
+/*AO: Abril 18, estilos añadidos para sidebar de página de registro */
+
+.sidebar_r{
+	float: right;
+	width: 53%;
+	padding-top: 40px;
 }
 
-.elgg-form-register #profile_manager_register_left .label_captcha {
-    display: block;
-    margin-top: 15px;
+.benefit{
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+
+.benefit #benpic1{
+	float: left;
+	background:url(<?php echo $url; ?>_graphics/wordscoll.png);
+	background-repeat: no-repeat no-repeat;
+	width: 250px;
+	height: 159px;
+	margin-left: 30px;
+}
+
+.benefit #benpic2{
+        float: left;
+        background:url(<?php echo $url; ?>_graphics/ben_world.png);
+        background-repeat: no-repeat no-repeat;
+        width: 170px;
+        height: 172px;
+        margin-left: 80px;
+}
+
+.benefit #benpic3{
+        float: left;
+        background:url(<?php echo $url; ?>_graphics/ben_share.png);
+        background-repeat: no-repeat no-repeat;
+        width: 196px;
+        height: 170px;
+        margin-left: 70px;
+}
+
+.benefit h2{
+	color: #0054A7;
+	font-weight: normal;
+	font-size: 20px;
+	color: #000;
+}
+
+.benefit .ben_text{
+	width: 200px;
+	margin-left: 60%;
+}
+
+.ben_text p{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	line-height: 19px;
+	font-size: 13px;
+	color: #555;
+}
+
+.registerf{
+	max-width: 80%;
 }

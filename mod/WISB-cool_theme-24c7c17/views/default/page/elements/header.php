@@ -2,13 +2,22 @@
 
 $site = elgg_get_site_entity();
 
-/*echo "<div id=\"facebook-header-logo\">";
-echo elgg_view('output/url', array(
-	'href' => '/',
-	'text' => '',
-	'class' => 'logo_sitio',
-));
+/*AO: Abril 19, para colocar link en banner de latin*/
 
-echo "</div>";*/
+if(elgg_get_context()!="main"){
+
+$link = "http://localhost/proyectolatin"; //link temporal
+
+/*echo "<div id=\"facebook-header-logo\">";*/
+echo elgg_view('output/url', array(
+	'href' => $link,
+	'text' => '',
+	'id' => 'logo_sitio',
+));
+}else{
+	echo "<div id=\"logo_sitio\"></div>";
+}
+
+//echo "</div>";
 
 //echo elgg_view_form('login', array('id' => 'facebook-header-login'));

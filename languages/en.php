@@ -1375,6 +1375,15 @@ You cannot reply to this email.",
 	"za" => "Zuang",
 	"zh" => "Chinese",
 	"zu" => "Zulu",
+
+/*AO: Abril 18, añadidas traducciones para página de registro */
+	'register:explore_interests' => "Explore your interests",
+	'register:explore_text' => "Communities allow you to find someone who shares your interests, whether computer geeks, math lovers or literature fans. Share news and ideas and establishes new relationships in communities.",
+	'register:collaborate' => "Collaborate with people from all around the world",
+	'register:coll_text' => "Communities offer unique spaces where you can talk about what you like, start yours! Contact people from all over the world and make a difference!",
+	'register:share' => "Share",
+	'register:share_text' => "Share with people in your community and writing groups, on LATIn Community. Start a discussion, text a group all at once, share your ideas!",
+
 );
 
 add_translation("en",$english);

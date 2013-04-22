@@ -182,16 +182,6 @@ if($is_subgroup):
         <?
     }
 
-    //po5i:politicas
-    if ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgroups_edition') {
-        ?>
-        <div class="elgg-module  elgg-module-info"><div class="elgg-head">
-            <h3><?php echo elgg_echo('au_subgroups:policies:title') ?></h3>
-            <a href='<?php echo elgg_echo('au_subgroups:policies:link') ?>' target='_blank'><?php echo elgg_echo('au_subgroups:policies:link') ?></a>
-        </div></div>
-        <?    
-    }
-
 endif; 
 /////////////////////////////////////////////////////////
 
@@ -246,7 +236,7 @@ if (count($group_fields["fields"]) > 0) {
         }
         echo '<div class="elgg-module  elgg-module-info"><div class="elgg-head">';
         $mandatory = $field->mandatory == "yes" ? ' class="mandatory"' : '';
-        echo "<h3" . $mandatory . ">" . $title . "</h3>";
+        echo "<h3" . $mandatory . ">" . elgg_echo($title) . "</h3>";        //po5i: multilang support
 
         if ($hint = $field->getHint()) {
             ?>
@@ -275,6 +265,17 @@ if (count($group_fields["fields"]) > 0) {
         echo '</div>';
         echo '</div>';
     }
+
+    //po5i:politicas
+    if ($is_subgroup and ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgroups_edition')) {
+        ?>
+        <div class="elgg-module  elgg-module-info"><div class="elgg-head">
+            <h3><?php echo elgg_echo('latin:field:policies:title') ?></h3>
+            <a href='<?php echo elgg_echo('latin:field:policies:link') ?>' target='_blank'><?php echo elgg_echo('au_subgroups:policies:link') ?></a>
+        </div></div>
+        <?    
+    }
+
 }
 
 ?>
