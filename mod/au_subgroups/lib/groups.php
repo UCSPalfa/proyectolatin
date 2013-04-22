@@ -50,7 +50,7 @@ function groups_handle_all_page() {
                 'full_view' => false,
                 'rendering_mode' => 'as_google_plus',
                 'list_type' => 'gallery',
-                'limit' => 20,
+                'limit' => 30,
             );
 
             if ($display_subgroups != 'yes') {
@@ -71,7 +71,7 @@ function groups_handle_all_page() {
                 'full_view' => false,
                 'rendering_mode' => 'as_google_plus',
                 'list_type' => 'gallery',
-                'limit' => 20,
+                'limit' => 30,
             ));
             if (!$content) {
                 $content .= "<div class='center' style='padding-top: 30px;'> " . elgg_echo('discussion:none') . " </div>";
@@ -84,7 +84,7 @@ function groups_handle_all_page() {
                 'full_view' => false,
                 'rendering_mode' => 'as_google_plus',
                 'list_type' => 'gallery',
-                'limit' => 20,
+                'limit' => 30,
             );
 
             if ($display_subgroups != 'yes') {
@@ -583,7 +583,7 @@ function groups_handle_members_page($guid) {
 //        'types' => 'user',
 //        'list_type' => 'gallery',
 //        'size' => 'medium',
-//        'limit' => 20,
+//        'limit' => 30,
 //            ));
 
 

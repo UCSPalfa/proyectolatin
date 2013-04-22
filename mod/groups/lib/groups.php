@@ -405,7 +405,7 @@ function groups_handle_members_page($guid) {
         'relationship_guid' => $group->guid,
         'inverse_relationship' => true,
         'types' => 'user',
-        'limit' => 20,
+        'limit' => 30,
             ));
 
     $params = array(
@@ -442,7 +442,7 @@ function groups_handle_links_page($guid) {
         'relationship_guid' => $group->guid,
         'inverse_relationship' => TRUE,
         'types' => 'group',
-        'limit' => 20,
+        'limit' => 30,
         'count' => false,
         'full_view' => $full_view,
         'as_grid' => $as_grid,
@@ -453,7 +453,7 @@ function groups_handle_links_page($guid) {
         'relationship_guid' => $group->guid,
         'inverse_relationship' => FALSE,
         'types' => 'group',
-        'limit' => 20,
+        'limit' => 30,
         'count' => false,
         'full_view' => $full_view,
         'as_grid' => $as_grid,

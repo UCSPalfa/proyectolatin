@@ -15,7 +15,7 @@ function discussion_handle_all_page() {
 		'type' => 'object',
 		'subtype' => 'groupforumtopic',
 		'order_by' => 'e.last_action desc',
-		'limit' => 20,
+		'limit' => 30,
 		'full_view' => false,
 	));
 
@@ -54,7 +54,7 @@ function discussion_handle_list_page($guid) {
 	$options = array(
 		'type' => 'object',
 		'subtype' => 'groupforumtopic',
-		'limit' => 20,
+		'limit' => 30,
 		'order_by' => 'e.last_action desc',
 		'container_guid' => $guid,
 		'full_view' => false,

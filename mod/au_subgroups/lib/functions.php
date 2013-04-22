@@ -329,7 +329,7 @@ function au_subgroups_handle_mine_page() {
         'full_view' => false,
         'rendering_mode' => 'as_google_plus',
         'list_type' => 'gallery',
-        'limit' => 20,
+        'limit' => 30,
     );
 
     if ($display_subgroups != 'yes') {
@@ -456,7 +456,7 @@ function au_subgroups_handle_owned_page() {
         'full_view' => false,
         'rendering_mode' => 'as_google_plus',
         'list_type' => 'gallery',
-        'limit' => 20,
+        'limit' => 30,
     );
 
     $options['joins'] = array("JOIN {$db_prefix}groups_entity ge ON e.guid = ge.guid");
