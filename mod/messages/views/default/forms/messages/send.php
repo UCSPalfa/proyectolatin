@@ -11,6 +11,10 @@ elgg_load_js('autosuggest1');
 elgg_load_js('autosuggest2');
 
 $recipient_guid = elgg_extract('recipient_guid', $vars, 0);
+$user = null;
+if ($recipient_guid){
+	$user = get_entity($recipient_guid);
+}
 $subject = elgg_extract('subject', $vars, '');
 $body = elgg_extract('body', $vars, '');
 $site_members = elgg_get_site_entity()->getMembers(0);
@@ -52,9 +56,29 @@ $recipient_drop_down = elgg_view('input/dropdown', array(
 		<?php 
 		echo json_encode($data);
 		?>
-
+		
 		};
-		$("input#recipient_guid").autoSuggest(data.items, {selectedItemProp: "name", searchObjProps: "name", startText: "", keyDelay: 50, minChars: 1,asHtmlID:"rcpt"});
+		<?php 
+		if (!is_null($user)){
+
+			$user_to['value'] = $user->guid;
+			$user_to['name'] = $user->name;
+		?>
+		 var selectedData = {items:[ <?php 
+					echo json_encode($user_to);
+			?>
+			]
+			};
+		 <?php 
+			}
+		 	else{
+		                             ?>
+		                             var selectedData = null;
+		                             <?php 
+			}  ?>
+		$("input#recipient_guid").autoSuggest(data.items, {selectedItemProp: "name", selectedValuesProp: "value", searchObjProps: "name", startText: "", preFill: selectedData.items, keyDelay: 50, minChars: 1,asHtmlID:"rcpt"});
+
+		
 		</script>
 
 
