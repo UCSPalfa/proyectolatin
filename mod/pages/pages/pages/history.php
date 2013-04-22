@@ -33,7 +33,7 @@ $title = $page->title . ": " . elgg_echo('pages:history');
 $content = elgg_list_annotations(array(
 		'guid' => $page_guid,
 		'annotation_name' => 'page',
-		'limit' => 20,
+		'limit' => 30,
 		'order_by' => "n_table.time_created desc"
 ));
 
