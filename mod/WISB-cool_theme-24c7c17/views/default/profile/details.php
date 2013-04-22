@@ -234,7 +234,7 @@ $content .= "<hr />";
 
 $file = elgg_get_site_url() . '_graphics/note.png';
 $icon = "<img src='$file' style='$iconStyle' title='Collaborating in'>";
-$content .= $icon . "<label style='font-weight: normal;'> " . $totalUserCommunities . " " . elgg_echo('au_subgroups') . " </label>";
+$content .= $icon . "<label style='font-weight: normal;'> " . $totalWritingGroups . " " . elgg_echo('au_subgroups') . " </label>";
 
 
 if ($twitter) {

@@ -26,6 +26,9 @@ elgg_extend_view('js/elgg', 'js/groups/css-pop');
 $group = $vars['entity'];
 
 
+elgg_push_breadcrumb(elgg_echo("information:of", array($group->name)));
+
+
 $description = $group->description;
 
 $tags = $group->interests;

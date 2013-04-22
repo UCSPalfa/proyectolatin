@@ -40,6 +40,7 @@ body {
 
 .elgg-page-header .elgg-inner #logo_sitio{
     background: url(<?php echo $url; ?>_graphics/banner_latin.png) 0 0 no-repeat;
+    background-size: 995px 128px;
     width: 995px;
     height: 128px;
     display: block;

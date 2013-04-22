@@ -25,6 +25,7 @@ elgg_extend_view('js/elgg', 'js/groups/css-pop');
 
 $writingGroup = $vars['entity'];
 
+elgg_push_breadcrumb(elgg_echo("information:of", array($writingGroup->name)));
 
 $description = $writingGroup->description;
 

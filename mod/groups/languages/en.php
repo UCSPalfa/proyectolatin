@@ -81,6 +81,7 @@ $english = array(
         'user:cv' => '%s\'s CV',
 
 	'member:of' => 'Member of',
+	'writing:groups:members:title' => 'Collaborators of %s',
 	'groups:members:title' => 'Members of %s',
 	'groups:members:more' => "View all members",
 	'groups:related:more' => "View all related communities",
@@ -97,7 +98,6 @@ $english = array(
 	'groups:ingroup' => 'in the community',
 	'groups:cantcreate' => 'You can not create a community. Only admins can.',
 	'groups:cantedit' => 'You can not edit this community',
-	'groups:exists' => 'This community already exists',
 	'groups:saved' => 'Community saved',
 	'groups:featured' => 'Featured communities',
 	'groups:makeunfeatured' => 'Unfeature',
@@ -352,6 +352,12 @@ or click below to view the community's join requests:
 	'groups:ecml:discussion' => 'Community Discussions',
 	'groups:ecml:groupprofile' => 'Community profiles',
 	'group:all:replies' => 'See all replies',
+    
+        'information:of' => "%s 's Information",
+        'you:no:writing:groups' => "You do not collaborate in any Writing Group yet",
+        'user:no:writing:groups' => "The user %s does not collaborate in any Writing Group yet",
+        
+    
 );
 
 add_translation("en", $english);

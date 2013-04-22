@@ -1,6 +1,6 @@
 <?php
 
-$english = array(
+$spanish = array(
    
     
     'latin:close' => 'Cerrar',
@@ -9,153 +9,152 @@ $english = array(
     'Institutions:participating' => 'Instituciones participantes',
     'Institutions:collaborating' => 'Instituciones colaborando',
     
-    'writingGroups:members' => 'Group collaborators',
-    'discussion:writinggroup' => 'Group discussion',
-    'file:writinggroup' => 'Group files',
-    'pages:writinggroup' => 'Group pages',
-    'bookmarks:writinggroup' => 'Group bookmarks',
-    'blog:writinggroup' => 'Group blogs',
-    'writingGroups:member' => 'collaborators',
-    'writingGroups:Members' => 'Collaborators',
+    'writingGroups:members' => 'Colaboradores del grupo',
+    'discussion:writinggroup' => 'Discussiones del grupo',
+    'file:writinggroup' => 'Archivos del grupo',
+    'pages:writinggroup' => 'Paginas del grupo',
+    'bookmarks:writinggroup' => 'Marcadores del grupo',
+    'blog:writinggroup' => 'Blogs del grupo',
+    'writingGroups:member' => 'colaboradores',
+    'writingGroups:Members' => 'Colaboradores',
     
     
-    'au_subgroups:name' => "Writing group name",
-    'au_subgroups:icon' => "Writing group icon (leave blank to leave unchanged)",
-    
-    'au_subgroups' => "Writing Groups",
-    'au_subgroups' => "Writing Groups",
-    'au_subgroups:subgroup' => "Writing Group",
-    'au_subgroups:subgroups' => "Writing Groups",
-    'au_subgroups:parent' => "Parent Community",
-    'au_subgroups:add:subgroup' => 'Create a Writing Group',
-    'au_subgroups:edit:subgroup' => 'Edit Writing Group', //po5i
-    'au_subgroups:delete:subgroup' => 'Delete Writing Group', //po5i
-    'au_subgroups:invite:subgroup' => 'Add users to Writing Group', //po5i
-    'au_subgroups:policies:title' => 'Policies', //po5i
-    'au_subgroups:policies:link' => 'http://www.google.com', //po5i
-    'au_subgroups:nogroups' => 'No writing groups have been created',
-    'au_subgroups:error:notparentmember' => "Users cannot join a writing group if they are not a member of the parent group",
-    'au_subtypes:error:create:disabled' => "Writing groups creation has been disabled for this group",
-    'au_subgroups:noedit' => "Cannot edit this writing group",
-    'au_subgroups:subgroups:delete' => "Delete writing Group",
-    'au_subgroups:delete:label' => "What should happen to the content of this writing group?  Any option selected will also apply to any subgroups that will be deleted.",
-    'au_subgroups:deleteoption:delete' => 'Delete all content within this writing group',
-    'au_subgroups:deleteoption:owner' => 'Transfer all content to the original creators',
-    'au_subgroups:deleteoption:parent' => 'Transfer all content to the parent community',
-    'au_subgroups:subgroup:of' => "Writing Group of %s",
-    'au_subgroups:setting:display_alphabetically' => "Display personal group listings alphabetically?",
-    'au_subgroups:setting:display_subgroups' => 'Show writing groups in standard group listings?',
-    'au_subgroups:setting:display_featured' => 'Show featured groups sidebar on personal group listings?',
-    'au_subgroups:error:invite' => "Action has been cancelled - the following users are not members of the parent group and cannot be invited/added.",
-    'au_subgroups:option:parent:members' => "Members of the parent community",
-    'au_subgroups:subgroups:more' => "View all Writing Groups",
+    'au_subgroups:name' => "Nombre del grupo de escritura",
+    'au_subgroups:icon' => "Icono del grupo de escritura (deje en blanco si no desea modificar)",
+        
+    'au_subgroups' => "Grupos de Escritura",
+    'au_subgroups:subgroup' => "Grupos de Escritur",
+    'au_subgroups:subgroups' => "Grupos de Escritura",
+    'au_subgroups:parent' => "Comunidad padre",
+    'au_subgroups:add:subgroup' => 'Crear un Grupo de Escritura',
+    'au_subgroups:edit:subgroup' => 'Editar Grupo de Escritura', //po5i
+    'au_subgroups:delete:subgroup' => 'Eliminar Grupo de Escritura', //po5i
+    'au_subgroups:invite:subgroup' => 'Añadir usuarios al Grupo de Escritura', //po5i
+    'au_subgroups:policies:title' => 'Políticas', //po5i
+    'au_subgroups:policies:link' => 'http://www.google.com', //po5i TODO: Que onda con esta cadena
+    'au_subgroups:nogroups' => 'Ningún Grupo de Escritura ha sido creado',
+    'au_subgroups:error:notparentmember' => "Los usuarios no pueden unirse a un Grupo de Escritura si no son miembros de la Comunidad padre",
+    'au_subtypes:error:create:disabled' => "La creación de Grupos de Escritura ha sido desabilitada para esta Comunidad",
+    'au_subgroups:noedit' => "No puede editar este Grupo de Escritura",
+    'au_subgroups:subgroups:delete' => "Eliminar Grupo de Escritura",
+    'au_subgroups:delete:label' => "¿Qué debería pasar con el contenido de este Grupo de Escritura? Cualquier opción seleccionada será también aplicada cualquier Grupo de Escritura que será eliminado.",
+    'au_subgroups:deleteoption:delete' => 'Eliminar todo el contenido de este Grupo de Escritura',
+    'au_subgroups:deleteoption:owner' => 'Transferir todo el contenido a los creadores originales',
+    'au_subgroups:deleteoption:parent' => 'Transferir todo el contenido a la Comunidad padre',
+    'au_subgroups:subgroup:of' => "Grupo de Escritura de %s",
+    'au_subgroups:setting:display_alphabetically' => "¿Mostrar Grupos de Escritura personales listados alfabéticamente?",
+    'au_subgroups:setting:display_subgroups' => '¿Mostrara Grupos de Escritura en listado estándar?',
+    'au_subgroups:setting:display_featured' => '¿Mostrar Grupos de Escritura destacados en la barra lateral del listado de Grupos personales?',
+    'au_subgroups:error:invite' => "Acción cancelada - Los siguientes Usuarios no son miembros de la Comunidad padre y, por tanto, no puede ser invitados o añadidos a este Grupo de Escritura.",
+    'au_subgroups:option:parent:members' => "Miembros de la Comunidad padre",
+    'au_subgroups:subgroups:more' => "Ver todos los Grupos de Escritura",
     // group options
-    'au_subgroups:group:enable' => "Subgroups: Enable Writing Groups for this group?",
-    'au_subgroups:group:memberspermissions' => "Subgroups: Enable any member to create subgroups? (if no, only group admins will be able to create subgroups)",
+    'au_subgroups:group:enable' => "Grupos de Escritura: ¿Habilitar Grupos de Escritura para esta Comunidad?",
+    'au_subgroups:group:memberspermissions' => "Grupos de Escritura: ¿Permitir a cualquier miembro de la Comunidad crear Grupos de Escritura? (si no, únicamente los administradores de la Comunidad podrán cerar Grupos de Escritura)",
     /*
      * Widget
      */
-    'au_subgroups:widget:order' => 'Order results by',
-    'au_subgroups:option:default' => 'Time Created',
-    'au_subgroups:option:alpha' => 'Alphabetical',
-    'au_subgroups:widget:numdisplay' => 'Number of subgroups to display',
-    'au_subgroups:widget:description' => 'List subgroups for this group',
+    'au_subgroups:widget:order' => 'Ordenar resultados por',
+    'au_subgroups:option:default' => 'Creado',
+    'au_subgroups:option:alpha' => 'Alfabético',
+    'au_subgroups:widget:numdisplay' => 'Número de Grupos de Escritura a mostrar',
+    'au_subgroups:widget:description' => 'Lista de Grupos de Escritura de esta Comunidad',
     /*
      * Move group
      */
-    'au_subgroups:move:edit:title' => "Make this group a subgroup of another group",
-    'au_subgroups:transfer:help' => "You can set this group as a subgroup of any other group you have permissions to edit.  If users are not a member of the new parent group, they will be removed from this group and sent a new invitation that will enroll them in the new parent group and all subgroups leading to this one. <b>This will also transfer any subgroups of this group</b>",
-    'au_subgroups:search:text' => "Search Groups",
-    'au_subgroups:search:noresults' => "No groups found",
-    'au_subgroups:error:timeout' => "Search timed out",
-    'au_subgroups:error:generic' => "An error has occurred with the search",
-    'au_subgroups:move:confirm' => "Are you sure you want to make this a subgroup of another group?",
-    'au_subgroups:error:permissions' => "You must have edit permissions for the subgroup and each parent up to the top.  Additionally, a group cannot move to a subgroup of itself.",
-    'au_subgroups:move:success' => "Writing group has been moved successfully",
-    'au_subgroups:error:invalid:group' => "Invalid group identifier",
-    'au_subgroups:invite:body' => "Hi %s,
+    'au_subgroups:move:edit:title' => "Hacer de esta Comunidad un Grupo de Escritura de otra Comunidad",
+    'au_subgroups:transfer:help' => "Puede definir esta Comunidad como un Grupo de Escritura de cualquier comunidad sobre la cual usted tenga permisos de edición. Si los usuarios no son miembros de la Comunidad padre, serán removidos de este Grupo de Escritura se les enviará una invitacion para unirse a la nueva Comunidad padre y a los Grupos de Escritura de ésta. <b>Esta operación tambien trasnferirá cualquier Grupo de Escritura de esta Comunidad</b>",
+    'au_subgroups:search:text' => "Buscar Comunidades",
+    'au_subgroups:search:noresults' => "No se encontraron Comunidades",
+    'au_subgroups:error:timeout' => "Tiempo de búsqueda agotado",
+    'au_subgroups:error:generic' => "Un error ha ocurrido con esta búsqueda",
+    'au_subgroups:move:confirm' => "Está seguro que desea mover este Grupo de Escritura a otra Comunidad?",
+    'au_subgroups:error:permissions' => "Usted debe tener permisos de edición para el Grupo de Escritura y para cada Comunidad padre hasta el nivel más alto.  Adicionalmente, una Comunidad no puede ser movida como Grupo de Escritura de sí misma.",
+    'au_subgroups:move:success' => "Grupo de Escritura movido exitosamente",
+    'au_subgroups:error:invalid:group' => "Identificador de Comunidad inválido",
+    'au_subgroups:invite:body' => "Hola %s,
 
-The group %s has been moved to a subgroup of the group %s.
-As you are not currently a member of the new parent group you have been removed from
-the subgroup.  You have been re-invited into the group, accepting the invitation will
-automatically join you as a member of all parent groups.
+El Grupo de Escritura %s ha sido movido a la Comunidad %s.
+Como actualmente usted no es miembro de la nueva Comunidad padre, ha sido removido
+del mencionado Grupo de Escritura.  Usted ha sido invitado nuevamente a dicho Grupo. Al aceptar la invitación,
+automáticamente se unirá como miembro de la nueva Comunidad padre.
 
-Click below to view your invitations:
+Haga clic a continuación para ver sus invitaciones:
 
 %s",
-		'au_subgroups:invitations' => 'Writing Group invitations',
-		'au_subgroups:invitations:pending' => 'Writing Group invitations (%s)',
-		'au_subgroups:invitations:selecttoinvite' => "To find a person type one or more words.  If he/she is not a member of the network write his/her email and press enter.",
-		'wgroups:invite:body' => "Hi %s,
+		'au_subgroups:invitations' => 'Invitations a Grupos de Escritura',
+		'au_subgroups:invitations:pending' => 'Invitations a Grupos de Escritura (%s)',
+		'au_subgroups:invitations:selecttoinvite' => "Para encontrar una persona, escriba una o más palabras. Si desea agregar a alguien que no es miembro de la red, escriba su dirección de correo electrónico y luego presione la tecla ENTER.",
+		'wgroups:invite:body' => "Hola %s,
 		
-%s invited you to join the '%s' writing group. Click below to view your invitations:
+%s le ha invitado a unirse al Grupo de Escritura '%s'. Haga clic a continuación para ver sus invitaciones:
 		
 %s",
-		'wgroups:invitec:body' => "Hi %s,
+		'wgroups:invitec:body' => "Hola %s,
 		
-%s invited you to join the '%s' writing group. First you must accept the invitation to join  %s community.
+%s le ha invitado a unirse al Grupo de Escritura '%s. Para aceptar, primero debe aceptar la invitación para unirse a la Comunidad  %s.
 
-		Click below to view your invitations:
+		Haga clic a continuación para ver sus invitaciones:
 		
 %s
 \n
 %s",
 		
-		'wgroups:invite:nouser:body' => "Hi,
+		'wgroups:invite:nouser:body' => "Hola,
 		
-You have been invited by %s to join the %s writing group.  
+Usted ha sido invitado por %s para unirse al Grupo de Escritura %s.  
 
-First you must register in %s site
-
-%s
-
-go to %s community and click on the Join button:
+Para acceder a la información y a todos los recursos de este Grupo, primero debe registrarse en %s
 
 %s
 
-and finally request membership in %s writing group
+ir a la Comunidad %s y dar clic en el boton de \"Unirse\":
+
+%s
+
+y, finalmente, solicitar unirse al Grupo de Escritura %s
 
 %s",
 		
-		'groups:invite:nouser:body' => "Hi,
+		'groups:invite:nouser:body' => "Hola,
 		
-You have been invited by %s to join the %s community.  
+Usted ha sido invitado por %s para unirse a la Comunidad %s.  
 
-First you must register in %s site
+Para acceder a la información y a todos los recursos disponibles, primero debe registrarse en %s
 
 %s
 
-and then go to the community's page and click on the Join button:
+y luego ir a la pagina de la Comunidad y hacer clic en el boton \"Unirse\":
 
 %s
 		",
 		
-		'groups:delete:subject:operator' => "Delete community notification",
-		'groups:delete:body:operator' => "I deleted %s community.
+		'groups:delete:subject:operator' => "Notificación de Eliminación de Comunidad",
+		'groups:delete:body:operator' => "He eliminado la Comunidad %s.
 		
-		Message sent automatically to all moderators",
+		Mensaje enviado automáticamente a todos los moderadores",
 		
-		'au_subgroups:invitations:note' => "Use left/right arrows, backspace, delete to navigate/remove boxes, and up/down/enter to navigate/add suggestions.",
+		'au_subgroups:invitations:note' => "Use las teclas de derecha e izquiera, retroceso y suprimir para navegar o remover cajas, y arriba/abajo para navegar y añadir sugerencias.",
 		
 		/**
 		 * Form fields
 		 */
-		"groups:members:new" => 'Add another member',
-		"groups:members:new:button" => 'Add member',
-		"groups:members:selectone" => 'select one...',
+		"groups:members:new" => 'Añadir otro miembro',
+		"groups:members:new:button" => 'Añadir miembro',
+		"groups:members:selectone" => 'seleccione uno...',
 		
 		/**
 		 * System messages
 		 */
-		"groups:members:added" => '%s successfully added as group member',
-		"groups:members:add:error" => 'It was impossible to add %s as group member',
-		"groups:members:owner_changed" => '%s is the new owner',
-		"groups:members:change_owner:error" => 'Only the community owner can assign a new owner',
-		"groups:members:removed" => 'Member successfully removed',
-		"wgroups:removeuser" => 'Remove from writing group',
-		"wgroups:members" => 'Group members',
-		"wgroups:invite:title" => "Invite people to this writing group",
+		"groups:members:added" => '%s exitosamente añadido como miembro del Grupo de Escritura',
+		"groups:members:add:error" => 'No fue posible añadir a %s como miembro del Grupo de Escritura',
+		"groups:members:owner_changed" => '%s es el nuevo propietario',
+		"groups:members:change_owner:error" => 'Solo el propietario del Grupo de Escritura o Comunidad puede asignar un nuevo propietario',
+		"groups:members:removed" => 'Miembro removido exitosamente',
+		"wgroups:removeuser" => 'Remover del Grupo de Escritura',
+		"wgroups:members" => 'Colaboradores del Grupo de Escritura',
+		"wgroups:invite:title" => "Invitar personas a este Grupo de Escritura",
 		
 );
 
-add_translation("en", $english);
+add_translation("es", $spanish);

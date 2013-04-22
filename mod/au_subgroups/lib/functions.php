@@ -304,9 +304,6 @@ function hasSubgroups($group) {
 
 function au_subgroups_handle_mine_page() {
 
-
-    elgg_push_context('mine_groups');
-
     $display_subgroups = elgg_get_plugin_setting('display_subgroups', 'au_subgroups');
     $display_alphabetically = elgg_get_plugin_setting('display_alphabetically', 'au_subgroups');
     $db_prefix = elgg_get_config('dbprefix');
@@ -329,7 +326,7 @@ function au_subgroups_handle_mine_page() {
         'full_view' => false,
         'rendering_mode' => 'as_google_plus',
         'list_type' => 'gallery',
-        'limit' => 20,
+        'limit' => 30,
     );
 
     if ($display_subgroups != 'yes') {
@@ -456,7 +453,7 @@ function au_subgroups_handle_owned_page() {
         'full_view' => false,
         'rendering_mode' => 'as_google_plus',
         'list_type' => 'gallery',
-        'limit' => 20,
+        'limit' => 30,
     );
 
     $options['joins'] = array("JOIN {$db_prefix}groups_entity ge ON e.guid = ge.guid");

@@ -93,8 +93,13 @@ if ($is_new_group){
 
 	$current_params = Array(
 							'query' => $group->name,
+							'search_type' => 'entities',
+							'offset' => 0,
+							'limit' => 10,
+							'sort' => 'relevance',
 							'order' => 'desc',
 							'type' => 'group',
+							'subtype' => '',
 
 						);
 
@@ -102,8 +107,7 @@ if ($is_new_group){
 
 	if(count($results['entities'])>0){
 		register_error(elgg_echo("groups:exists"));	
-		forward(REFERER);
-	}
+		forward(REFERER);	
 }
 /////////////////////////////////////
 

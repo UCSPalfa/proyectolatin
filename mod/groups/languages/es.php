@@ -3,250 +3,302 @@
  * Elgg groups plugin language pack
  *
  * @package ElggGroups
+ * 
  */
 
+
 $spanish = array(
+
+    
+        'communities:and:writing:groups' => 'Comunidades y Grupos de Escritura',
+    
+        'languages' => 'Idiomas',
+        'no:languages' => 'No se han indicado idiomas todavía',
+    
+        'community:interests' => 'Intereses',
+        'community:no:interests' => 'No se han indicado intereses todavía',
 
 	/**
 	 * Menu items and titles
 	 */
-	'groups' => "Grupos",
-	'groups:owned' => "Groups I own",
-	'groups:owned:user' => 'Groups %s owns',
-	'groups:yours' => "Mis grupos",
-	'groups:user' => "Grupos de %s",
-	'groups:all' => "Todos los grupos",
-	'groups:add' => "Crear un grupo",
-	'groups:edit' => "Editar grupo",
-	'groups:delete' => 'Eliminar grupo',
-	'groups:membershiprequests' => 'Manejar solicitud de adhesión',
-	'groups:membershiprequests:pending' => 'Manejar solicitud de adhesión (%s)',
-	'groups:invitations' => 'Invitaciones de Grupo',
-	'groups:invitations:pending' => 'Invitaciones de Grupo (%s)',
+	'groups' => "Comunidades",
+	'groups:owned' => "Comunidades de las que soy propietario",
+	'groups:owned:user' => 'Comunidades de las que %s es propietario',
+	'groups:yours' => "Mis Comunidades",
+	'writing:groups:yours' => "Mis Grupos de Escritura",
+	'groups:yours' => "Mis Comunidades",
+	'groups:user' => "Comunidades de %s",
+	'writing:groups:user' => "Grupos de Escritura de %s",
+	'groups:all' => "Todas las Comunidades",
+	'groups:add' => "Crear nueva Comunidad",
+	'groups:edit' => "Editar Comunidad",
+	'groups:delete' => 'Eliminar Comunidad',
+	'groups:membershiprequests' => 'Administrar solicitudes de membresía',
+	'groups:membershiprequests:pending' => 'Administrar solicitudes de membresía (%s)',
+	'groups:invitations' => 'Invitaciones a Comunidades',
+	'groups:invitations:pending' => 'Invitaciones a Comunidades (%s)',
 
-	'groups:icon' => 'Icono del Grupo (leave blank to leave unchanged)',
-	'groups:name' => 'Nombre del Grupo',
-	'groups:username' => 'Nombre corto del grupo (displayed in URLs, alphanumeric characters only)',
+	'groups:icon' => 'Ícono de la Comunidad (deje en blanco si no desea modificar este campo)',
+    
+	'groups:name' => 'Nombre de la Comunidad',
+    
+        
+    
+    
+	'groups:username' => 'Nombre corto de la Comunidad (se mostrará en las URLs. Ingrese únicamente caracteres alfanuméricos.)',
 	'groups:description' => 'Descripción',
-	'groups:briefdescription' => 'Descripción corta',
-	'groups:interests' => 'Tags',
-	'groups:website' => 'Website',
-	'groups:members' => 'Miembros de grupos',
-	'groups:linkedTo' => 'Linked to',
+	'groups:briefdescription' => 'Descripción breve',
+	'groups:interests' => 'Intereses',
+	'groups:website' => 'Sitio web',
+	'groups:members' => 'Miembros de la Comunidad',
+	'groups:linkedTo' => 'Vinculada a',
 	'groups:my_status' => 'Mi estado',
-	'groups:my_status:group_owner' => 'You own this group',
-	'groups:my_status:group_member' => 'You are in this group',
-	'groups:subscribed' => 'Group notifications on',
-	'groups:unsubscribed' => 'Group notifications off',
+	'groups:my_status:group_owner' => 'Usted es propietario de esta Comunidad',
+	'groups:my_status:group_member' => 'Usted está en esta Comunidad',
+	'groups:subscribed' => 'Notificaciones de Comunidad activadas',
+	'groups:unsubscribed' => 'Notificaciones de Comunidad desactivadas',
+    
+    
+        
+        'community:no:books' => 'Esta Comunidad no tiene Grupos de Escritura aún',
+        'community:no:members' => 'Esta Comunidad no tiene miembros aún',
+        'community:no:related' => 'Esta Comunidad no está relacionada con ninguna otra todavía',
+        'community:no:description' => 'Esta Comunidad no tiene una descripción todavía',
+    
+        'user:no:communities' => 'Este usuario no se ha unido a ninguna Comunidad todavía',
+        'user:no:writing:books' => 'Este usuario no está colaborando en ningún Grupo de Escritura todavía',
+        'user:no:bio' => 'Este usuario no ha especificado su biografía todavía',
+    
+        'you:no:communities' => 'Usted no se ha unido a ninguna Comunidad todavía',
+        'you:no:bio' => 'Usted no ha especificado su biografía todavía. Edite su perfil para especificar esta información.',
+        'you:no:writing:books' => 'Usted no está colaborando actualmente en este Grupo de Escritura',
+    
+        'writingGroup:no:books' => 'Este grupo de Escritura no tiene libro todavía',
+        'writingGroup:no:members' => 'Este grupo de Escritura no tiene ningún miembro aún',
+        'writingGroup:no:related' => 'Este grupo de Escritura no está relacionado con ningún otro aún',
+        'writingGroup:no:description' => 'Este Grupo de Escritura no tiene una descripción todavía',
+    
+        'user:cv' => 'CV de %s',
 
+	'member:of' => 'Miembro de',
+        'writing:groups:members:title' => 'Colaboradores de %s',    
 	'groups:members:title' => 'Miembros de %s',
 	'groups:members:more' => "Ver todos los miembros",
-	'groups:membership' => "Group membership permissions",
+	'groups:related:more' => "Ver todas las Comunidades relacionadas",
+	'groups:book:more' => "Ver todos los libros",
+	'groups:membership' => "Permisos de membresía de la Comunidad",
 	'groups:access' => "Permisos de acceso",
 	'groups:owner' => "Propietario",
-	'groups:owner:warning' => "Warning: if you change this value, you will no longer be the owner of this group.",
-	'groups:widget:num_display' => 'Number of groups to display',
-	'groups:widget:membership' => 'Group membership',
-	'groups:widgets:description' => 'Display the groups you are a member of on your profile',
-	'groups:noaccess' => 'No access to group',
-	'groups:permissions:error' => 'You do not have the permissions for this',
-	'groups:ingroup' => 'en el grupo',
-	'groups:cantcreate' => 'You can not create a group. Only admins can.',
-	'groups:cantedit' => 'You can not edit this group',
-	'groups:saved' => 'Grupo guardado',
-	'groups:featured' => 'Featured groups',
-	'groups:makeunfeatured' => 'Unfeature',
-	'groups:makefeatured' => 'Make featured',
-	'groups:featuredon' => '%s is now a featured group.',
-	'groups:unfeatured' => '%s has been removed from the featured groups.',
-	'groups:featured_error' => 'Invalid group.',
-	'groups:joinrequest' => 'Request membership',
-	'groups:join' => 'Unirse al grupo',
-	'groups:leave' => 'Dejar el grupo',
-	'groups:invite' => 'Invitar amigos',
-	'groups:invite:title' => 'Invite friends to this group',
+	'groups:owner:warning' => "Advertencia: si cambia este valor, usted dejará de ser el propietario de esta Comunidad.",
+	'groups:widget:num_display' => 'Número de comunidades a mostrar',
+	'groups:widget:membership' => 'Membresía de la Comunidad',
+	'groups:widgets:description' => 'Mostrar en su perfil las comunidades de las que usted es miembro',
+	'groups:noaccess' => 'No es posible acceder a esta Comunidad',
+	'groups:permissions:error' => 'Usted no tiene los permisos suficientes para ejecutar esta operación',
+	'groups:ingroup' => 'en la Comunidad',
+	'groups:cantcreate' => 'Usted no puede crear una Comunidad. Únicamente los administradores puede ejecutar esta operación.',
+	'groups:cantedit' => 'Usted no pued editar esta Comunidad',
+	'groups:saved' => 'Comunidad guardada',
+	'groups:featured' => 'Comunidades destacadas',
+	'groups:makeunfeatured' => 'Marcar como no destacada',
+	'groups:makefeatured' => 'Marcar como destacada',
+	'groups:featuredon' => '%s es ahora una Comunidad destacada.',
+	'groups:unfeatured' => '%s ha sido removida de la lista de Comunidades destacadas.',
+	'groups:featured_error' => 'Comunidad inválida.',
+	'groups:joinrequest' => 'Solicitar membresía',
+	'groups:join' => 'Unirse a la Comunidad',
+	'groups:leave' => 'Abandonar la Comunidad',
+	'writing:group:leave' => 'Abandonar el Grupo de Escritura',
+	'book:title' => 'Título del libro',
+	'groups:invite' => 'Invitar personas',
+	'groups:invite:title' => 'Invitar personas a esta Comunidad',
 	'groups:inviteto' => "Invitar amigos a '%s'",
-	'groups:link' => 'Link to groups',
-	'groups:links' => 'Linked to',
-	'groups:links:more' => 'Ver todos los enlaces',
-	'groups:link:title' => 'Groups linked to this group',
-	'groups:linkto' => "Link groups to '%s'",
-	'groups:nofriends' => "You have no friends left who have not been invited to this group.",
-	'groups:nofriendsatall' => 'You have no friends to invite!',
-	'groups:viagroups' => "via groups",
-	'groups:group' => "Group",
-	'groups:search:tags' => "tag",
-	'groups:search:title' => "Search for groups tagged with '%s'",
-	'groups:search:none' => "No matching groups were found",
-	'groups:search_in_group' => "Search in this group",
-	'groups:acl' => "Grupo: %s",
+	'groups:link' => 'Vincular a Comunidades',
+	'groups:links' => 'Vinculado a',
+	'groups:links:more' => 'Ver todos los vínculos',
+	'groups:link:title' => 'Comunidades vinculadas a esta Comunidad',
+	'groups:linkto' => "Vincular Comunidades a '%s'",
+	'groups:nofriends' => "Usted ya no tiene amigos que no hayan sido invitados a esta Comunidad.",
+	'groups:nofriendsatall' => 'Usted no tiene amigos que invitar',
+	'groups:viagroups' => "via Comunidades",
+	'groups:group' => "Comunidad",
+	'groups:search' => "Buscar Comunidades por intereses",
+	'groups:search:all' => "Buscar Comunidades",
+	'groups:search:tags' => "interés",
+	'groups:search:title' => "Búsqueda de Comunidades etiquetadas con '%s'",
+	'groups:search:all:title' => "Búsqueda de Comunidades que contienen '%s'",
+	'groups:search:none' => "No se encontraron Comunidades con este criterio de búsqueda",
+	'groups:search_in_group' => "Buscar en esta Comunidad",
+	'groups:acl' => "Comunidad: %s",
 
-	'discussion:notification:topic:subject' => 'New group discussion post',
+	'discussion:notification:topic:subject' => 'Nuevo tema de discusión en la Comunidad',
 	'groups:notification' =>
-'%s added a new discussion topic to %s:
+'%s añadió un nuevo tema de discusión a %s:
 
 %s
 %s
 
-View and reply to the discussion:
+Ver y responder a la discusión:
 %s
 ',
 	
 	'discussion:notification:reply:body' =>
-'%s replied to the discussion topic %s in the group %s:
+'%s respondió al tema de discusión %s en la comunidad %s:
 
 %s
 
-View and reply to the discussion:
+Ver y responder a la discusión:
 %s
 ',
 
-	'groups:activity' => "Group activity",
-	'groups:enableactivity' => 'Enable group activity',
-	'groups:activity:none' => "There is no group activity yet",
+	'groups:activity' => "Actividad de la Comunidad",
+	'groups:enableactivity' => 'Habilitar actividad de la Comunidad',
+	'groups:activity:none' => "No hay actividad en esta Comunidad aún",
 
-	'groups:notfound' => "Group not found",
-	'groups:notfound:details' => "The requested group either does not exist or you do not have access to it",
+	'groups:notfound' => "Comunidad no encontrada",
+	'groups:notfound:details' => "La Comunidad solicitada no existe o usted no tiene acceso a ella",
 
-	'groups:requests:none' => 'There are no current membership requests.',
+	'groups:requests:none' => 'Actualmente no existen solicitudes de membresía.',
 
-	'groups:invitations:none' => 'There are no current invitations.',
+	'groups:invitations:none' => 'Actualmente, no hay invitaciones.',
 
-	'item:object:groupforumtopic' => "Discussion topics",
+	'item:object:groupforumtopic' => "Tópicos de discusión",
 
-	'groupforumtopic:new' => "Add discussion post",
+	'groupforumtopic:new' => "Añadir tópico de discusión",
 
-	'groups:count' => "groups created",
-	'groups:open' => "open group",
-	'groups:closed' => "closed group",
-	'groups:member' => "members",
-	'groups:searchtag' => "Search for groups by tag",
+	'groups:count' => "Comunidades creadas",
+	'groups:open' => "Comunidad abierta",
+	'groups:closed' => "Comunidad cerrada",
+	'groups:member' => "miembros",
+	'groups:searchtag' => "Buscar Comunidades por tag",
 
-	'groups:more' => 'More groups',
-	'groups:none' => 'No groups',
+	'groups:more' => 'Mas Comunidades',
+	'groups:none' => 'No Comunidades',
 
 
 	/*
 	 * Access
 	 */
-	'groups:access:private' => 'Closed - Users must be invited',
-	'groups:access:public' => 'Open - Any user may join',
-	'groups:access:group' => 'Group members only',
-	'groups:closedgroup' => 'This group has a closed membership.',
-	'groups:closedgroup:request' => 'To ask to be added, click the "request membership" menu link.',
-	'groups:visibility' => 'Who can see this group?',
+	'groups:access:private' => 'Cerrada - Los usuarios deben ser inivtados',
+	'groups:access:public' => 'Abierta - Cualquier usuario puede unirse',
+	'groups:access:group' => 'Solo miembros de la Comunidad',
+	'groups:closedgroup' => 'Esta Comunidad tiene membresía cerrada.',
+	'groups:closedgroup:request' => 'Para solicitar ser añadido, haga clic en "solicitar membresía".',
+	'groups:visibility' => '¿Quién puede ver esta Comunidad?',
 
 	/*
 	Group tools
 	*/
-	'groups:enableforum' => 'Enable group discussion',
-	'groups:yes' => 'yes',
+	'groups:enableforum' => 'Habilitar discusión para esta Comunidad',
+	'groups:yes' => 'sí',
 	'groups:no' => 'no',
-	'groups:lastupdated' => 'Last updated %s by %s',
-	'groups:lastcomment' => 'Last comment %s by %s',
+	'groups:lastupdated' => 'Última actualización %s por %s',
+	'groups:lastcomment' => 'Último comentario %s por %s',
 
 	/*
 	Group discussion
 	*/
-	'discussion' => 'Discussion',
-	'discussion:add' => 'Add discussion topic',
-	'discussion:latest' => 'Latest discussion',
-	'discussion:group' => 'Group discussion',
-	'discussion:none' => 'No discussion',
-	'discussion:reply:title' => 'Reply by %s',
+	'discussion' => 'Discusión',
+	'discussion:add' => 'Añadir tópico de discusión',
+	'discussion:latest' => 'Discusión más reciente',
+	'discussion:group' => 'Discusión de la Comunidad',
+	'discussion:none' => 'Ninguna discusión',
+	'discussion:reply:title' => 'Respuesta de %s',
 
-	'discussion:topic:created' => 'The discussion topic was created.',
-	'discussion:topic:updated' => 'The discussion topic was updated.',
-	'discussion:topic:deleted' => 'Discussion topic has been deleted.',
+	'discussion:topic:created' => 'El tópico de discusión fue creado.',
+	'discussion:topic:updated' => 'El tópico de discusión fue actualizado.',
+	'discussion:topic:deleted' => 'El tópico de discusión fue eliminado.',
 
-	'discussion:topic:notfound' => 'Discussion topic not found',
-	'discussion:error:notsaved' => 'Unable to save this topic',
-	'discussion:error:missing' => 'Both title and message are required fields',
-	'discussion:error:permissions' => 'You do not have permissions to perform this action',
-	'discussion:error:notdeleted' => 'Could not delete the discussion topic',
+	'discussion:topic:notfound' => 'Tópico de discusión no encontrado',
+	'discussion:error:notsaved' => 'No ha sido posible guardar este tópico',
+	'discussion:error:missing' => 'Tanto el título como el mensaje son campos obligatorios',
+	'discussion:error:permissions' => 'Usted no tiene permisos para realizar esta acción',
+	'discussion:error:notdeleted' => 'No se pudo eliminar el tópico de discusión',
 
-	'discussion:reply:deleted' => 'Discussion reply has been deleted.',
-	'discussion:reply:error:notdeleted' => 'Could not delete the discussion reply',
+	'discussion:reply:deleted' => 'La respuesta a la discusión ha sido eliminada.',
+	'discussion:reply:error:notdeleted' => 'No se pudo eliminar la respuesta a la discusión',
 
-	'reply:this' => 'Reply to this',
+	'reply:this' => 'Responder a esto',
 
-	'group:replies' => 'Replies',
-	'groups:forum:created' => 'Created %s with %d comments',
-	'groups:forum:created:single' => 'Created %s with %d reply',
-	'groups:forum' => 'Discussion',
-	'groups:addtopic' => 'Add a topic',
-	'groups:forumlatest' => 'Latest discussion',
-	'groups:latestdiscussion' => 'Latest discussion',
-	'groups:newest' => 'Newest',
+	'by' => 'Por %s',
+	'posted:by' => 'Publicado por %s',
+	'group:replies' => 'Respuestas',
+	'groups:forum:created' => 'Creó %s con %d comentarios',
+	'groups:forum:created:single' => 'Creó %s con %d respuesta',
+	'groups:forum' => 'Discusión',
+	'groups:addtopic' => 'Añadir un tópico',
+	'groups:forumlatest' => 'Última discusión',
+	'groups:latestdiscussion' => 'Última discusión',
+	'groups:newest' => 'Más reciente',
 	'groups:popular' => 'Popular',
-	'groupspost:success' => 'Your reply was succesfully posted',
-	'groups:alldiscussion' => 'Latest discussion',
-	'groups:edittopic' => 'Edit topic',
-	'groups:topicmessage' => 'Topic message',
-	'groups:topicstatus' => 'Topic status',
-	'groups:reply' => 'Post a comment',
-	'groups:topic' => 'Topic',
-	'groups:posts' => 'Posts',
-	'groups:lastperson' => 'Last person',
-	'groups:when' => 'When',
-	'grouptopic:notcreated' => 'No topics have been created.',
-	'groups:topicopen' => 'Open',
-	'groups:topicclosed' => 'Closed',
-	'groups:topicresolved' => 'Resolved',
-	'grouptopic:created' => 'Your topic was created.',
-	'groupstopic:deleted' => 'The topic has been deleted.',
-	'groups:topicsticky' => 'Sticky',
-	'groups:topicisclosed' => 'This discussion is closed.',
-	'groups:topiccloseddesc' => 'This discussion is closed and is not accepting new comments.',
-	'grouptopic:error' => 'Your group topic could not be created. Please try again or contact a system administrator.',
-	'groups:forumpost:edited' => "You have successfully edited the forum post.",
-	'groups:forumpost:error' => "There was a problem editing the forum post.",
+	'groupspost:success' => 'Su respuesta fue exitosamente publicada',
+	'groups:alldiscussion' => 'Última discusión',
+	'groups:edittopic' => 'Editar tópico',
+	'groups:topicmessage' => 'Mensaje del tópico',
+	'groups:topicstatus' => 'Estado del tópico',
+	'groups:reply' => 'Publicar un comentario',
+	'groups:topic' => 'Tópico',
+	'groups:posts' => 'Publicaciones',
+	'groups:lastperson' => 'Última persona',
+	'groups:when' => 'Cuándo',
+	'grouptopic:notcreated' => 'Ningún tópico ha sido creado.',
+	'groups:topicopen' => 'Abierto',
+	'groups:topicclosed' => 'Cerrado',
+	'groups:topicresolved' => 'Solucionado',
+	'grouptopic:created' => 'Su tópico fue creado.',
+	'groupstopic:deleted' => 'El tópico ha sido eliminado.',
+	'groups:topicsticky' => 'Pegajosos',
+	'groups:topicisclosed' => 'Esta discusión está cerrada.',
+	'groups:topiccloseddesc' => 'Esta discusión está cerrada y no está aceptando nuevos comentarios.',
+	'grouptopic:error' => 'Su tópico no pudo ser creado. Por favor, intente de nuevo o contacte al administrador del sistema.',
+	'groups:forumpost:edited' => "Usted ha editado exitosamente su publicación en el foro.",
+	'groups:forumpost:error' => "Hubo un problema al intentar editar la publicación en el foro.",
 
 
-	'groups:privategroup' => 'This group is closed. Requesting membership.',
-	'groups:notitle' => 'Groups must have a title',
-	'groups:cantjoin' => 'Can not join group',
-	'groups:cantleave' => 'Could not leave group',
-	'groups:removeuser' => 'Remove from group',
-	'groups:cantremove' => 'Cannot remove user from group',
-	'groups:removed' => 'Successfully removed %s from group',
-	'groups:addedtogroup' => 'Successfully added the user to the group',
-	'groups:joinrequestnotmade' => 'Could not request to join group',
-	'groups:joinrequestmade' => 'Requested to join group',
-	'groups:joined' => 'Successfully joined group!',
-	'groups:left' => 'Successfully left group',
-	'groups:notowner' => 'Sorry, you are not the owner of this group.',
-	'groups:notmember' => 'Sorry, you are not a member of this group.',
-	'groups:alreadymember' => 'You are already a member of this group!',
-	'groups:userinvited' => 'User has been invited.',
-	'groups:usernotinvited' => 'User could not be invited.',
-	'groups:useralreadyinvited' => 'User has already been invited',
-	'groups:invite:subject' => "%s you have been invited to join %s!",
-	'groups:updated' => "Last reply by %s %s",
-	'groups:started' => "Started by %s",
-	'groups:joinrequest:remove:check' => 'Are you sure you want to remove this join request?',
-	'groups:invite:remove:check' => 'Are you sure you want to remove this invitation?',
-	'groups:invite:body' => "Hi %s,
+	'groups:privategroup' => 'Esta comunidad es cerrada. Solicitando membresía.',
+	'groups:notitle' => 'Las Comunidades deben tener un título',
+	'groups:cantjoin' => 'No se puede unir a la Comunidad',
+	'groups:cantleave' => 'No se puede abandonar la Comunidad',
+	'groups:removeuser' => 'Remover de la Comunidad',
+	'groups:cantremove' => 'No se puede remover al usuario de la Comunidad',
+	'groups:removed' => 'Se ha removido con éxito a %s de la Comunidad',
+	'groups:addedtogroup' => 'Usuario añadido a la Comunidad exitosamente',
+	'groups:joinrequestnotmade' => 'No se pudo solicitar la membresía a la Comunidad',
+	'groups:joinrequestmade' => 'Solicitud para unirse a la Comunidad enviada',
+	'groups:joined' => 'Se ha unido a la Comunidad exitosamente!',
+	'groups:left' => 'Ha dejado la Comunidad exitosamente',
+	'groups:notowner' => 'Lo sentimos, usted no es el propietario de esta Comunidad.',
+	'groups:notmember' => 'Lo sentimos, usted no es miembro de esta Comunidad.',
+	'groups:alreadymember' => 'Usted ya es miembro de esta Comunidad',
+	'groups:userinvited' => 'El usuario ha sido invitado.',
+	'groups:usernotinvited' => 'El usuario no pudo ser invitado.',
+	'groups:useralreadyinvited' => 'El usuario ya ha sido invitado',
+	'groups:invite:subject' => "%s usted ha sido invitado a unirse a %s!",
+	'groups:updated' => "Última respuesta de %s %s",
+	'groups:started' => "Iniciado por %s",
+	'groups:joinrequest:remove:check' => '¿Esta seguro que desea borrar esta solicitud de membresía?',
+	'groups:invite:remove:check' => '¿Esta seguro que desea borrar esta invitación?',
+	'groups:invite:body' => "Hola %s,
 
-%s invited you to join the '%s' group. Click below to view your invitations:
-
-%s",
-
-	'groups:welcome:subject' => "Welcome to the %s group!",
-	'groups:welcome:body' => "Hi %s!
-
-You are now a member of the '%s' group! Click below to begin posting!
+%s le ha invitado a unirse a Comunidad '%s'. Haga clic a continuación para ver sus invitaciones:
 
 %s",
 
-	'groups:request:subject' => "%s has requested to join %s",
-	'groups:request:body' => "Hi %s,
+	'groups:welcome:subject' => "Bienvenido a la Comunidad %s!",
+	'groups:welcome:body' => "Hola %s!
 
-%s has requested to join the '%s' group. Click below to view their profile:
+Usted es ahora un miembro de la Comunidad '%s'! Haga clic a continuación para comenzar a publicar!
+
+%s",
+
+	'groups:request:subject' => "%s ha solicitado unirse a %s",
+	'groups:request:body' => "Hola %s,
+
+%s ha solicitado unirse a la Comunidad '%s'. Haga clic a continuación para ver el perfil:
 
 %s
 
-or click below to view the group's join requests:
+o a haga clic a continuación para ver las solicitudes de membresía de esta Comunidad:
 
 %s",
 
@@ -254,52 +306,56 @@ or click below to view the group's join requests:
 		Forum river items
 	*/
 
-	'river:create:group:default' => '%s created the group %s',
-	'river:join:group:default' => '%s joined the group %s',
-	'river:create:object:groupforumtopic' => '%s added a new discussion topic %s',
-	'river:reply:object:groupforumtopic' => '%s replied on the discussion topic %s',
+	'river:create:group:default' => '%s creó la Comunidad %s',
+	'river:join:group:default' => '%s se ha unido a la Community %s',
+	'river:create:object:groupforumtopic' => '%s añadió un nuevo tópico de discusión %s',
+	'river:reply:object:groupforumtopic' => '%s respondió en el tópico de discusión %s',
 	
-	'groups:nowidgets' => 'No widgets have been defined for this group.',
+	'groups:nowidgets' => 'Ningún widgets ha sido definido para esta Comunidad.',
 
 
-	'groups:widgets:members:title' => 'Group members',
-	'groups:widgets:members:description' => 'List the members of a group.',
-	'groups:widgets:members:label:displaynum' => 'List the members of a group.',
-	'groups:widgets:members:label:pleaseedit' => 'Please configure this widget.',
+	'groups:widgets:members:title' => 'Miembros de la Comunidad',
+	'groups:widgets:members:description' => 'Listar los miembros de una Comunidad.',
+	'groups:widgets:members:label:displaynum' => 'Listar los miembros de una Comunidad.',
+	'groups:widgets:members:label:pleaseedit' => 'Por favor, configure este widget.',
 
-	'groups:widgets:entities:title' => "Objects in group",
-	'groups:widgets:entities:description' => "List the objects saved in this group",
-	'groups:widgets:entities:label:displaynum' => 'List the objects of a group.',
+	'groups:widgets:entities:title' => "Objects in community",
+	'groups:widgets:entities:description' => "List the objects saved in this community",
+	'groups:widgets:entities:label:displaynum' => 'List the objects of a community.',
 	'groups:widgets:entities:label:pleaseedit' => 'Please configure this widget.',
 
 	'groups:forumtopic:edited' => 'Forum topic successfully edited.',
 
-	'groups:allowhiddengroups' => 'Do you want to allow private (invisible) groups?',
-	'groups:whocancreate' => 'Who can create new groups?',
+	'groups:allowhiddengroups' => 'Do you want to allow private (invisible) communities?',
+	'groups:whocancreate' => 'Who can create new communities?',
 
 	/**
 	 * Action messages
 	 */
-	'group:deleted' => 'Group and group contents deleted',
-	'group:notdeleted' => 'Group could not be deleted',
+	'group:deleted' => 'Community and community contents deleted',
+	'group:notdeleted' => 'Community could not be deleted',
 
-	'group:notfound' => 'Could not find the group',
-	'grouppost:deleted' => 'Group posting successfully deleted',
-	'grouppost:notdeleted' => 'Group posting could not be deleted',
+	'group:notfound' => 'Could not find the community',
+	'grouppost:deleted' => 'Community posting successfully deleted',
+	'grouppost:notdeleted' => 'Community posting could not be deleted',
 	'groupstopic:deleted' => 'Topic deleted',
 	'groupstopic:notdeleted' => 'Topic not deleted',
 	'grouptopic:blank' => 'No topic',
 	'grouptopic:notfound' => 'Could not find the topic',
 	'grouppost:nopost' => 'Empty post',
-	'groups:deletewarning' => "Are you sure you want to delete this group? There is no undo!",
+	'groups:deletewarning' => "Are you sure you want to delete this community? There is no undo!",
 
 	'groups:invitekilled' => 'The invite has been deleted.',
 	'groups:joinrequestkilled' => 'The join request has been deleted.',
 
 	// ecml
-	'groups:ecml:discussion' => 'Group Discussions',
-	'groups:ecml:groupprofile' => 'Group profiles',
-
+	'groups:ecml:discussion' => 'Community Discussions',
+	'groups:ecml:groupprofile' => 'Community profiles',
+	'group:all:replies' => 'See all replies',
+    
+        'information:of' => "Informacion de %s",
+        'you:no:writing:groups' => "Usted no colabora en ningun Grupo de Escritura todavia",
+        'user:no:writing:groups' => "El usuario %s no colabora en ningun Grupo de Escritura todavia",
 );
 
-add_translation("en", $english);
+add_translation("es", $spanish);
