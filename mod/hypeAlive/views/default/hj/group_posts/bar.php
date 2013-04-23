@@ -19,6 +19,7 @@ if (!$entity || !elgg_instanceof($entity, 'object', 'groupforumtopic')) {
 	return true;
 }
 
+
 $params['container_guid'] = $entity->guid;
 $params['aname'] = 'group_topic_post';
 
@@ -46,9 +47,9 @@ $likes_view = hj_alive_view_likes_list($params);
 	class="hj-annotations-bar clearfix">
 	<div class="topic-menu-section">
 		<div class="hj-annotations-menu">
-			<!-- menu de comentario solo si es miembro del grupo -->
+			<!-- menu de comentario solo si es miembro del grupo y si el tema esta abierto-->
 			<?php 
-			if ($group->isMember($user)) {
+			if ($group->isMember($user) && $entity->status != 'closed') {
 		
 			?>
 				<ul
