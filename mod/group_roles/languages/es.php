@@ -10,33 +10,33 @@ $spanish = array(
 	/**
 	 * Titles
 	 */
-	"group_operators:title" => 'Moderadores de %s',
-	"group_operators:manage" => 'Maneja moderadores de grupo',
-	"group_operators:operators" => 'Moderadores',
-	"group_operators:members" => 'Miembros',
+	"group_roles:title" => 'Miembros de %s',
+	"group_roles:manage" => 'Manejar roles de miembro',
+	"group_roles:operators" => 'Roles',
+	"group_roles:members" => 'Miembros',
 	
 	/**
 	 * Menus
 	 */
-	"group_operators:operators:drop" => 'Eliminar privilegios',
-	"group_operators:owner" => 'Es el propietario',
-	"group_operators:owner:make" => 'Haz propietario',
+	"group_roles:member:drop" => 'Remover miembro',
+	"group_roles:owner" => 'Es el propietario',
+	"group_roles:owner:make" => 'Haz propietario',
 	
 	/**
 	 * Form fields
 	 */
-	"group_operators:new" => 'Añade otro moderador',
-	"group_operators:new:button" => 'Añade moderador',
-	"group_operators:selectone" => 'selecciona uno...',
+	"group_roles:new" => 'Añadir otro miembro',
+	"group_roles:new:button" => 'Añadir miembro',
+	"group_roles:selectone" => 'seleccione uno...',
 	
 	/**
 	 * System messages
 	 */
-	"group_operators:added" => '%s ha sido añadido satisfactoriamente como moderador del grupo',
-	"group_operatros:add:error" => 'Ha sido imposible añadir %s como moderador del grupo',
-	"group_operators:owner_changed" => '%s es el nuevo propietario',
-	"group_operators:change_owner:error" => 'Sólo el propietario del grupo puede asignar un nuevo propietario',
-	"group_operators:removed" => 'El moderador ha sido borrado satisfactoriamente',
+	"group_roles:added" => '%s ha sido añadido satisfactoriamente como miembro del grupo',
+	"group_operatros:add:error" => 'Ha sido imposible añadir a %s como miembro del grupo',
+	"group_roles:owner_changed" => '%s es el nuevo propietario',
+	"group_roles:change_owner:error" => 'Sólo el propietario del grupo puede asignar un nuevo propietario',
+	"group_roles:removed" => 'El miembro del grupo ha sido borrado exitosamente',
 
 );
 

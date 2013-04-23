@@ -56,5 +56,4 @@ if (!$guid) {
     }
 }
 
-
 return true;

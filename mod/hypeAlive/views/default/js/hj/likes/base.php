@@ -65,7 +65,7 @@
                             } else {
                                 likesList.hide();
                             }
-                            var menu = container.find('.hj-annotations-menu');
+                            var menu = container.find('.hj-annotations-menu:first');
                             if (val.self) {
                                 $('.elgg-menu-item-like:first > a', menu)
                                 .addClass('hidden');
