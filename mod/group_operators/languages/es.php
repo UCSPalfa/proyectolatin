@@ -11,7 +11,7 @@ $spanish = array(
 	 * Titles
 	 */
 	"group_operators:title" => 'Moderadores de %s',
-	"group_operators:manage" => 'Maneja moderadores de grupo',
+	"group_operators:manage" => 'Manejar moderadores de grupo',
 	"group_operators:operators" => 'Moderadores',
 	"group_operators:members" => 'Miembros',
 	
@@ -25,9 +25,9 @@ $spanish = array(
 	/**
 	 * Form fields
 	 */
-	"group_operators:new" => 'Añade otro moderador',
-	"group_operators:new:button" => 'Añade moderador',
-	"group_operators:selectone" => 'selecciona uno...',
+	"group_operators:new" => 'Añadir otro moderador',
+	"group_operators:new:button" => 'Añadir moderador',
+	"group_operators:selectone" => 'seleccione uno...',
 	
 	/**
 	 * System messages
@@ -36,7 +36,7 @@ $spanish = array(
 	"group_operatros:add:error" => 'Ha sido imposible añadir %s como moderador del grupo',
 	"group_operators:owner_changed" => '%s es el nuevo propietario',
 	"group_operators:change_owner:error" => 'Sólo el propietario del grupo puede asignar un nuevo propietario',
-	"group_operators:removed" => 'El moderador ha sido borrado satisfactoriamente',
+	"group_operators:removed" => 'El moderador ha sido borrado exitosamente',
 
 );
 
