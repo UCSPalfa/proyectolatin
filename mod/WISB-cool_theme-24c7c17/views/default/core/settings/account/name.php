@@ -8,7 +8,7 @@
 
 $user = elgg_get_page_owner_entity();
 if ($user) {
-	$title = elgg_echo('user:name:label');
+	$title = ""; //elgg_echo('user:name:label');
 	$content = elgg_echo('name') . ' :<br />';
 	$content .= elgg_view('input/text', array(
 		'name' => 'name',

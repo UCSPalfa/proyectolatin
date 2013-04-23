@@ -356,6 +356,9 @@ o a haga clic a continuación para ver las solicitudes de membresía de esta Com
         'information:of' => "Información de %s",
         'you:no:writing:groups' => "Usted no colabora en ningún Grupo de Escritura todavía",
         'user:no:writing:groups' => "El usuario %s no colabora en ningún Grupo de Escritura todavía",
+
+    //po5i
+    'groups:exists' => 'Esta comunidad ya existe',
 );
 
 add_translation("es", $spanish);

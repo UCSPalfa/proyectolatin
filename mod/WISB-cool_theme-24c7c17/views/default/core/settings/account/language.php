@@ -9,7 +9,7 @@
 $user = elgg_get_page_owner_entity();
 
 if ($user) {
-	$title = elgg_echo('user:set:language');
+	$title = "<hr>";//elgg_echo('user:set:language');
 	$content = elgg_echo('user:language:label') . ': ';
 	$content .= elgg_view("input/dropdown", array(
 		'name' => 'language',
