@@ -6,11 +6,9 @@ $site = elgg_get_site_entity();
 
 if(elgg_get_context()!="main"){
 
-$link = "http://localhost/proyectolatin"; //link temporal
-
 /*echo "<div id=\"facebook-header-logo\">";*/
 echo elgg_view('output/url', array(
-	'href' => $link,
+	'href' => "/",
 	'text' => '',
 	'id' => 'logo_sitio',
 ));
