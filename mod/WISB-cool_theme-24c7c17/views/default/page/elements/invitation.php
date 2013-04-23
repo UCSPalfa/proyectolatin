@@ -30,7 +30,7 @@ $header .= "</div>";
 
 $header .= "<div style='font-size:13px; font-weight: normal; text-align:center; '>  <br /><br />";
 
-$header .= "<b>" . elgg_view('output/url', array('href' => 'login', 'text' => elgg_echo('latin:login'), 'style' => 'color: #0054A7;')) . "</b>";
+$header .= "<b>" . elgg_view('output/url', array('href' => '/', 'text' => elgg_echo('latin:login'), 'style' => 'color: #0054A7;')) . "</b>";
 
 $header .=  " " . elgg_echo('latin:or') . " ";
 
