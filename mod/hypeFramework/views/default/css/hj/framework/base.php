@@ -74,10 +74,10 @@ div.mandatory {
     background:transparent url(<?php echo $graphics_url ?>mandatory.png) no-repeat 100% 23px;
 }
 
-/*.mandatory {    po5i
+.mandatory{    /*po5i*/
 	padding-right:15px;
-    background:transparent url(<?php echo $graphics_url ?>mandatory.png) no-repeat 462px 30px;
-}*/
+	background:transparent url(<?php echo $graphics_url ?>mandatory.png) no-repeat 440px 2px;
+}
 
 input.hj-input-processing {
 	background:white url(<?php echo $graphics_url ?>loader/indicator.gif) no-repeat right;

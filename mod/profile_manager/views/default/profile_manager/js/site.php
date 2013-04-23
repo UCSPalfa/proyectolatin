@@ -49,7 +49,7 @@ elgg.profile_manager.init = function(){
 
 	// registration form adjustments
 	if($(".elgg-form-register").length > 0){
-/*AO: Abril 22, comentado para que no aparezca el asterisco junto al label del campo obligatorio en el formulario de registro*/
+//AO: Abril 22, comentado para que no aparezca el asterisco junto al label del campo obligatorio en el formulario de registro
 		// append mandatory *
 //		$(".elgg-form-register .mandatory>label").append("*");
 
