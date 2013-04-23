@@ -12,11 +12,12 @@ padding:0 5px;
 }
 
 .elgg-menu-comments li a {
- 	text-align: center;
+    text-align: center;
     color: #0054A7;
     font-size: 12px;
-    font-weight: bold;
-
+/*    font-weight: bold;*/
+/*AO: Abril 22, quitada la negrita */
+    font-weight: normal;
 }
 
 li.elgg-menu-item-showallcomments {

@@ -18,7 +18,7 @@ echo elgg_echo("");
 echo "</p>";
 echo "</div>";
 
-echo "<div class=\"bloque_t1\">";
+echo "<div class=\"bloque_t2\">";
 echo "<h2>";
 echo elgg_echo('latin:communities');
 echo "</h2>";
@@ -79,15 +79,12 @@ echo elgg_view('output/url', array(
 ));
 echo "<h3>";
 
-
-
-
 echo "<p>";
 echo elgg_echo("");
 echo "</p>";
 echo "</div>";
 
-echo "<div class=\"bloque_t2\">";
+echo "<div class=\"bloque_t1\">";
 echo "<h2>";
 echo elgg_echo("Participate");
 echo "</h2>";

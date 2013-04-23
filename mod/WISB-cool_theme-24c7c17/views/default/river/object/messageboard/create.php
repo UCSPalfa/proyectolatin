@@ -14,7 +14,8 @@ $annotation = $vars['item']->getAnnotation();
 
 if ($annotation->canEdit()) {
         $annotation_id = $annotation->id;
-        $delete_button = "<a id='$annotation_id' class='delete_opost' style='color: #0054A7;' href='#'>" . elgg_view_icon('delete') . "</a>";
+/*AO: Abril 22, añadido title remove a botón de eliminar */
+        $delete_button = "<a id='$annotation_id' title='Remove' class='delete_opost' style='color: #0054A7;' href='#'>" . elgg_view_icon('delete') . "</a>";
 }else{
         $delete_button = "";
 }

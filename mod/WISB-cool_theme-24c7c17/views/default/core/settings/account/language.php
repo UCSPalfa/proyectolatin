@@ -14,7 +14,9 @@ if ($user) {
 	$content .= elgg_view("input/dropdown", array(
 		'name' => 'language',
 		'value' => $user->language,
-		'options_values' => get_installed_translations()
+//		'options_values' => get_installed_translations()
+/*AO: Abril 22, comentado get_installed_translations, modificado por arreglo con lenguajes definidos */
+                'options_values' => array("es" => "Spanish","en" => "English", "pt" => "Portuguese")
 	));
 	echo elgg_view_module('info', $title, $content);
 }
