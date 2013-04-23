@@ -53,12 +53,16 @@ $metadata = elgg_view_menu('entity', array(
 	'sort_by' => 'priority',
 	'class' => 'elgg-menu-hz',
 ));
-
+$access = elgg_view('output/access', array('entity' => $vars['entity']));
 // do not show the metadata and controls in widget view
 if (elgg_in_context('widgets')) {
 	$metadata = '';
 }
-
+if (!$group->isMember($poster)){
+	$metadata = <<<METAD
+	<ul class="elgg-menu elgg-menu-entity elgg-menu-hz elgg-menu-entity-default"><li class="elgg-menu-item-access">$access</li></ul>
+METAD;
+}
 if ($full) {
 	$subtitle = "$poster_text $date $replies_link";
 	$subtitle = "<div style='margin-top:4px;'>$poster_text $date</div>";
