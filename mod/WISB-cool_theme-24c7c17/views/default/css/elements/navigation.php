@@ -86,3 +86,8 @@ line-height: 14px;}
 
 /* AO: Abril 13, quitado el padding izquierdo del menú top de thewire */
 .elgg-menu-filter{padding-left:0;}
+
+/* AO: Abril 22, modificado estilo de breadcrumbs */
+.elgg-breadcrumbs > li > a{font-size: 13px; color:#0054a7;}
+.elgg-breadcrumbs > li{color: #000; font-size: 13px;}
+.elgg-breadcrumbs{padding-top: 10px}

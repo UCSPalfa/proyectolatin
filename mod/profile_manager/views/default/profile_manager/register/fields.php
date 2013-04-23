@@ -127,7 +127,9 @@
 				
 				$fields_result .= "<br />";
 				$fields_result .= "<div" . $class . ">";
-				$fields_result .= "<label>" . $field->getTitle() . "</label>";
+/*AO: Abril 23, label de institution en formulario de registro*/
+//				$fields_result .= "<label>" . $field->getTitle() . "</label>";
+				$fields_result .= "<label>" . elgg_echo($field->getTitle()) . "</label>";
 				
 				if($hint = $field->getHint()){ 
 					$fields_result .= "<span class='custom_fields_more_info' id='more_info_" . $field->metadata_name . "'></span>"; 		

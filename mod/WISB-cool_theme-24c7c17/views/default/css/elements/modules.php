@@ -11,7 +11,7 @@
 
 /* Info */
 .elgg-module-info > .elgg-head {
-    max-width: 490px;
+    max-width: 455px;   /*po5i: estaba 490*/;
     height: 100%;
     /*background-color: #eeeeee;
     background-repeat: repeat-x;
@@ -27,7 +27,7 @@
     -moz-border-radius: 4px;
     border-radius: 4px;*/
     margin-bottom: 5px;
-    padding: 5px 8px;
+    /*padding: 5px 8px;*/
 }
 
 .elgg-module-aside {

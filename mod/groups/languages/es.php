@@ -81,6 +81,7 @@ $spanish = array(
         'user:cv' => 'CV de %s',
 
 	'member:of' => 'Miembro de',
+        'writing:groups:members:title' => 'Colaboradores de %s',    
 	'groups:members:title' => 'Miembros de %s',
 	'groups:members:more' => "Ver todos los miembros",
 	'groups:related:more' => "Ver todas las Comunidades relacionadas",
@@ -318,39 +319,43 @@ o a haga clic a continuación para ver las solicitudes de membresía de esta Com
 	'groups:widgets:members:label:displaynum' => 'Listar los miembros de una Comunidad.',
 	'groups:widgets:members:label:pleaseedit' => 'Por favor, configure este widget.',
 
-	'groups:widgets:entities:title' => "Objects in community",
-	'groups:widgets:entities:description' => "List the objects saved in this community",
-	'groups:widgets:entities:label:displaynum' => 'List the objects of a community.',
-	'groups:widgets:entities:label:pleaseedit' => 'Please configure this widget.',
+	'groups:widgets:entities:title' => "Objetos en la Comunidad",
+	'groups:widgets:entities:description' => "Lista de objetos guardados en la Comunidad",
+	'groups:widgets:entities:label:displaynum' => 'Listar los Objetos de una Comunidad.',
+	'groups:widgets:entities:label:pleaseedit' => 'Por favor, configure este widget.',
 
-	'groups:forumtopic:edited' => 'Forum topic successfully edited.',
+	'groups:forumtopic:edited' => 'Tópico de discusión exitosamente editado.',
 
-	'groups:allowhiddengroups' => 'Do you want to allow private (invisible) communities?',
-	'groups:whocancreate' => 'Who can create new communities?',
+	'groups:allowhiddengroups' => '¿Desea usted permitir Comunidades privados(invisibles)?',
+	'groups:whocancreate' => '¿Quién puede crear nuevas Comunidades?',
 
 	/**
 	 * Action messages
 	 */
-	'group:deleted' => 'Community and community contents deleted',
-	'group:notdeleted' => 'Community could not be deleted',
+	'group:deleted' => 'La Comunidad y su contenido han sido eliminados',
+	'group:notdeleted' => 'La Comunidad no pudo ser eliminada',
 
-	'group:notfound' => 'Could not find the community',
-	'grouppost:deleted' => 'Community posting successfully deleted',
-	'grouppost:notdeleted' => 'Community posting could not be deleted',
-	'groupstopic:deleted' => 'Topic deleted',
-	'groupstopic:notdeleted' => 'Topic not deleted',
-	'grouptopic:blank' => 'No topic',
-	'grouptopic:notfound' => 'Could not find the topic',
-	'grouppost:nopost' => 'Empty post',
-	'groups:deletewarning' => "Are you sure you want to delete this community? There is no undo!",
+	'group:notfound' => 'No se pudo encontrar la Comunidad',
+	'grouppost:deleted' => 'El post en la Comunidad ha sido exitosamente eliminado',
+	'grouppost:notdeleted' => 'El post en la Comunidad no pudo ser eliminado',
+	'groupstopic:deleted' => 'Tema eliminado',
+	'groupstopic:notdeleted' => 'Tema no eliminado',
+	'grouptopic:blank' => 'Ningún tema',
+	'grouptopic:notfound' => 'No se pudo encontrar el tema',
+	'grouppost:nopost' => 'Tema vacío',
+	'groups:deletewarning' => "¿Está seguro que desea eliminar esta Comunidad? Esta operación no puede ser deshecha.",
 
-	'groups:invitekilled' => 'The invite has been deleted.',
-	'groups:joinrequestkilled' => 'The join request has been deleted.',
+	'groups:invitekilled' => 'La invitación ha sido eliminada.',
+	'groups:joinrequestkilled' => 'La solicitud de membresía ha sido eliminada.',
 
 	// ecml
-	'groups:ecml:discussion' => 'Community Discussions',
-	'groups:ecml:groupprofile' => 'Community profiles',
-	'group:all:replies' => 'See all replies',
+	'groups:ecml:discussion' => 'Discusiones de la Comunidad',
+	'groups:ecml:groupprofile' => 'Perfiles de la Comunidad',
+	'group:all:replies' => 'Ver todas las respuestas',
+    
+        'information:of' => "Información de %s",
+        'you:no:writing:groups' => "Usted no colabora en ningún Grupo de Escritura todavía",
+        'user:no:writing:groups' => "El usuario %s no colabora en ningún Grupo de Escritura todavía",
 );
 
 add_translation("es", $spanish);

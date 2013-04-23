@@ -62,7 +62,8 @@ $pageowner = elgg_get_page_owner_entity();
 /* AO: Abril 13, delete para borrar mis comentarios en mi muro, muro de otro usuario o grupo. Solo puedo borrar los comentarios del que soy autor...*/
 if($entity->canEdit() && $group!=null && $group->isMember($owner)){
         $id_hjcomment = $entity->guid;
-        $delete_comment = "<a id='$id_hjcomment' class='delete_hjcomm' style='color: #0054A7;' href='#'>" . elgg_view_icon('delete') . "</a>";
+/*AO: Abril 22, añadido title remove a botón de eliminar */
+        $delete_comment = "<a id='$id_hjcomment' title='Remove' class='delete_hjcomm' style='color: #0054A7;' href='#'>" . elgg_view_icon('delete') . "</a>";
 }else{
         $delete_comment = "";
 }

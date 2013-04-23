@@ -29,7 +29,8 @@ $summary = elgg_echo("river:create:object:thewire", array($subject_link, $object
 
 if($object->canEdit()){
         $id_comment = $vars['item']->object_guid;
-        $delete_button = "<a id='$id_comment' class='delete_button_post' style='color: #0054A7;' href='#'>" . elgg_view_icon('delete') . "</a>";
+/*AO: Abril 22, añadido title remove a botón de eliminar */
+        $delete_button = "<a id='$id_comment' title='Remove' class='delete_button_post' style='color: #0054A7;' href='#'>" . elgg_view_icon('delete') . "</a>";
 }else{
         $delete_button = "";
 }

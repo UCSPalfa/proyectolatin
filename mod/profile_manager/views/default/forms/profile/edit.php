@@ -16,15 +16,11 @@
  */
 // id profile_edit_form
 ?>	
-<div class="elgg-module  elgg-module-info"><div class="elgg-head">
-        <h3 class="mandatory"><?php echo elgg_echo('user:name:label'); ?></h3>
+<div class="elgg-module  elgg-module-info"><div class="elgg-head mandatory">
+        <h3><?php echo elgg_echo('user:name:label'); ?></h3>
         <?php echo elgg_view('input/text', array('name' => 'name', 'value' => $vars['entity']->name)); ?>
     </div></div>
 
-<!--div class="elgg-module  elgg-module-info"><div class="elgg-head">
-        <h3><?php echo elgg_echo('email:address:label'); ?></h3>
-<?php echo elgg_view('input/text', array('name' => 'email', 'value' => $vars['entity']->email)); ?>
-</div></div-->
 <?php
 // Build fields
 
@@ -188,15 +184,17 @@ if (!empty($cats)) {
                 $access_id = get_default_access($vars["entity"]);
             }
 
+            $mandatory = $field->mandatory == "yes" ? 'mandatory' : ''; //po5i
+
             if ($hide_non_editables == "yes" && ($valtype == "non_editable")) {
-                $field_result = '<div class="elgg-module hidden_non_editable elgg-module-info"><div class="elgg-head">';
+                $field_result = '<div class="elgg-module hidden_non_editable elgg-module-info"><div class="elgg-head '.$mandatory.'">';
                 //$field_result = "<tr class='hidden_non_editable'>";//GC
             } else {
-                $field_result = '<div class="elgg-module  elgg-module-info"><div class="elgg-head">';
+                $field_result = '<div class="elgg-module  elgg-module-info"><div class="elgg-head '.$mandatory.'">';
                 //$field_result = "<tr>";//GC
             }
-            $mandatory = $field->mandatory == "yes" ? ' class="mandatory"' : '';
-            $field_result .= "<h3" . $mandatory . ">" . elgg_echo($title) . "</h3>";        //po5i: multilang support
+            
+            $field_result .= "<h3>" . elgg_echo($title) . "</h3>";        //po5i: multilang support
             //$field_result .= "<td  width='10%'>" . $title . "</td>";
 
             if ($hint = $field->getHint()) {
