@@ -254,7 +254,8 @@ if ($must_move_icons) {
 
 
 //po5i:ingresar usuarios al writing group solo en la creacion
-$user_list = get_input('recipient_guid');
+//$user_list = get_input('recipient_guid');		//autocompletar v.1
+$user_list = get_input('as_values_rcpt');		//autocompletar v.2
 if (!empty($user_list)) {
 	$user_guid = explode(",",$user_list);
 }
