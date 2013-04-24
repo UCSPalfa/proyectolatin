@@ -12,6 +12,7 @@ if (!$topic) {
 	return true;
 }
 elgg_load_js('JTabContent');
+$logged_user = elgg_get_logged_in_user_entity();
 $poster = $topic->getOwnerEntity();
 $group = $topic->getContainerEntity();
 $excerpt = elgg_get_excerpt($topic->description);
@@ -58,7 +59,7 @@ $access = elgg_view('output/access', array('entity' => $vars['entity']));
 if (elgg_in_context('widgets')) {
 	$metadata = '';
 }
-if (!$group->isMember($poster)){
+if (!$group->isMember($logged_user)){
 	$metadata = <<<METAD
 	<ul class="elgg-menu elgg-menu-entity elgg-menu-hz elgg-menu-entity-default"><li class="elgg-menu-item-access">$access</li></ul>
 METAD;

@@ -3,7 +3,7 @@
 /*AO: Abril 15, carga de js*/
 elgg_load_js('elgg.deletehjcomm');
 elgg_extend_view('js/elgg', 'js/delete-hjcomm');
-
+$logged_user = elgg_get_logged_in_user_entity();
 $entity = elgg_extract('entity', $vars, false);
 $topic = get_entity($entity->container_guid);
 $group = null;
@@ -60,7 +60,7 @@ $bar = elgg_view('hj/comments/bar', $vars);
 $pageowner = elgg_get_page_owner_entity();
 //if($entity->canEdit() || ($pageowner->username == $_SESSION['user']->username && elgg_get_context()!="discussion")){
 /* AO: Abril 13, delete para borrar mis comentarios en mi muro, muro de otro usuario o grupo. Solo puedo borrar los comentarios del que soy autor...*/
-if($entity->canEdit() && $group!=null && $group->isMember($owner)){
+if($entity->canEdit() && $group!=null && $logged_user==$owner && $group->isMember($owner)){
         $id_hjcomment = $entity->guid;
 /*AO: Abril 22, añadido title remove a botón de eliminar */
         $delete_comment = "<a id='$id_hjcomment' title='Remove' class='delete_hjcomm' style='color: #0054A7;' href='#'>" . elgg_view_icon('delete') . "</a>";
