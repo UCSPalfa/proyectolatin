@@ -197,7 +197,8 @@ if($is_subgroup):
             var data = {items: 
                                 <?php echo json_encode($data); ?>
                         };
-            $("input#recipient_guid").autoSuggest(data.items, {selectedItemProp: "name", selectedValuesProp: "value", searchObjProps: "name", startText: "", keyDelay: 50, minChars: 1,asHtmlID:"rcpt"});
+
+            $("input#recipient_guid").autoSuggest(data.items, {<?php echo "emptyText:\"". elgg_echo("notfound")."\",";?> selectedItemProp: "name", selectedValuesProp: "value", searchObjProps: "name", startText: "", keyDelay: 50, minChars: 1,asHtmlID:"rcpt"});
 
         </script>
         <?php 
