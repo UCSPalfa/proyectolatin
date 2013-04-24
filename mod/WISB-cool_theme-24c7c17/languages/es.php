@@ -29,10 +29,10 @@ add_translation('es', array(
         'WISB:footer_wisb' => 'WISB',
         'WISB:footer_developers' => 'Desarrolladores',
         'WISB:footer_wisblog' => 'WISBlog',
-	'newsfeed' => 'Noticias RSS',
+	'newsfeed' => 'Noticias',
     
 	'profile:wall' => "Muro",
-	'profile:info' => "Info",
+	'profile:info' => "Mi perfil",
 	'profile:activity:none' => "No hay actividad para mostrar",
     
 	'likes:likethis' => 'Me gusta',
