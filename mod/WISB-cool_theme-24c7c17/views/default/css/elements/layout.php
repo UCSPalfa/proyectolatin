@@ -335,12 +335,12 @@ body {
 }
 /*Para formulario de registro */
 .register_form{
-	float: left;
+	float: right;
 	width: 40%;
 	padding: 25px;
 	margin: 15px 0 0 0;
-	background: #f1f1f1;
-	border: 1px solid #e5e5e5;
+	background: rgb(250, 250, 250);
+	border: 1px solid #777;
 }
 
 .register_form label{
@@ -355,7 +355,7 @@ body {
 
 
 .sidebar_r{
-	float: right;
+	float: left;
 	width: 53%;
 	padding-top: 40px;
         
@@ -372,7 +372,7 @@ body {
 .benefitImage{
 	float: left;
 	width: 80px;	
-	margin-left: 15px;        
+	margin-left: 10px;        
 }
 
 .benefit h2{
