@@ -162,7 +162,9 @@ body {
     position: relative;
     padding-top: 20px;
     float: right;
-    width: 190px;
+/*AO: Abril 24, modificado por ajuste en idioma español*/
+/*    width: 190px;*/
+    width: 210px;
     min-height: 360px;
 }
 /***** PAGE FOOTER ******/
