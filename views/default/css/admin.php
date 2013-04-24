@@ -230,10 +230,19 @@ p {
 	cursor: pointer;
 }
 .elgg-message.elgg-state-error {
-	background: #fbe3e4;
-	color: #8a1f11;
+	
+	color: #000;
 	border-color: #fbc2c4;
 	font-weight: bold;
+        
+        background-repeat: repeat-x;
+        background-image: -moz-linear-gradient(top, #edd98b, #e6c855);
+        background-image: -ms-linear-gradient(top, #edd98b, #e6c855);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#edd98b), to(#e6c855));
+        background-image: -webkit-linear-gradient(top, #edd98b, #e6c855);
+        background-image: -o-linear-gradient(top, #edd98b, #e6c855);
+        background-image: linear-gradient(top, #edd98b, #e6c855);   
+        
 }
 .elgg-message.elgg-state-success {
 	background: #e6efc2;
@@ -1443,10 +1452,18 @@ a.elgg-widget-collapsed:before {
 	background: #dedede;
 }
 .elgg-plugin .elgg-state-error {
-	background: #fbe3e4;
+	
 	color: #8a1f11;
 	border-color: #fbc2c4;
 	font-weight: bold;
+        
+        background-repeat: repeat-x;
+        background-image: -moz-linear-gradient(top, #edd98b, #e6c855);
+        background-image: -ms-linear-gradient(top, #edd98b, #e6c855);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#edd98b), to(#e6c855));
+        background-image: -webkit-linear-gradient(top, #edd98b, #e6c855);
+        background-image: -o-linear-gradient(top, #edd98b, #e6c855);
+        background-image: linear-gradient(top, #edd98b, #e6c855);
 }
 .elgg-plugin .elgg-state-warning {
 	background: #fbedb5;

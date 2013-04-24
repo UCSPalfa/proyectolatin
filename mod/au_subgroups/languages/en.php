@@ -85,7 +85,7 @@ Click below to view your invitations:
 %s",
 		'au_subgroups:invitations' => 'Writing Group invitations',
 		'au_subgroups:invitations:pending' => 'Writing Group invitations (%s)',
-		'au_subgroups:invitations:selecttoinvite' => "To find a person type one or more words.  If he/she is not a member of the network write his/her email and press enter.",
+		'au_subgroups:invitations:selecttoinvite' => "To find a person type one or more words.  If he/she is not a member of the network write his/her email and press TAB.",
 		'wgroups:invite:body' => "Hi %s,
 		
 %s invited you to join the '%s' writing group. Click below to view your invitations:

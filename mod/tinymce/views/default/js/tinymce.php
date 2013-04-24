@@ -38,7 +38,7 @@ elgg.tinymce.init = function() {
 		mode : "specific_textareas",
 		editor_selector : "elgg-input-longtext",
 		theme : "advanced",
-		language : "<?php echo tinymce_get_site_language(); ?>",
+		language : "<?php echo get_language(); ?>",
 		plugins : "lists,spellchecker,autosave,fullscreen,paste",
 		relative_urls : false,
 		remove_script_host : false,

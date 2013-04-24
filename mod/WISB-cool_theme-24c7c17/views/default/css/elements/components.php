@@ -43,7 +43,7 @@
 /* ***************************************
 	Messages
 *************************************** */
-.elgg-message{color:#FFF;font-weight:700;display:block;cursor:pointer;opacity:0.9;-webkit-box-shadow:0 2px 5px rgba(0,0,0,0.45);-moz-box-shadow:0 2px 5px rgba(0,0,0,0.45);box-shadow:0 2px 5px rgba(0,0,0,0.45);-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px;padding:3px 10px;}.elgg-state-success{background-color:#000;}.elgg-state-error{background-color:red;}.elgg-state-notice{background-color:#4690D6;}
+.elgg-message{color:#FFF;font-weight:700;display:block;cursor:pointer;opacity:0.9;-webkit-box-shadow:0 2px 5px rgba(0,0,0,0.45);-moz-box-shadow:0 2px 5px rgba(0,0,0,0.45);box-shadow:0 2px 5px rgba(0,0,0,0.45);-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px;padding:3px 10px;}.elgg-state-success{background-color:#000; font-size: 13px;}.elgg-state-error{background-repeat: repeat-x;background-image: -moz-linear-gradient(top, #edd98b, #e6c855);background-image: -ms-linear-gradient(top, #edd98b, #e6c855);background-image: -webkit-gradient(linear, left top, left bottom, from(#edd98b), to(#e6c855));        background-image: -webkit-linear-gradient(top, #edd98b, #e6c855);        background-image: -o-linear-gradient(top, #edd98b, #e6c855);        background-image: linear-gradient(top, #edd98b, #e6c855); color: #000; font-size:14px;}.elgg-state-notice{background-color:#4690D6;}
 /* ***************************************
 	River
 *************************************** */

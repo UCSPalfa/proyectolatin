@@ -17,6 +17,10 @@ function compare_member_id($a, $b) {
  	}
 
 }
+elgg_load_js('JSMultiSelect');
+elgg_load_js('autosuggest');
+elgg_load_js('autosuggest1');
+elgg_load_js('autosuggest2');
 
 $group = $vars['entity'];
 $owner = $group->getOwnerEntity();
@@ -41,27 +45,23 @@ $group_guid =  $group->guid;
 //$candidates = elgg_extract('candidates', $vars);
 $candidates = $members;
 
+foreach ($members as $friend) {
+	
+	$json['value'] = $friend->guid;
+	$json['name'] = $friend->name;
+	$data[] = $json;
+}
+
+
 foreach ($candidates as $user){
 	$user_icon = elgg_view_entity_icon($user, 'tiny');
 	$response[] = array($user->guid, $user->name." - ".$user->username." - ".$user->email, $user->name." - ".$user->username, $user_icon.$user->name." - ".$user->username." - ".$user->email);
 }
 ?>
-<script type="text/javascript">
-	window.addEvent('load', function(){
-		// Autocomplete initialization
-		var t4 = new TextboxList('invite_list', {unique: true, plugins: {autocomplete: {}}});
-		var autocomplete = t4.plugins['autocomplete'];
-		autocomplete.setValues(
-<?php 
-
-echo json_encode($response);
-?>
-);
 
 
-});
 
-</script>
+
 <?php 
 
 
@@ -72,18 +72,40 @@ if ($members) {
 	$introduction = elgg_echo('invitefriends:introduction');
 	//echo elgg_view('input/friendspicker', array('entities' => $members, 'name' => 'user_guid', 'highlight' => 'all'));
 	//echo $body;
-	elgg_load_js('mootools');
+	/*elgg_load_js('mootools');
 	elgg_load_js('GrowingInput');
 	elgg_load_js('JSTextboxList');
-	elgg_load_js('JSTextboxList.Autocomplete');
+	elgg_load_js('JSTextboxList.Autocomplete');*/
 	$title_to_invite = elgg_echo('au_subgroups:invitations:selecttoinvite');
 	$note = elgg_echo('au_subgroups:invitations:note');
 	echo <<< HTML
 	<div>$title_to_invite</div>
-	<table><tr><td>
-			<div class="form_friends">
-	<input type="text" name="invite_list" value="" id="invite_list" />
-	</div>
+	<table width="100%"><tr><td>
+		
+HTML;
+?>
+			<input type="text" name="invite_list" id="invite_list" />
+	<script type="text/javascript">
+		var data = {items: 
+		
+		<?php 
+		echo json_encode($data);
+		?>
+		
+		};
+		
+		$("input#invite_list").autoSuggest(data.items, {
+		<?php echo "emptyText:\"". elgg_echo("notfound")."\",";?>
+			
+		
+
+			selectedItemProp: "name", selectedValuesProp: "value", searchObjProps: "name", startText: "", keyDelay: 50, minChars: 1,asHtmlID:"rcpt"});
+
+		
+		</script>
+	<?php
+	echo <<< HTML
+
 	</td><td>&nbsp;
 HTML;
 	echo elgg_view('input/submit', array('value' => elgg_echo('invite')));

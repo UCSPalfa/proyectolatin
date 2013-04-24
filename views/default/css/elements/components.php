@@ -130,7 +130,17 @@
 	background-color: black;
 }
 .elgg-state-error {
-	background-color: red;
+	
+        color:#000;
+        background-repeat: repeat-x;
+        background-image: -moz-linear-gradient(top, #edd98b, #e6c855);
+        background-image: -ms-linear-gradient(top, #edd98b, #e6c855);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#edd98b), to(#e6c855));
+        background-image: -webkit-linear-gradient(top, #edd98b, #e6c855);
+        background-image: -o-linear-gradient(top, #edd98b, #e6c855);
+        background-image: linear-gradient(top, #edd98b, #e6c855);
+       
+        
 }
 .elgg-state-notice {
 	background-color: #4690D6;
