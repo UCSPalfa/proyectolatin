@@ -339,7 +339,7 @@ body {
 	width: 40%;
 	padding: 25px;
 	margin: 15px 0 0 0;
-	background: rgb(250, 250, 250);
+	background: rgb(247, 247, 247);
 	border: 1px solid #777;
 }
 
