@@ -8,8 +8,8 @@
 $logged_in_user = elgg_get_logged_in_user_entity();
 
 //$user_guid = get_input('user_guid');
-$user_list = get_input('invite_list');
-
+//$user_list = get_input('invite_list');
+$user_list = get_input('as_values_rcpt');
 if (!empty($user_list)) {
 	$user_guid = explode(",",$user_list);
 }
@@ -17,11 +17,13 @@ $group_guid = get_input('group_guid');
 $group = get_entity($group_guid);
 
 $parent = au_subgroups_get_parent_group($group);
-
+system_message("mensaje");
 if (sizeof($user_guid)) {
 	foreach ($user_guid as $uid) {
+		if (empty($uid)) continue;
 		$u_id = trim($uid);
-		
+	
+	
 		//foreach user check if is a registered user or an email
 		if (is_numeric($u_id)){
 			$user = get_entity($u_id);
