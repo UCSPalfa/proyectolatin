@@ -166,7 +166,7 @@ $spanish = array(
 	'NotificationException:NoNotificationMethod' => "No se especific&oacute; un m&eacute;todo de notificaci&oacute;n",
 	'NotificationException:NoHandlerFound' => "No se encuentra un controlador '%s' o no es ejecutable",
 	'NotificationException:ErrorNotifyingGuid' => "Ocurri&oacute; un error al notificar %d",
-	'NotificationException:NoEmailAddress' => "No pudo cargarse la direcci&oacute;n de Email para el GUID:%d",
+	'NotificationException:NoEmailAddress' => "No pudo cargarse la direcci&oacute;n de correo electrónico para el GUID:%d",
 	'NotificationException:MissingParameter' => "Par&aacute;metro requerido faltante: '%s'",
 
 	'DatabaseException:WhereSetNonQuery' => "Donde no contenga WhereQueryComponent",
@@ -269,9 +269,9 @@ $spanish = array(
  * User details
  */
 	'name' => "Nombre",
-	'email' => "Direcci&oacute;n de Email",
+	'email' => "Direcci&oacute;n de correo",
 	'username' => "Nombre de usuario",
-	'loginusername' => "Nombre de usuario o Email",
+	'loginusername' => "Nombre de usuario o email",
 	'password' => "Contrase&ntilde;a",
 	'passwordagain' => "Contrase&ntilde;a (nuevamente, para verificaci&oacute;n)",
 	'admin_option' => "Hacer administrador a este usuario?",
@@ -394,7 +394,7 @@ $spanish = array(
 	'profile:location' => "Ubicaci&oacute;n",
 	'profile:skills' => "Habilidades",
 	'profile:interests' => "Intereses",
-	'profile:contactemail' => "Email de contacto",
+	'profile:contactemail' => "Correo electrónico de contacto",
 	'profile:phone' => "Tel&eacute;fono",
 	'profile:mobile' => "M&oacute;vil",
 	'profile:website' => "Sitio Web",
@@ -511,12 +511,12 @@ $spanish = array(
 	'registerdisabled' => "La registraci&oacute;n se deshabilit&oacute; por el administrador del sistema",
         'register:fields' => 'Todos los campos son obligatorios',
 
-	'registration:notemail' => 'No ha ingresado una direcci&oacute;n de Email v&aacute;lida',
+	'registration:notemail' => 'No ha ingresado una dirección de correo electrónica válida',
 	'registration:userexists' => 'El nombre de usuario ya existe',
 	'registration:usernametooshort' => 'El nombre de usuario debe tener un m&iacute;nimo de %u caracteres',
         'registration:usernametoolong' => 'El nombre de usuario es demasiado largo. Debe tener un máximo de %u caracteres.',
 	'registration:passwordtooshort' => 'La contrase&ntilde;a debe tener un m&iacute;nimo de %u caracteres',
-	'registration:dupeemail' => 'Ya se encuentra registrada la direcci&oacute;n de Email',
+	'registration:dupeemail' => 'Ya se encuentra registrada la dirección de correo electrónico',
 	'registration:invalidchars' => 'Lo sentimos, su nombre de usuario posee los caracteres inv&aacute;lidos: %s. Estos son todos los caracteres que se encuentran invalidados: %s',
 	'registration:emailnotvalid' => 'Lo sentimos, la direcci&oacute;n de email que ha ingresado es inv&aacute;lida en el sistema',
 	'registration:passwordnotvalid' => 'Lo sentimos, la contrase&ntilde;a que ha ingresado es inv&aacute;lida en el sistema',
@@ -541,7 +541,7 @@ $spanish = array(
 	'user:password:fail:tooshort' => "La contrase&ntilde;a es demasiado corta!",
 	'user:password:fail:incorrect_current_password' => 'La contrase&ntilde;a actual ingresada es incorrecta',
 	'user:resetpassword:unknown_user' => 'Usuario inv&aacute;lido',
-	'user:resetpassword:reset_password_confirm' => 'Al modificar la contrase&ntilde;a se le enviar&aacute; la nueva a la direcci&oacute;n de Email registrada',
+	'user:resetpassword:reset_password_confirm' => 'Al modificar la contrase&ntilde;a se le enviar&aacute; la nueva a la direcci&oacute;n de correo electrónica registrada',
 
 	'user:set:language' => "Configuraci&oacute;n de lenguaje",
 	'user:language:label' => "Su lenguaje",
@@ -551,7 +551,7 @@ $spanish = array(
 	'user:username:notfound' => 'No se encuentra el usuario %s',
 
 	'user:password:lost' => 'Olvid&eacute; mi contrase&ntilde;a',
-	'user:password:resetreq:success' => 'Solicitud de nueva contrase&ntilde;a confirmada, se le ha enviado un Email',
+	'user:password:resetreq:success' => 'Solicitud de nueva contrase&ntilde;a confirmada, se le ha enviado un correo electrónico',
 	'user:password:resetreq:fail' => 'No se pudo solicitar una nueva contrase&ntilde;a',
 
 	'user:password:text' => 'Para solicitar una nueva contrase&ntilde;a ingrese su nombre de usuario y presione el bot&oacute;n debajo',
@@ -818,7 +818,7 @@ $spanish = array(
 
 	'usersettings:statistics:yourdetails' => "Sus detalles",
 	'usersettings:statistics:label:name' => "Nombre completo",
-	'usersettings:statistics:label:email' => "Email",
+	'usersettings:statistics:label:email' => "Correo electrónico",
 	'usersettings:statistics:label:membersince' => "Membro desde",
 	'usersettings:statistics:label:lastlogin' => "&uacute;ltimo acceso",
 
@@ -1041,7 +1041,7 @@ Una vez autenticado, le recomendamos que modifique su contrase&ntilde;a.
 	'installation:httpslogin:label' => "Habilitar autenticaci&oacute;n HTTPS",
 	'installation:view' => "Ingrese la vista que se visualizar&aacute; por defecto en el sitio o deje esto en blanco para la vista por defecto (si tiene dudas, d&eacute;jelo por defecto):",
 
-	'installation:siteemail' => "Direcci&oacute;n de Email del sitio (utilizada para enviar mails desde el sistema):",
+	'installation:siteemail' => "Direcci&oacute;n de correo electrónico del sitio (utilizada para enviar mails desde el sistema):",
 
 	'installation:disableapi' => "Elgg provee una API para el desarrollo de servicios web de modo que aplicaciones remotas puedan interactuar con el sitio",
 	'installation:disableapi:label' => "Habilitar la API de servicios web de Elgg",
@@ -1091,11 +1091,11 @@ Una vez autenticado, le recomendamos que modifique su contrase&ntilde;a.
 /**
  * Emails
  */
-	'email:settings' => "Configuraci&oacute;n de Email",
-	'email:address:label' => "Direcci&oacute;n de Email",
+	'email:settings' => "Configuraci&oacute;n de correo electrónico",
+	'email:address:label' => "Direcci&oacute;n de correo electrónico",
 
-	'email:save:success' => "Nueva direcci&oacute;n de Email guardada, se solicit&oacute; la verificaci&oacute;n",
-	'email:save:fail' => "No se pudo guardar la nueva direcci&oacute;n de Email",
+	'email:save:success' => "Nueva direcci&oacute;n de correo electrónico guardada, se solicit&oacute; la verificaci&oacute;n",
+	'email:save:fail' => "No se pudo guardar la nueva direcci&oacute;n de correo electrónico",
 
 	'friend:newfriend:subject' => "%s te ha puesto como amigo suyo!",
 	'friend:newfriend:body' => "%s te ha puesto como amigo suyo!
