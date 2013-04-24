@@ -356,6 +356,9 @@ or click below to view the community's join requests:
         'information:of' => "%s 's Information",
         'you:no:writing:groups' => "You do not collaborate in any Writing Group yet",
         'user:no:writing:groups' => "The user %s does not collaborate in any Writing Group yet",
+
+    //po5i
+    'groups:exists' => 'This community already exists',
         
     
 );

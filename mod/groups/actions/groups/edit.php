@@ -108,6 +108,7 @@ if ($is_new_group){
 	if(count($results['entities'])>0){
 		register_error(elgg_echo("groups:exists"));	
 		forward(REFERER);	
+	}
 }
 /////////////////////////////////////
 
