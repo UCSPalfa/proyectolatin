@@ -6,7 +6,8 @@
  *
  */
 echo "<div class=\"bloque_vd\">";
-echo "<h1>";
+
+echo "<h1 style='text-align:right;'>";
 echo elgg_echo("The");
 echo "<span>";
 echo elgg_echo(" LATIn ");
@@ -16,6 +17,7 @@ echo "</h1>";
 echo "<p>";
 echo elgg_echo("");
 echo "</p>";
+echo "<img src='_graphics/latinImage.png' style='margin-top: -63px;'>";
 echo "</div>";
 
 echo "<div class=\"bloque_t2\">";
