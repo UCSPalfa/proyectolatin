@@ -163,8 +163,8 @@ body {
     padding-top: 20px;
     float: right;
 /*AO: Abril 24, modificado por ajuste en idioma español*/
-/*    width: 190px;*/
-    width: 220px;
+/*    width: 190px; */
+    width: 231px;
     min-height: 360px;
 }
 /***** PAGE FOOTER ******/
@@ -295,6 +295,17 @@ body {
     font-weight: bold;
 }
 
+/*AO: Abril 24, estilo del div contenido para alinear panel de búsqueda y vista de comunidades en página principal*/
+.bloque_t2 .contenido{
+    margin: 0 auto;
+    width: 90%;
+}
+
+/*AO: Abril 24, modificado el ancho del input de búsqueda en página principal*/
+.bloque_t2 .searchInput{
+    width: 80%;
+}
+
 .elgg-sidebar-right .elgg-head {
     background-color: #fff;
     border-top: 0;
@@ -310,6 +321,7 @@ body {
     font-weight: bold;
 }
 /*Login form de página principal*/
+
 .elgg-form-login label {
     color: #333333;
     font-weight: bold;
@@ -323,6 +335,21 @@ body {
 .elgg-form-login .elgg-input-password {
     width: 100%;
 }
+
+/*AO: Abril 24, modificado por ajuste en idioma español*/
+
+.elgg-form-login .elgg-foot{
+        width: 100%;
+}
+
+.elgg-form-login .elgg-foot label{
+        width: 52%;
+}
+
+.elgg-form-login .elgg-foot .elgg-button-submit{
+    float: right;
+}
+/*AO*/
 
 .elgg-menu-general li {
     display: inline-block;

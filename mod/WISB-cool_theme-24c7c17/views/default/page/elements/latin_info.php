@@ -21,6 +21,8 @@ echo "<h2>";
 echo elgg_echo('latin:communities');
 echo "</h2>";
 
+/* AO: Abril 24, agregado div contenido*/
+echo "<div class=\"contenido\">";
 $options = array(
     'type' => 'group',
     'relationship' => 'member',
@@ -46,7 +48,7 @@ foreach ($theGroups as $currentGroup) {
 //echo print_r($communities);
 //$content = elgg_list_entities_from_relationship_count($options);
 
-$limit = 14;
+$limit = 12;
 if (count($communities) >= $limit) {
     $communities = array_slice($communities, 0, $limit);
 }
@@ -80,6 +82,7 @@ echo "<h3>";
 echo "<p>";
 echo elgg_echo("");
 echo "</p>";
+echo "</div>";
 echo "</div>";
 
 echo "<div class=\"bloque_t1\">";
