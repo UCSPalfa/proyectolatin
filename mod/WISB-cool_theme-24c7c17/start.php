@@ -249,7 +249,7 @@ function facebook_theme_pagesetup_handler() {
                     $new_messages = " [$num_messages]";
                 elgg_register_menu_item('page', array(
                     'name' => 'messages:inbox',
-                    'text' => elgg_view_icon('messages') . elgg_echo('Inbox') . $new_messages,
+                    'text' => elgg_view_icon('messages') . elgg_echo('messages:inbox') . $new_messages,
                     'href' => "/messages/",
                     'priority' => 30,
                 ));

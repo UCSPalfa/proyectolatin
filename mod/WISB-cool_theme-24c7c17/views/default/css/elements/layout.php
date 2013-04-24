@@ -362,12 +362,12 @@ body {
 }
 /*Para formulario de registro */
 .register_form{
-	float: left;
+	float: right;
 	width: 40%;
 	padding: 25px;
 	margin: 15px 0 0 0;
-	background: #f1f1f1;
-	border: 1px solid #e5e5e5;
+	background: rgb(247, 247, 247);
+	border: 1px solid #777;
 }
 
 .register_form label{
@@ -380,42 +380,26 @@ body {
 
 /*AO: Abril 18, estilos añadidos para sidebar de página de registro */
 
+
 .sidebar_r{
-	float: right;
+	float: left;
 	width: 53%;
 	padding-top: 40px;
+        
+/*        background-image:url('<?php echo $url; ?>_graphics/latinAmerica.png');
+        background-size: 100% 100%;
+        background-repeat:no-repeat;*/
 }
 
 .benefit{
 	overflow: hidden;
-	margin-bottom: 30px;
+	margin-bottom: 25px;
 }
 
-.benefit #benpic1{
+.benefitImage{
 	float: left;
-	background:url(<?php echo $url; ?>_graphics/wordscoll.png);
-	background-repeat: no-repeat no-repeat;
-	width: 250px;
-	height: 159px;
-	margin-left: 30px;
-}
-
-.benefit #benpic2{
-        float: left;
-        background:url(<?php echo $url; ?>_graphics/ben_world.png);
-        background-repeat: no-repeat no-repeat;
-        width: 170px;
-        height: 172px;
-        margin-left: 80px;
-}
-
-.benefit #benpic3{
-        float: left;
-        background:url(<?php echo $url; ?>_graphics/ben_share.png);
-        background-repeat: no-repeat no-repeat;
-        width: 196px;
-        height: 170px;
-        margin-left: 70px;
+	width: 80px;	
+	margin-left: 10px;        
 }
 
 .benefit h2{
@@ -423,20 +407,30 @@ body {
 	font-weight: normal;
 	font-size: 20px;
 	color: #000;
+        font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
 .benefit .ben_text{
-	width: 200px;
-	margin-left: 60%;
+	width: auto;
+	margin-left: 21%;
+        text-align: justify;
 }
 
 .ben_text p{
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	line-height: 19px;
 	font-size: 13px;
-	color: #555;
+	color: #444;
 }
 
 .registerf{
 	max-width: 80%;
+}
+
+hr.registerBreak {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 30px;
 }

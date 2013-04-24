@@ -15,10 +15,6 @@
 $editingWritingGroup = false;
 $addingWritingGroup = false;
 
-//po5i-ajax: cargar js
-elgg_load_js('elgg.searchgroup');
-elgg_extend_view('js/elgg', 'js/search-group');
-
 $currentContext = elgg_get_context();
 // The entity already exists, so the form is loaded TO EDIT a community or a writing group
 if (isset($vars['entity'])) {
@@ -61,6 +57,15 @@ $is_subgroup = isSubgroup($vars['entity']); //po5i
 if ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgroups_edition') {
     $nameField = 'au_subgroups:name';
     $iconField = 'au_subgroups:icon';
+    
+    $id_name_input_view = '';
+}
+else{
+    $id_name_input_view = 'name_ajax_group_search';
+
+    //po5i-ajax: cargar js
+    elgg_load_js('elgg.searchgroup');
+    elgg_extend_view('js/elgg', 'js/search-group');
 }
 ?>
 
@@ -79,7 +84,7 @@ if ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgrou
     echo elgg_view("input/text", array(
         'name' => 'name',
         'value' => $vars['entity']->name,
-        'id'    => 'name_ajax_group_search',
+        'id'    => $id_name_input_view,
         'autocomplete' => 'off'
         //'js' => 'onKeyDown="alert(11)";'    //po5i
     ));
@@ -128,6 +133,7 @@ if ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgrou
   display: table-cell;
 }
 </style>
+
 <div id="name_ajax_recommendations">
     <div id="nane_ajax_legend"><?php echo elgg_echo('profile_manager:groups:similar'); ?></div>
     <div id="name_ajax_results"></div>
@@ -151,35 +157,61 @@ if ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgrou
 //TODO: Agregar usuarios dinamicamente (solo para create)
 if($is_subgroup):    
     if ($currentContext == 'au_subgroups_creation') {
-        $candidates = elgg_get_site_entity()->getMembers(0);
-
-        foreach ($candidates as $user){
-            $user_icon = elgg_view_entity_icon($user, 'tiny');
-            $response[] = array($user->guid, $user->name." - ".$user->username." - ".$user->email, $user->name." - ".$user->username, $user_icon.$user->name." - ".$user->username." - ".$user->email);
-        }
-        ?>
-        <script type="text/javascript">
-            window.addEvent('load', function(){
-                // Autocomplete initialization
-                var t4 = new TextboxList('recipient_guid', {unique: true, plugins: {autocomplete: {}}});
-                var autocomplete = t4.plugins['autocomplete'];
-                autocomplete.setValues(
-                    <?php echo json_encode($response); ?>
-                );
-        });
-        </script>
-        <?php 
-        elgg_load_js('mootools');
-        elgg_load_js('GrowingInput');
-        elgg_load_js('JSTextboxList');
-        elgg_load_js('JSTextboxList.Autocomplete')
         ?>
 
         <div class="elgg-module  elgg-module-info"><div class="elgg-head">
             <h3><?php echo elgg_echo('au_subgroups:invite:subgroup') ?></h3>
             <input type="text" name="recipient_guid" value="" id="recipient_guid" /><!--csv-->
         </div></div>
+        
         <?
+        $candidates = elgg_get_site_entity()->getMembers(0);
+
+        //autocompletar v.1
+        /*foreach ($candidates as $user){
+            $user_icon = elgg_view_entity_icon($user, 'tiny');
+            $response[] = array($user->guid, $user->name." - ".$user->username." - ".$user->email, $user->name." - ".$user->username, $user_icon.$user->name." - ".$user->username." - ".$user->email);
+        }*/
+        
+        //autocompletar v.2
+        $data =array();
+        foreach ($candidates as $friend) {
+            $recipients_options[$friend->guid] = $friend->name;
+            $json['value'] = $friend->guid;
+            $json['name'] = $friend->name;
+            $data[] = $json;
+        }
+        ?>
+        <script type="text/javascript">
+            //autocompletar v.1
+            /*window.addEvent('load', function(){
+                // Autocomplete initialization
+                var t4 = new TextboxList('recipient_guid', {unique: true, plugins: {autocomplete: {}}});
+                var autocomplete = t4.plugins['autocomplete'];
+                autocomplete.setValues(
+                    <?php echo json_encode($response); ?>
+                );
+            });*/
+            
+            //autocompletar v.2
+            var data = {items: 
+                                <?php echo json_encode($data); ?>
+                        };
+            $("input#recipient_guid").autoSuggest(data.items, {selectedItemProp: "name", selectedValuesProp: "value", searchObjProps: "name", startText: "", keyDelay: 50, minChars: 1,asHtmlID:"rcpt"});
+
+        </script>
+        <?php 
+        //autocompletar v.1
+        /*elgg_load_js('mootools');
+        elgg_load_js('GrowingInput');
+        elgg_load_js('JSTextboxList');
+        elgg_load_js('JSTextboxList.Autocomplete')*/
+
+        //autocompletar v.2
+        elgg_load_js('JSMultiSelect');
+        elgg_load_js('autosuggest');
+        elgg_load_js('autosuggest1');
+        elgg_load_js('autosuggest2');
     }
 
 endif; 

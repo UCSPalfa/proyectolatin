@@ -54,7 +54,9 @@ $likes_view = hj_alive_view_likes_list($params);
 			?>
 				<ul
 				class="elgg-menu elgg-menu-comments elgg-menu-hz elgg-menu-comments-default">
-				<li class="elgg-menu-item-comment"><a href="">Comment</a>&nbsp;&nbsp;</li>
+				<li class="elgg-menu-item-comment"><a href="">
+				<?php echo elgg_echo('hj:alive:comments:commentsbutton');?>
+				</a>&nbsp;&nbsp;</li>
 				</ul>
 			<?php 
 			}
