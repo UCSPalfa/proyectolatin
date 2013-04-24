@@ -62,7 +62,7 @@ No responda este correo.",
 
 	'messageboard:blank' => "No hay nada que guardar.",
 	'messageboard:notfound' => "Lo siento; no pudimos encontrar el ítem especificado.",
-	'messageboard:notdeleted' => "Lo siento; no pudimos eliminar su mensaje.",
+	'messageboard:notdeleted' => "Lo siento; no pudimos eliminar el mensaje.",
 	'messageboard:somethingwentwrong' => "Intento fallido al guardar su mensaje, asegúrese de haberlo ingresado.",
 
 	'messageboard:failure' => "Se ha producido un error inesperado al intentar añadir su mensaje. Por favor inténtelo de nuevo.",
