@@ -36,13 +36,13 @@
 	}
 	?>
 
-	<ul class="elgg-menu elgg-menu-general mtm">
+    <ul class="elgg-menu elgg-menu-general mtm" style="text-align: center;">
 	<?php
 		if (elgg_get_config('allow_registration')) {
-			echo '<li><a class="registration_link" href="' . elgg_get_site_url() . 'register">' . elgg_echo('register') . '</a></li>';
+			echo '<li><a class="registration_link" style="color: #0054A7; font-size: 12px;" href="' . elgg_get_site_url() . 'register">' . elgg_echo('register') . '</a></li>';
 		}
 	?>
-		<li><a class="forgot_link" href="<?php echo elgg_get_site_url(); ?>forgotpassword">
+		<li style="margin-left: 20px;"><a class="forgot_link" style="color: #0054A7; font-size: 12px;" href="<?php echo elgg_get_site_url(); ?>forgotpassword">
 			<?php echo elgg_echo('user:password:lost'); ?>
 		</a></li>
 	</ul>

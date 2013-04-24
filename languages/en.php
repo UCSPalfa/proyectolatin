@@ -9,6 +9,7 @@
 $english = array(
     
     
+        'latin:site:name' => "The LATIn Network",
     	'books:communities' => 'Books written whitin this community',
     	'books:user' => 'This user collaborates in these books',
     	'search:communities' => 'Search for communities',
@@ -21,6 +22,7 @@ $english = array(
         'latin:or' => "or",
         'latin:register' => "Register",
         'latin:now' => "now",
+        
     
     
     

@@ -8,7 +8,7 @@
 
 $spanish = array(
 
-
+        'latin:site:name' => "La Red LATIn",
         'books:communities' => 'Libros escritos en esta comunidad',
         'books:user' => 'Este usuario colabora en estos libros',
         'search:communities' => 'Buscar comunidades',

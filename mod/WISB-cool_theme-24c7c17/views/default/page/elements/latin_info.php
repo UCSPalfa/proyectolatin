@@ -7,12 +7,8 @@
  */
 echo "<div class=\"bloque_vd\">";
 
-echo "<h1 style='text-align:right;'>";
-echo elgg_echo("The");
-echo "<span>";
-echo elgg_echo(" LATIn ");
-echo "</span>";
-echo elgg_echo("Project");
+echo "<h1 style='text-align:right; font-weight: bold;'>";
+echo elgg_echo("latin:site:name");
 echo "</h1>";
 echo "<p>";
 echo elgg_echo("");

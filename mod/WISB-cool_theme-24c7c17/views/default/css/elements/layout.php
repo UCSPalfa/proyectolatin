@@ -262,7 +262,7 @@ body {
 }
 
 .bloque_t1 h2 {
-    color: #0054A7;
+    color: #000;
     font-weight: bold;
 }
 
@@ -289,7 +289,7 @@ body {
 }
 
 .bloque_t2 h2 {
-    color: #0054A7;
+    color: #000;
     font-weight: bold;
 }
 
