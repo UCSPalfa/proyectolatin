@@ -72,9 +72,9 @@ $recipient_drop_down = elgg_view('input/dropdown', array(
 		 <?php 
 			}
 		 	else{
-		                             ?>
-		                             var selectedData = null;
-		                             <?php 
+		 ?>
+		 var selectedData =  {items:[]};
+		 <?php 
 			}  ?>
 		$("input#recipient_guid").autoSuggest(data.items, {selectedItemProp: "name", selectedValuesProp: "value", searchObjProps: "name", startText: "", preFill: selectedData.items, keyDelay: 50, minChars: 1,asHtmlID:"rcpt"});
 
