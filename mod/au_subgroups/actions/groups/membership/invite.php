@@ -17,7 +17,7 @@ $group_guid = get_input('group_guid');
 $group = get_entity($group_guid);
 
 $parent = au_subgroups_get_parent_group($group);
-system_message("mensaje");
+
 if (sizeof($user_guid)) {
 	foreach ($user_guid as $uid) {
 		if (empty($uid)) continue;
