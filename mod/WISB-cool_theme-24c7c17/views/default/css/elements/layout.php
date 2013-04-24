@@ -164,7 +164,7 @@ body {
     float: right;
 /*AO: Abril 24, modificado por ajuste en idioma español*/
 /*    width: 190px;*/
-    width: 210px;
+    width: 220px;
     min-height: 360px;
 }
 /***** PAGE FOOTER ******/
