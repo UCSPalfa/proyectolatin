@@ -88,7 +88,7 @@ $spanish = array(
     'hj:framework:entity:delete:success' => 'Completado exitosamente',
     'hj:framework:entity:delete:error' => 'Ocurrió un error al intentar eliminar esta instancia',
     'hj:framework:widget:add:success' => 'Sección añadida. Por favor actualice la configuración de la sección',
-    'hj:framework:widget:add:failure' => "No pudimos añadir la sección,
+    'hj:framework:widget:add:failure' => "No pudimos añadir la sección",
 
     /**
      * UI
