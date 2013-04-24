@@ -353,10 +353,15 @@ body {
 
 /*AO: Abril 18, estilos añadidos para sidebar de página de registro */
 
+
 .sidebar_r{
 	float: right;
 	width: 53%;
 	padding-top: 40px;
+        
+/*        background-image:url('<?php echo $url; ?>_graphics/latinAmerica.png');
+        background-size: 100% 100%;
+        background-repeat:no-repeat;*/
 }
 
 .benefit{
@@ -365,8 +370,7 @@ body {
 }
 
 .benefitImage{
-	float: left;	
-	background-repeat: no-repeat no-repeat;
+	float: left;
 	width: 80px;	
 	margin-left: 15px;        
 }
@@ -389,7 +393,7 @@ body {
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	line-height: 19px;
 	font-size: 13px;
-	color: #999;
+	color: #444;
 }
 
 .registerf{
