@@ -88,6 +88,7 @@ function notifications_plugin_pagesetup() {
 			'name' => '2_a_user_notify',
 			'text' => elgg_echo('notifications:subscriptions:changesettings'),
 			'href' => "notifications/personal/{$user->username}",
+                        'priority' => 6,
 		);
 		elgg_register_menu_item('page', $params);
 		
@@ -96,6 +97,7 @@ function notifications_plugin_pagesetup() {
 				'name' => '2_group_notify',
 				'text' => elgg_echo('notifications:subscriptions:changesettings:groups'),
 				'href' => "notifications/group/{$user->username}",
+                                'priority' => 7,
 			);
 			elgg_register_menu_item('page', $params);
 		}
