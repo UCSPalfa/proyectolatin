@@ -22,15 +22,35 @@ elgg_set_page_owner_guid($group->guid);
 if (($user instanceof ElggUser) && ($group instanceof ElggGroup)) {
 	if ($group->getOwnerGUID() != elgg_get_logged_in_user_guid()) {
 		if ($group->leave($user)) {
-			system_message(elgg_echo("groups:left"));
+                    if (isSubgroup($group)) {
+                        system_message(elgg_echo("writing:groups:left"));
+                    } else {
+                        system_message(elgg_echo("groups:left"));
+                    }
+			
 		} else {
-			register_error(elgg_echo("groups:cantleave"));
+                    if (isSubgroup($group)) {
+                        register_error(elgg_echo("writing:groups:cantleave"));
+                    } else {
+                        register_error(elgg_echo("groups:cantleave"));
+                    }
+			
 		}
 	} else {
-		register_error(elgg_echo("groups:cantleave"));
+            if (isSubgroup($group)) {
+                        register_error(elgg_echo("writing:groups:cantleave"));
+                    } else {
+                        register_error(elgg_echo("groups:cantleave"));
+                    }
+		
 	}
 } else {
-	register_error(elgg_echo("groups:cantleave"));
+    if (isSubgroup($group)) {
+                        register_error(elgg_echo("writing:groups:cantleave"));
+                    } else {
+                        register_error(elgg_echo("groups:cantleave"));
+                    }
+	
 }
 
 forward(REFERER);

@@ -19,13 +19,25 @@ if (($user instanceof ElggUser) && ($group instanceof ElggGroup) && $group->canE
 		if ($group->leave($user)) {
 			system_message(elgg_echo("groups:removed", array($user->name)));
 		} else {
+                    if (isSubgroup($group)) {
+                        register_error(elgg_echo("writing:groups:cantremove"));
+                    } else {
 			register_error(elgg_echo("groups:cantremove"));
+                    }
 		}
 	} else {
-		register_error(elgg_echo("groups:cantremove"));
+		if (isSubgroup($group)) {
+                        register_error(elgg_echo("writing:groups:cantremove"));
+                    } else {
+			register_error(elgg_echo("groups:cantremove"));
+                    }
 	}
 } else {
-	register_error(elgg_echo("groups:cantremove"));
+	if (isSubgroup($group)) {
+                        register_error(elgg_echo("writing:groups:cantremove"));
+                    } else {
+			register_error(elgg_echo("groups:cantremove"));
+                    }
 }
 
 forward(REFERER);

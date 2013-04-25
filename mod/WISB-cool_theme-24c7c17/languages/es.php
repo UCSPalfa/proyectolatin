@@ -32,7 +32,7 @@ add_translation('es', array(
 	'newsfeed' => 'Noticias',
     
 	'profile:wall' => "Muro",
-	'profile:info' => "Mi perfil",
+	'profile:info' => "Perfil",
 	'profile:activity:none' => "No hay actividad para mostrar",
     
 	'likes:likethis' => 'Me gusta',

@@ -275,6 +275,12 @@ foreach ($user_guid as $uid) {
 }
 ///////////////////////////////////////////////////////////////
 
-system_message(elgg_echo("groups:saved"));
+if (isSubgroup($group)) {
+    system_message(elgg_echo("writing:groups:saved"));
+} else {
+    system_message(elgg_echo("groups:saved"));    
+}
+
+
 
 forward($group->getUrl());

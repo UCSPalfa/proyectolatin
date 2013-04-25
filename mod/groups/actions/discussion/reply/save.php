@@ -25,7 +25,11 @@ $user = elgg_get_logged_in_user_entity();
 
 $group = $topic->getContainerEntity();
 if (!$group->canWriteToContainer()) {
-	register_error(elgg_echo('groups:notmember'));
+    if (isSubgroup($group)) {
+            register_error(elgg_echo('writing:groups:notmember'));
+        } else {
+            register_error(elgg_echo('groups:notmember')); 
+        }
 	forward(REFERER);
 }
 
@@ -33,7 +37,11 @@ if (!$group->canWriteToContainer()) {
 if ($annotation_id) {
 	$annotation = elgg_get_annotation_from_id($annotation_id);
 	if (!$annotation->canEdit()) {
-		register_error(elgg_echo('groups:notowner'));
+                if (isSubgroup($group)) {
+                    register_error(elgg_echo('writing:groups:notowner'));
+                } else {
+                    register_error(elgg_echo('groups:notowner'));
+                }
 		forward(REFERER);
 	}
 

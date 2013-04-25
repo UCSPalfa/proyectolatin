@@ -38,10 +38,20 @@ if (($user instanceof ElggUser) && ($group instanceof ElggGroup)) {
 
 	if ($join) {
 		if (groups_join_group($group, $user)) {
-			system_message(elgg_echo("groups:joined"));
+                        if (isSubgroup($group)) {
+                            system_message(elgg_echo("writing:groups:joined"));
+                        } else {
+                            system_message(elgg_echo("groups:joined"));
+                        }
+			
 			forward($group->getURL());
 		} else {
-			register_error(elgg_echo("groups:cantjoin"));
+                    if (isSubgroup($group)) {
+                            register_error(elgg_echo("writing:groups:cantjoin"));
+                        } else {
+                            register_error(elgg_echo("groups:cantjoin"));
+                        }
+			
 		}
 	} else {
 		add_entity_relationship($user->guid, 'membership_request', $group->guid);
@@ -60,13 +70,30 @@ if (($user instanceof ElggUser) && ($group instanceof ElggGroup)) {
 			$url,
 		));
 		if (notify_user($group->owner_guid, $user->getGUID(), $subject, $body)) {
-			system_message(elgg_echo("groups:joinrequestmade"));
+		
+                    if (isSubgroup($group)) {
+                        system_message(elgg_echo("writing:groups:joinrequestmade"));
+                    } else {
+                        system_message(elgg_echo("groups:joinrequestmade"));
+                    }
+                    
 		} else {
-			register_error(elgg_echo("groups:joinrequestnotmade"));
+                    
+                    if (isSubgroup($group)) {
+                        register_error(elgg_echo("writing:groups:joinrequestnotmade"));
+                    } else {
+                        register_error(elgg_echo("groups:joinrequestnotmade"));
+                    }
+			
 		}
 	}
 } else {
-	register_error(elgg_echo("groups:cantjoin"));
+    if (isSubgroup($group)) {
+                        register_error(elgg_echo("writing:groups:cantjoin"));
+                    } else {
+                        register_error(elgg_echo("groups:cantjoin"));
+                    }
+	
 }
 
 forward(REFERER);

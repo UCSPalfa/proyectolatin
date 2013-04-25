@@ -112,7 +112,7 @@
 		'profile_manager:admin:show_on_register' => 'Mostrar en el registro',	
 		'profile_manager:admin:mandatory' => 'Obligatorio',
 		'profile_manager:admin:user_editable' => 'El usuario puede editar este campo',
-		'profile_manager:admin:output_as_tags' => 'Mostrar en el perfil como tags',
+		'profile_manager:admin:output_as_tags' => 'Mostrar en el perfil como etiquetas',
 		'profile_manager:admin:admin_only' => 'Campo solo para administración',
 		'profile_manager:admin:count_for_completeness' => 'Contabilizar este campo en el widget de completitud del perfil',
 		'profile_manager:admin:blank_available' => 'Agregar una opción en blanco',		

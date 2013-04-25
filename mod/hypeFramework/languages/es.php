@@ -131,7 +131,7 @@ $spanish = array(
      */
     'hj:label:hjportfoliofile:title' => 'Título',
     'hj:label:hjportfoliofile:description' => 'Descripción',
-    'hj:label:hjportfoliofile:tags' => 'Tags',
+    'hj:label:hjportfoliofile:tags' => 'Etiquetas',
     'hj:label:hjportfoliofile:filefolder' => 'Carpeta de archivo',
     'hj:label:hjportfoliofile:newfilefolder' => 'Nueva carpeta',
     'hj:label:hjportfoliofile:fileupload' => 'Archivo a subir',

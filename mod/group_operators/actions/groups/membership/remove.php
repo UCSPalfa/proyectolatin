@@ -30,15 +30,37 @@ if (($user instanceof ElggUser) && ($group instanceof ElggGroup) && $group->canE
 			}
 			
 			//foreach subgroup check if is member and remove relation
-			system_message(elgg_echo("groups:removed", array($user->name)));
+			
+                        
+                        if (isSubgroup($group)) {
+                        system_message(elgg_echo("writing:groups:removed", array($user->name)));
+                    } else {
+                        system_message(elgg_echo("groups:removed", array($user->name)));
+                    }
+                        
 		} else {
-			register_error(elgg_echo("groups:cantremove"));
+                    
+                    if (isSubgroup($group)) {
+                        register_error(elgg_echo("writing:groups:cantremove"));
+                    } else {
+                        register_error(elgg_echo("groups:cantremove"));
+                    }
+                    
+			
 		}
 	} else {
-		register_error(elgg_echo("groups:cantremove"));
+		if (isSubgroup($group)) {
+                        register_error(elgg_echo("writing:groups:cantremove"));
+                    } else {
+                        register_error(elgg_echo("groups:cantremove"));
+                    }
 	}
 } else {
-	register_error(elgg_echo("groups:cantremove"));
+	if (isSubgroup($group)) {
+                        register_error(elgg_echo("writing:groups:cantremove"));
+                    } else {
+                        register_error(elgg_echo("groups:cantremove"));
+                    }
 }
 
 forward(REFERER);

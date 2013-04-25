@@ -403,7 +403,7 @@ $spanish = array(
 
         'profile:field:text' => 'Texto corto',
         'profile:field:longtext' => 'Texto largo',
-        'profile:field:tags' => 'Tags',
+        'profile:field:tags' => 'Etiquetas',
         'profile:field:url' => 'Dirección Web',
         'profile:field:file' => 'Subir archivo',          //po5i
         'profile:field:email' => 'Correo electrónico',
@@ -418,7 +418,7 @@ $spanish = array(
 	'profile:editdefault:delete:success' => 'Item de perfil por defecto eliminado!',
 	'profile:defaultprofile:reset' => 'Reinicio de perfil de sistema por defecto',
 	'profile:resetdefault' => 'Reiniciar perfil de sistema por defecto',
-	'profile:explainchangefields' => "Puede reemplazar los campos de perfil existentes con sus propios utilizando el formulario de abajo. \n\n Ingrese un nuevo nombre de campo de perfil, por ejemplo, 'Equipo favorito', luego seleccione el tipo de campo (eg. texto, url, tags), y haga click en el bot&oacute;n de 'Agregar'. Para re ordenar los campos arrastre el control al lado de la etiqueta del campo. Para editar la etiqueta del campo haga click en el texto de la etiqueta para volverlo editable. \n\n Puede volver a la disposici&oacute;n original del perfil en cualquier momento, pero perder&aacute; la informaci&oacute;n creada en los campos personalizados del perfil hasta el momento",
+	'profile:explainchangefields' => "Puede reemplazar los campos de perfil existentes con sus propios utilizando el formulario de abajo. \n\n Ingrese un nuevo nombre de campo de perfil, por ejemplo, 'Equipo favorito', luego seleccione el tipo de campo (eg. texto, url, etiquetas), y haga click en el bot&oacute;n de 'Agregar'. Para re ordenar los campos arrastre el control al lado de la etiqueta del campo. Para editar la etiqueta del campo haga click en el texto de la etiqueta para volverlo editable. \n\n Puede volver a la disposici&oacute;n original del perfil en cualquier momento, pero perder&aacute; la informaci&oacute;n creada en los campos personalizados del perfil hasta el momento",
 	'profile:editdefault:success' => 'Elemento agregado al perfil por defecto correctamente',
 	'profile:editdefault:fail' => 'No se pudo guardar el perfil por defecto',
         'profile:field_too_long' => 'No se puede guardar la información de su perfil porque la sección "%s" es demasiada larga.',
@@ -487,7 +487,7 @@ $spanish = array(
 	'viewtype:list' => "Vista de lista",
 	'viewtype:gallery' => "Galer&iacute;a",
 
-	'tag:search:startblurb' => "Items con tags que coincidan con '%s':",
+	'tag:search:startblurb' => "Items con etiquetas que coincidan con '%s':",
 
 	'user:search:startblurb' => "Usuarios que coincidan con '%s':",
 	'user:search:finishblurb' => "Click aqu&iacute; para ver mas",
@@ -937,8 +937,8 @@ $spanish = array(
 	'annotations' => "Anotaciones",
 	'relationships' => "Relaciones",
 	'metadata' => "Metadata",
-	'tagcloud' => "Nube de tags",
-	'tagcloud:allsitetags' => "Tags de todo el sitio",
+	'tagcloud' => "Nube de etiquetas",
+	'tagcloud:allsitetags' => "Etiquetas de todo el sitio",
 
         'on' => 'On',
         'off' => 'Off',
@@ -1201,8 +1201,8 @@ Por favor no responda a este correo",
 /**
  * Tag labels
  */
-	'tag_names:tags' => 'Tags',
-	'tags:site_cloud' => 'Nube de Tags del Sitio',
+	'tag_names:tags' => 'Etiquetas',
+	'tags:site_cloud' => 'Nube de Etiquetas del Sitio',
 
 /**
  * Javascript

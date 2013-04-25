@@ -29,9 +29,9 @@ $spanish = array(
     'hj:alive:comments:delete' => 'Eliminar',
     'hj:alive:comments:newcomment' => 'Escribir un comentario',
 
-    'hj:alive:comments:addtopic' => 'Añadir nuevo tópico de discusión',
-    'hj:alive:comments:forumtopictitle' => 'Escriba el título de su tópico de discusión...',
-    'hj:alive:comments:forumtopicdescription' => 'Escriba la descripción de su tópico de discusión...',
+    'hj:alive:comments:addtopic' => 'Añadir nuevo tema de discusión',
+    'hj:alive:comments:forumtopictitle' => 'Escriba el título de su tema de discusión...',
+    'hj:alive:comments:forumtopicdescription' => 'Escriba la descripción de su tema de discusión...',
     'eComents:forumtopicaddbutton' => 'Añadir',
 
     'hj:alive:comments:commentmissing' => 'No ha ingresado su comentario',
@@ -83,7 +83,7 @@ $spanish = array(
                 %s.
             ",
 
-    'group_topic_post:email:level1:subject' => 'Nueva publicación en su tópico de discusión de grupo',
+    'group_topic_post:email:level1:subject' => 'Nueva publicación en su tema de discusión de grupo',
     'group_topic_post:email:level1:body' =>
             "Usted tiene una nueva publicación de %s en su %s: <br />
                 <br />
@@ -94,7 +94,7 @@ $spanish = array(
                 %s.
             ",
 
-    'group_topic_post:email:level2:subject' => 'Nueva publicación en tópico de grupo',
+    'group_topic_post:email:level2:subject' => 'Nueva publicación en tema de grupo',
     'group_topic_post:email:level2:body' =>
             "Hay una nueva publicación de %s en una discusión sobre %s: <br />
                 <br />
@@ -128,7 +128,7 @@ $spanish = array(
     'hj:alive:search:file' => 'Archivos',
 
 	'search_types:group_topic_posts' => 'Publicaciones en la discusión',
-	'hj:alive:reply_to' => 'Responder al tópico "%s" en grupo "%s"',
+	'hj:alive:reply_to' => 'Responder al tema "%s" en grupo "%s"',
 );
 
 add_translation("es", $spanish);

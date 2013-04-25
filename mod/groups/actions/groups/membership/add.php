@@ -30,7 +30,12 @@ if (sizeof($user_guid)) {
 								$group->getURL())
 							));
 
-					system_message(elgg_echo('groups:addedtogroup'));
+                                        if (isSubgroup($group)) {
+                                            system_message(elgg_echo('writing:groups:addedtogroup'));
+                                        } else {
+                                            system_message(elgg_echo('groups:addedtogroup'));
+                                        }
+					
 				} else {
 					// huh
 				}
