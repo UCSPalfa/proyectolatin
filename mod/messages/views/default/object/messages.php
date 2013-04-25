@@ -14,6 +14,7 @@ if (!$message) {
 }
 
 if ($message->toId == elgg_get_page_owner_guid()) {
+	$detail_label =elgg_echo("messages:from");
 	// received
 	$user = get_entity($message->fromId);
 	if ($user) {
@@ -38,13 +39,14 @@ if ($message->toId == elgg_get_page_owner_guid()) {
 
 } else {
 	// sent
+	$detail_label =elgg_echo("messages:to");
 	$user = get_entity($message->toId);
 
 	if ($user) {
 		$icon = elgg_view_entity_icon($user, 'tiny');
 		$user_link = elgg_view('output/url', array(
 			'href' => "messages/compose?send_to=$user->guid",
-			'text' => elgg_echo('messages:to_user', array($user->name)),
+			'text' => $user->name,
 			'is_trusted' => true,
 		));
 	} else {
@@ -104,7 +106,7 @@ if ($full) {
 	echo "<td>";
 	echo "<table  width='100%'>";
 	echo "<tr><td width='15%' style='text-align:right'>".elgg_echo("messages:title").":</td><td width='3%'><td> <b>$message->title </b> </td></tr>";
-	echo "<tr><td width='15%' style='text-align:right'>".elgg_echo("messages:from").":</td><td width='3%'><td> $user_link</td></tr>";
+	echo "<tr><td width='15%' style='text-align:right'>".$detail_label.":</td><td width='3%'><td> $user_link</td></tr>";
 	echo "<tr><td width='15%' style='text-align:right'>".elgg_echo("messages:date").":</td><td width='3%'><td> ".date("Y-m-d H:i:s",$message->time_created ) ."</td></tr>";
 	echo "<tr>";
 	echo "</table>";
