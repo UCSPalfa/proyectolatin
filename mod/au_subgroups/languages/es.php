@@ -134,7 +134,7 @@ y luego ir a la pagina de la Comunidad y hacer clic en el boton \"Unirse\":
 		
 		Mensaje enviado automáticamente a todos los moderadores",
 		
-		'au_subgroups:invitations:note' => "Use las teclas de derecha e izquiera, retroceso y suprimir para navegar o remover cajas, y arriba/abajo para navegar y añadir sugerencias.",
+		'au_subgroups:invitations:note' => "Use las teclas de derecha e izquierda, retroceso y suprimir para navegar o remover cajas, y arriba/abajo para navegar y añadir sugerencias.",
 		
 		/**
 		 * Form fields
