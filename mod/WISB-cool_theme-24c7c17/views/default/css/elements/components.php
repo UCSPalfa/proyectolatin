@@ -62,3 +62,7 @@
         width: 80%;
 /*      margin: 0px auto;*/
 }
+
+.elgg-river-object {
+    color: #0054A7;
+}
