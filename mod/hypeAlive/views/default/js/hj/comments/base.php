@@ -114,7 +114,7 @@
                                         var $id_hjcomment = $(this).attr("id");
                                         var $comment_container = $(this).closest('li');
 
-                                        if(confirm('Are you sure?')){
+					if(confirm(elgg.echo('hj:framework:deletequestion'))){
 
                                                 $.ajax({
                                                         type: "GET",
