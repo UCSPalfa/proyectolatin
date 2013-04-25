@@ -47,11 +47,11 @@ Revisa y comenta sobre su nuevo favorito:
 	'river:create:object:bookmarks' => '%s hizo favorito %s',
 	'river:comment:object:bookmarks' => '%s comentó en el favorito %s',
 	'bookmarks:river:annotate' => 'un comentario en este favorito',
-	'bookmarks:river:item' => 'un item',
+	'bookmarks:river:item' => 'un ítem',
 
 	'item:object:bookmarks' => 'Favoritos',
 
-	'bookmarks:group' => 'Favoritos de la comunidad',
+	'bookmarks:group' => 'Favoritos de la Comunidad',
 	'bookmarks:enablebookmarks' => 'Habilitar favoritos de la comunidad',
 	'bookmarks:nogroup' => 'Esta comunidad no tiene favoritos por el momento',
 	'bookmarks:more' => 'Más favoritos',
@@ -76,8 +76,8 @@ Revisa y comenta sobre su nuevo favorito:
 	 * Status messages
 	 */
 
-	'bookmarks:save:success' => "Su item ha sido agregado exitosamente a los favoritos.",
-	'bookmarks:delete:success' => "Su item ha sido eliminado de los favoritos.",
+	'bookmarks:save:success' => "Su ítem ha sido agregado exitosamente a los favoritos.",
+	'bookmarks:delete:success' => "Su ítem ha sido eliminado de los favoritos.",
 
 	/**
 	 * Error messages
