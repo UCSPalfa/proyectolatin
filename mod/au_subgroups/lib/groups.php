@@ -426,6 +426,9 @@ function groups_handle_invitations_page() {
  * Group invitations for a user
  */
 function subgroups_handle_invitations_page() {
+    
+    elgg_push_context('mine_groups');
+    
     gatekeeper();
 
     $user = elgg_get_page_owner_entity();
