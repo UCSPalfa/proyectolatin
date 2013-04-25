@@ -84,7 +84,7 @@ Haga clic a continuación para ver sus invitaciones:
 %s",
 		'au_subgroups:invitations' => 'Invitations a Grupos de Escritura',
 		'au_subgroups:invitations:pending' => 'Invitations a Grupos de Escritura (%s)',
-		'au_subgroups:invitations:selecttoinvite' => "Para encontrar una persona, escriba una o más palabras. Si desea agregar a alguien que no es miembro de la red, escriba su dirección de correo electrónico y luego presione la tecla ENTER.",
+		'au_subgroups:invitations:selecttoinvite' => "Para encontrar una persona, escriba una o más palabras. Si desea agregar a alguien que no es miembro de la red, escriba su dirección de correo electrónico y luego presione la tecla TAB.",
 		'wgroups:invite:body' => "Hola %s,
 		
 %s le ha invitado a unirse al Grupo de Escritura '%s'. Haga clic a continuación para ver sus invitaciones:
@@ -134,7 +134,7 @@ y luego ir a la pagina de la Comunidad y hacer clic en el boton \"Unirse\":
 		
 		Mensaje enviado automáticamente a todos los moderadores",
 		
-		'au_subgroups:invitations:note' => "Use las teclas de derecha e izquiera, retroceso y suprimir para navegar o remover cajas, y arriba/abajo para navegar y añadir sugerencias.",
+		'au_subgroups:invitations:note' => "Use las teclas de derecha e izquierda, retroceso y suprimir para navegar o remover cajas, y arriba/abajo para navegar y añadir sugerencias.",
 		
 		/**
 		 * Form fields

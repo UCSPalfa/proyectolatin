@@ -280,7 +280,7 @@ Ver y responder a la discusión:
 	'groups:invite:remove:check' => '¿Esta seguro que desea borrar esta invitación?',
 	'groups:invite:body' => "Hola %s,
 
-%s le ha invitado a unirse a Comunidad '%s'. Haga clic a continuación para ver sus invitaciones:
+%s le ha invitado a unirse a la Comunidad '%s'. Haga clic a continuación para ver sus invitaciones:
 
 %s",
 

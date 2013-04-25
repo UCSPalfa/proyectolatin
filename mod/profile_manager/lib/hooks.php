@@ -249,6 +249,57 @@
 	}
 
 	/**
+	 * function to check if custom fields on group edit have been filled (if required) (po5i)
+	 * 
+	 * @param $hook_name
+	 * @param $entity_type
+	 * @param $return_value
+	 * @param $parameters
+	 * @return unknown_type
+	 */
+	function profile_manager_action_group_edit_hook($hook_name, $entity_type, $return_value, $parameters){
+		/*elgg_make_sticky_form('group/edit');
+		
+		// new
+		$profile_type_guid = get_input("custom_profile_fields_custom_profile_type", false);
+		$fields = profile_manager_get_categorized_fields($user, true, true, true, $profile_type_guid);
+		$required_fields = array();
+			
+		if(!empty($fields["categories"])){
+			foreach($fields["categories"] as $cat_guid => $cat){
+				$cat_fields = $fields["fields"][$cat_guid]; 
+				foreach($cat_fields as $field){
+					if($field->show_on_register == "yes" && $field->admin_only != "yes" && $field->mandatory == "yes"){
+						$required_fields[] = $field;
+					}
+				}
+			}
+		}
+		
+		if($required_fields){
+		    
+		    $custom_profile_fields = array();
+		    
+		    foreach($_POST as $key => $value){
+		    	if(strpos($key, "custom_profile_fields_") == 0){
+		    		$key = substr($key, 22);
+		    		$custom_profile_fields[$key] = $value;
+		    	}
+		    }
+		    
+		    foreach($required_fields as $entity){
+		    	
+		    	$passed_value = $custom_profile_fields[$entity->metadata_name];
+		    	
+				if(empty($passed_value)){
+					register_error(elgg_echo("profile_manager:register_pre_check:missing", array($entity->getTitle())));
+					forward(REFERER);					
+				}
+		    }
+		}*/
+	}
+
+	/**
 	 * 
 	 * If possible change the username of a user
 	 * @param unknown_type $hook_name
