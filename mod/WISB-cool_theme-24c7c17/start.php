@@ -262,6 +262,7 @@ function facebook_theme_pagesetup_handler() {
                 'text' => elgg_echo('profile:edit'),
                 'link_class' => 'elgg-button elgg-button-action',
                 'contexts' => array('profile'),
+                
             ));
 
 

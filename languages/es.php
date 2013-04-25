@@ -280,7 +280,7 @@ $spanish = array(
  * Access
  */
 	'PRIVATE' => "Privado",
-	'LOGGED_IN' => "Usuarios logueados",
+	'LOGGED_IN' => "Usuarios conectados",
 	'PUBLIC' => 'Todos',
 	'access:friends:label' => "Amigos",
 	'access' => "Acceso",
@@ -926,7 +926,7 @@ $spanish = array(
  */
 	'title' => "T&iacute;tulo",
 	'description' => "Descripci&oacute;n",
-	'tags' => "Tags",
+	'tags' => "Etiquetas",
 	'spotlight' => "Enfoque",
 	'all' => "Todo",
 	'mine' => "M&iacute;o",

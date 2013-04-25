@@ -1493,18 +1493,21 @@ function users_pagesetup() {
 		);
 		elgg_register_menu_item('page', $params);*/
 		
-		elgg_register_menu_item('page', array(
-			'name' => 'edit_avatar',
-			'href' => "avatar/edit/{$owner->username}",
-			'text' => elgg_echo('avatar:edit'),
-			'contexts' => array('profile_edit'),
-		));
-
+		
 		elgg_register_menu_item('page', array(
 			'name' => 'edit_profile',
 			'href' => "profile/{$owner->username}/edit",
 			'text' => elgg_echo('profile:edit'),
 			'contexts' => array('profile_edit'),
+                        'priority' => 3,
+		));
+                        
+                elgg_register_menu_item('page', array(
+			'name' => 'edit_avatar',
+			'href' => "avatar/edit/{$owner->username}",
+			'text' => elgg_echo('avatar:edit'),
+			'contexts' => array('profile_edit'),
+                        'priority' => 4,
 		));
 	}
 
