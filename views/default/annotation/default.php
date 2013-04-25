@@ -51,7 +51,7 @@ $body = <<<HTML
 	</span>
 					<div style="float:right">
 
-	$menu
+	
 	</div>
 	</div>
 
