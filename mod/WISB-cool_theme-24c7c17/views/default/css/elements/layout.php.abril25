@@ -9,14 +9,14 @@
  */
 $url = elgg_get_site_url();
 ?>
-/* AO: Abril 25, cambios para que la página inicial se redimensione sin problemas*/
-html, body {
+/* AUMENTADO BODY*/
+body {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
 }
-/* AO: Abril 25, cambios para que la página inicial se redimensione sin problemas*/
+/* AUMENTADO ELGG-PAGE*/
 .elgg-page {
     position: relative;
     width: 100%;
@@ -25,11 +25,11 @@ html, body {
     margin:0;
     padding:0;
 }
-/* AO: Abril 25, cambios para que la página inicial se redimensione sin problemas*/
+/* AUMENTADO ELGG-PAGE-BODY*/
 .elgg-page-body {
-    padding: 10px 80px;
+    padding: 10px 10px 80px 10px;
 }
-/* <style>*/
+/* <style>
 /* ***************************************
     PAGE LAYOUT
 *************************************** */
@@ -178,14 +178,11 @@ html, body {
     margin: 0 auto;
 }
 /*.elgg-page-default .elgg-page-footer > .elgg-inner {margin-left: 181px; padding: 0; margin-right:181px}*/
-/* AO: Abril 25, cambios para que la página inicial se redimensione sin problemas*/
 .elgg-page-footer {
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100%;
-/*    height: 80px;*/
-/*AO: Abril 29, página principal*/
-    height: 110px;
+    height: 80px;
     left: 0;
     margin:0;
     padding:0;
@@ -201,9 +198,7 @@ html, body {
 }
 /***** ESTILOS AÑADIDOS ******/
 .footer_izq {
-/*AO: Abril 29, página principal*/
-/*    width: 200px;*/
-    width: 260px;
+    width: 200px;
     float: left;
 }
 
@@ -445,9 +440,4 @@ hr.registerBreak {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     margin-bottom: 30px;
-}
-
-.legal{
-    width: 100%;
-    clear: both;
 }

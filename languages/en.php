@@ -1385,7 +1385,6 @@ You cannot reply to this email.",
 	'register:coll_text' => "Communities offer unique spaces where you can talk about what you like, start yours! Contact people from all over the world and make a difference!",
 	'register:share' => "Share",
 	'register:share_text' => "Share with people in your community and writing groups, on LATIn Community. Start a discussion, text a group all at once, share your ideas!",
-
 );
 
 add_translation("en",$english);
