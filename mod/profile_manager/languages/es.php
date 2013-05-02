@@ -411,6 +411,10 @@
 		'profile_manager:profile:groups' => "Grupos de escritura",
 		'profile_manager:profile:no_groups' => "No hay grupos",
 		'profile_manager:profile:no_communities' => "No hay comunidades",
+
+                //AO: Abril 30, términos
+                'profile_manager:terms' => "Condiciones",
+
 	
 	);
 	

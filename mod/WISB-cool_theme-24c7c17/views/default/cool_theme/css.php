@@ -251,3 +251,19 @@ input[type=checkbox] {
 .delete_opost{
         float: right;
 }
+
+/*AO: Abril 30, css de términos y condiciones*/
+.terms{
+        margin-top: 30px;
+        color : #000;
+}
+
+.terms .first{
+        font-weight: bold;
+}
+
+.terms ol{
+        list-style-type: decimal;
+        padding-left: 1.5em;
+        margin: 0 1.5em 1.5em 0;
+}

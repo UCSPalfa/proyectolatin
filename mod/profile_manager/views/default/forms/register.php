@@ -97,7 +97,10 @@ echo "<div id='profile_manager_register_left'>";
 		</div>
 	</div>
 	<?php 
-		echo $terms;
+//AO: Abril 30, comentado el div
+//              echo "<div id='profile_manager_register_right'>";
+                        echo elgg_view("register/extend_side");
+//              echo "</div>";
 	?>
 </fieldset>
 
@@ -106,12 +109,14 @@ echo "<div id='profile_manager_register_left'>";
 echo elgg_view('register/extend');
 // Add captcha hook
 echo elgg_view('input/captcha');
-
+//AO: Abril 30, colocados los términos después del captcha 
+echo $terms; 
 echo "</div>";
 
-echo "<div id='profile_manager_register_right'>";
-echo elgg_view("register/extend_side");
-echo "</div>";
+//AO: Abril 30, comentado y colocado arriba
+//echo "<div id='profile_manager_register_right'>";
+//echo elgg_view("register/extend_side");
+//echo "</div>";
 
 echo "<div class='clearfloat'></div>";
 echo "<div class='elgg-foot'>";

@@ -411,6 +411,23 @@
 		'profile_manager:profile:groups' => "Writing Groups",
 		'profile_manager:profile:no_groups' => "No groups found",
 		'profile_manager:profile:no_communities' => "No communities found",
+
+                //AO: Abril 30, términos
+                'profile_manager:terms' => "Terms",
+                'profile_manager:p1' => "If you use the community.latinproject.org service you agree to be bound by the following terms and conditions ('Terms of Use').",
+                'profile_manager:p2' => "<ol><li>You are responsible for any activity that occurs under your screen name.</li>
+                <li>You are responsible for keeping your password secure.</li>
+                <li>You must not abuse, harass, threaten, impersonate or intimidate other community.latinproject.org users.</li>
+                <li>You may not use the community.latinproject.org service for any illegal or unauthorized purpose. International users agree to comply with all local laws regarding online conduct and acceptable content.</li>
+                <li>You are solely responsible for your conduct and any data, text, information, screen names, graphics, photos, profiles, audio and video clips, links ('Content') that you submit, post, and display on the community.latinproject.org service.</li>
+                <li>community.latinproject.org is intended for personal use, not a business solution. Professional or corporate uses of community.elgg.org are at your own risk.</li>
+                <li>You must not modify, adapt or hack community.latinproject.org or modify another website so as to falsely imply that it is associated with community.latinproject.org.</li>
+                <li>You must not create or submit unwanted email or advertisements to community.latinproject.org or any of its members ('Spam').</li>
+                <li>You must not transmit any worms or viruses or any code of a destructive nature.</li>
+                <li>You must not, in the use of community.latinproject.org, violate any laws in your jurisdiction (including but not limited to copyright laws).</li>
+                <li>Any loss of data is not the responsibility of community.latinproject.org. Use of this service is at your own risk.</li>
+                </ol>",
+
 	
 	);
 	

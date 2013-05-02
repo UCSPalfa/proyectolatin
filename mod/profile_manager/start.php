@@ -50,6 +50,9 @@
 		
 		// Register Page handler
 		elgg_register_page_handler("profile_manager", "profile_manager_page_handler");
+		//AO: Abril 30, añadida página para términos y condiciones
+		elgg_register_page_handler("terms", "profile_manager_page_handler");
+
 		
 		// admin user add, registered here to overrule default action
 		elgg_register_action("useradd", dirname(__FILE__) . "/actions/useradd.php", "admin");
@@ -132,6 +135,9 @@
 				break;
 			case "user_summary_control":
 				include(dirname(__FILE__) . "/pages/user_summary_control/preview.php");
+				return true;
+			case "terms":
+				include(dirname(__FILE__) . "/pages/terms.php");
 				return true;
 		}
 	}

@@ -125,7 +125,8 @@
 					}
 				}
 				
-				$fields_result .= "<br />";
+//AO: Abril 30, quitado espacio antes de campo institution en formulario de registro
+//                              $fields_result .= "<br />";
 				$fields_result .= "<div" . $class . ">";
 /*AO: Abril 23, label de institution en formulario de registro*/
 //				$fields_result .= "<label>" . $field->getTitle() . "</label>";
