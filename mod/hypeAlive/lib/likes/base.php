@@ -17,7 +17,8 @@ function hj_alive_view_likes_list($params) {
         $text_people_one = elgg_echo('hj:alive:comments:lang:peopleone');
         $text_likethis = elgg_echo('hj:alive:comments:lang:likethis');
         $text_likesthis = elgg_echo('hj:alive:comments:lang:likesthis');
-
+        $text_likethisone = elgg_echo('hj:alive:comments:lang:likethisone');
+        
         $user = elgg_get_logged_in_user_entity();
 
         foreach ($likes as $like) {
@@ -47,7 +48,7 @@ function hj_alive_view_likes_list($params) {
         }
         $link_post = '</a>';
         if (!empty($str_owner) && $others == 0) {
-            $string = $str_owner . $text_likethis;
+            $string = $str_owner . $text_likethisone;
         } else if (!empty($str_owner) && $others == 1) {
             $likes_short = "$link_pre $others $text_others_one $link_post";
             $string = "$str_owner $text_and $likes_short $text_likethis";

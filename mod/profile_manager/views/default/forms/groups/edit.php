@@ -285,10 +285,15 @@ if (count($group_fields["fields"]) > 0) {
             echo "<div>";
         }
 
+        if($valtype == "radio" && $metadata_name == "PoliciesDropdown"){    //po5i: politicas
+            $js = 'onClick="ProposalShowHide(this.value)";';
+        }
+
         echo elgg_view("input/{$valtype}", array(
             'name' => $metadata_name,
             'value' => $value,
             'options' => $options,
+            'js' => $js,    //po5i
         ));
 
         if ($valtype == "dropdown") {
@@ -306,6 +311,22 @@ if (count($group_fields["fields"]) > 0) {
             <h3><?php echo elgg_echo('latin:field:policies:title') ?></h3>
             <a href='<?php echo elgg_echo('latin:field:policies:link') ?>' target='_blank'><?php echo elgg_echo('au_subgroups:policies:link') ?></a>
         </div></div>
+
+        <!-- función para ocultar o mostrar el adjuntar la propuesta si acepta o no las politicas -->
+        <script>
+        function ProposalShowHide(val){
+            if(val == "yes"){
+                //$('[name="Proposal"]').show();
+                $('[name="Proposal"]').animate({opacity: 1.0}, 100).fadeIn('slow', function() { $(this).show(); });
+            }
+            if(val == "no"){
+                //$('[name="Proposal"]').hide();
+                $('[name="Proposal"]').animate({opacity: 1.0}, 100).fadeOut('slow', function() { $(this).hide(); });
+
+            }
+        }
+        $('[name="Proposal"]').hide();
+        </script>
         <?    
     }
 

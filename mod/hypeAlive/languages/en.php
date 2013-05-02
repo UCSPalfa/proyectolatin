@@ -22,7 +22,7 @@ $english = array(
     'hj:alive:comments:lang:peopleone' => 'person ',
     'hj:alive:comments:lang:likethis' => 'like this',
     'hj:alive:comments:lang:likesthis' => 'likes this',
-
+	'hj:alive:comments:lang:likethisone' => 'like this',
 
     'hj:alive:comments:count' => 'comments',
     'hj:alive:comments:comments' => 'comments',

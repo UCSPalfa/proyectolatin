@@ -14,7 +14,7 @@ $spanish = array(
     'hj:comment:commenton' => 'Comentar sobre %s',
     'hj:alive:comments:valuecantbeblank' => 'El comentario no puede estar vacío',
 
-    'hj:alive:comments:lang:you' => 'Usted ',
+    'hj:alive:comments:lang:you' => 'A ti ',
     'hj:alive:comments:lang:and' => 'y ',
     'hj:alive:comments:lang:others' => 'otras personas ',
     'hj:alive:comments:lang:othersone' => 'otra persona ',
@@ -22,7 +22,7 @@ $spanish = array(
     'hj:alive:comments:lang:peopleone' => 'persona ',
     'hj:alive:comments:lang:likethis' => 'les gusta esto',
     'hj:alive:comments:lang:likesthis' => 'le gusta esto',
-
+	'hj:alive:comments:lang:likethisone' => 'te gusta esto',
 
     'hj:alive:comments:count' => 'comentarios',
     'hj:alive:comments:comments' => 'comentarios',

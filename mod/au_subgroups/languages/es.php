@@ -82,8 +82,8 @@ automáticamente se unirá como miembro de la nueva Comunidad padre.
 Haga clic a continuación para ver sus invitaciones:
 
 %s",
-		'au_subgroups:invitations' => 'Invitations a Grupos de Escritura',
-		'au_subgroups:invitations:pending' => 'Invitations a Grupos de Escritura (%s)',
+		'au_subgroups:invitations' => 'Invitaciones a Grupos de Escritura',
+		'au_subgroups:invitations:pending' => 'Invitaciones a Grupos de Escritura (%s)',
 		'au_subgroups:invitations:selecttoinvite' => "Para encontrar una persona, escriba una o más palabras. Si desea agregar a alguien que no es miembro de la red, escriba su dirección de correo electrónico y luego presione la tecla TAB.",
 		'wgroups:invite:body' => "Hola %s,
 		
