@@ -65,7 +65,9 @@ add_translation('en', array(
         'main:title:legal' => "Legal",
         'main:legal:alfa' => "LATIn Project (DCI-ALA/19.09.01/11/21526/279-155/ALFA III(2011)-52)",
 	'main:legal:fund' => "Funded by the ALFA Program, an initiative of EuropeAid",
-	'main:legal:copy' => "&copy; Copyright LATIn, 2013 | Terms & Conditions",
+	'main:legal:copy' => "&copy; Copyright LATIn, 2013",
+	'main:legal:cond' => "Terms",
+	'main:legal:priv' => "Privacy",
 	'main:legal:elgg' => "Built on Elgg",
         /* AO*/
 	

@@ -414,21 +414,36 @@
 
                 //AO: Abril 30, términos
                 'profile_manager:terms' => "Terms",
-                'profile_manager:p1' => "If you use the community.latinproject.org service you agree to be bound by the following terms and conditions ('Terms of Use').",
-                'profile_manager:p2' => "<ol><li>You are responsible for any activity that occurs under your screen name.</li>
+                'profile_manager:t1' => "Basic terms",
+                'profile_manager:t2' => "General conditions",
+                'profile_manager:p1' => "If you use the comunidad.proyectolatin.org service you agree to be bound by the following terms and conditions ('Terms of Use').",
+                'profile_manager:l1' => "<ol><li>You are responsible for any activity that occurs under your screen name.</li>
                 <li>You are responsible for keeping your password secure.</li>
-                <li>You must not abuse, harass, threaten, impersonate or intimidate other community.latinproject.org users.</li>
-                <li>You may not use the community.latinproject.org service for any illegal or unauthorized purpose. International users agree to comply with all local laws regarding online conduct and acceptable content.</li>
-                <li>You are solely responsible for your conduct and any data, text, information, screen names, graphics, photos, profiles, audio and video clips, links ('Content') that you submit, post, and display on the community.latinproject.org service.</li>
-                <li>community.latinproject.org is intended for personal use, not a business solution. Professional or corporate uses of community.elgg.org are at your own risk.</li>
-                <li>You must not modify, adapt or hack community.latinproject.org or modify another website so as to falsely imply that it is associated with community.latinproject.org.</li>
-                <li>You must not create or submit unwanted email or advertisements to community.latinproject.org or any of its members ('Spam').</li>
+                <li>You must not abuse, harass, threaten, impersonate or intimidate other comunidad.proyectolatin.org users.</li>
+                <li>You may not use the comunidad.proyectolatin.org service for any illegal or unauthorized purpose. International users agree to comply with all local laws regarding online conduct and acceptable content.</li>
+                <li>You are solely responsible for your conduct and any data, text, information, screen names, graphics, photos, profiles, audio and video clips, links ('Content') that you submit, post, and display on the comunidad.proyectolatin.org service.</li>
+                <li>comunidad.proyectolatin.org is intended for personal use, not a business solution. Professional or corporate uses of community.elgg.org are at your own risk.</li>
+                <li>You must not modify, adapt or hack comunidad.proyectolatin.org or modify another website so as to falsely imply that it is associated with comunidad.proyectolatin.org.</li>
+                <li>You must not create or submit unwanted email or advertisements to comunidad.proyectolatin.org or any of its members ('Spam').</li>
                 <li>You must not transmit any worms or viruses or any code of a destructive nature.</li>
-                <li>You must not, in the use of community.latinproject.org, violate any laws in your jurisdiction (including but not limited to copyright laws).</li>
-                <li>Any loss of data is not the responsibility of community.latinproject.org. Use of this service is at your own risk.</li>
+                <li>You must not, in the use of comunidad.proyectolatin.org, violate any laws in your jurisdiction (including but not limited to copyright laws).</li>
+                <li>Any loss of data is not the responsibility of comunidad.proyectolatin.org. Use of this service is at your own risk.</li>
                 </ol>",
-
-	
+                'profile_manager:p2' => "Violation of any of these agreements will result in the termination of your comunidad.proyectolatin.org account. While comunidad.proyectolatin.org prohibits such conduct and content on its site, you understand and agree that comunidad.proyectolatin.org cannot be responsible for the Content posted on its web site and, despite our best efforts, may be exposed to such materials and that you use the comunidad.proyectolatin.org service at your own risk.",
+		'profile_manager:l2' => "<ul>
+		<li>We reserve the right to modify or terminate the comunidad.proyectolatin.org service for any reason, with notice you at time.</li>
+		<li>We reserve the right to alter these Terms of Use at any time. If the alterations constitute a material change to the Terms of Use, we will notify you via an appropriate method. What is a 'material change' is at our discretion.</li>
+		<li>We reserve the right to reclaim usernames on behalf of businesses or individuals that hold legal claim or trademark on those usernames.</li>
+		</ul>",
+                'profile_manager:t3' => "Advertising",
+		'profile_manager:l3' => "<ul>
+		<li>Advertising goods or services is forbidden on the community site.</li>
+		<li>Users failing to adhere to this term will be banned and the offending content deleted at our discretion, with or without notification.</li>
+		</ul>",
+                'profile_manager:t4' => "Copyright (What's Yours is Yours)",
+                'profile_manager:p3' => "We claim no intellectual property rights over any material you provide/upload or contribute to the comunidad.proyectolatin.org service.<p>If you have any questions email contacto@latinproject.org</p>",
+		'profile_manager:priv' => "Privacy",
+		'profile_manager:priv:p1' => "You own your content. LATIn project is not responsible for content posted to this site by other parties.",
 	);
 	
 	add_translation("en", $english);

@@ -8,8 +8,16 @@ $content = elgg_view_title($title);
 
 
 $content .= "<div class='terms'>";
-$content .= "<p class='first'>" . elgg_echo('profile_manager:p1') . "</p>";
-$content .= elgg_echo('profile_manager:p2');
+$content .= "<h3>" . elgg_echo('profile_manager:t1') . "</h3>";
+$content .= "<p class='parr'>" . elgg_echo('profile_manager:p1') . "</p>";
+$content .= elgg_echo('profile_manager:l1');
+$content .= "<p>" . elgg_echo('profile_manager:p2') . "</p>";
+$content .= "<h3>" . elgg_echo('profile_manager:t2') . "</h3>";
+$content .= elgg_echo('profile_manager:l2');
+$content .= "<h3>" . elgg_echo('profile_manager:t3') . "</h3>";
+$content .= elgg_echo('profile_manager:l3');
+$content .= "<h3>" . elgg_echo('profile_manager:t4') . "</h3>";
+$content .= "<p class='parr'>" . elgg_echo('profile_manager:p3') . "</p>";
 $content .= "</div>";
 
 

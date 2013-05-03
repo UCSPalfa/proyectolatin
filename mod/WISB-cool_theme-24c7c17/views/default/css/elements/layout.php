@@ -27,7 +27,9 @@ html, body {
 }
 /* AO: Abril 25, cambios para que la página inicial se redimensione sin problemas*/
 .elgg-page-body {
-    padding: 10px 80px;
+/* AO: Mayo 2
+    padding: 10px 80px; */
+    padding: 30px;
 }
 /* <style>*/
 /* ***************************************
@@ -183,12 +185,14 @@ html, body {
     position: relative;
     bottom: 0;
     width: 100%;
-/*    height: 80px;*/
+/*  height: 80px;*/
 /*AO: Abril 29, página principal*/
     height: 110px;
     left: 0;
     margin:0;
-    padding:0;
+/*AO: Mayo 2, página principal
+    padding:0; */
+    padding: 20px 0 0 0;
 }
 
 .elgg-page-footer {
@@ -203,13 +207,13 @@ html, body {
 .footer_izq {
 /*AO: Abril 29, página principal*/
 /*    width: 200px;*/
-    width: 260px;
+    width: 200px;
     float: left;
 }
 
 .footer_der {
     margin-left: 0;
-    width: 350px;
+    width: 400px;
     float: right;
 }
 
@@ -450,4 +454,27 @@ hr.registerBreak {
 .legal{
     width: 100%;
     clear: both;
+}
+
+.footer_der ul{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+
+.footer_der ul li{ 
+	display: inline;
+}
+
+.footer_der ul li a{
+	padding-left: 5px;
+}
+
+.footer_der ul li::after{
+	content: "|";
+	padding: 0 .5em;
+}
+
+.footer_der ul li:last-child::after{
+	display: none;
 }

@@ -256,14 +256,37 @@ input[type=checkbox] {
 .terms{
         margin-top: 30px;
         color : #000;
+	font-size: 13px;
 }
 
-.terms .first{
+.terms h3{
+	font-size: 14px;
+        color : #000;
+	margin-bottom: 15px;
+}
+
+.terms .parr{
         font-weight: bold;
 }
 
 .terms ol{
         list-style-type: decimal;
-        padding-left: 1.5em;
+        padding-left: 25px;
         margin: 0 1.5em 1.5em 0;
+}
+
+.terms ol li{
+	margin-top: 0.5em;
+}
+
+.terms ul{
+	list-style-type: square;
+        padding-left: 25px;
+        margin: 0 1.5em 1.5em 0;
+}
+
+.terms ul li{
+	display: list-item;
+	text-align: -webkit-match-parent;
+	margin-top: 0.5em;
 }

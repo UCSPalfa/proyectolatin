@@ -414,7 +414,36 @@
 
                 //AO: Abril 30, términos
                 'profile_manager:terms' => "Condiciones",
-
+                'profile_manager:t1' => "Términos básicos",
+                'profile_manager:t2' => "Condiciones generales",
+                'profile_manager:p1' => "Si utiliza el servicio comunidad.proyectolatin.org, usted acepta los siguientes términos y condiciones ('Términos de Uso') que rigen nuestra relación con todos aquellos que interactúan con comunidad.proyectolatin.org.",
+		'profile_manager:l1' => "<ol><li>Usted es responsable de cualquier actividad que ocurra bajo su nombre de usuario.</li>
+                <li>Usted es responsable de mantener su contraseña segura.</li>
+		<li>Usted no debe abusar, acosar, amenazar, intimidar o suplantar a otros usuarios de comunidad.proyectolatin.org.</li>
+		<li>Usted no puede usar el servicio comunidad.proyectolatin.org para ningún propósito ilegal o no autorizado. Los usuarios internacionales se comprometen a cumplir con todas las leyes locales sobre conducta y contenido aceptable.</li>
+		<li>Usted es el único responsable de su conducta y de cualquier dato, texto, información, nombres de pantalla, gráficos, fotos, perfiles, audio y video clips, enlaces (\"Contenido\") que usted envíe, publique y muestre en el servicio communidad.proyectolatin.org.</li>
+		<li>comunidad.proyectolatin.org es para uso personal, no es una solución de negocio. Los usos profesionales o empresariales de comunidad.proyectolatin.org corren se ejecutan su propio riesgo.</li>
+		<li>Usted no debe cambiar, adaptar o hackear comunidad.proyectolatin.org o modificar otro sitio web para indicar falsamente que está asociado con comunidad.proyectolatin.org.</li>
+		<li>Usted no debe crear o enviar correo electrónico no deseado o anuncios a comunidad.proyectolatin.org o cualquiera de sus miembros ('Spam').</li>
+		<li>Usted no debe transmitir ningún gusano, virus o cualquier código de naturaleza destructiva.</li>
+		<li>Usted no debe, en el uso de comunidad.proyectolatin.org, violar cualquier ley en su jurisdicción (incluyendo pero no limitado a las leyes de derechos de autor).</li>
+		<li>Cualquier pérdida de datos no es responsabilidad de comunidad.latinproject.org. El uso de este servicio es bajo su propio riesgo.</li>
+                </ol>",
+		'profile_manager:p2' => "La violación de cualquiera de estos acuerdos tendrá como resultado la cancelación de su cuenta en comunidad.proyectolatin.org. Mientras que comunidad.proyectolatin.org prohíbe dicha conducta y contenido en su sitio, usted entiende y acepta que comunidad.proyectolatin.org no puede ser responsable por el contenido publicado en su sitio web y, a pesar de nuestros mejores esfuerzos, puede estar expuesto a tales materiales. Usted utiliza el servicio comunity.proyectolatin.org bajo su propio riesgo.",
+                'profile_manager:l2' => "<ul>
+		<li>Nos reservamos el derecho de modificar o terminar el servicio de comunidad.proyectolatin.org por cualquier motivo, con previo aviso.</li>
+		<li>Nos reservamos el derecho de modificar estos Términos de Uso en cualquier momento. Si las modificaciones constituyen un cambio sustancial en las condiciones de uso, se lo notificaremos a través de un método apropiado. Dejamos a nuestro criterio lo que es un \"cambio sustancial\".</li>
+		<li>Nos reservamos el derecho de reclamar nombres de usuario en nombre de las empresas o individuos que tienen Derecho o marca comercial sobre esos nombres de usuario.</li>
+                </ul>",
+                'profile_manager:t3' => "Publicidad",
+                'profile_manager:l3' => "<ul>
+		<li>La publicidad de bienes o servicios está prohibida en el sitio de la comunidad.</li>
+		<li>Los usuarios que no cumplan con estas condiciones serán prohibidos y el contenido ofensivo será borrado a nuestra discreción, con o sin notificación.</li>
+                </ul>",
+		'profile_manager:t4' => "Derechos de autor (Lo que es suyo es suyo)",
+		'profile_manager:p3' => "No reclamamos los derechos de propiedad intelectual sobre cualquier material que usted proporcione/suba o contribuya al servicio de comunidad.latinproject.org.<p>Si tiene alguna pregunta, escríbanos a contacto@latinproject.org</p>",
+		'profile_manager:priv' => "Privacidad",
+		'profile_manager:priv:p1' => "Usted es dueño de su contenido. El proyecto LATIn no es responsable del contenido publicado en este sitio por otras partes.",
 	
 	);
 	

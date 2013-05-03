@@ -52,6 +52,7 @@
 		elgg_register_page_handler("profile_manager", "profile_manager_page_handler");
 		//AO: Abril 30, añadida página para términos y condiciones
 		elgg_register_page_handler("terms", "profile_manager_page_handler");
+		elgg_register_page_handler("privacy", "profile_manager_page_handler");
 
 		
 		// admin user add, registered here to overrule default action
@@ -139,6 +140,9 @@
 			case "terms":
 				include(dirname(__FILE__) . "/pages/terms.php");
 				return true;
+			case "privacy":
+                                include(dirname(__FILE__) . "/pages/privacy.php");
+                                return true;
 		}
 	}
 	
