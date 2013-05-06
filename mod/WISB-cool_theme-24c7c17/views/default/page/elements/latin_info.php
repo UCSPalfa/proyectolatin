@@ -7,7 +7,7 @@
  */
 echo "<div class=\"bloque_vd\">";
 
-echo "<h1 style='text-align:center; font-weight: bold; margin-bottom: 50px'>";
+echo "<h1 style='text-align:center; font-weight: bold; margin-bottom: 70px'>";
 echo elgg_echo("latin:site:name");
 echo "</h1>";
 echo "<p>";
