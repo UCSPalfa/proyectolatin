@@ -248,7 +248,8 @@ html, body {
 .bloque_vd h1 {
     color: #000000;
     font-family: Arial, sans-serif;
-    font-size: 2.8em;
+/*AO: Mayo 6, modificado tamaño de letra*/
+    font-size: 22px;
     font-weight: normal;
     line-height: 1.4em;
 }
@@ -490,6 +491,7 @@ hr.registerBreak {
 .bloque_t1 ul li{
 	background-image: url(<?php echo $url; ?>_graphics/next.png);
 	background-repeat: no-repeat;
+	background-size: 24px;
 	background-position: top left;
 	margin: 15px 0;
 	height: 48px;
