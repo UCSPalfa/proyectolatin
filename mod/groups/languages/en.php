@@ -258,6 +258,7 @@ View and reply to the discussion:
 
 	'groups:privategroup' => 'This community is closed. Requesting membership.',
 	'groups:notitle' => 'Communities must have a title',
+	'writing:groups:notitle' => 'Writing Groups must have a title',
 	'groups:cantjoin' => 'Can not join community',
         'writing:groups:cantjoin' => 'Can not join Writing group',
 	'groups:cantleave' => 'Could not leave community',

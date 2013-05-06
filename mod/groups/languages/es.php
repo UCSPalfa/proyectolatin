@@ -258,6 +258,7 @@ Ver y responder a la discusión:
 
 	'groups:privategroup' => 'Esta comunidad es cerrada. Solicitando membresía.',
 	'groups:notitle' => 'Las Comunidades deben tener un título',
+	'writing:groups:notitle' => 'Los grupos de escritura deben tener un título',
 	'groups:cantjoin' => 'No se puede unir a la Comunidad',
 	'writing:groups:cantjoin' => 'No se puede unir al Grupo de Escritura',
 	'groups:cantleave' => 'No se puede abandonar la Comunidad',
