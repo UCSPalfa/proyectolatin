@@ -9,21 +9,29 @@
 $english = array(
     
     
-        'latin:site:name' => "The LATIn Network",
+/*AO: Mayo 4, cambio en label */
+        'latin:site:name' => "Collaborative Network for Creating Open Textbooks",
     	'books:communities' => 'Books written whitin this community',
     	'books:user' => 'This user collaborates in these books',
     	'search:communities' => 'Search for communities',
         'view:all' => "View all",
         'popular:communities' => "Most Popular",
-        'latin:communities' => "LATIn Communities",
+/*AO: Mayo 4, cambio en label */
+        'latin:communities' => "Thematic Communities",
         'latin:invitation' => "Would you like to collaborate and share your ideas with people from all around the world?",
         'latin:login_reister' => "Login or register",
         'latin:login' => "Login",
         'latin:or' => "or",
         'latin:register' => "Register",
         'latin:now' => "now",
-        
-    
+/*AO: Mayo 4, traducciones añadidas */
+        'latin:participate' => "Get $1200 to Finance your Book",
+	'latin:steps' => "<ul>
+	<li>Register</li>
+	<li>Create/Join a community</li>
+	<li>Create/Join a writing group and participate</li>
+	</ul>",
+	'contest:info' => "Contest rules",
     
     
 /**

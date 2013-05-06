@@ -177,7 +177,7 @@ margin-top: 18px;
 
 .bottonRight {
 float: right;
-margin-top: 30px;
+margin-top: 35px;
 margin-right: 5px;
 color: rgb(0, 61, 121);
 }

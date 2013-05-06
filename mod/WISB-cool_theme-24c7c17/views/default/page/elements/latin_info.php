@@ -7,7 +7,7 @@
  */
 echo "<div class=\"bloque_vd\">";
 
-echo "<h1 style='text-align:right; font-weight: bold;'>";
+echo "<h1 style='text-align:center; font-weight: bold; margin-bottom: 50px'>";
 echo elgg_echo("latin:site:name");
 echo "</h1>";
 echo "<p>";
@@ -70,14 +70,13 @@ echo "<br />";
 
 echo $content;
 
-
 echo "<h3>";
 echo elgg_view('output/url', array(
     'text' => elgg_echo("view:all"),
     'value' => '/groups',
     'class' => 'bottonRight',
 ));
-echo "<h3>";
+echo "</h3>";
 
 echo "<p>";
 echo elgg_echo("");
@@ -87,9 +86,15 @@ echo "</div>";
 
 echo "<div class=\"bloque_t1\">";
 echo "<h2>";
-echo elgg_echo("Participate");
+echo elgg_echo("latin:participate");
 echo "</h2>";
-echo "<p>";
-echo elgg_echo("");
-echo "</p>";
+echo "<div class=\"contenido\">";
+echo elgg_echo("latin:steps");
+echo "<h3>";
+echo elgg_view('output/url', array(
+    'text' => elgg_echo("contest:info"),
+    'value' => '/',
+));
+echo "</h3>";
+echo "</div>";
 echo "</div>";

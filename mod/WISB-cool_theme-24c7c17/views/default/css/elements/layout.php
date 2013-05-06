@@ -478,3 +478,36 @@ hr.registerBreak {
 .footer_der ul li:last-child::after{
 	display: none;
 }
+
+/*AO: Mayo 4, estilos añadidos */
+
+.bloque_t1 ul{
+	list-style-type: none;
+	padding: 0;
+	margin-top: 30px;
+}
+
+.bloque_t1 ul li{
+	background-image: url(<?php echo $url; ?>_graphics/next.png);
+	background-repeat: no-repeat;
+	background-position: top left;
+	margin: 15px 0;
+	height: 48px;
+	padding-left: 35px;
+	font-weight: bold;
+	font-size: 16px;
+	color: #000;
+}
+
+.bloque_t1 .contenido{
+    margin: 0 auto;
+    width: 90%;
+}
+
+
+.bloque_t1 a{
+	position: absolute;
+	bottom: 15px;
+	right: 30px;
+	color: rgb(0, 61, 121);
+}

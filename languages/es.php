@@ -8,19 +8,30 @@
 
 $spanish = array(
 
-        'latin:site:name' => "La Red LATIn",
+/*AO: Mayo 4, cambio en label */
+        'latin:site:name' => "Red Colaborativa para la Creación de Libros de Texto Abiertos",
         'books:communities' => 'Libros escritos en esta comunidad',
         'books:user' => 'Este usuario colabora en estos libros',
         'search:communities' => 'Buscar comunidades',
         'view:all' => "Ver todas",
         'popular:communities' => "Las más populares",
-        'latin:communities' => "Comunidades en LATIn",
+/*AO: Mayo 4, cambio en label */
+        'latin:communities' => "Comunidades Temáticas",
         'latin:invitation' => "¿Le gustaría colaborar y compartir sus ideas con personas de todo el mundo?",
         'latin:login_reister' => "Inicie sesión o regístrese",
         'latin:login' => "Inicie sesión",
         'latin:or' => "o",
         'latin:register' => "Registrarse",
         'latin:now' => "ahora",
+/*AO: Mayo 4, traducciones añadidas */
+        'latin:participate' => "Obtenga $1200 para Financiar su Libro",
+        'latin:steps' => "<ul>
+        <li>Regístrese</li>
+        <li>Cree/Únase a una comunidad</li>
+        <li>Cree/Únase a un grupo de escritura y participe</li>
+        </ul>",
+        'contest:info' => "Reglas del concurso",
+
 
 
 
