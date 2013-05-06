@@ -268,6 +268,8 @@ if (count($group_fields["fields"]) > 0) {
             $line_break = '';
         }
         $mandatory = $field->mandatory == "yes" ? 'mandatory' : ''; //po5i
+        if($metadata_name == "Proposal")    //po5i: propuesta
+            $mandatory .= " proposal_showhide";
         echo '<div class="elgg-module  elgg-module-info"><div class="elgg-head '.$mandatory.'">';        
         echo "<h3>" . elgg_echo($title) . "</h3>";        //po5i: multilang support
 
@@ -317,15 +319,18 @@ if (count($group_fields["fields"]) > 0) {
         function ProposalShowHide(val){
             if(val == "yes"){
                 //$('[name="Proposal"]').show();
-                $('[name="Proposal"]').animate({opacity: 1.0}, 100).fadeIn('slow', function() { $(this).show(); });
+                //$('[name="Proposal"]').animate({opacity: 1.0}, 100).fadeIn('slow', function() { $(this).show(); });
+                $('.proposal_showhide').animate({opacity: 1.0}, 100).fadeIn('slow', function() { $(this).show(); });
             }
             if(val == "no"){
                 //$('[name="Proposal"]').hide();
-                $('[name="Proposal"]').animate({opacity: 1.0}, 100).fadeOut('slow', function() { $(this).hide(); });
+                //$('[name="Proposal"]').animate({opacity: 1.0}, 100).fadeOut('slow', function() { $(this).hide(); });
+                $('.proposal_showhide').animate({opacity: 1.0}, 100).fadeOut('slow', function() { $(this).hide(); });
 
             }
         }
-        $('[name="Proposal"]').hide();
+        //$('[name="Proposal"]').hide();
+        $('.proposal_showhide').hide();
         </script>
         <?    
     }

@@ -82,9 +82,16 @@ if (sizeof($input) > 0) {
 
 // Validate create
 if (!$group->name) {
-	register_error(elgg_echo("groups:notitle"));
+	if (isSubgroup($group)) {
+	    register_error(elgg_echo("writing:groups:notitle"));
+	} else {
+	    register_error(elgg_echo("groups:notitle"));
+	}
+	
 	forward(REFERER);
 }
+//var_dump($group);
+//die;
 
 //po5i: validar que el nombre existe al guardar:
 //se tuvo que usar un nuevo hook para buscar solo por nombre
