@@ -93,7 +93,7 @@ echo elgg_echo("latin:steps");
 echo "<h3>";
 echo elgg_view('output/url', array(
     'text' => elgg_echo("contest:info"),
-    'value' => '/',
+    'value' => 'profile_manager/contestrules',
 ));
 echo "</h3>";
 echo "</div>";
