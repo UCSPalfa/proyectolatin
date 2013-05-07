@@ -24,7 +24,7 @@ $spanish = array(
         'latin:register' => "Registrarse",
         'latin:now' => "ahora",
 /*AO: Mayo 4, traducciones añadidas */
-        'latin:participate' => "Gana €1200 para Financiar su Libro",
+        'latin:participate' => "Gane €1200 para Financiar su Libro",
         'latin:steps' => "<ul>
         <li>Regístrese</li>
         <li>Cree/Únase a una comunidad</li>
