@@ -25,10 +25,12 @@
 		'latin:field:proposal' => 'Propuesta del contenido',
 		'latin:field:booktitle' => 'Título del Libro',
 		'latin:field:description' => 'Descripción del grupo',
-		'latin:field:policies' => '¿Acepta usted las políticas?',
-		'latin:field:policies:title' => 'Link de las políticas',
+		'latin:field:policies' => '¿Acepta usted las reglas del concurso?',
+		'latin:field:policies:title' => 'Reglas del concurso',
 		'latin:field:policies:link' => 'profile_manager/contestrules',
-		'latin:field:policies:linkdesc' => 'Haga clic aquí para ir a la página de las políticas.',
+		'latin:field:policies:linkdesc1' => 'Al aceptar las ',
+		'latin:field:policies:linkdesc2' => 'reglas del concurso ',
+		'latin:field:policies:linkdesc3' => 'usted está de acuerdo con nuestras condiciones y automáticamente participa en la convocatoria de la creación colaborativa de libros de texto abierto.',
 
 		// entity names
 		'item:object:custom_profile_field' => 'Campo de perfil personalizado',

@@ -513,3 +513,8 @@ hr.registerBreak {
 	right: 30px;
 	color: rgb(0, 61, 121);
 }
+
+.link_cr{
+        color: rgb(0, 61, 121);
+	font-weight: bold;
+}

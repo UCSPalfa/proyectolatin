@@ -310,13 +310,12 @@ if (count($group_fields["fields"]) > 0) {
     if ($is_subgroup and ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgroups_edition')) {
         ?>
         <div class="elgg-module  elgg-module-info"><div class="elgg-head">
-            <h3><?php echo elgg_echo('latin:field:policies:title') ?></h3>
-            <!--a href='/<?php echo elgg_echo('latin:field:policies:link') ?>' target='_blank'><?php echo elgg_echo('latin:field:policies:link') ?></a-->
-            <?php echo elgg_view('output/url', array(
+            <p style="font-size: 12px"><?php echo elgg_echo('latin:field:policies:linkdesc1') .  elgg_view('output/url', array(
                                                         'href' => elgg_echo('latin:field:policies:link'),
-                                                        'text' => elgg_echo('latin:field:policies:linkdesc'),
+                                                        'text' => elgg_echo('latin:field:policies:linkdesc2'),
                                                         'is_trusted' => true,
-                                                    ));?>
+							'class' => "link_cr",
+                                                    )) . elgg_echo('latin:field:policies:linkdesc3')?></p>
         </div></div>
 
         <!-- función para ocultar o mostrar el adjuntar la propuesta si acepta o no las politicas -->
