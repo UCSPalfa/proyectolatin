@@ -62,7 +62,7 @@ add_translation('es', array(
     
         /* AO: Abril 25, añadidas traducciones*/
         'main:title:contact' => "Contacto",
-        'main:contact:email' => "contacto (@) proyectolatin (.) org",
+        'main:contact:email' => "contacto (@) latinproject (.) org",
         'main:title:legal' => "Legal",
 	'main:legal:alfa' => "Proyecto LATIn (DCI-ALA/19.09.01/11/21526/279-155/ALFA III(2011)-52)",
 	'main:legal:fund' => "Financiado por el Programa ALFA, una iniciativa de EuropeAid",
