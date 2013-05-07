@@ -257,7 +257,7 @@ Ver y responder a la discusión:
 
 
 	'groups:privategroup' => 'Esta comunidad es cerrada. Solicitando membresía.',
-	'groups:notitle' => 'Las comunidades deben tener un título',
+	'groups:notitle' => 'Las comunidades deben tener un nombre',
 	'writing:groups:notitle' => 'Los grupos de escritura deben tener un nombre',
 	'writing:groups:nobooktitle' => 'Los grupos de escritura deben tener un título de libro',
 	'writing:groups:nopoliciesaccept' => 'Debe aceptar o rechazar las políticas',
