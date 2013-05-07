@@ -787,3 +787,7 @@ text-align: center;
 div.miniGridGroup div a div.au_subgroups_group_icon img {
     border: 1px solid black;
 }
+
+.elgg-input-radios {
+padding-top: 4px;
+}
