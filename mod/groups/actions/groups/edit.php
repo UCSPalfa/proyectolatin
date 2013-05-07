@@ -270,21 +270,22 @@ if ($must_move_icons) {
 $user_list = get_input('as_values_rcpt');		//autocompletar v.2
 if (!empty($user_list)) {
 	$user_guid = explode(",",$user_list);
-}
+	foreach ($user_guid as $uid) {
+		$u_id = trim($uid);
+		if (is_numeric($u_id)){
+			$user = get_entity($u_id);
 
-foreach ($user_guid as $uid) {
-	$u_id = trim($uid);
-	if (is_numeric($u_id)){
-		$user = get_entity($u_id);
-
-		if (!check_entity_relationship($user->guid, 'member', $group->guid)) {
-			add_entity_relationship($user->guid, 'member', $group->guid);
-			system_message(elgg_echo('groups:members:added', array($user->name, $group->name)));
-		} else {
-			register_error(elgg_echo('groups:members:add:error', array($user->name, $group->name)));
+			if (!check_entity_relationship($user->guid, 'member', $group->guid)) {
+				add_entity_relationship($user->guid, 'member', $group->guid);
+				system_message(elgg_echo('groups:members:added', array($user->name, $group->name)));
+			} else {
+				register_error(elgg_echo('groups:members:add:error', array($user->name, $group->name)));
+			}
 		}
 	}
 }
+
+
 ///////////////////////////////////////////////////////////////
 
 if (isSubgroup($group)) {

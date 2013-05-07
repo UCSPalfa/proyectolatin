@@ -27,7 +27,8 @@
 		'latin:field:description' => 'Descripción del grupo',
 		'latin:field:policies' => '¿Acepta usted las políticas?',
 		'latin:field:policies:title' => 'Link de las políticas',
-		'latin:field:policies:link' => 'https://www.google.com',
+		'latin:field:policies:link' => 'profile_manager/contestrules',
+		'latin:field:policies:linkdesc' => 'Haga clic aquí para ir a la página de las políticas.',
 
 		// entity names
 		'item:object:custom_profile_field' => 'Campo de perfil personalizado',

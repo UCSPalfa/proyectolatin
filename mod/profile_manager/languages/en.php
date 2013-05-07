@@ -27,7 +27,8 @@
 		'latin:field:description' => 'Description of the group',
 		'latin:field:policies' => 'Do you accept the policies?',
 		'latin:field:policies:title' => 'Policies Link',
-		'latin:field:policies:link' => 'https://www.google.com',
+		'latin:field:policies:link' => 'profile_manager/contestrules',
+		'latin:field:policies:linkdesc' => 'Click here to go to the page with the contest rules.',		
 
 		// entity names
 		'item:object:custom_profile_field' => 'Custom Profile Field',

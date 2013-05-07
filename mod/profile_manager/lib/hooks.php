@@ -290,8 +290,21 @@
 		    	//$entity->subgroups_only si el tipo del campo es subgrupo.
 		    	
 				if(empty($passed_value) && (($is_subgroup && $entity->subgroups_only == "yes") || (!$is_subgroup && $entity->subgroups_only == "no")) ){		//validación
-					register_error(elgg_echo("profile_manager:register_pre_check:missing", array(elgg_echo($entity->getTitle()))));
-					forward(REFERER);
+					if ($entity->metadata_name == "Proposal"){
+						if(get_input('PoliciesDropdown') == "yes"){
+							if ($entity->metadata_type == "file"){
+								if(!file_exists($_FILES[$entity->metadata_name]['tmp_name']) && !is_uploaded_file($_FILES[$entity->metadata_name]['tmp_name'])){
+									register_error(elgg_echo("profile_manager:register_pre_check:missing", array(elgg_echo($entity->getTitle()))));
+									forward(REFERER);
+								}
+							}
+						}
+					}
+					else{
+						register_error(elgg_echo("profile_manager:register_pre_check:missing", array(elgg_echo($entity->getTitle()))));
+						forward(REFERER);
+					}
+						
 				}
 		    }
 		}
