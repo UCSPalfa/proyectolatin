@@ -258,22 +258,20 @@
 	 * @return unknown_type
 	 */
 	function profile_manager_action_group_edit_hook($hook_name, $entity_type, $return_value, $parameters){
-		/*elgg_make_sticky_form('group/edit');
-		
-		// new
-		$profile_type_guid = get_input("custom_profile_fields_custom_profile_type", false);
-		$fields = profile_manager_get_categorized_fields($user, true, true, true, $profile_type_guid);
+		elgg_make_sticky_form('groups');
+
+		$is_subgroup = (boolean)get_input('is_subgroup');
+
+		$fields = profile_manager_get_categorized_group_fields();
 		$required_fields = array();
-			
-		if(!empty($fields["categories"])){
-			foreach($fields["categories"] as $cat_guid => $cat){
-				$cat_fields = $fields["fields"][$cat_guid]; 
+		
+		if(!empty($fields)){
+				$cat_fields = $fields["fields"]; 
 				foreach($cat_fields as $field){
-					if($field->show_on_register == "yes" && $field->admin_only != "yes" && $field->mandatory == "yes"){
+					if($field->mandatory == "yes"){
 						$required_fields[] = $field;
 					}
 				}
-			}
 		}
 		
 		if($required_fields){
@@ -281,22 +279,24 @@
 		    $custom_profile_fields = array();
 		    
 		    foreach($_POST as $key => $value){
-		    	if(strpos($key, "custom_profile_fields_") == 0){
-		    		$key = substr($key, 22);
 		    		$custom_profile_fields[$key] = $value;
-		    	}
 		    }
 		    
 		    foreach($required_fields as $entity){
 		    	
 		    	$passed_value = $custom_profile_fields[$entity->metadata_name];
+
+		    	//$is_subgroup si el formulario es subgrupo
+		    	//$entity->subgroups_only si el tipo del campo es subgrupo.
 		    	
-				if(empty($passed_value)){
-					register_error(elgg_echo("profile_manager:register_pre_check:missing", array($entity->getTitle())));
-					forward(REFERER);					
+				if(empty($passed_value) && (($is_subgroup && $entity->subgroups_only == "yes") || (!$is_subgroup && $entity->subgroups_only == "no")) ){		//validación
+					register_error(elgg_echo("profile_manager:register_pre_check:missing", array(elgg_echo($entity->getTitle()))));
+					forward(REFERER);
 				}
 		    }
-		}*/
+		}
+
+		//die;
 	}
 
 	/**

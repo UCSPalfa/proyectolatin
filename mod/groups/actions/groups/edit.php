@@ -4,7 +4,6 @@
  *
  * @package ElggGroups
  */
-
 elgg_make_sticky_form('groups');
 
 /**
@@ -80,16 +79,22 @@ if (sizeof($input) > 0) {
 	}
 }
 
-// Validate create
-if (!$group->name) {
-	if (isSubgroup($group)) {
-	    register_error(elgg_echo("writing:groups:notitle"));
-	} else {
-	    register_error(elgg_echo("groups:notitle"));
+// Validate create (po5i)
+$is_subgroup = (boolean)get_input('is_subgroup');
+if ($is_subgroup) {
+	if (!$group->name) {
+    	register_error(elgg_echo("writing:groups:notitle"));
+    	forward(REFERER);
 	}
-	
-	forward(REFERER);
+
+} else {
+    if (!$group->name) {
+    	register_error(elgg_echo("groups:notitle"));
+    	forward(REFERER);
+	}
 }
+	
+	
 //var_dump($group);
 //die;
 

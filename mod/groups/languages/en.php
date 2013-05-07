@@ -258,7 +258,10 @@ View and reply to the discussion:
 
 	'groups:privategroup' => 'This community is closed. Requesting membership.',
 	'groups:notitle' => 'Communities must have a title',
-	'writing:groups:notitle' => 'Writing Groups must have a title',
+	'writing:groups:notitle' => 'Writing groups must have a title',
+	'writing:groups:nobooktitle' => 'Writing Groups must have a book title',
+	'writing:groups:nopoliciesaccept' => 'You must accept or decline the policies',
+	'writing:groups:noproposal' => 'You have to upload a file with the proposal',
 	'groups:cantjoin' => 'Can not join community',
         'writing:groups:cantjoin' => 'Can not join Writing group',
 	'groups:cantleave' => 'Could not leave community',
