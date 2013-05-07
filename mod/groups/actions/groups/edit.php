@@ -80,21 +80,12 @@ if (sizeof($input) > 0) {
 }
 
 // Validate create (po5i)
-
-if (!isSubgroup($group)) {
+$is_subgroup = (boolean)get_input('is_subgroup');
+if ($is_subgroup) {
 	if (!$group->name) {
     	register_error(elgg_echo("writing:groups:notitle"));
     	forward(REFERER);
 	}
-	//TODO: Comentado porque la funcion isSubgroup no puede diferenciar grupo y subgrupos en este escenario.
-	/*if (get_input("BookTitle") && !$group->BookTitle) {
-    	register_error(elgg_echo("writing:groups:nobooktitle"));
-    	forward(REFERER);
-	}
-	if (get_input("PoliciesDropdown") &&!$group->PoliciesDropdown) {
-    	register_error(elgg_echo("writing:groups:nopoliciesaccept"));
-    	forward(REFERER);
-	}*/
 
 } else {
     if (!$group->name) {

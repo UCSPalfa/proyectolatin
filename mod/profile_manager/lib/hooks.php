@@ -258,7 +258,9 @@
 	 * @return unknown_type
 	 */
 	function profile_manager_action_group_edit_hook($hook_name, $entity_type, $return_value, $parameters){
-		elgg_make_sticky_form('groups/edit');
+		elgg_make_sticky_form('groups');
+
+		$is_subgroup = (boolean)get_input('is_subgroup');
 
 		$fields = profile_manager_get_categorized_group_fields();
 		$required_fields = array();
@@ -277,19 +279,19 @@
 		    $custom_profile_fields = array();
 		    
 		    foreach($_POST as $key => $value){
-		    	//if(strpos($key, "custom_profile_fields_") == 0){
-		    		//$key = substr($key, 22);
 		    		$custom_profile_fields[$key] = $value;
-		    	//}
 		    }
 		    
 		    foreach($required_fields as $entity){
 		    	
 		    	$passed_value = $custom_profile_fields[$entity->metadata_name];
+
+		    	//$is_subgroup si el formulario es subgrupo
+		    	//$entity->subgroups_only si el tipo del campo es subgrupo.
 		    	
-				if(empty($passed_value)){		//validación
-					//register_error(elgg_echo("profile_manager:register_pre_check:missing", array(elgg_echo($entity->getTitle()))));
-					//forward(REFERER);
+				if(empty($passed_value) && (($is_subgroup && $entity->subgroups_only == "yes") || (!$is_subgroup && $entity->subgroups_only == "no")) ){		//validación
+					register_error(elgg_echo("profile_manager:register_pre_check:missing", array(elgg_echo($entity->getTitle()))));
+					forward(REFERER);
 				}
 		    }
 		}

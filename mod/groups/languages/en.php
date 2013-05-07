@@ -257,8 +257,8 @@ View and reply to the discussion:
 
 
 	'groups:privategroup' => 'This community is closed. Requesting membership.',
-	'groups:notitle' => 'Must have a title',
-	'writing:groups:notitle' => 'Must have a title',
+	'groups:notitle' => 'Communities must have a title',
+	'writing:groups:notitle' => 'Writing groups must have a title',
 	'writing:groups:nobooktitle' => 'Writing Groups must have a book title',
 	'writing:groups:nopoliciesaccept' => 'You must accept or decline the policies',
 	'writing:groups:noproposal' => 'You have to upload a file with the proposal',

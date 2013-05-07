@@ -332,6 +332,8 @@ if (count($group_fields["fields"]) > 0) {
         //$('[name="Proposal"]').hide();
         $('.proposal_showhide').hide();
         </script>
+
+        <input type="hidden" name="is_subgroup" value="true" /> <!-- po5i: para saber el origen -->
         <?    
     }
 
