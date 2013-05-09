@@ -25,10 +25,12 @@
 		'latin:field:proposal' => 'Content Proposal',
 		'latin:field:booktitle' => 'Book Title',
 		'latin:field:description' => 'Description of the group',
-		'latin:field:policies' => 'Do you accept the policies?',
+		'latin:field:policies' => 'Do you accept the contest rules?',
 		'latin:field:policies:title' => 'Policies Link',
 		'latin:field:policies:link' => 'profile_manager/contestrules',
-		'latin:field:policies:linkdesc' => 'Click here to go to the page with the contest rules.',		
+		'latin:field:policies:linkdesc1' => 'By clicking yes, you agree to our ',	
+		'latin:field:policies:linkdesc2' => 'terms',	
+		'latin:field:policies:linkdesc3' => 'and automatically participate in the call for the collaborative creation of open textbooks.',	
 
 		// entity names
 		'item:object:custom_profile_field' => 'Custom Profile Field',
