@@ -5,7 +5,7 @@
 	require_once "{$CONFIG->pluginspath}elgg_social_login/settings.php"; 
 
 	// display "Or connect with" message, or not.. ?
-	echo "<div style='padding:10px;padding-top:0px;margin-top:0px;'><div style='padding:10px;padding-left:0px;'><b>Or connect with:</b></div>";
+	echo "<div style='padding:10px;padding-top:0px;margin-top:0px;'><div style='padding:10px;padding-left:0px;'><b>".elgg_echo('social:loging:connect').":</b></div>";
 
 	// display provider icons
 	foreach( $HA_SOCIAL_LOGIN_PROVIDERS_CONFIG AS $item ){
@@ -30,7 +30,7 @@
 
 	// link attribution && privacy page 
 	?>
-	<p style="border-top:1px dotted #999;font-size: 10px;">
+	<p style="border-top:1px dotted #999;font-size: 10px;display:none">
 		Powered by <a href="http://hybridauth.sourceforge.net" target="_blank">HybridAuth</a>
 
 		<?php
