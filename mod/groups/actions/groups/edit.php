@@ -92,6 +92,11 @@ if ($is_subgroup) {
     	register_error(elgg_echo("groups:notitle"));
     	forward(REFERER);
 	}
+	//GC - May 10: validate if description is empty
+	if (!$group->description) {
+		register_error(elgg_echo("groups:nodescription"));
+		forward(REFERER);
+	}
 }
 	
 	

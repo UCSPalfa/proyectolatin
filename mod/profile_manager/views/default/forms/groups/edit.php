@@ -54,6 +54,7 @@ $iconField = 'groups:icon';
 
 $is_subgroup = isSubgroup($vars['entity']); //po5i
 
+$description_madatory = "";//GC
 if ($currentContext == 'au_subgroups_creation' or $currentContext == 'au_subgroups_edition') {
     $nameField = 'au_subgroups:name';
     $iconField = 'au_subgroups:icon';
@@ -66,6 +67,7 @@ else{
     //po5i-ajax: cargar js
     elgg_load_js('elgg.searchgroup');
     elgg_extend_view('js/elgg', 'js/search-group');
+    $description_madatory = "mandatory";//GC
 }
 ?>
 
@@ -142,7 +144,7 @@ else{
 
 <!-- po5i -->
 <div class="elgg-module  elgg-module-info">
-<div class="elgg-head">
+<div class="elgg-head <?php echo $description_madatory; ?>">
     <h3><?php echo elgg_echo("groups:description"); ?></h3>
     <?php echo elgg_view("input/longtext", array(
         'name' => 'description',

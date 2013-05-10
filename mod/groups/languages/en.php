@@ -257,7 +257,7 @@ View and reply to the discussion:
 
 
 	'groups:privategroup' => 'This community is closed. Requesting membership.',
-	'groups:notitle' => 'Communities must have a title',
+	'groups:notitle' => 'Communities must have a name',
 	'writing:groups:notitle' => 'Writing groups must have a title',
 	'writing:groups:nobooktitle' => 'Writing Groups must have a book title',
 	'writing:groups:nopoliciesaccept' => 'You must accept or decline the policies',
@@ -377,7 +377,7 @@ or click below to view the community's join requests:
 
     //po5i
     'groups:exists' => 'This community already exists',
-        
+    'groups:nodescription' => 'Communities must have a description',//GC        
     
 );
 

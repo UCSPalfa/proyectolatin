@@ -24,7 +24,7 @@ $spanish = array(
         'latin:register' => "Registrarse",
         'latin:now' => "ahora",
 /*AO: Mayo 4, traducciones añadidas */
-        'latin:participate' => "Gane €1200 para Financiar su Libro",
+        'latin:participate' => "Participa de la Comunidad LATIn",
         'latin:steps' => "<ul>
         <li>Regístrese</li>
         <li>Cree/Únase a una comunidad</li>
@@ -1375,7 +1375,11 @@ Por favor no responda a este correo",
         'register:coll_text' => "Las comunidades ofrecen espacios únicos donde se puede hablar de lo que te gusta, empieza tu comunidad! Póngase en contacto con gente de todo el mundo y haga la diferencia!",
         'register:share' => "Comparta",
         'register:share_text' => "Comparta con personas en su comunidad y grupos de escritura en la comunidad LATIn. Inicie una discusión, mensajee a todos de una vez, comparta sus ideas!",
-
+        'site:about_title'=>"Acerca del Proyecto LATIn",
+		'site:about'=>	"La Iniciativa Latinoamericana de Libros de Texto Abiertos abordará el problema del alto costo de los libros de texto para la Educación Superior en Latinoamérica.",
+		'site:latin_objectives' =>"El objetivo general del proyecto es mejorar la accesibilidad a la Universidad Latinoamericana para estudiantes de bajos ingresos, y reducir la tasa de deserción escolar debido a razones financieras.<br/><br/>El objetivo específico de este proyecto será la creación y difusión de la Iniciativa Colaborativa de Libro de Texto Abierto para la Educación Superior diseñado exclusivamente para la región.",
+		'site:read_more' =>"Lea más en <a  style=\"color: #0054A7; font-size: 12px; font-weight: bold;\" href=\"http://www.latinproject.org\">Proyecto LATIn</a>",
+        
 );
 
 add_translation("es",$spanish);

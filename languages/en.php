@@ -25,7 +25,8 @@ $english = array(
         'latin:register' => "Register",
         'latin:now' => "now",
 /*AO: Mayo 4, traducciones añadidas */
-        'latin:participate' => "Win €1200 to Finance your Book",
+     //   'latin:participate' => "Win €1200 to Finance your Book", GC: cambiado por petición de Manuel
+		'latin:participate' => "Participate in the LATIn Community",
 	'latin:steps' => "<ul>
 	<li>Register</li>
 	<li>Create/Join a community</li>
@@ -1393,6 +1394,10 @@ You cannot reply to this email.",
 	'register:coll_text' => "Communities offer unique spaces where you can talk about what you like, start yours! Contact people from all over the world and make a difference!",
 	'register:share' => "Share",
 	'register:share_text' => "Share with people in your community and writing groups, on LATIn Community. Start a discussion, text a group all at once, share your ideas!",
+	'site:about_title'=>"About LATIn Project",
+	'site:about'=>	"The Latin American Open Textbook Initiative will address the problem of high cost of textbooks for Higher Education in Latin America.",
+	'site:latin_objectives' =>"The overall objective of the project is to improve the accessibility to the Latin American University for low-income students, as well as to reduce the dropout rate due to financial reasons. <br/><br/>The  specific objective of the project will be the creation and dissemination of a Collaborative Open Textbook Initiative for Higher Education tailored specifically for the region.",
+	'site:read_more' =>"Read more in <a  style=\"color: #0054A7; font-size: 12px; font-weight: bold;\" href=\"http://www.latinproject.org\">LATIn Project</a> website.",
 );
 
 add_translation("en",$english);

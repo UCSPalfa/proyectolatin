@@ -43,3 +43,8 @@ if (isset($vars['area3'])) {
 echo elgg_view_menu('extras', array(
 	'sort_by' => 'priority',
 ));
+
+//GC:info about LATIn project
+if (!elgg_is_logged_in() && elgg_in_context("main")){
+echo elgg_view('page/elements/latinproject', $vars);
+}

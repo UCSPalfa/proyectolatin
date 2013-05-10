@@ -518,3 +518,33 @@ hr.registerBreak {
         color: rgb(0, 61, 121);
 	font-weight: bold;
 }
+
+.bloque_about {
+    float: left;
+    margin-top: 15px;
+    border: 1px solid silver;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    min-height: 350px;
+    padding: 10px;
+    position: relative;
+}
+
+.bloque_about {
+    background-image: url(<?php echo $url; ?>_graphics/p_box.gif);
+    background-position: 50% 100%;
+    background-repeat: no-repeat no-repeat;
+    margin-right: 0;
+    background-size: 100%;
+}
+
+.bloque_about h2 {
+    color: #000;
+    font-weight: bold;
+}
+
+.bloque_about div {
+    font-size:12px;
+}

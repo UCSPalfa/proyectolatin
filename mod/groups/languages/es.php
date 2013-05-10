@@ -377,6 +377,7 @@ o a haga clic a continuación para ver las solicitudes de membresía de esta Com
 
     //po5i
     'groups:exists' => 'Esta comunidad ya existe',
+    'groups:nodescription' => 'Las comunidades deben tener una descripción',//GC
 );
 
 add_translation("es", $spanish);
