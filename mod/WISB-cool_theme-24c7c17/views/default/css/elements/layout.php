@@ -232,30 +232,51 @@ html, body {
     margin-bottom: 3px;
 }
 /*Algunos cambios de estilo en página principal*/
-.bloque_vd {
+/*AO: Mayo 13, cambiados estilos de bloque_vd por slider*/
+.bloque_vd{
     float: left;
-    width: 97%;
+    width: 705px;
     border: 1px solid silver;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    min-height: 240px;
+    min-height: 390px;
     padding: 10px;
     position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.bloque_vd > ul {
+    position: relative;
+    -webkit-transition: 0.5s left;
+    -moz-transition: 0.5s left;
+    -ms-transition: 0.5s left;
+    -o-transition: 0.5s left;
+    list-style: none;
+    margin: 0; padding: 0;
+}
+
+.bloque_vd > ul > li {
+	float: left;
+	width: 705px;
+	min-height: 390px;
+	padding-right: 10px;
 }
 
 .bloque_vd h1 {
     color: #000000;
     font-family: Arial, sans-serif;
-/*AO: Mayo 6, modificado tamaño de letra*/
     font-size: 22px;
-    font-weight: normal;
+    font-weight: bold;
     line-height: 1.4em;
+    text-align: center;
+    padding-bottom: 15px;
 }
 
-.bloque_vd h1 span {
-    font-weight: bold;
+.bloque_vd p{
+    font-size: 14px;
 }
 
 .bloque_t1 {
@@ -547,4 +568,25 @@ hr.registerBreak {
 
 .bloque_about div {
     font-size:12px;
+}
+
+.lista_info{
+    display: inline;
+}
+
+/*AO: Mayo 13, estilos añadidos para opciones de slider */
+.slider_opt ul{
+	text-align: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+}
+
+.slider_opt ul li{
+        display: inline;
+	font-weight: bold;
+}
+
+.slider_opt ul li a{
+        padding-left: 15px;
 }

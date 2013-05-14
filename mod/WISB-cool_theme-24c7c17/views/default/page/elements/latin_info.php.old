@@ -5,54 +5,17 @@
  * AO: Marzo, añadido para mostrar info de LATIn es página de inicio
  *
  */
-elgg_load_js('elgg.sliderjs');
-elgg_extend_view('js/elgg', 'js/slider-js');
-?>
-
-<?php
 echo "<div class=\"bloque_vd\">";
-echo "<ul>";
-echo "<li>";
-echo "<h1>";
+
+echo "<h1 style='text-align:center; font-weight: bold; margin-bottom: 70px'>";
 echo elgg_echo("latin:site:name");
 echo "</h1>";
-echo "<img src='_graphics/latinImage.png'>";
-echo "</li>";
-echo "<li>";
-echo "<h1>";
-echo elgg_echo("site:about_title");
-echo "</h1>";
 echo "<p>";
-echo elgg_echo("site:about");
+echo elgg_echo("");
 echo "</p>";
-echo "<p>";
-echo elgg_echo("site:latin_objectives");
-echo "</p>";
-echo "<p>";
-echo elgg_echo("site:read_more");
-echo "</p>";
-echo "<img src='_graphics/latin_logo.png' style='height: 150px; display: block; margin: 0 auto'>";
-echo "</li>";
-echo "</ul>";
+echo "<img src='_graphics/latinImage.png' style='margin-top: -63px;'>";
 echo "</div>";
-?>
 
-<div class="slider_opt">
-    <ul>
-      <li><a href="javascript:sliders[0].goToPrev()"><img src='_graphics/icon1.png' /></a></li>
-      <li><a href="javascript:sliders[0].goToNext()"><img src='_graphics/icon2.png' /></a></li>
-    </ul>
-</div>
-
-
-<script type="text/javascript">
-   var sliders = []
-    $('.bloque_vd').each(function() {
-      sliders.push(new Slider(this))
-    })
-</script>
-
-<?php
 echo "<div class=\"bloque_t2\">";
 echo "<h2>";
 echo elgg_echo('latin:communities');

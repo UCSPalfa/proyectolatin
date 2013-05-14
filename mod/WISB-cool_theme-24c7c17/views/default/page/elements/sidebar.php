@@ -45,6 +45,8 @@ echo elgg_view_menu('extras', array(
 ));
 
 //GC:info about LATIn project
-if (!elgg_is_logged_in() && elgg_in_context("main")){
+//AO: Mayo 13, comentado y añadida información a slider
+/*if (!elgg_is_logged_in() && elgg_in_context("main")){
 echo elgg_view('page/elements/latinproject', $vars);
 }
+*/

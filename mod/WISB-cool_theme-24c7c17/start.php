@@ -16,6 +16,12 @@ function cool_theme_init() {
     elgg_register_simplecache_view('js/delete-opost');
     elgg_register_js('elgg.deleteopost', $delete_js);
 
+    /* AO: Mayo 13, registro de js para eliminar annotation. Puedo eliminar mis annotations en muro de otro usuario o grupo o eliminar anotations de otros en mi muro */
+    $slider_js = elgg_get_simplecache_url('js', 'slider-js');
+    elgg_register_simplecache_view('js/slider-js');
+    elgg_register_js('elgg.sliderjs', $slider_js);
+
+
     /* AO: Abril 17, registrada vista ajax para procesamiento de eliminar annotation en muro de otro usuario o grupo o eliminar annotations de otros en mi muro */
     elgg_register_ajax_view('messageboard/delete_opost_process');
 
