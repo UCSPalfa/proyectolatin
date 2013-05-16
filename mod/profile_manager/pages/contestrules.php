@@ -83,10 +83,10 @@ $content .= <<<POLITICAS
 
 <h3>4. FINANCIAMIENTO, DURACIÓN Y RESPONSABILIDAD DE LAS PROPUESTAS.</h3>
 
-LATIn financiará un mínimo de 16 propuestas, por un monto de 1200 euros por docente participante. El monto global de financiamiento dependerá, entonces, del número de docentes involucrado en la propuesta.
+<p>LATIn financiará un mínimo de 16 propuestas, por un monto de 1200 euros por docente participante. El monto global de financiamiento dependerá, entonces, del número de docentes involucrado en la propuesta.</p>
 
 
-El financiamiento será realizado en tres entregas:
+<p>El financiamiento será realizado en tres entregas:</p>
 
 <ol>
 <li>la primera entrega, por un total de 200 euros por docente participante, se pagarán luego de aprobada y seleccionada la propuesta</li>

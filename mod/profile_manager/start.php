@@ -54,6 +54,7 @@
 		elgg_register_page_handler("terms", "profile_manager_page_handler");
 		elgg_register_page_handler("privacy", "profile_manager_page_handler");
 		elgg_register_page_handler("contestrules", "profile_manager_page_handler");
+		elgg_register_page_handler("contestrules-pt", "profile_manager_page_handler");
 
 		
 		// admin user add, registered here to overrule default action
@@ -146,6 +147,9 @@
                 return true;
 			case "contestrules":
                 include(dirname(__FILE__) . "/pages/contestrules.php");
+                return true;
+			case "contestrules-pt":
+                include(dirname(__FILE__) . "/pages/contestrules-pt.php");
                 return true;
 		}
 	}
