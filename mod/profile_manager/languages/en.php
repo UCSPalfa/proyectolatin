@@ -22,7 +22,7 @@
 		'latin:field:languages' => 'Languages',
 		'latin:field:email_visibility' => 'Email Visibility',
 		'latin:field:areas' => 'Areas of Interests',
-		'latin:field:proposal' => 'Content Proposal',
+		'latin:field:proposal' => 'Postulation Proposal',
 		'latin:field:booktitle' => 'Book Title',
 		'latin:field:description' => 'Description of the group',
 		'latin:field:policies' => 'Do you accept the contest rules?',

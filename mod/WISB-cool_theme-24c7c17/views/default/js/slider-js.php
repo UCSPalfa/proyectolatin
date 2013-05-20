@@ -21,8 +21,8 @@
         if (index < 0 || index > this.li.length - 1)
           return
 
-        //AO: Mayo 13, move <ul> left - Modificado de 100 a 101, por paddings
-        this.ul.style.left = '-' + (101 * index) + '%'
+        //AO: Mayo 14, move <ul> left - Modificado de 100 a 102, por paddings
+        this.ul.style.left = '-' + (102 * index) + '%'
 
         this.currentIndex = index
       },

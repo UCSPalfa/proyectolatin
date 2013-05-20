@@ -30,7 +30,7 @@ $english = array(
 	'latin:steps' => "<ul>
 	<li>Register</li>
 	<li>Create/Join a community</li>
-	<li>Create/Join a writing group and participate</li>
+	<li>Create/Join a writing group and participate in LATIn contest</li>
 	</ul>",
 	'contest:info' => "Contest rules",
     

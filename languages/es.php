@@ -28,7 +28,7 @@ $spanish = array(
         'latin:steps' => "<ul>
         <li>Regístrese</li>
         <li>Cree/Únase a una comunidad</li>
-        <li>Cree/Únase a un grupo de escritura y participe</li>
+        <li>Cree/Únase a un grupo de escritura y participe del concurso LATIn</li>
         </ul>",
         'contest:info' => "Reglas del concurso",
 

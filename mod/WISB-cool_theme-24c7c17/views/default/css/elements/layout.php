@@ -262,7 +262,7 @@ html, body {
 	float: left;
 	width: 705px;
 	min-height: 390px;
-	padding-right: 10px;
+	padding-right: 15px;
 }
 
 .bloque_vd h1 {
@@ -540,7 +540,7 @@ hr.registerBreak {
 	font-weight: bold;
 }
 
-.bloque_about {
+/*.bloque_about {
     float: left;
     margin-top: 15px;
     border: 1px solid silver;
@@ -549,7 +549,7 @@ hr.registerBreak {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     min-height: 350px;
-    padding: 10px;
+    padding: 15px;
     position: relative;
 }
 
@@ -568,7 +568,7 @@ hr.registerBreak {
 
 .bloque_about div {
     font-size:12px;
-}
+}*/
 
 .lista_info{
     display: inline;

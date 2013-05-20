@@ -101,14 +101,14 @@ $content .= <<<POLITICAS
 <h3>5. PRESENTACIÓN DE LAS PROPUESTAS</h3>
 
 <ol>
-<li>El proyecto LATIn pondrá a disposición de los interesados una plataforma en la cual se podrá encontrar otros profesores interesados en la temática.  Esta plataforma es accesbile en la direccion: http://comunidad.proyectolatin.org</li>
-<li>Las propuestas deberán presentarse completando el Formulario de Postulación online que está disponible en http://www.proyectolatin.org/concurso</li>
-<li>En el Formulario de Postulación se deberán completar la siguiente información:
+<li>El proyecto LATIn pondrá a disposición de los interesados una plataforma (http://comunidad.proyectolatin.org) en la cual podrán interactuar sobre diversas temáticas, armar comunidades y generar grupos de escritura para elaborar los libros de texto abierto.</li>
+<li>Para presentar una propuesta todos los participantes del grupo deberán registrarse en la plataforma LATIn, crear/unirse a una comunidad; en ésta crear/unirse a un grupo de escritura. El líder del grupo de escritura durante la creación de su grupo deberá completar todos los campos obligatorios, aceptar las políticas del concurso y subir su propuesta de postulación durante la creación del grupo de escritura. El líder podrá posteriormente editar la información de su grupo hasta la fecha límite: 15 de junio de 2013. Ésto en el caso de no completar su propuesta de postulación al momento de crear el grupo de escritura.</li>
+<li>La propuesta de Postulación deberá completar la siguiente información:
     <ol>
-    <li>Datos del Docente Responsable de la Propuesta y Curriculum Vitae (CV resumido)</li>
-    <li>Datos del grupo de docentes participantes y Curriculum Vitae (CV resumido)</li>
-    <li>Disciplina</li>
-    <li>Especialidad</li>
+    <li>Datos del Docente Responsable de la Propuesta y Curriculum Vitae (CV resumido).</li>
+    <li>Datos del grupo de docentes participantes y Curriculum Vitae (CV resumido).</li>
+    <li>Disciplina.</li>
+    <li>Especialidad.</li>
     <li>Principales áreas temáticas que se pretende abordar.</li>
     <li>Título tentativo del libro de texto propuesto.</li>
     <li>Descripción general de la propuesta
@@ -133,7 +133,7 @@ $content .= <<<POLITICAS
 
 <h3>6. DOCUMENTACIÓN</h3>
 
-<p>Las propuestas se deberán presentar de acuerdo a las instrucciones y en los formularios estipulados en esta convocatoria. </p>
+<p>Las propuestas se deberán presentar de acuerdo a las instrucciones estipuladas en esta convocatoria. (Ver Presentación de las propuestas) </p>
 <p>Cada miembro del equipo de trabajo deberá enviar un correo a concurso@latinproject.org desde su email oficial de la universidad confirmando su participación en la propuesta.</p>
 <p>No se evaluarán postulaciones que carezcan de parte o todo lo anteriormente expresado.</p>
 
@@ -142,7 +142,7 @@ $content .= <<<POLITICAS
 <h3>7. ENVÍO DE LAS PROPUESTAS</h3>
  
 
-<p>Las propuestas podrán ser enviadas utilizando el sistema previsto en la Plataforma LATIn (http://www.proyectolatin.org/concurso), hasta el día 15 de junio de 2013, 00:00 UTC/GMT - 5 hs.</p>
+<p>Las propuestas podrán ser enviadas hasta el día 15 de junio de 2013, 00:00 UTC/GMT - 5 hs.</p>
 
 
 <h3>8. EVALUACIÓN DE LAS PROPUESTAS</h3>
@@ -151,16 +151,16 @@ $content .= <<<POLITICAS
 <p>Para la evaluación de las propuestas se considerará:</p>
 
 <ol>
-<li>La pertinencia, actualidad y novedad de la temática propuesta</li>
-<li>La vigencia y/o actualidad de los contenidos</li>
-<li>El aporte del material para la comunidad educativa disciplinar</li>
-<li>La carencia bibliográfica disponible en el medio</li>
-<li>La pertinencia de la propuesta de acuerdo con los planes de estudio de las instituciones socias</li>
-<li>La coherencia entre los contenidos que serán abordados y los objetivos que se plantean a cumplir</li>
-<li>La adecuación de la propuesta a los destinatarios definidos</li>
-<li>La pertinencia y actualidad de la bibliografía de base</li>
-<li>La adecuación de los recursos educativos y actividades que se prevén incluir con el propósito de reforzar y/o complementar el contenido teórico y práctico</li>
-<li>La adecuación de los mecanismos de colaboración para la escritura del libro de texto abierto que se presentan en la propuesta</li>
+<li>La pertinencia, actualidad y novedad de la temática propuesta.</li>
+<li>La vigencia y/o actualidad de los contenidos.</li>
+<li>El aporte del material para la comunidad educativa disciplinar.</li>
+<li>La carencia bibliográfica disponible en el medio.</li>
+<li>La pertinencia de la propuesta de acuerdo con los planes de estudio de las instituciones socias.</li>
+<li>La coherencia entre los contenidos que serán abordados y los objetivos que se plantean a cumplir.</li>
+<li>La adecuación de la propuesta a los destinatarios definidos.</li>
+<li>La pertinencia y actualidad de la bibliografía de base.</li>
+<li>La adecuación de los recursos educativos y actividades que se prevén incluir con el propósito de reforzar y/o complementar el contenido teórico y práctico.</li>
+<li>La adecuación de los mecanismos de colaboración para la escritura del libro de texto abierto que se presentan en la propuesta.</li>
 <li>La adecuación del cronograma previsto a los plazos establecidos en la convocatoria.</li>
 </ol>
 
