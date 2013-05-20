@@ -102,7 +102,7 @@ $content .= <<<POLITICAS
 
 <ol>
 <li>El proyecto LATIn pondrá a disposición de los interesados una plataforma (http://comunidad.proyectolatin.org) en la cual podrán interactuar sobre diversas temáticas, armar comunidades y generar grupos de escritura para elaborar los libros de texto abierto.</li>
-<li>Para presentar una propuesta todos los participantes del grupo deberán registrarse en la plataforma LATIn, crear/unirse a una comunidad; en ésta crear/unirse a un grupo de escritura. El líder del grupo de escritura durante la creación de su grupo deberá completar todos los campos obligatorios, aceptar las políticas del concurso y subir su propuesta de postulación durante la creación del grupo de escritura. El líder podrá posteriormente editar la información de su grupo hasta la fecha límite: 15 de junio de 2013. Ésto en el caso de no completar su propuesta de postulación al momento de crear el grupo de escritura.</li>
+<li>Para presentar una propuesta todos los participantes del grupo deberán registrarse en la plataforma LATIn, crear o unirse a una comunidad; para luego crear o unirse a un grupo de escritura. El responsable del grupo deberá completar los campos obligatorios, aceptar las políticas del concurso y subir su propuesta de postulación durante la creación del grupo de escritura. La fecha límite para presentar una propuesta es el 1 de julio de 2013.</li>
 <li>La propuesta de Postulación deberá completar la siguiente información:
     <ol>
     <li>Datos del Docente Responsable de la Propuesta y Curriculum Vitae (CV resumido).</li>
@@ -134,7 +134,7 @@ $content .= <<<POLITICAS
 <h3>6. DOCUMENTACIÓN</h3>
 
 <p>Las propuestas se deberán presentar de acuerdo a las instrucciones estipuladas en esta convocatoria. (Ver Presentación de las propuestas) </p>
-<p>Cada miembro del equipo de trabajo deberá enviar un correo a concurso@latinproject.org desde su email oficial de la universidad confirmando su participación en la propuesta.</p>
+<p>Cada miembro del equipo de trabajo deberá enviar un correo a contacto@latinproject.org desde su email oficial de la universidad confirmando su participación en la propuesta.</p>
 <p>No se evaluarán postulaciones que carezcan de parte o todo lo anteriormente expresado.</p>
 
 
@@ -142,7 +142,7 @@ $content .= <<<POLITICAS
 <h3>7. ENVÍO DE LAS PROPUESTAS</h3>
  
 
-<p>Las propuestas podrán ser enviadas hasta el día 15 de junio de 2013, 00:00 UTC/GMT - 5 hs.</p>
+<p>Las propuestas podrán ser enviadas hasta el día 1 de julio de 2013, 00:00 UTC/GMT - 5 hs.</p>
 
 
 <h3>8. EVALUACIÓN DE LAS PROPUESTAS</h3>
