@@ -103,7 +103,7 @@ $content .= <<<POLITICAS
 <ol>
 <li>El proyecto LATIn pondrá a disposición de los interesados una plataforma (http://comunidad.proyectolatin.org) en la cual podrán interactuar sobre diversas temáticas, armar comunidades y generar grupos de escritura para elaborar los libros de texto abierto.</li>
 <li>Para presentar una propuesta todos los participantes del grupo deberán registrarse en la plataforma LATIn, crear o unirse a una comunidad; para luego crear o unirse a un grupo de escritura. El responsable del grupo deberá completar los campos obligatorios, aceptar las políticas del concurso y subir su propuesta de postulación durante la creación del grupo de escritura. La fecha límite para presentar una propuesta es el 1 de julio de 2013.</li>
-<li>La propuesta de Postulación deberá completar la siguiente información:
+<li>La propuesta de Postulación deberá contener la siguiente información completa:
     <ol>
     <li>Datos del Docente Responsable de la Propuesta y Curriculum Vitae (CV resumido).</li>
     <li>Datos del grupo de docentes participantes y Curriculum Vitae (CV resumido).</li>

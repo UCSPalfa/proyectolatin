@@ -24,7 +24,25 @@
 
 	$port = array(
 
-					
+		// LATIn field names:
+                'latin:field:bio' => 'Bio',
+                'latin:field:institution' => 'Instituição',
+                'latin:field:country' => 'País',
+                'latin:field:city' => 'Cidade',
+                'latin:field:interests' => 'Interesses',
+                'latin:field:curriculum' => 'CV',
+                'latin:field:languages' => 'Línguas',
+                'latin:field:email_visibility' => 'Visibilidade e-mail',
+                'latin:field:areas' => 'Áreas de interesse',
+                'latin:field:proposal' => 'Proposta de nomeação',
+                'latin:field:booktitle' => 'Título do Livro',
+                'latin:field:description' => 'Descrição do grupo',
+                'latin:field:policies' => '¿Você aceita as regras do concurso?',
+                'latin:field:policies:title' => 'Regras do concurso',
+                'latin:field:policies:link' => 'profile_manager/contestrules-pt',
+                'latin:field:policies:linkdesc1' => 'A aceitar as ',
+                'latin:field:policies:linkdesc2' => 'regras do concurso ',
+                'latin:field:policies:linkdesc3' => 'você concorda com os nossos termos e participar automaticamente na chamada para a criação colaborativa de livros abertos.',
 
 		// entity names
 

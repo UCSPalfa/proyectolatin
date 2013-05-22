@@ -101,9 +101,9 @@ $content .= <<<POLITICAS
 <h3>5. APRESENTACÃO DAS PROPOSTAS</h3>
 
 <ol>
-<li>O projeto LATIn colocará à disposição dos interessados uma plataforma, na qual será possível encontrar outros professores interessados no tema. Esta plataforma pode ser acessada  no endereço http://comunidad.proyectolatin.org </li>
-<li>As propostas deverão ser apresentadas completando o Formulário de Inscrição online, que está disponível em http://www.proyectolatin.org/concurso</li>
-<li>No formulário de inscrição as seguintes informações deverão ser preenchidas:
+<li>O projeto LATIn colocará à disposição dos interessados uma plataforma (http://comunidad.proyectolatin.org), na qual poderão interagir sobre diversos temas, criar comunidades e gerar grupos de escrita para elaborar livros didáticos abertos.</li>
+<li>Para apresentar uma proposta, todos os participantes do grupo deverão se registrar na plataforma LATIn, criar ou participar de uma comunidade, e em seguida criar ou participar de um grupo de escrita. O líder do grupo de escrita deverá preencher todos os programas obrigatórios, aceitar as políticas do concurso e enviar sua proposta de nomeação para o grupo de escrita. O prazo para apresentação de propostas é 1 de julho de 2013.</li>
+<li>A proposta de nomeação as seguintes informações deverão ser preenchidas:
     <ol>
     <li>Dados do Professor Responsável pela Proposta  e Curriculum Vitae (CV resumido)</li>
     <li>Dados do grupo de professores participantes e Curriculum Vitae (CV resumido)</li>
@@ -142,7 +142,7 @@ $content .= <<<POLITICAS
 <h3>7. ENVIO DAS PROPOSTAS</h3>
  
 
-<p>As propostas poderão ser enviadas  utilizando o sistema previsto na Plataforma LATIn (http://www.proyectolatin.org/concurso ), até o dia 15 de junho de 2013 00:00 UTC/GMT - 5 hs.</p>
+<p>As propostas poderão ser enviadas até o dia 1 de julho de 2013, 00:00 UTC/GMT - 5 hs.</p>
 
 
 <h3>8. AVALIDAÇÃO DAS PROPOSTAS</h3>
