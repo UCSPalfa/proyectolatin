@@ -115,8 +115,8 @@ $content .= <<<POLITICAS
         <ul>
         <li>Resumo da proposta (500 palavras)</li>
         <li>Justificativa da necessidade do livro didático proposto, principalmente na contribuição com respeito à literatura existente.</li>
-        <li>Asignatura(s) a la(s) que está dirigida, programa de la(s) unidad(es) curricular(es) cuyo dictado apoyaría el Libro de texto elaborado.</li>
-        <li>Impactos esperados, número de estudiantes a los que está dirigido (anualmente), descripción de los estudiantes a los que va dirigido.</li>
+        <li>Assunto(s) abordado(s), unidade(s) curricular(es) que suportam o livro produzido.</li>
+        <li>Impactos esperados, número de estudantes a que se dirige (anualmente), a descrição dos alunos a quem se dirige.</li>
         <li>Objetivos gerais e específicos.</li>
         <li>Índice provisório, principais conteúdos teóricos e práticos a serem desenvolvidos, seções, capítulos.</li>
         <li>Características do material a ser elaborado, tipo de recursos educativos que o compõem, entre os quais se sugere: atividades, exercícios, simulações, questionários, diagramas, fotos, gráficos, tabelas, experimentos, problemas, avaliações, autoavaliações, entre outros.</li>
