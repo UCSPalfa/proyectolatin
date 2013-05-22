@@ -27,11 +27,14 @@ $english = array(
 /*AO: Mayo 4, traducciones añadidas */
      //   'latin:participate' => "Win €1200 to Finance your Book", GC: cambiado por petición de Manuel
 		'latin:participate' => "Participate in the LATIn Community",
-	'latin:steps' => "<ul>
+		'latin:step1' => "Register",
+		'latin:step2' => "Create/Join a community",
+		'latin:step3' => "Create/Join a writing group and participate",
+	/*'latin:steps' => "<ul>
 	<li>Register</li>
 	<li>Create/Join a community</li>
-	<li>Create/Join a writing group and participate in LATIn contest</li>
-	</ul>",
+	<li>Create/Join a writing group and participate</li>
+	</ul>",*/
 	'contest:info' => "Contest rules",
     
     

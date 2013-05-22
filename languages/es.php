@@ -25,11 +25,14 @@ $spanish = array(
         'latin:now' => "ahora",
 /*AO: Mayo 4, traducciones añadidas */
         'latin:participate' => "Participa de la Comunidad LATIn",
-        'latin:steps' => "<ul>
+        'latin:step1' => "Regístrese",
+		'latin:step2' => "Cree/Únase a una comunidad",
+		'latin:step3' => "Cree/Únase a un grupo de escritura y participe del concurso LATIn",
+        /*'latin:steps' => "<ul>
         <li>Regístrese</li>
         <li>Cree/Únase a una comunidad</li>
         <li>Cree/Únase a un grupo de escritura y participe del concurso LATIn</li>
-        </ul>",
+        </ul>",*/
         'contest:info' => "Reglas del concurso",
 
 

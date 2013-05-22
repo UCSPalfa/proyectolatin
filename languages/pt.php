@@ -39,7 +39,16 @@ $port = array(
         'latin:register' => "Cadastre-se",
 
         'latin:now' => "agora",
-
+        'latin:participate' => "Junte-se à Comunidade LATIn",
+        'latin:step1' => "Registrar",
+		'latin:step2' => "Criar / Junte-se a comunidade",
+		'latin:step3' => "Criar / Aderir a um grupo de escrita e participar do concurso LATIn",
+        /*'latin:steps' => "<ul>
+        <li>Regístrese</li>
+        <li>Cree/Únase a una comunidad</li>
+        <li>Cree/Únase a un grupo de escritura y participe del concurso LATIn</li>
+        </ul>",*/
+        'contest:info' => "Regras do Concurso",
     
 
     

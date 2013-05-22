@@ -126,7 +126,15 @@ echo "<h2>";
 echo elgg_echo("latin:participate");
 echo "</h2>";
 echo "<div class=\"contenido\">";
-echo elgg_echo("latin:steps");
+
+echo '<ul>';
+echo '<li><a style="position: initial;" href="' . elgg_get_site_url() . 'register"' . elgg_echo('register') . ">		". elgg_echo("latin:step1") ."</a></li>" ;
+echo '<li><a style="position: initial;" href="' . elgg_get_site_url() . 'groups/all"' . elgg_echo('register') . ">		". elgg_echo("latin:step2") ."</a></li>" ;
+echo '<li><a style="position: initial;" href="' . elgg_get_site_url() . 'groups/writing_groups/"' . elgg_echo('register') . ">		". elgg_echo("latin:step3") ."</a></li>" ;
+echo '</ul>';
+
+//echo elgg_echo("latin:steps");
+
 echo "<h3>";
 echo elgg_view('output/url', array(
     'text' => elgg_echo("contest:info"),
