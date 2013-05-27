@@ -351,6 +351,7 @@ or click below to view the community's join requests:
 	 * Action messages
 	 */
 	'group:deleted' => 'Community and community contents deleted',
+	'writing:group:deleted' => 'Writing group and contents deleted',
 	'group:notdeleted' => 'Community could not be deleted',
 
 	'group:notfound' => 'Could not find the community',

@@ -73,8 +73,12 @@ if (($entity) && ($entity instanceof ElggGroup)) {
 	}
 
 	// delete group
+	$subgroup = isSubgroup($entity);	//po5i
 	if ($entity->delete()) {
-		system_message(elgg_echo('group:deleted'));
+		if($subgroup)
+			system_message(elgg_echo('writing:group:deleted'));		//po5i
+		else
+			system_message(elgg_echo('group:deleted'));
 	} else {
 		register_error(elgg_echo('group:notdeleted'));
 	}

@@ -667,6 +667,7 @@ ou clique abaixo para ver as requisições de participação da comunidade:
 	 */
 
 	'group:deleted' => 'Comunidade e conteúdos da comunidades deletados',
+	'writing:group:deleted' => 'Grupos de escrita e conteúdos deletados',
 
 	'group:notdeleted' => 'Comunidade não pode ser deletada',
 

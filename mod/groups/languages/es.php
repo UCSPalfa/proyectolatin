@@ -351,6 +351,7 @@ o a haga clic a continuación para ver las solicitudes de membresía de esta Com
 	 * Action messages
 	 */
 	'group:deleted' => 'La Comunidad y su contenido han sido eliminados',
+	'writing:group:deleted' => 'El grupo de escritura y su contenido han sido eliminados',
 	'group:notdeleted' => 'La Comunidad no pudo ser eliminada',
 
 	'group:notfound' => 'No se pudo encontrar la Comunidad',
