@@ -35,21 +35,21 @@ if (!isset($CONFIG)) {
  * @global string $CONFIG->dbuser
  * @name $CONFIG->dbuser
  */
-$CONFIG->dbuser = 'user_latin';
+$CONFIG->dbuser = 'latincomm';
 
 /**
  * The database password
  *
  * @global string $CONFIG->dbpass
  */
-$CONFIG->dbpass = 'latin123';
+$CONFIG->dbpass = 'poi9.34LATI21';
 
 /**
  * The database name
  *
  * @global string $CONFIG->dbname
  */
-$CONFIG->dbname = 'latin';
+$CONFIG->dbname = 'latincomm';
 
 /**
  * The database host.

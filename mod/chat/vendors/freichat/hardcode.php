@@ -1,9 +1,9 @@
 <?php
 /* Data base details */
 $con = 'mysql';
-$username='user_latin';
-$password='latin123';
-$client_db_name='latin';
+$username='latincomm';
+$password='poi9.34LATI21';
+$client_db_name='latincomm';
 $host='localhost';
 $driver='Elgg';
 $db_prefix='elgg_';
