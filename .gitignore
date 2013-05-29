@@ -1,1 +1,4 @@
 /nbproject/private/
+conf/
+engine/settings.php
+mod/chat/vendors/freichat/hardcode.php
