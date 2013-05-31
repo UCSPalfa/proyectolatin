@@ -17,7 +17,9 @@
 $port = array(
 
     
-
+		'latin:site:name' => "Rede Colaborativa para Criação de Livros Didático Abertos",
+        'books:communities' => 'Livros escritos nesta comunidade',
+        'books:user' => 'Este usuário trabalha nesses livros',
     
 
     	'search:communities' => 'Procurar por comunidades',
@@ -26,7 +28,7 @@ $port = array(
 
         'popular:communities' => "Populares",
 
-        'latin:communities' => "Comunidades LATIn",
+        'latin:communities' => "Comunidades Temáticas",
 
         'latin:invitation' => "Você gostaria de colaborar e compartilhar suas ideias com pessoas do mundo todo?",
 
