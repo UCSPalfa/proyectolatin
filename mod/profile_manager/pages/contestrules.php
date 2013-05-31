@@ -68,7 +68,7 @@ $content .= <<<POLITICAS
 <li>Deberá designarse un Docente Responsable General de la Propuesta.  El será la persona de contacto con el Proyecto LATIn.</li>
 <li>En ningún caso, un docente podrá presentarse como Responsable de más de una propuesta en el marco de la presente convocatoria.</li>
 <li>Se podrán integrar docentes, investigadores y estudiantes de otras IES de la región, los cuales participarán en carácter de Colaboradores. Estos Colaboradores no serán remunerados directamente por el proyecto, pero podrán asumir cualquiera de los roles previstos en los proceso de escritura.</li>
-<li>La comunicación de los ganadores se realizará hasta el 1ro de Agosto de 2013.</li>
+<li>La comunicación de los ganadores se realizará hasta el 15 de Septiembre de 2013.</li>
 <li>La fecha máxima prevista para la escritura del libro será el 15 de enero de 2014. </li>
 <li>La fecha máxima para haber utilizado el libro en un curso es 30 de Septiembre de 2014</li>
 <li>Los idiomas oficiales para la publicación son: Español y Portugués.</li>
@@ -102,7 +102,7 @@ $content .= <<<POLITICAS
 
 <ol>
 <li>El proyecto LATIn pondrá a disposición de los interesados una plataforma (http://comunidad.proyectolatin.org) en la cual podrán interactuar sobre diversas temáticas, armar comunidades y generar grupos de escritura para elaborar los libros de texto abierto.</li>
-<li>Para presentar una propuesta todos los participantes del grupo deberán registrarse en la plataforma LATIn, crear o unirse a una comunidad; para luego crear o unirse a un grupo de escritura. El responsable del grupo deberá completar los campos obligatorios, aceptar las políticas del concurso y subir su propuesta de postulación durante la creación del grupo de escritura. La fecha límite para presentar una propuesta es el 1 de julio de 2013.</li>
+<li>Para presentar una propuesta todos los participantes del grupo deberán registrarse en la plataforma LATIn, crear o unirse a una comunidad; para luego crear o unirse a un grupo de escritura. El responsable del grupo deberá completar los campos obligatorios, aceptar las políticas del concurso y subir su propuesta de postulación durante la creación del grupo de escritura. La fecha límite para presentar una propuesta es el 15 de agosto de 2013.</li>
 <li>La propuesta de Postulación deberá contener la siguiente información completa:
     <ol>
     <li>Datos del Docente Responsable de la Propuesta y Curriculum Vitae (CV resumido).</li>
@@ -142,7 +142,7 @@ $content .= <<<POLITICAS
 <h3>7. ENVÍO DE LAS PROPUESTAS</h3>
  
 
-<p>Las propuestas podrán ser enviadas hasta el día 1 de julio de 2013, 00:00 UTC/GMT - 5 hs.</p>
+<p>Las propuestas podrán ser enviadas hasta el día 15 de agosto de 2013, 00:00 UTC/GMT - 5 hs.</p>
 
 
 <h3>8. EVALUACIÓN DE LAS PROPUESTAS</h3>
@@ -205,9 +205,9 @@ $content .= <<<POLITICAS
 <h3>11. FECHAS IMPORTANTES</h3>
  
 <ol>
-<li>Plazo límite de recepción de propuestas: 1 de julio de 2013</li>
-<li>Evaluación de las propuestas recibidas: 1 de agosto de 2013</li>
-<li>Notificación de aceptación de propuestas: 5 de agosto de 2013</li>
+<li>Plazo límite de recepción de propuestas: 15 de agosto de 2013</li>
+<li>Evaluación de las propuestas recibidas: 15 de septiembre de 2013</li>
+<li>Notificación de aceptación de propuestas: 20 de septiembre de 2013</li>
 <li>Proceso de producción de libros de textos abiertos: 30 de noviembre de 2013</li>
 <li>Entrega de libros elaborados a la editorial: 1 de diciembre de 2013</li>
 <li>Acreditación de los libro de texto abiertos: 15 de diciembre de 2013</li>
