@@ -800,7 +800,39 @@
 
 		'profile_manager:profile:no_communities' => "Nenhuma comunidade encontrada",
 
-	
+		//AO: Abril 30, términos
+		'profile_manager:terms' => "Condições",
+		'profile_manager:t1' => "Termos básicos",
+		'profile_manager:t2' => "Condições gerais",
+		'profile_manager:p1' => "Se você utiliza o serviço comunidad.proyectolatin.org, deve aceitar os seguintes termos e condições (Termos de Uso), que regem nossa relação com todos aqueles que interagem com  comunidad.proyectolatin.org.",
+		'profile_manager:l1' => "<ol><li>Você é responsável por qualquer atividade que ocorra em seu nome de usuário..</li>
+		<li>Você é responsável por manter sua senha segura..</li>
+		<li>Você não deve abusar, acusar, ameaçar, intimidar ou suplantar outros usuários de  comunidad.proyectolatin.org.</li>
+		<li>Você não pode usar o serviço  comunidad.proyectolatin.org para nenhum propósito ilegal ou não autorizado. Os usuários internacionais se comprometem a cumprir todas as leis locais sobre conduta e conteúdo aceito.</li>
+		<li>Você é o único responsável por sua conduta e por qualquer dado, texto, informação, nomes de exibição, gráficos, fotos, perfis, áudio e videoclipes, links (“Conteúdo”) que você envie, publique e exiba no serviço comunidad.proyectolatin.org.</li>
+		<li>comunidad.proyectolatin.org é para uso pessoal, não é uma solução de negócio. Os usos profissionais ou empresariais de comunidad.proyectolatin.org estão por sua conta e risco.</li>
+		<li>Você não deve mudar, adaptar ou hackear comunidad.proyectolatin.org ou modificar outro web site para indicar falsamente que está associado a  comunidad.proyectolatin.org.</li>
+		<li>Você não deve criar ou enviar e-mails não desejados ou anúncios à  comunidad.proyectolatin.org ou à qualquer um de seus membros ('Spam').</li>
+		<li>Você não deve transmitir nenhum worm, vírus ou qualquer código de natureza destrutiva.</li>
+		<li>Você não deve, usando comunidad.proyectolatin.org, violar qualquer lei em sua jurisdição (incluindo, mas não limitado às leis de direitos autorais).</li>
+		<li>Qualquer perda de dados não é responsabilidade de comunidad.proyectolatin.org. O uso deste serviço é feito por sua conta e risco.</li>
+		</ol>",
+		'profile_manager:p2' => "A violação de qualquer um destes acordos terá como resultado o cancelamento de sua conta em  comunidad.proyectolatin.org. Enquanto comunidad.proyectolatin.org proíbe tal conduta e conteúdo em seu site, você entende e aceita que comunidad.proyectolatin.org não pode ser responsável pelo conteúdo publicado em seu web site e, apesar de nossos melhores esforços, pode estar exposto a tais materiais. Você utiliza o serviço comunidad.proyectolatin.org por sua conta e risco.",
+		'profile_manager:l2' => "<ul>
+		<li>Reservamo-nos o direito de modificar ou encerrar o serviço  comunidad.proyectolatin.org, por qualquer motivo, com prévio aviso.</li>
+		<li>Reservamo-nos o direito de modificar estes Termos de uso a qualquer momento. Se as modificações constituem uma mudança substancial nas condições de uso, notificaremos os usuários através de um método apropriado. Deixamos a nosso critério o que é uma “mudança substancial”.</li>
+		<li>Reservamo-nos o direito de reivindicar nomes de usuário em nome de empresas ou indivíduos que tenham Direitos ou marca comercial sobre estes nomes de usuário.</li>
+		</ul>",
+		'profile_manager:t3' => "Publicidade",
+		'profile_manager:l3' => "<ul>
+		<li>A publicidade de bens e serviços está proibida no site da comunidade.</li>
+		<li>Os usuários que não cumprirem com estas condições serão proibidos e o conteúdo ofensivo será apagado, a nosso critério, com ou sem notificação.</li>
+		</ul>",
+		'profile_manager:t4' => "Direitos autorais(O que é seu é seu)",
+		'profile_manager:p3' => "Não exigimos os direitos de propriedade intelectual sobre qualquer material que você forneça/faça upload ou contribua ao serviço comunidad.latinproject.org.<p>Se tiver alguma dúvida, encaminhe ao e-mail contacto@latinproject.org</p>",
+		'profile_manager:priv' => "Privacidade",
+		'profile_manager:priv:p1' => "Você é dono de seu conteúdo. O projeto LATIn não é responsável pelo conteúdo publicado neste site por parte de terceiros.",
+
 
 	);
 
