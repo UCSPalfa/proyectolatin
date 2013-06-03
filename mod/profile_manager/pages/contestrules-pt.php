@@ -69,7 +69,7 @@ $content .= <<<POLITICAS
 <li>Deverá ser designado um Professor Responsável Geral da Proposta. Ele será a pessoa de contato com o projeto LATIn.</li>
 <li>Em nenhum caso, um professor poderá se apresentar como Responsável de mais de uma proposta no âmbito desta convocatória.</li>
 <li>O grupo poderá ser integrado por professores, pesquisadores e estudantes de outras IES da região, os quais participarão como Colaboradores. Eles não serão remunerados diretamente pelo projeto, mas poderão assumir qualquer um dos papéis previstos no processo de escrita colaborativa.</li>
-<li>O anúncio dos ganhadores será até o dia 15 de setembro de 2013.</li>
+<li>O anúncio dos ganhadores será até o dia 20 de setembro de 2013.</li>
 <li>A data máxima prevista para escrita do livro será 15 de janeiro de 2014.</li>
 <li>A data máxima para ter utilizado o livro em um curso é 30 de setembro de 2014.</li>
 <li>Os idiomas oficiais de publicação são: Espanhol e Português. </li>
@@ -206,14 +206,14 @@ $content .= <<<POLITICAS
  
 <ol>
 <li>Prazo limite de recebimento de propostas: 15 de agosto de 2013</li>
-<li>Avalição das propostas recebidas: 15 de setembro de 2013</li>
+<li>Avalição das propostas recebidas: 16 de setembro de 2013</li>
 <li>Notificação de aceitação e propostas: 20 de setembro de 2013</li>
 <li>Processo de produção de livros didáticos abertos: 30 novembros de 2013</li>
-<li>Entrega dos livros elaborados para o editor: 1º de dezembro de 2013</li>
-<li>Confirmação dos livros didáticos abertos: 15 de dezembro de 2013</li>
+<li>Entrega dos livros elaborados para o editor: 2 de dezembro de 2013</li>
+<li>Confirmação dos livros didáticos abertos: 16 de dezembro de 2013</li>
 <li>Notificação de confirmação dos livros didáticos abertos: 20 de dezembro de 2013</li>
 <li>Implementação piloto: 30 de setembro de 2014</li>
-<li>Entrega do informe final da implementação piloto: 30 de novembro de 2014</li>
+<li>Entrega do informe final da implementação piloto: 15 de dezembro de 2014</li>
 </ol>
 
 <h3>12. ANEXO</h3>
