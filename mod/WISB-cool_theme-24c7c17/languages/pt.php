@@ -62,7 +62,7 @@ add_translation('pt', array(
 
 	
 
-	'profile:wall' => "Quadro",
+	'profile:wall' => "Perfil",
 
 	'profile:info' => "Info",
 
