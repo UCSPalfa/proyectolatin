@@ -68,7 +68,7 @@ $content .= <<<POLITICAS
 <li>Deberá designarse un Docente Responsable General de la Propuesta.  El será la persona de contacto con el Proyecto LATIn.</li>
 <li>En ningún caso, un docente podrá presentarse como Responsable de más de una propuesta en el marco de la presente convocatoria.</li>
 <li>Se podrán integrar docentes, investigadores y estudiantes de otras IES de la región, los cuales participarán en carácter de Colaboradores. Estos Colaboradores no serán remunerados directamente por el proyecto, pero podrán asumir cualquiera de los roles previstos en los proceso de escritura.</li>
-<li>La comunicación de los ganadores se realizará hasta el 15 de Septiembre de 2013.</li>
+<li>La comunicación de los ganadores se realizará hasta el 20 de Septiembre de 2013.</li>
 <li>La fecha máxima prevista para la escritura del libro será el 15 de enero de 2014. </li>
 <li>La fecha máxima para haber utilizado el libro en un curso es 30 de Septiembre de 2014</li>
 <li>Los idiomas oficiales para la publicación son: Español y Portugués.</li>
@@ -206,14 +206,14 @@ $content .= <<<POLITICAS
  
 <ol>
 <li>Plazo límite de recepción de propuestas: 15 de agosto de 2013</li>
-<li>Evaluación de las propuestas recibidas: 15 de septiembre de 2013</li>
+<li>Evaluación de las propuestas recibidas: 16 de septiembre de 2013</li>
 <li>Notificación de aceptación de propuestas: 20 de septiembre de 2013</li>
 <li>Proceso de producción de libros de textos abiertos: 30 de noviembre de 2013</li>
-<li>Entrega de libros elaborados a la editorial: 1 de diciembre de 2013</li>
-<li>Acreditación de los libro de texto abiertos: 15 de diciembre de 2013</li>
+<li>Entrega de libros elaborados a la editorial: 2 de diciembre de 2013</li>
+<li>Acreditación de los libros de texto abiertos: 16 de diciembre de 2013</li>
 <li>Notificación de acreditación de los libros de texto abiertos: 20 de diciembre de 2013</li>
-<li>Piloto de aplicación:  30 de setiembre de 2014</li>
-<li>Entrega de Informe Final del Piloto de aplicación: 30 de noviembre de 2014</li>
+<li>Piloto de aplicación:  30 de septiembre de 2014</li>
+<li>Entrega de Informe Final del Piloto de aplicación: 15 de diciembre de 2014</li>
 </ol>
 
 <h3>12. ANEXO</h3>
