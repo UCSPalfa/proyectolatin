@@ -37,7 +37,7 @@
                 'latin:field:proposal' => 'Proposta de nomeação',
                 'latin:field:booktitle' => 'Título do Livro',
                 'latin:field:description' => 'Descrição do grupo',
-                'latin:field:policies' => '¿Você aceita as regras do concurso?',
+                'latin:field:policies' => 'Você aceita as regras do concurso?',
                 'latin:field:policies:title' => 'Regras do concurso',
                 'latin:field:policies:link' => 'profile_manager/contestrules-pt',
                 'latin:field:policies:linkdesc1' => 'A aceitar as ',
