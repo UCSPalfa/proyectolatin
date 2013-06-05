@@ -69,8 +69,8 @@ $content .= <<<POLITICAS
 <li>En ningún caso, un docente podrá presentarse como Responsable de más de una propuesta en el marco de la presente convocatoria.</li>
 <li>Se podrán integrar docentes, investigadores y estudiantes de otras IES de la región, los cuales participarán en carácter de Colaboradores. Estos Colaboradores no serán remunerados directamente por el proyecto, pero podrán asumir cualquiera de los roles previstos en los proceso de escritura.</li>
 <li>La comunicación de los ganadores se realizará hasta el 20 de Septiembre de 2013.</li>
-<li>La fecha máxima prevista para la escritura del libro será el 15 de enero de 2014. </li>
-<li>La fecha máxima para haber utilizado el libro en un curso es 30 de Septiembre de 2014</li>
+<li>La fecha máxima prevista para la escritura del libro será el 5 de Enero de 2014. </li>
+<li>La fecha máxima para haber utilizado el libro en un curso es 30 de Septiembre de 2014.</li>
 <li>Los idiomas oficiales para la publicación son: Español y Portugués.</li>
 <li>No se considerarán en este llamado:
 <ol>
@@ -89,9 +89,9 @@ $content .= <<<POLITICAS
 <p>El financiamiento será realizado en tres entregas:</p>
 
 <ol>
-<li>la primera entrega, por un total de 200 euros por docente participante, se pagarán luego de aprobada y seleccionada la propuesta</li>
-<li>la segunda entrega, por un total de 600 euros por docente participante, se abonarán luego de finalizar la fase de producción del libro de texto (Enero 2014) y de que éste sea acreditado por el Comité Editorial.</li>
-<li>la última entrega, por un total de 400 euros por docente participante, serán abonados luego de finalizada la fase Piloto (Septiembre 2014) y contra entrega de informe correspondiente.</li>
+<li>La primera entrega, por un total de 200 euros por docente participante, se pagarán luego de aprobada y seleccionada la propuesta</li>
+<li>La segunda entrega, por un total de 600 euros por docente participante, se abonarán luego de finalizar la fase de producción del libro de texto (Enero 2014) y de que éste sea acreditado por el Comité Editorial.</li>
+<li>La última entrega, por un total de 400 euros por docente participante, serán abonados luego de finalizada la fase Piloto (Septiembre 2014) y contra entrega de informe correspondiente.</li>
 </ol>
 
 <p>El monto asignado podrá utilizarse sólo para la remuneración de docentes. El pago será efectuado a través de los servicios administrativos de las IES participantes del proyecto LATIn, y será abonado según las normas de cada administración universitaria.  No se contempla el pago de ningún impuesto o tasa que la remuneración causare.  </p>
@@ -142,7 +142,7 @@ $content .= <<<POLITICAS
 <h3>7. ENVÍO DE LAS PROPUESTAS</h3>
  
 
-<p>Las propuestas podrán ser enviadas hasta el día 15 de agosto de 2013, 00:00 UTC/GMT - 5 hs.</p>
+<p>Las propuestas podrán ser enviadas hasta el día 15 de Agosto de 2013, 00:00 UTC/GMT - 5 hs.</p>
 
 
 <h3>8. EVALUACIÓN DE LAS PROPUESTAS</h3>
@@ -205,15 +205,15 @@ $content .= <<<POLITICAS
 <h3>11. FECHAS IMPORTANTES</h3>
  
 <ol>
-<li>Plazo límite de recepción de propuestas: 15 de agosto de 2013</li>
-<li>Evaluación de las propuestas recibidas: 16 de septiembre de 2013</li>
-<li>Notificación de aceptación de propuestas: 20 de septiembre de 2013</li>
-<li>Proceso de producción de libros de textos abiertos: 30 de noviembre de 2013</li>
-<li>Entrega de libros elaborados a la editorial: 2 de diciembre de 2013</li>
-<li>Acreditación de los libros de texto abiertos: 16 de diciembre de 2013</li>
-<li>Notificación de acreditación de los libros de texto abiertos: 20 de diciembre de 2013</li>
-<li>Piloto de aplicación:  30 de septiembre de 2014</li>
-<li>Entrega de Informe Final del Piloto de aplicación: 15 de diciembre de 2014</li>
+<li>Plazo límite de recepción de propuestas: 15 de Agosto de 2013.</li>
+<li>Evaluación de las propuestas recibidas hasta: 16 de Septiembre de 2013.</li>
+<li>Notificación de aceptación de propuestas el: 20 de Septiembre de 2013.</li>
+<li>Proceso de producción de libros de textos abiertos hasta: 30 de Diciembre de 2013.</li>
+<li>Entrega de libros elaborados a la editorial hasta: 5 de Enero de 2014.</li>
+<li>Acreditación de los libros de texto abierto el: 16 de Enero de 2014.</li>
+<li>Notificación de acreditación de los libros de textos abiertos el: 20 de Enero de 2014.</li>
+<li>Fecha máxima para finalizar piloto de aplicación:  30 de Septiembre de 2014.</li>
+<li>Entrega de Informe Final del Piloto de aplicación: 15 de Noviembre de 2014.</li>
 </ol>
 
 <h3>12. ANEXO</h3>

@@ -69,9 +69,9 @@ $content .= <<<POLITICAS
 <li>Deverá ser designado um Professor Responsável Geral da Proposta. Ele será a pessoa de contato com o projeto LATIn.</li>
 <li>Em nenhum caso, um professor poderá se apresentar como Responsável de mais de uma proposta no âmbito desta convocatória.</li>
 <li>O grupo poderá ser integrado por professores, pesquisadores e estudantes de outras IES da região, os quais participarão como Colaboradores. Eles não serão remunerados diretamente pelo projeto, mas poderão assumir qualquer um dos papéis previstos no processo de escrita colaborativa.</li>
-<li>O anúncio dos ganhadores será até o dia 20 de setembro de 2013.</li>
-<li>A data máxima prevista para escrita do livro será 15 de janeiro de 2014.</li>
-<li>A data máxima para ter utilizado o livro em um curso é 30 de setembro de 2014.</li>
+<li>O anúncio dos ganhadores será até o dia 20 de Setembro de 2013.</li>
+<li>A data máxima prevista para escrita do livro será 5 de Janeiro de 2014.</li>
+<li>A data máxima para ter utilizado o livro em um curso é 30 de Setembro de 2014.</li>
 <li>Os idiomas oficiais de publicação são: Espanhol e Português. </li>
 <li>Não se consideram neste chamado:
 <ol>
@@ -90,7 +90,7 @@ $content .= <<<POLITICAS
 
 <ol>
 <li>A primeira parcela, no valor de 200 euros por professor participante, serão pagos assim que a proposta for aprovada e selecionada.</li>
-<li>A segunda parcela, no valor de 600 euros  por professor participante, serão pagos assim que a fase de produção do livro didático for terminada (janeiro de 2014), e que é credenciada pelo Conselho Editorial.</li>
+<li>A segunda parcela, no valor de 600 euros  por professor participante, serão pagos assim que a fase de produção do livro didático for terminada (Janeiro de 2014), e que é credenciada pelo Conselho Editorial.</li>
 <li>A última parcela, no valor de 400 euros por professor participante, serão pagos assim que a fase Piloto for finalizada (Setembro de 2014) e no momento da entrega do relatório correspondente.</li>
 </ol>
 
@@ -102,7 +102,7 @@ $content .= <<<POLITICAS
 
 <ol>
 <li>O projeto LATIn colocará à disposição dos interessados uma plataforma (http://comunidad.proyectolatin.org), na qual poderão interagir sobre diversos temas, criar comunidades e gerar grupos de escrita para elaborar livros didáticos abertos.</li>
-<li>Para apresentar uma proposta, todos os participantes do grupo deverão se registrar na plataforma LATIn, criar ou participar de uma comunidade, e em seguida criar ou participar de um grupo de escrita. O líder do grupo de escrita deverá preencher todos os programas obrigatórios, aceitar as políticas do concurso e enviar sua proposta de nomeação para o grupo de escrita. O prazo para apresentação de propostas é 15 de agosto de 2013.</li>
+<li>Para apresentar uma proposta, todos os participantes do grupo deverão se registrar na plataforma LATIn, criar ou participar de uma comunidade, e em seguida criar ou participar de um grupo de escrita. O líder do grupo de escrita deverá preencher todos os programas obrigatórios, aceitar as políticas do concurso e enviar sua proposta de nomeação para o grupo de escrita. O prazo para apresentação de propostas é 15 de Agosto de 2013.</li>
 <li>A proposta de nomeação as seguintes informações deverão ser preenchidas:
     <ol>
     <li>Dados do Professor Responsável pela Proposta  e Curriculum Vitae (CV resumido)</li>
@@ -142,7 +142,7 @@ $content .= <<<POLITICAS
 <h3>7. ENVIO DAS PROPOSTAS</h3>
  
 
-<p>As propostas poderão ser enviadas até o dia 15 de agosto de 2013, 00:00 UTC/GMT - 5 hs.</p>
+<p>As propostas poderão ser enviadas até o dia 15 de Agosto de 2013, 00:00 UTC/GMT - 5 hs.</p>
 
 
 <h3>8. AVALIDAÇÃO DAS PROPOSTAS</h3>
@@ -205,15 +205,15 @@ $content .= <<<POLITICAS
 <h3>11. DATAS IMPORTANTES</h3>
  
 <ol>
-<li>Prazo limite de recebimento de propostas: 15 de agosto de 2013</li>
-<li>Avalição das propostas recebidas: 16 de setembro de 2013</li>
-<li>Notificação de aceitação e propostas: 20 de setembro de 2013</li>
-<li>Processo de produção de livros didáticos abertos: 30 novembros de 2013</li>
-<li>Entrega dos livros elaborados para o editor: 2 de dezembro de 2013</li>
-<li>Confirmação dos livros didáticos abertos: 16 de dezembro de 2013</li>
-<li>Notificação de confirmação dos livros didáticos abertos: 20 de dezembro de 2013</li>
-<li>Implementação piloto: 30 de setembro de 2014</li>
-<li>Entrega do informe final da implementação piloto: 15 de dezembro de 2014</li>
+<li>Prazo limite de recebimento de propostas: 15 de Agosto de 2013.</li>
+<li>Avalição das propostas recebidas será até: 16 de Setembro de 2013.</li>
+<li>Notificação de aceitação e propostas: 20 de Setembro de 2013.</li>
+<li>Processo de produção de livros didáticos abertos será até: 30 Dezembro de 2013.</li>
+<li>Entrega dos livros elaborados para o editor será até: 5 de Janeiro de 2014.</li>
+<li>Confirmação dos livros didáticos abertos: 16 de Janeiro de 2014.</li>
+<li>Notificação de confirmação dos livros didáticos abertos: 20 de Janeiro de 2014.</li>
+<li>Prazo limite de implementação piloto: 30 de Setembro de 2014.</li>
+<li>Entrega do informe final da implementação piloto: 15 de novembro de 2014.</li>
 </ol>
 
 <h3>12. ANEXO</h3>

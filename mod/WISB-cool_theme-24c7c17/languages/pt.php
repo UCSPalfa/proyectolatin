@@ -62,7 +62,7 @@ add_translation('pt', array(
 
 	
 
-	'profile:wall' => "Quadro",
+	'profile:wall' => "Perfil",
 
 	'profile:info' => "Info",
 
@@ -119,13 +119,13 @@ add_translation('pt', array(
         /* AO*/
 
         /* AO: Abril 25, añadidas traducciones*/
-        'main:title:contact' => "Contato",
+        'main:title:contact' => "contato",
         'main:contact:email' => "contacto (@) latinproject (.) org",
         'main:title:legal' => "Legal",
 		'main:legal:alfa' => "Projeto LATIn (DCI-ALA/19.09.01/11/21526/279-155/ALFA III(2011)-52)",
-		'main:legal:fund' => "Financiado pelo Programa ALFA, uma iniciativa da EuropeAid",
+		'main:legal:fund' => "Fundado pelo programa ALFA, uma iniciativa EuropeAid",
 		'main:legal:copy' => "&copy; Copyright LATIn, 2013",
-		'main:legal:cond' => "Condições",
+		'main:legal:cond' => "Termos",
 		'main:legal:priv' => "Privacidade",
         'main:legal:elgg' => "Construído sobre Elgg",
         /* AO*/

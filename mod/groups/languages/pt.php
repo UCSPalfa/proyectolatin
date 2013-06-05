@@ -60,7 +60,7 @@ $port = array(
 
 	'writing:groups:user' => "Grupos de escrita de %s",
 
-	'groups:all' => "Todas comunidades",
+	'groups:all' => "Todas as comunidades",
 
 	'groups:add' => "Criar uma nova comunidade",
 
@@ -322,7 +322,7 @@ Visualizar e responder a discussão:
 
 
 
-	'groups:invitations:none' => 'Não já contites atualmente',
+	'groups:invitations:none' => 'Não há convites atualmente',
 
 
 
@@ -470,7 +470,7 @@ Visualizar e responder a discussão:
 
 	'groups:edittopic' => 'Editar tópico',
 
-	'groups:topicmessage' => 'Tópico da mensagem',
+	'groups:topicmessage' => 'Corpo da mensagem',
 
 	'groups:topicstatus' => 'Status do tópico',
 
