@@ -1,9 +1,9 @@
 <?php
 /* Data base details */
 $con = 'mysql';
-$username='latincomm';
-$password='poi9.34LATI21';
-$client_db_name='latincomm';
+$username='latin_usr';
+$password='latin123';
+$client_db_name='latin';
 $host='localhost';
 $driver='Elgg';
 $db_prefix='elgg_';
@@ -11,7 +11,7 @@ $uid='5176c185213aa';
 
 $PATH = 'freichat/'; // Use this only if you have placed the freichat folder somewhere else
 $installed=true;
-$admin_pswd='yi13Ho3lah20';
+$admin_pswd='admin123';
 
 $debug = false;
 
