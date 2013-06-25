@@ -5,8 +5,8 @@
  * @package ElggGroups
  */
 
-$user_guid = get_input('user_guid');
-$group_guid = get_input('group_guid');
+$user_guid = get_input('who');
+$group_guid = get_input('mygroup');
 
 $user = get_entity($user_guid);
 $group = get_entity($group_guid);

@@ -520,48 +520,75 @@ function groups_entity_menu_setup($hook, $type, $return, $params) {
  * Add a remove user link to user hover menu when the page owner is a group
  */
 function groups_user_entity_menu_setup($hook, $type, $return, $params) {
-    if (elgg_is_logged_in()) {
-        $group = elgg_get_page_owner_entity();
-
-        // Check for valid group
-        if (!elgg_instanceof($group, 'group')) {
-            return $return;
-        }
-
-        $entity = $params['entity'];
-
-        // Make sure we have a user and that user is a member of the group
-        if (!elgg_instanceof($entity, 'user') || !$group->isMember($entity)) {
-            return $return;
-        }
-
-        // Add remove link if we can edit the group, and if we're not trying to remove the group owner
-        if ($group->canEdit() && $group->getOwnerGUID() != $entity->guid) {
+    
+       /***
+        * Modification UCSP
+        * Function to remove user from a group
+        */
+    
+    
+       $entity = $params['entity'];
+       $group = elgg_get_page_owner_entity();
+    
+    
+       if ($group->canEdit() && $group->getOwnerGUID() != $entity->guid) {
+            $user_login = elgg_get_logged_in_user_entity();
             
             $text = "";
             if (isSubgroup($group)) {
                 $text = elgg_echo('writing:groups:removeuser');
-            } else {
+            } 
+            else {
                 $text = elgg_echo('groups:removeuser');
             }
             
-            $remove = elgg_view('output/confirmlink', array(
-                'href' => "action/groups/remove?user_guid={$entity->guid}&group_guid={$group->guid}",
-                'text' => $text,
-                        
-                        
-                    ));
-
-            $options = array(
-                'name' => 'removeuser',
-                'text' => $remove,
-                'priority' => 999,
-            );
-            $return[] = ElggMenuItem::factory($options);
+            /**
+             * It`s a owner group, can delete a moderators an users
+             */
+            if($user_login->guid == $group->owner_guid){
+		if($entity->guid != $group->owner_guid){
+            
+		  $options = array(
+				      'name' => 'removeuser',
+				      'text' => $text),
+				      'href' => 'action/groups/membership/remove?'.http_build_query(array(
+				      'mygroup' => $group->guid,
+				      'who' => $entity->guid,
+				      )),
+				      'priority' => 300,
+				      'is_action' => true
+		  );
+		  $return[] = ElggMenuItem::factory($options);
+	    
+		}	      
+            }
+            
+            /**
+             * It´s a moderator, only can delete a users
+             */
+            if($group->canEdit()){
+	      if($entity->guid != $group->owner_guid && !$entity->canEdit()){
+            
+		  $options = array(
+				      'name' => 'removeuser',
+				      'text' => $text),
+				      'href' => 'action/groups/membership/remove?'.http_build_query(array(
+				      'mygroup' => $group->guid,
+				      'who' => $entity->guid,
+				      )),
+				      'priority' => 300,
+				      'is_action' => true
+		  );
+		  $return[] = ElggMenuItem::factory($options);
+	    
+		}
+            }
         }
-    }
+             
+       
 
-    return $return;
+       return $return;
+    
 }
 
 /**
