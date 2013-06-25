@@ -154,21 +154,24 @@ function group_operators_entity_menu_setup($hook, $entity_type, $returnvalue, $p
 			'is_action' => true
 		);
 		$return[] = ElggMenuItem::factory($options);
-		/*
+		/**
+		 * Modification UCSP 
+		 * Function for change owner of a group
+		 */
 		if(elgg_get_logged_in_user_guid() == $group->owner_guid || elgg_is_admin_logged_in()){
 			$options = array(
 				'name' => 'change_owner',
 				'text' => elgg_echo('group_operators:owner:make'),
 				'href' => 'action/group_operators/mkowner?'.http_build_query(array(
-																				'mygroup' => $group->guid,
-																				'who' => $entity->guid,
-																			)),
+				'mygroup' => $group->guid,
+				'who' => $entity->guid,
+				)),
 				'priority' => 300,
 				'is_action' => true
 			);
 			$return[] = ElggMenuItem::factory($options);
 			
-		}*/
+		}
 	} else {
 		$options = array(
 			'name' => 'change_owner',
