@@ -17,6 +17,11 @@ $othergroup_guid = $othergroup->guid;
 if ($group instanceof ElggGroup && $group->canEdit() && $othergroup instanceof ElggGroup) {
 	if (!check_entity_relationship($group_guid, 'related', $othergroup_guid) && $group_guid != $othergroup_guid) {
 		add_entity_relationship($group_guid, 'related', $othergroup_guid);
+		/***
+		 *Modification UCSP
+		 *Add relationship from the other group to my group
+		 */
+                add_entity_relationship($othergroup_guid, 'related', $group_guid);
 	}
 }
 else{
