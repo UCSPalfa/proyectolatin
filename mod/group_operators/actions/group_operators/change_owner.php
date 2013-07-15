@@ -31,6 +31,15 @@
 		// Finally, we change the owner
 		
 		$mygroup->owner_guid = $who_guid;
+		/***
+		 * Modification UCSP
+		 * Update the container guid of the entity group to make same to the new owner guid so the old owner can`t 
+		 * manage the group when loses the moderator privileges
+		 */
+		$mygroup->container_guid = $who_guid;
+		
+		
+		
 		$mygroup->save();
 		
 		system_message(elgg_echo('group_operators:owner_changed', array($who->name)));
