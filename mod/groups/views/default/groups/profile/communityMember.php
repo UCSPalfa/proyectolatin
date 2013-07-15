@@ -2,6 +2,16 @@
 
 $theUser = $vars['entity'];
 
+/***
+ * Modification UCSP
+ */
+$theGroup = $vars['group'];
+$user_type = $vars['user_type'];
+$group_user_type = $vars['group_user_type'];
+$messagedelete = $vars['delete_action'];
+
+
+
 $file = $theUser->getIconURL();
 $icon = "<img src='$file'>";
 $theUrl = $theUser->getURL();
@@ -110,7 +120,55 @@ if ($city || $country) {
 
 }
 
+/***
+ *Modification UCSP
+ *
+ */
+//Can't eliminate group's owner
+if($group_user_type != 0){
+   
+   //if login user is the group's owner can eliminate moderators and users
+   if($user_type == 0){
+        
+        $content .=  "<div class='user-institution-div' style='white-space: nowrap;'>";
+	$file = elgg_get_site_url() . '_graphics/delete.png';
+	$icon = "<img src='$file' style='margin-left: 200px;'>";
+	$content .= elgg_view('output/url', array(
+	'href' => 'action/groups/membership/remove?'.http_build_query(array(
+					'mygroup' => $theGroup->guid,
+					'who' => $theUser->guid,
+					)),
+	'text' => $icon,
+	'title' => $messagedelete,
+	'priority' => 300,
+	'is_action' => true,
+	'is_trusted' => true,));
 
+	$content .= "</div>";
+   }
+   //if login user is a moderator only can eliminate a users or himself
+   else if($user_type == 1){
+        if($group_user_type == 2){
+	    $content .=  "<div class='user-institution-div' style='white-space: nowrap;'>";
+	    $file = elgg_get_site_url() . '_graphics/delete.png';
+	    $icon = "<img src='$file' style='margin-left: 200px;'>";
+	    $content .= elgg_view('output/url', array(
+	    'href' => 'action/groups/membership/remove?'.http_build_query(array(
+					    'mygroup' => $theGroup->guid,
+					    'who' => $theUser->guid,
+					    )),
+	    'text' => $icon,
+	    'title' => $messagedelete,
+	    'priority' => 300,
+	    'is_action' => true,
+	    'is_trusted' => true,));
+
+	    $content .= "</div>";
+        }
+   }
+   
+
+}
 
 $content .= "</div>"; // End of groupInformation
 

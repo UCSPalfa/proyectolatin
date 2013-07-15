@@ -588,11 +588,86 @@ function groups_handle_members_page($guid) {
         'pagination' => false
             ));
 
-    $content .= "<div style=''>";
+    /***
+     *
+     * Modification UCSP 
+     *  - Only owner group can eliminate users and moderators.
+     *  - Moderators only can eliminate a users.
+     *  - We need to know if a login user is the owner of the group, is a modererator o only a member
+     *  - Also we need to know the user's type of the group members 
+     */
+     
+    $login_user = elgg_get_logged_in_user_entity(); 
+     
+    $operators = elgg_get_entities_from_relationship(array(
+        'relationship' => 'operator',
+        'relationship_guid' => $group->guid,
+        'inverse_relationship' => true,
+        'types' => 'user',
+        'limit' => 0
+            ));        
+            
 
+    if (isSubgroup($group)) {
+          $text = elgg_echo('writing:groups:removeuser');
+    } 
+    else {
+          $text = elgg_echo('groups:removeuser');
+    }
+    
+    
+    // 0 = owner
+    // 1 = operator
+    // 2 = user
+    
+    // $user_type = type of the login user
+    // $group_user_type = user's type of the group's members 
+    $user_type = 2;
+    $group_user_type = 2;
+    
+    //if the login user is the owner of the group
+    if($group->getOwnerGUID() == $login_user->guid){
+        $user_type = 0;
+    }
+    //if the login user is a moderator of the group
+    if($group->canEdit() && $group->getOwnerGUID() != $login_user->guid){
+        $user_type = 1;
+    }
+    
+
+    //user's type of the group members
     foreach ($members as $member) {
-
-        $content .= elgg_view('groups/profile/communityMember', array('entity' => $member));
+    
+        $group_user_type = 2;
+        
+        //if the member is the owner of the group
+        if ($group->getOwnerGUID() == $member->getGUID()) {
+               $group_user_type = 0;
+        }
+        //if the member is a moderator or is the same of the login user
+        else{
+	    foreach($operators as $operator){
+	      
+	      if($login_user->guid == $member->getGUID()){
+		   $group_user_type = 2;
+		    break;
+	      }
+	    
+	      if($operator->guid == $member->guid){
+		    $group_user_type = 1;
+		    break;
+	      }
+	    }
+        }
+        
+        
+        //load the content
+        $content .= elgg_view('groups/profile/communityMember', array(
+                    'entity' => $member, 
+                    'group' => $group, 
+                    'user_type' => $user_type,
+                    'group_user_type' => $group_user_type,
+                    'delete_action' => $text));
     }
 
     $content .= "</div>";
