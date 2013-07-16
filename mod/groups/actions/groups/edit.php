@@ -51,6 +51,19 @@ if ($group_guid && !$group->canEdit()) {
 	forward(REFERER);
 }
 
+
+
+
+/***
+ * Modification UCSP
+ * Create a file object
+ */
+$file_object = '';
+
+
+
+
+
 // Assume we can edit or this is a new group
 if (sizeof($input) > 0) {
 	foreach($input as $shortname => $value) {
@@ -71,9 +84,33 @@ if (sizeof($input) > 0) {
 			//print_r($filehandler);
 			//echo $shortname;
 			//die($value);
+			
+			/***
+			 * Modification UCSP
+			 * Create a PluginFile for the Postulation Proposal
+			 */
+			  $file = new FilePluginFile();
+			  $file->subtype = "file";  
+			  $file->title = "au_subgroups:postulation_proposal";
+			  $file->description = "au_subgroups:postulation_proposal";
+			  $file->access_id = '2';
+			  $prefix = "file/";
+			  $filestorename = elgg_strtolower(time().$_FILES[$shortname]['name']);
+			  $file->setFilename($prefix . $filestorename);
+	                  $mime_type = ElggFile::detectMimeType($_FILES[$shortname]['tmp_name'], $_FILES['upload']['type']);
+	                  $file->setMimeType($mime_type);
+			  $file->originalfilename = $_FILES[$shortname]['name'];
+			  $file->simpletype = file_get_simple_type($mime_type);
+			 // Open the file to guarantee the directory exists
+			  $file->open("write");
+			  $file->close();
+			  move_uploaded_file($_FILES[$shortname]['tmp_name'], $file->getFilenameOnFilestore());
+			  $filename = $file->getFilenameOnFilestore();
+
+			  $guidfile = $file->save();
+			  $file_object = $file;
+			
 		}
-
-
 
 		$group->$shortname = $value;
 	}
@@ -156,6 +193,7 @@ $old_icontime = null;
 if (!$is_new_group && $new_owner_guid && $new_owner_guid != $old_owner_guid) {
 	// verify new owner is member and old owner/admin is logged in
 	if (is_group_member($group_guid, $new_owner_guid) && ($old_owner_guid == $user->guid || $user->isAdmin())) {
+		
 		$group->owner_guid = $new_owner_guid;
 		
 		// @todo Remove this when #4683 fixed
@@ -169,6 +207,45 @@ $must_move_icons = ($owner_has_changed && $old_icontime);
 
 // Aquí se guarda el grupo y se hace la escritura en la base de datos
 $group->save();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/***
+ * Modification UCSP
+ */
+ 
+if($user->guid == $group->getOwnerGUID())
+{
+  // add the file object to the group
+  add_object_to_group($group->guid,$object->guid);
+  /***
+  * Delete old Proposal Postulation and update the new if a editing the writing group
+  */
+  if(!$is_new_group ){
+
+	      $filerequests = elgg_get_entities_from_relationship(array(
+	      'type' => 'object',
+	      'subtype' => 'file',
+	      'relationship' => 'postulation_proposal',
+	      'relationship_guid' => $group->guid,
+	      'inverse_relationship' => true,
+	      'limit' => 1,
+		  ));
+	      
+	      $file = $filerequests[0];
+	      
+	      if(check_entity_relationship($file->guid, 'postulation_proposal', $group->guid))
+	      {
+		  remove_entity_relationship($file->guid, 'postulation_proposal', $group->guid);
+		  delete_entity($file->guid);
+	      }
+  }
+  // create the relation between the file and the group making the file how the postulation proposal of the group
+  add_entity_relationship($file_object->guid, 'postulation_proposal', $group->guid);
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 // Invisible group support
 // @todo this requires save to be called to create the acl for the group. This

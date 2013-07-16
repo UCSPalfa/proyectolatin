@@ -469,8 +469,7 @@ function groups_handle_profile_page($guid) {
         forward('groups/all');
     }
 
-    elgg_push_breadcrumb($group->name);
-
+    elgg_push_breadcrumb($group->name); 
     groups_register_profile_buttons($group);
 
     $content = elgg_view('groups/profile/layout', array('entity' => $group));
@@ -588,6 +587,9 @@ function groups_handle_members_page($guid) {
         'pagination' => false
             ));
 
+            
+            
+            
     /***
      *
      * Modification UCSP 
@@ -873,6 +875,35 @@ function groups_register_profile_buttons($group) {
         }
         $url = elgg_get_site_url() . "groups/invite/{$group->getGUID()}";
         $actions[$url] = 'groups:invite';
+        
+       
+       
+        /***
+         * Modification UCSP
+         * Add Menu to Download Postulation Proposal in the Info page of the Writing Group
+         */
+
+        if (isSubgroup($group)) { 
+	    $filerequests = elgg_get_entities_from_relationship(array(
+            'type' => 'object',
+            'subtype' => 'file',
+            'relationship' => 'postulation_proposal',
+            'relationship_guid' => $group->guid,
+            'inverse_relationship' => true,
+            'limit' => 1,
+                ));
+	    
+	    $file = $filerequests[0];
+	    $file_guid = $file->guid;
+	    $url = "file/download/".$file_guid;
+	    $actions[$url] = 'au_subgroups:download:postulation_proposal';
+
+	}
+        
+        
+        
+        
+        
     } elseif (elgg_is_logged_in()) {
         // join - admins can always join.
         $url = elgg_get_site_url() . "action/groups/join?group_guid={$group->getGUID()}";
@@ -905,6 +936,14 @@ function groups_register_profile_buttons($group) {
         }
     }
 }
+
+
+
+
+
+
+
+
 
 /**
  * Prepares variables for the group edit form view.

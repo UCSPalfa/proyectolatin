@@ -95,6 +95,16 @@ $port = array(
     'au_subgroups:option:parent:members' => "Membros da comunidade pai",
 
     'au_subgroups:subgroups:more' => "Ver todos os Grupos de Escrita",
+    
+    
+    
+    /***	
+     *Modification UCSP
+     */
+
+    'au_subgroups:download:postulation_proposal' => "Baixar Proposta de Nomeação",
+    'au_subgroups:postulation_proposal' => "Proposta de Nomeação",
+    
 
     // group options
 

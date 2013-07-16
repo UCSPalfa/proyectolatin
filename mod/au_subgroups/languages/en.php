@@ -49,7 +49,15 @@ $english = array(
     'au_subgroups:error:invite' => "Action has been cancelled - the following users are not members of the parent group and cannot be invited/added.",
     'au_subgroups:option:parent:members' => "Members of the parent community",
     'au_subgroups:subgroups:more' => "View all Writing Groups",
-    // group options
+   
+   
+   /***
+     *Modification UCSP
+     */
+    'au_subgroups:download:postulation_proposal' => "Download Postulation Proposal",
+    'au_subgroups:postulation_proposal' => "Postulation Proposal",
+   
+   // group options
     'au_subgroups:group:enable' => "Subgroups: Enable Writing Groups for this group?",
     'au_subgroups:group:memberspermissions' => "Subgroups: Enable any member to create subgroups? (if no, only group admins will be able to create subgroups)",
     /*

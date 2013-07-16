@@ -48,6 +48,13 @@ $spanish = array(
     'au_subgroups:error:invite' => "Acción cancelada - Los siguientes Usuarios no son miembros de la Comunidad padre y, por tanto, no puede ser invitados o añadidos a este Grupo de Escritura.",
     'au_subgroups:option:parent:members' => "Miembros de la Comunidad padre",
     'au_subgroups:subgroups:more' => "Ver todos los Grupos de Escritura",
+    
+    /***
+     *Modification UCSP
+     */
+    'au_subgroups:download:postulation_proposal' => "Descargar Propuesta de Postulación",
+    'au_subgroups:postulation_proposal' => "Propuesta de Postulación",
+    
     // group options
     'au_subgroups:group:enable' => "Grupos de Escritura: ¿Habilitar Grupos de Escritura para esta Comunidad?",
     'au_subgroups:group:memberspermissions' => "Grupos de Escritura: ¿Permitir a cualquier miembro de la Comunidad crear Grupos de Escritura? (si no, únicamente los administradores de la Comunidad podrán cerar Grupos de Escritura)",
